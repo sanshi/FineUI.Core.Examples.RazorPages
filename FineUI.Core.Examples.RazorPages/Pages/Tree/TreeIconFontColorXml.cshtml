@@ -1,0 +1,51 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.Tree.TreeIconFontColorXmlModel
+@{
+    ViewBag.SourceFiles = "~/wwwroot/content/tree/tree_iconfont_randomcolor.xml";
+    ViewBag.Title = "Tree/TreeIconFontColorXml";
+    var F = Html.F();
+}
+
+@section head {
+
+    <style>
+        @Html.Raw(ViewBag.DynamicCSS)
+    </style>
+
+}
+
+@section body {
+
+    <f:Tree ID="Tree1" IsFluid="true" ShowHeader="true" Title="树控件" EnableCollapse="false" Nodes="@(TreeNode[])ViewBag.Tree1Nodes">
+    </f:Tree>
+    <br>
+
+    <f:Button ID="btnGetSelectedNode" OnClick="@Url.Handler("btnGetSelectedNode_Click")" OnClickParameter1="@(new Parameter("selectedNode", "getSelectedNode()"))" CssClass="marginr" Text="获取选中的节点"></f:Button>
+    <br>
+
+    <f:Label ID="labResult" EncodeText="false"></f:Label>
+
+
+}
+
+@section script {
+
+    <script>
+
+        function getSelectedNode() {
+            var result;
+
+            var selectedNode = F.ui.Tree1.getSelectedNode(true);
+            if (selectedNode) {
+                result = {
+                    id: selectedNode.id,
+                    text: selectedNode.text
+                };
+            }
+
+            return F.toJSON(result);
+        }
+
+    </script>
+
+}

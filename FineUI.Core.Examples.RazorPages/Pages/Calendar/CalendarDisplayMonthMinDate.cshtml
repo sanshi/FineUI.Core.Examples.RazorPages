@@ -1,0 +1,24 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.Calendar.CalendarDisplayMonthMinDateModel
+@{
+    ViewBag.Title = "Calendar/CalendarDisplayMonthMinDate";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Calendar ID="Calendar1" DateFormatString="@ViewBag.Calendar1DateFormatString" Text="@ViewBag.Calendar1Text" DisplayType="Month" ShowTodayButton="false"
+                OnDateSelect="@Url.Handler("Calendar1_DateSelect")" OnDateSelectParameter1="@(new Parameter("text", "F.ui.Calendar1.getText()"))"
+                MinDate="@ViewBag.Calendar1MinDate" MaxDate="@ViewBag.Calendar1MaxDate">
+    </f:Calendar>
+    <br />
+    <br />
+    <f:Button ID="Button1" OnClick="@Url.Handler("Button1_Click")" Text="@ViewBag.Button1Text"></f:Button>
+    <br />
+    <br />
+    <f:Label ID="labResult" EncodeText="false">
+    </f:Label>
+
+}
+

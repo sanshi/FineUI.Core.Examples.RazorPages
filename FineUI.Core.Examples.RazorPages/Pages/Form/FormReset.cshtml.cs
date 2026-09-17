@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Data;
+using Newtonsoft.Json.Linq;
+using Microsoft.AspNetCore.Http;
+
+namespace FineUI.Core.Examples.RazorPages.Pages.Form
+{
+    public class FormResetModel : BaseModel
+    {
+        public void OnGet()
+        {
+
+        }
+
+
+        
+        public IActionResult OnPostBtnSubmitForm1_Click(IFormCollection values)
+        {
+            ShowNotify(values);
+
+            return UIHelper.Result();
+        }
+
+        public IActionResult OnPostBtnSubmitForm2_Click(IFormCollection values)
+        {
+            ShowNotify(values);
+
+            return UIHelper.Result();
+        }
+
+        public IActionResult OnPostBtnSubmitAll_Click(IFormCollection values)
+        {
+            ShowNotify(values);
+
+            return UIHelper.Result();
+        }
+        
+    }
+}

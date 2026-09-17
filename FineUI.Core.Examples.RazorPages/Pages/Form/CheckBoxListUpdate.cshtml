@@ -1,0 +1,62 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.Form.CheckBoxListUpdateModel
+@{
+    ViewBag.Title = "Form/CheckBoxListUpdate";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" LabelWidth="120" EnableCollapse="false" BodyPadding="10" ShowBorder="true" ShowHeader="true" Title="简单表单">
+        <Items>
+            <f:CheckBoxList ID="CheckBoxList1" Label="列表一">
+                <f:CheckItem Text="可选项 1" Value="value1" />
+                <f:CheckItem Text="可选项 2" Value="value2" Selected="true" />
+                <f:CheckItem Text="可选项 3" Value="value3" Selected="true" />
+            </f:CheckBoxList>
+            <f:Button ID="btnUpdateList1" CssClass="marginr" Text="更新列表一" OnClick="@Url.Handler("btnUpdateList1_Click")"></f:Button>
+            <f:Button ID="btnCheckedItemsList1" Text="获取列表一的选中项" OnClick="@Url.Handler("btnCheckedItemsList_Click")" OnClickParameter1="@(new Parameter("name", "列表一", ParameterMode.String))" OnClickParameter2="@(new Parameter("selected", "getCheckBoxListSelected('CheckBoxList1')"))"></f:Button>
+            <f:Label>
+            </f:Label>
+            <f:CheckBoxList ID="CheckBoxList2" Label="列表二（竖排）" ColumnNumber="3" ColumnVertical="true" DataTextField="Name" DataValueField="Id" DataSource="@ViewBag.CheckBoxList2DataSource" SelectedValueArray="@ViewBag.CheckBoxList2SelectedValueArray">
+            </f:CheckBoxList>
+            <f:Button ID="btnUpdateList2" CssClass="marginr" Text="更新列表二" OnClick="@Url.Handler("btnUpdateList2_Click")"></f:Button>
+            <f:Button ID="btnCheckedItemsList2" Text="获取列表二的选中项" OnClick="@Url.Handler("btnCheckedItemsList_Click")" OnClickParameter1="@(new Parameter("name", "列表二", ParameterMode.String))" OnClickParameter2="@(new Parameter("selected", "getCheckBoxListSelected('CheckBoxList2')"))"></f:Button>
+            <f:Label ID="Label1">
+            </f:Label>
+            <f:CheckBoxList ID="CheckBoxList4" Label="列表四" ColumnNumber="3" ColumnVertical="false">
+            </f:CheckBoxList>
+            <f:Button ID="btnUpdateList4" CssClass="marginr" Text="更新列表四（可反复操作）" OnClick="@Url.Handler("btnUpdateList4_Click")" OnClickParameter1="@(new Parameter("count", "F.ui.CheckBoxList4.items.length"))"></f:Button>
+            <f:Button ID="btnCheckedItemsList4" Text="获取列表四的选中项" OnClick="@Url.Handler("btnCheckedItemsList_Click")" OnClickParameter1="@(new Parameter("name", "列表四", ParameterMode.String))" OnClickParameter2="@(new Parameter("selected", "getCheckBoxListSelected('CheckBoxList4')"))"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br />
+    <br />
+    <f:CheckBoxList ID="CheckBoxList3" Width="700" Label="列表三" ColumnNumber="3" ColumnVertical="false">
+        <f:CheckItem Text="可选项 1" Value="value1" />
+        <f:CheckItem Text="可选项 2" Value="value2" />
+        <f:CheckItem Text="可选项 3" Value="value3" />
+        <f:CheckItem Text="可选项 4" Value="value4" />
+        <f:CheckItem Text="可选项 5" Value="value5" Selected="true" />
+        <f:CheckItem Text="可选项 6" Value="value6" Selected="true" />
+        <f:CheckItem Text="可选项 7" Value="value7" Selected="true" />
+        <f:CheckItem Text="可选项 8" Value="value8" />
+    </f:CheckBoxList>
+    <br />
+    <f:Button ID="btnUpdateList3" CssClass="marginr" Text="更新列表三" OnClick="@Url.Handler("btnUpdateList3_Click")"></f:Button>
+    <f:Button ID="btnCheckedItemsList3" Text="获取列表三的选中项" OnClick="@Url.Handler("btnCheckedItemsList_Click")" OnClickParameter1="@(new Parameter("name", "列表三", ParameterMode.String))" OnClickParameter2="@(new Parameter("selected", "getCheckBoxListSelected('CheckBoxList3')"))"></f:Button>
+    <br />
+
+}
+
+@section script {
+    <script>
+
+        function getCheckBoxListSelected(cbxListID) {
+            return F.ui[cbxListID].getValue();
+        }
+
+
+    </script>
+}

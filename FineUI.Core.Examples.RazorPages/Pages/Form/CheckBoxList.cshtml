@@ -1,0 +1,100 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.Form.CheckBoxListModel
+@{
+    ViewBag.Title = "Form/CheckBoxList";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" LabelWidth="160" BodyPadding="10" ShowBorder="true" ShowHeader="true" Title="简单表单">
+        <Items>
+            <f:CheckBoxList ID="CheckBoxList1" Label="列表一">
+                <f:CheckItem Text="可选项 1" Value="value1" />
+                <f:CheckItem Text="可选项 2" Value="value2" Selected="true" />
+                <f:CheckItem Text="可选项 3" Value="value3" Selected="true" />
+            </f:CheckBoxList>
+            <f:Panel CssClass="f-field" ShowBorder="false" ShowHeader="false">
+                <Items>
+                    <f:Button ID="btnServerSetSelectedValue" CssClass="marginr" Text="选中上面列表中的第一项和第三项" OnClick="@Url.Handler("btnServerSetSelectedValue_Click")"></f:Button>
+                    <f:Button ID="btnServerGetSelectedValue" CssClass="marginr" Text="获取上面列表的选中项" OnClick="@Url.Handler("btnServerGetSelectedValue_Click")" OnClickParameter1="@(new Parameter("selected", "getCheckBoxList1Selected()"))"></f:Button>
+                    <f:Button ID="btnClientGetSelectedValue" Text="获取上面列表的选中项（JavaScript 脚本）" ClickHandler="onAlertSelectedValueClick"></f:Button>
+                </Items>
+            </f:Panel>
+            <f:Label></f:Label>
+            <f:CheckBoxList ID="CheckBoxList2" Label="列表二（一列）" ColumnNumber="1"
+                            DataTextField="Name" DataValueField="Id" DataSource="@ViewBag.CheckBoxList2DataSource"
+                            SelectedValueArray="@ViewBag.CheckBoxList2SelectedValueArray">
+            </f:CheckBoxList>
+            <f:Label></f:Label>
+            <f:CheckBoxList ID="CheckBoxList3" Label="列表三（选中项改变事件）" ColumnNumber="3" ShowRedStar="true" Required="true" OnSelectedIndexChanged="@Url.Handler("CheckBoxList3_SelectedIndexChanged")" OnSelectedIndexChangedParameter1="@(new Parameter("selected", "this.getValue()"))">
+                <f:CheckItem Text="可选项 1（很长很长很长很长很长很长的可选项）" Value="value1" />
+                <f:CheckItem Text="可选项 2" Value="value2" />
+                <f:CheckItem Text="可选项 3" Value="value3" />
+                <f:CheckItem Text="可选项 4" Value="value4" />
+                <f:CheckItem Text="可选项 5" Value="value5" />
+                <f:CheckItem Text="可选项 6" Value="value6" />
+                <f:CheckItem Text="可选项 7" Value="value7" />
+                <f:CheckItem Text="可选项 8" Value="value8" />
+            </f:CheckBoxList>
+            <f:Label></f:Label>
+            <f:CheckBoxList ID="rblVertical" Label="列表四（竖排）" ColumnNumber="3" ColumnVertical="true" ShowRedStar="true" Required="true">
+                <Items>
+                    <f:CheckItem Text="可选项 1" Value="value1" />
+                    <f:CheckItem Text="可选项 2" Value="value2" />
+                    <f:CheckItem Text="可选项 3" Value="value3" />
+                    <f:CheckItem Text="可选项 4" Value="value4" />
+                    <f:CheckItem Text="可选项 5" Value="value5" />
+                    <f:CheckItem Text="可选项 6" Value="value6" />
+                    <f:CheckItem Text="可选项 7" Value="value7" />
+                    <f:CheckItem Text="可选项 8" Value="value8" />
+                </Items>
+                
+            </f:CheckBoxList>
+        </Items>
+        <Toolbars>
+            <f:Toolbar Position="Bottom" ToolbarAlign="Right">
+                <Items>
+                    <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="@Url.Handler("btnSubmit_Click")" OnClickFields="SimpleForm1"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:SimpleForm>
+
+}
+
+
+@section script {
+    <script type="text/javascript">
+
+        function onAlertSelectedValueClick(event) {
+            var list1 = F.ui.CheckBoxList1;
+
+            var selectedValues = list1.getValue();
+            if (selectedValues.length) {
+                top.F.alert("列表一的选中项：" + selectedValues.join(','));
+            } else {
+                top.F.alert("列表一没有选中项！");
+            }
+        }
+
+
+        function getCheckBoxList1Selected() {
+            var list = F.ui.CheckBoxList1;
+
+            var result = [];
+            $.each(list.items, function (index, item) {
+                if (item.isChecked()) {
+                    result.push({
+                        'label': item.getInputLabel(),
+                        'value': item.getInputValue()
+                    });
+                }
+            });
+
+            return F.toJSON(result);
+        }
+
+    </script>
+}

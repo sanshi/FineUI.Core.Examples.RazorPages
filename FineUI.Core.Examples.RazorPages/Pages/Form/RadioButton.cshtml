@@ -1,0 +1,51 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.Form.RadioButtonModel
+@{
+    ViewBag.Title = "Form/RadioButton";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true"  LabelWidth="150" Title="简单表单" EnableCollapse="false" BodyPadding="10" ShowBorder="true" ShowHeader="true">
+        <Items>
+            <f:RadioButton ID="rbtnSingleRadio" Label="单选框" Text="可选项" >
+            </f:RadioButton>
+            <f:Button ID="btnSelectSingleRadio" CssClass="marginr" Text="选择/反选单选框" OnClick="@Url.Handler("btnSelectSingleRadio_Click")" OnClickParameter1="@(new Parameter("isChecked", "F.ui.rbtnSingleRadio.getValue()"))"></f:Button>
+            <f:Button ID="btnChangeCheckStatus" CssClass="marginr" Text="选择/反选单选框（客户端脚本）" ClickHandler="onChangeCheckStatusClick"></f:Button>
+            <f:Label >
+            </f:Label>
+            <f:RadioButton ID="rbtnFirst" Label="单选框（分组）" Checked="true" GroupName="MyRadioGroup1" Text="可选项 1" >
+            </f:RadioButton>
+            <f:RadioButton ID="rbtnSecond" GroupName="MyRadioGroup1" ShowEmptyLabel="true" Text="可选项 2" >
+            </f:RadioButton>
+            <f:RadioButton ID="rbtnThird" GroupName="MyRadioGroup1" ShowEmptyLabel="true" Text="可选项 3" >
+            </f:RadioButton>
+            <f:Button ID="btnSelectSecondRadio" Text="选中分组单选框中的下一个" OnClick="@Url.Handler("btnSelectSecondRadio_Click")" OnClickParameter1="@(new Parameter("checkedRadio", "$('[name=MyRadioGroup1]:checked').val()"))"></f:Button>
+            <f:Label>
+            </f:Label>
+            <f:RadioButton ID="rbtnFirstAuto" Label="单选框（选中改变事件）" Checked="true" GroupName="MyRadioGroup2" Text="可选项 1"  OnCheckedChanged="@Url.Handler("rbtnAuto_CheckedChanged")" OnCheckedChangedParameter1="@(new Parameter("checkedRadio", "this.getInputLabel()"))">
+            </f:RadioButton>
+            <f:RadioButton ID="rbtnSecondAuto" GroupName="MyRadioGroup2" ShowEmptyLabel="true" Text="可选项 2"  OnCheckedChanged="@Url.Handler("rbtnAuto_CheckedChanged")" OnCheckedChangedParameter1="@(new Parameter("checkedRadio", "this.getInputLabel()"))">
+            </f:RadioButton>
+            <f:RadioButton ID="rbtnThirdAuto" GroupName="MyRadioGroup2" ShowEmptyLabel="true" Text="可选项 3"  OnCheckedChanged="@Url.Handler("rbtnAuto_CheckedChanged")" OnCheckedChangedParameter1="@(new Parameter("checkedRadio", "this.getInputLabel()"))">
+            </f:RadioButton>
+        </Items>
+    </f:SimpleForm>
+
+}
+
+@section script {
+
+    <script>
+
+        function onChangeCheckStatusClick(event) {
+            var radio = F.ui.rbtnSingleRadio;
+            radio.setValue(!radio.getValue());
+        }
+
+
+    </script>
+
+}

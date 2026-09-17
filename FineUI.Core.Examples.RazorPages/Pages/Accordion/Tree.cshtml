@@ -1,0 +1,77 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.Accordion.TreeModel
+@{
+    ViewBag.SourceFiles = "~/Accordion/TreeDefaultPage";
+    ViewBag.Title = "Accordion/Tree";
+    var F = Html.F();
+}
+
+
+@functions {
+
+/// <summary>
+/// 改变节点的 Target 属性
+/// </summary>
+/// <param name="nodes"></param>
+private void ResolveTreeNode(TreeNodeCollection nodes)
+{
+    foreach (TreeNode node in nodes)
+    {
+        if (node.Nodes.Count == 0)
+        {
+            if (!String.IsNullOrEmpty(node.NavigateUrl))
+            {
+                node.Target = "accordionmainframe";
+            }
+        }
+        else
+        {
+            ResolveTreeNode(node.Nodes);
+        }
+    }
+}
+
+}
+
+
+@section body {
+
+    <f:RegionPanel ID="RegionPanel1" IsViewPort="true" ShowBorder="false" Margin="24">
+        <Regions>
+            <f:Region ID="Region2" RegionSplit="true" RegionSplitHeaderClass="false" RegionPosition="Left" Width="200" ShowHeader="false" Title="目录" EnableCollapse="false" Layout="Fit">
+                <Items>
+                    <f:Accordion ShowBorder="false" ShowHeader="false" ShowCollapseTool="true">
+                        <Panes>
+                            <f:AccordionPane Title="面板一" IconUrl="@Url.Content("~/res/images/16/1.png")" BodyPadding="2px 5px" Layout="Fit">
+                                <Items>
+                                    <f:Tree ShowBorder="false" ShowHeader="false" ID="treeMenu" DataSource="@ViewBag.Tree1DataSource">
+                                    </f:Tree>
+                                </Items>
+                            </f:AccordionPane>
+                            <f:AccordionPane Title="面板二" IconUrl="@Url.Content("~/res/images/16/4.png")" BodyPadding="2px 5px">
+                                <Items>
+                                    <f:Label Text="面板二中的文本">
+                                    </f:Label>
+                                </Items>
+                            </f:AccordionPane>
+                        </Panes>
+                    </f:Accordion>
+                </Items>
+            </f:Region>
+            <f:Region ID="Region3" ShowHeader="false" EnableIFrame="true" IFrameUrl="@Url.Content("~/Accordion/TreeDefaultPage")" IFrameName="accordionmainframe" Position="Center">
+            </f:Region>
+        </Regions>
+    </f:RegionPanel>
+
+
+    @{
+        Tree tree = F.GetControl<Tree>("treeMenu");
+
+        // 视图中设置控件的DataSource属性，会延迟到页面渲染时才调用DataBind函数。如果需要在视图中访问Nodes属性，需要手工调用DataBind函数。
+        tree.DataBind();
+
+        ResolveTreeNode(tree.Nodes);
+    }
+
+}
+

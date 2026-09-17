@@ -1,0 +1,36 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.Mobile.DataList.DataListSelectedValueArrayKeepCurrentSelectionModel
+@{
+    ViewBag.Title = "MobileDataList/DataListSelectedValueArrayKeepCurrentSelection";
+    ViewBag.BodyBGColor = false;
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <link href="~/res/css/datalist.css" rel="stylesheet" />
+
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel1" ShowBorder="false" ShowHeader="false" AutoScroll="true" IsViewPort="true">
+        <Toolbars>
+            <f:Toolbar ID="Toolbar1" Title="列表" HeaderStyle="true">
+                <Items>
+                    <f:Button Text="获取选中项" ID="btnSubmit"
+                              OnClick="@Url.Handler("btnSubmit_Click")" OnClickParameter1="@(new Parameter("selected", "F.ui.DataList1.getSelectedItems()"))"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+        <Items>
+            <f:DataList ID="DataList1" Items="@ViewBag.DataList1Items" SelectedValueArray="@(new string[] { "cn", "us" })" EnableMultiSelect="true" KeepCurrentSelection="true" EnableSelect="true" DataValueField="Id">
+            </f:DataList>
+        </Items>
+    </f:Panel>
+
+
+}
+

@@ -1,0 +1,23 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.Panel.CollapseModel
+@{
+    ViewBag.Title = "Panel/Collapse";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel1" IsFluid="true" Title="面板一" BodyPadding="10" EnableCollapse="true" IconUrl="@Url.Content("~/res/images/16/8.png")"
+             OnCollapse="@Url.Handler("Panel1_CollapseExpand")" OnCollapseParameter1="@(new Parameter("collapsed", "F.ui.Panel1.collapsed"))"
+             OnExpand="@Url.Handler("Panel1_CollapseExpand")" OnExpandParameter1="@(new Parameter("collapsed", "F.ui.Panel1.collapsed"))">
+        <Items>
+            <f:Panel ID="Panel2" Title="面板二" ShowBorder="true" Height="200" BodyPadding="10" EnableCollapse="true" ShowHeader="true" Content="展开折叠这两个面板。"
+                     OnCollapse="@Url.Handler("Panel2_CollapseExpand")" OnCollapseParameter1="@(new Parameter("collapsed", "F.ui.Panel2.collapsed"))"
+                     OnExpand="@Url.Handler("Panel2_CollapseExpand")" OnExpandParameter1="@(new Parameter("collapsed", "F.ui.Panel2.collapsed"))">
+            </f:Panel>
+        </Items>
+    </f:Panel>
+
+}
+

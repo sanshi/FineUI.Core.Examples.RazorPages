@@ -1,0 +1,45 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.Mobile.DataList.DataListDataBindModel
+@{
+    ViewBag.Title = "MobileDataList/DataListDataBind";
+    ViewBag.BodyBGColor = false;
+    var F = Html.F();
+}
+
+
+@section head {
+
+    <link href="~/res/css/datalist.css" rel="stylesheet" />
+    <style>
+        .item-desc {
+            word-break: break-all;
+            white-space: normal;
+        }
+    </style>
+
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel1" ShowBorder="false" ShowHeader="false" AutoScroll="true" IsViewPort="true">
+        <Toolbars>
+            <f:Toolbar ID="Toolbar1" Title="列表" HeaderStyle="true">
+                <Items>
+                    <f:Button Text="重新绑定" ID="btnReDataBind"
+                              OnClick="@Url.Handler("btnReDataBind_Click")" OnClickParameter1="@(new Parameter("source", "F.ui.DataList1.getAttr('data-source-key')"))"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+        <Items>
+            <f:DataList ID="DataList1" Items="@ViewBag.DataList1Items">
+                <Attributes>
+                    <f:Attribute Key="data-source-key" Value="source1"></f:Attribute>
+                </Attributes>
+            </f:DataList>
+        </Items>
+    </f:Panel>
+
+
+}
+

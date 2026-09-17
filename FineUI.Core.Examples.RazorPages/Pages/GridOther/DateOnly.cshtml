@@ -1,0 +1,57 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.GridOther.DateOnlyModel
+@{
+    ViewBag.Title = "GridOther/DateOnly";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
+            DataSource="@DataSourceUtil.GetSimpleDataTable()">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="仅日期" DataField="DateOnly1" Width="150" />
+            <f:RenderField HeaderText="仅时间" DataField="TimeOnly1" Width="150" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行（客户端）" CssClass="marginr" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+    <f:Button Text="选中了哪些行（服务端）" ID="Button1" OnClick="@Url.Handler("Button1_Click")" OnClickParameter1="@(new Parameter("selected", "getGridSelectedRows()"))"></f:Button>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function getGridSelectedRows() {
+            var result = [], grid = F.ui.Grid1;
+
+            $.each(grid.getSelectedRows(true), function (index, item) {
+                var itemArr = [];
+                itemArr.push(item.id);
+                itemArr.push(item.text);
+                itemArr.push(item.values.Gender);
+                itemArr.push(item.values.Major);
+                itemArr.push(item.values.DateOnly1);
+                itemArr.push(item.values.TimeOnly1);
+
+                result.push(itemArr);
+            });
+
+            return F.toJSON(result);
+        }
+
+    </script>
+
+}

@@ -1,0 +1,44 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.Form.RadioButtonListImageItemModel
+@{
+    ViewBag.Title = "Form/RadioButtonListImageItem";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" LabelWidth="220" EnableCollapse="false" BodyPadding="10" ShowBorder="true" ShowHeader="true" Title="单选框列表 - 图标选项（可信 HTML）">
+        <Items>
+            <f:RadioButtonList ID="RadioButtonList1" Label="① DataBind + DataTextRaw（自动绑定）" ColumnNumber="4"
+                               DataTextField="Display" DataValueField="Code" DataTextRaw="true"
+                               DataSource="@ViewBag.RadioButtonList1Source" SelectedValue="cn">
+            </f:RadioButtonList>
+            <f:RadioButtonList ID="RadioButtonList2" Label="② 手工构建 Items（TextRawHtml）" ColumnNumber="4">
+            </f:RadioButtonList>
+        </Items>
+        <Toolbars>
+            <f:Toolbar ID="Toolbar1" Position="Bottom" ToolbarAlign="Right">
+                <Items>
+                    <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="@Url.Handler("btnSubmit_Click")" OnClickFields="SimpleForm1"></f:Button>
+                </Items>
+            </f:Toolbar>
+        </Toolbars>
+    </f:SimpleForm>
+
+    <br />
+    <br />
+    注：RazorPages（标签模式）演示「DataBind + DataTextRaw」与「手工构建 Items（TextRawHtml）」两种方式，二者功能与安全性等价——都只信任图标模板与 URL、对数据字段 HtmlEncode 转义。
+    OnItemDataBound 为 RazorForms / Pro 专用，RazorPages 不适用（可用上述两种方式替代）。
+
+    @{
+        // ② 手工构建 Items：把后端构建好的 RadioItem[] 加入控件（RazorPages 标签无 Items 数组属性，用 GetControl 追加）
+        RadioButtonList RadioButtonList2 = F.GetControl<RadioButtonList>("RadioButtonList2");
+        foreach (var it in (RadioItem[])ViewBag.RadioButtonList2Items)
+        {
+            RadioButtonList2.Items.Add(it);
+        }
+        RadioButtonList2.SelectedValue = "us";
+    }
+
+}

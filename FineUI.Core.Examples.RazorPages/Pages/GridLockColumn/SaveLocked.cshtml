@@ -1,0 +1,100 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.GridLockColumn.SaveToDBModel
+@{
+    ViewBag.Title = "GridLockColumn/SaveToDB";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()"
+            AllowColumnLocking="true" Width="1000">
+        <Columns>
+            <f:RowNumberField ColumnID="RowNumber" />
+            <f:RenderField HeaderText="姓名" DataField="Name" EnableLock="true" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" EnableLock="true" />
+            <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" EnableLock="true" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" EnableLock="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" Width="400" EnableLock="true" />
+            <f:RenderField EnableLock="true" DataField="ShenGao" ColumnID="ShenGao" HeaderText="身高" />
+            <f:RenderField EnableLock="true" DataField="TiZhong" ColumnID="TiZhong" HeaderText="体重" />
+            <f:RenderField EnableLock="true" DataField="XueYaDi" ColumnID="XueYaDi" HeaderText="血压（低）" />
+            <f:RenderField EnableLock="true" DataField="XueYaGao" ColumnID="XueYaGao" HeaderText="血压（高）" />
+            <f:RenderField EnableLock="true" DataField="ShiLiZuo" ColumnID="ShiLiZuo" HeaderText="视力（左）" />
+            <f:RenderField EnableLock="true" DataField="ShiLiYou" ColumnID="ShiLiYou" HeaderText="视力（右）" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup" EnableLock="true" />
+            <f:RenderField HeaderText="注册日期" DataField="LogTime" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" EnableLock="true" />
+        </Columns>
+        <Listeners>
+            <f:Listener Event="columnlock" Handler="onGridColumnLock"></f:Listener>
+            <f:Listener Event="columnunlock" Handler="onGridColumnUnlock"></f:Listener>
+        </Listeners>
+    </f:Grid>
+    <br>
+    <br>
+
+    <f:Button ID="btnRefresh" Text="刷新本页面（保持列锁定状态）" ClickHandler="onReloadPageClick"></f:Button>
+
+
+    @{
+        Grid grid1 = F.GetControl<Grid>("Grid1");
+
+        List<string> lockedColumns = ViewBag.LockedColumns as List<string>;
+
+        if (lockedColumns.Count > 0)
+        {
+            foreach (GridColumn column in grid1.Columns)
+            {
+                RenderBaseField field = column as RenderBaseField;
+                if (field == null)
+                {
+                    continue;
+                }
+
+                if (lockedColumns.Contains(field.ColumnID) || lockedColumns.Contains(field.DataField))
+                {
+                    field.Locked = true;
+                }
+
+            }
+        }
+    }
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+
+        function onGridColumnLock(event, columnId) {
+            // 触发后台事件
+            F.doPostBack({
+                url: '@Url.Handler("Grid1_ColumnLockUnlock")',
+                params: {
+                    type: 'lock',
+                    columnId: columnId
+                }
+            });
+        }
+
+        function onGridColumnUnlock(event, columnId) {
+            // 触发后台事件
+            F.doPostBack({
+                url: '@Url.Handler("Grid1_ColumnLockUnlock")',
+                params: {
+                    type: 'unlock',
+                    columnId: columnId
+                }
+            });
+        }
+
+        function onReloadPageClick(event) {
+            window.location.reload();
+        }
+
+    </script>
+}

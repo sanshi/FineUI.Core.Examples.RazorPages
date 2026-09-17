@@ -1,0 +1,35 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.DataModel.GridSortingQuickSortFieldModel
+@{
+    ViewBag.Title = "Grid/GridSortingQuickSortField";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCheckBoxSelect="true" DataIDField="Id" DataTextField="Name" 
+            AllowSorting="true" SortField="@ViewBag.Grid1SortField" SortDirection="@ViewBag.Grid1SortDirection" 
+            OnSort="@Url.Handler("Grid1_Sort")" OnSortFields="Grid1" DataSource="@Model.Students">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField For="Students.First().Name" QuickSortField="true" />
+            <f:RenderField For="Students.First().Gender" QuickSortField="true" RendererFunction="renderGender" />
+            <f:RenderField For="Students.First().EntranceYear" QuickSortField="true" />
+            <f:RenderCheckField For="Students.First().AtSchool" QuickSortField="true" RenderAsStaticField="true" />
+            <f:RenderField For="Students.First().Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField For="Students.First().Group" RendererFunction="renderGroup" />
+            <f:RenderField For="Students.First().EntranceDate" />
+        </Columns>
+    </f:Grid>
+    <br />
+    <f:Button Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick"></f:Button>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

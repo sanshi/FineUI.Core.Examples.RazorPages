@@ -1,0 +1,50 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.Calendar.CalendarIndependentRangePanelsModel
+@{
+    ViewBag.Title = "Calendar/CalendarIndependentRangePanels";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <b>日期范围</b>
+    <br />
+    <f:Calendar ID="Calendar1" DateFormatString="yyyy/MM/dd"
+        RangeStartDate="@ViewBag.Calendar1RangeStartDate" RangeEndDate="@ViewBag.Calendar1RangeEndDate"
+        DisplayType="DayRange" IndependentRangePanels="true">
+    </f:Calendar>
+    <br />
+    <br />
+    <br />
+    <b>月份范围</b>
+    <br />
+    <f:Calendar ID="Calendar2" DateFormatString="yyyy/MM"
+        RangeStartDate="@ViewBag.Calendar2RangeStartDate" RangeEndDate="@ViewBag.Calendar2RangeEndDate"
+        DisplayType="MonthRange" IndependentRangePanels="true">
+    </f:Calendar>
+    <br />
+    <br />
+    <br />
+    <b>年份范围</b>
+    <br />
+    <f:Calendar ID="Calendar3" DateFormatString="yyyy"
+        RangeStartDate="@ViewBag.Calendar3RangeStartDate" RangeEndDate="@ViewBag.Calendar3RangeEndDate"
+        DisplayType="YearRange" IndependentRangePanels="true">
+    </f:Calendar>
+    <br />
+    <f:Button ID="Button1" Text="获取选中的值" OnClick="@Url.Handler("Button1_Click")"
+        OnClickParameter1="@(new Parameter("text1", "F.ui.Calendar1.getText()"))"
+        OnClickParameter2="@(new Parameter("text2", "F.ui.Calendar2.getText()"))"
+        OnClickParameter3="@(new Parameter("text3", "F.ui.Calendar3.getText()"))"></f:Button>
+    <br />
+    <br />
+    <f:Label ID="labResult" EncodeText="false" ShowLabel="false">
+    </f:Label>
+    <br />
+    <div style="margin-top:15px;color:#666;line-height:1.8;">
+        说明：设置 IndependentRangePanels=true 开启“范围面板独立切换”。范围选择时左右两个面板可各自独立切换年份/月份，互不联动，便于快速定位跨度较大的起止日期区间。
+    </div>
+
+}
+

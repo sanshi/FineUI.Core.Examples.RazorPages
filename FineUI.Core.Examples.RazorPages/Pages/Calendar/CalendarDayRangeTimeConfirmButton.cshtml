@@ -1,0 +1,24 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.Calendar.CalendarDayRangeTimeConfirmButtonModel
+@{
+    ViewBag.Title = "Calendar/CalendarDayRangeTimeConfirmButton";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Calendar ID="Calendar1" DateFormatString="@ViewBag.Calendar1DateFormatString"
+        OnDateSelect="@Url.Handler("Calendar1_DateSelect")" OnDateSelectParameter1="@(new Parameter("text", "F.ui.Calendar1.getText()"))"
+        RangeStartDate="@ViewBag.Calendar1RangeStartDate" RangeEndDate="@ViewBag.Calendar1RangeEndDate"
+        DisplayType="DayRange" ShowTime="true" ShowConfirmButton="true" ConfirmToSelect="true">
+    </f:Calendar>
+    <br />
+    <br />
+    <f:Button ID="Button1" OnClick="@Url.Handler("Button1_Click")" Text="@ViewBag.Button1Text"></f:Button>
+    <br />
+    <br />
+    <f:Label ID="labResult" EncodeText="false">
+    </f:Label>
+}
+

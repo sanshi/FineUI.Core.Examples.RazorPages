@@ -1,0 +1,57 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.DropDownList.CustomItemTooltipModel
+@{
+    ViewBag.Title = "DropDownList/CustomItemTooltip";
+    var F = Html.F();
+}
+
+@section head {
+
+    <style>
+        .item-text {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .item-desc {
+            font-size: 0.9em;
+            word-break: break-all;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" ShowBorder="true" Title="自定义列表项" ShowHeader="true">
+        <Items>
+            <f:DropDownList ID="DropDownList1" DataTextField="Name" DataValueField="Id" DataSource="@DataSourceUtil.GetDataTable()">
+            </f:DropDownList>
+            <f:Button ID="btnGetSelection" Text="获取此下拉列表的选中项" OnClick="@Url.Handler("btnGetSelection_Click")" OnClickFields="DropDownList1"></f:Button>
+        </Items>
+    </f:SimpleForm>
+    <br />
+    <f:Label ID="labResult" EncodeText="false">
+    </f:Label>
+
+    <br />
+    <br />
+    注：在页面视图上，通过遍历数据源来更新下拉列表每一项的属性。
+
+    @{
+        DropDownList DropDownList1 = F.GetControl<DropDownList>("DropDownList1");
+
+        // 视图中设置控件的DataSource属性，会延迟到页面渲染时才调用DataBind函数。如果需要在视图中访问Items属性，需要手工调用DataBind函数。
+        DropDownList1.DataBind();
+
+        // 下拉列表的列表项没有 Desc 信息，所以需要遍历数据源
+        var index = 0;
+        foreach (System.Data.DataRow row in (DropDownList1.DataSource as System.Data.DataTable).Rows)
+        {
+            DropDownList1.Items[index].Attributes["data-qtip"] = String.Format("<div class=\"item-text\">{0}（{2}）</div><div class=\"item-desc\">{1}</div>", row["Name"], row["Desc"], row["Id"]);
+            index++;
+        }
+
+    }
+
+}

@@ -1,0 +1,31 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.Grid.SimulateTreeModel
+@{
+    ViewBag.Title = "Grid/SimulateTree";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格"
+            DataIDField="Id" DataTextField="Name" DataSource="@ViewBag.Grid1DataSource" EnableCheckBoxSelect="true" EnableSimulateTree="true">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="地区" DataField="Name" DataSimulateTreeLevelField="TreeLevel" ExpandUnusedSpace="true" MinWidth="150" />
+            <f:RenderField HeaderText="分组" DataField="Group" RendererFunction="renderGroup"></f:RenderField>
+        </Columns>
+        @* <PageItems>
+            <f:ToolbarSeparator></f:ToolbarSeparator>
+            <f:Button Text="清空数据" ID="btnClearData" OnClick="@Url.Handler("btnClearData_Click")" OnClickFields="Grid1"></f:Button>
+        </PageItems> *@
+    </f:Grid>
+
+}
+
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+}

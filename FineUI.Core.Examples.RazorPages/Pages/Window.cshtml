@@ -1,0 +1,60 @@
+@page
+@model FineUI.Core.EmptyProject.RazorPages.Pages.WindowModel
+@{
+    ViewBag.Title = "Window";
+    var F = @Html.F();
+}
+
+@section body {
+
+    <style>
+        body.f-body {
+            padding: 0 !important;
+        }
+    </style>
+
+    <f:Panel ID="Panel1" ShowBorder="false" ShowHeader="false" AutoScroll="false" IsViewPort="true" Layout="Fit">
+        <Items>
+            <f:TabStrip ID="TabStrip1" IsFluid="true" CssClass="blockpanel" BoxFlex="1" ShowBorder="false" TabPosition="Left" TabTitleVertical="true" EnableTabCloseMenu="false" ActiveTabIndex="0" ShowInkBar="true">
+                <Tabs>
+                    <f:Tab Title="测试" Hidden="false" BodyPadding="10" Layout="VBox" LayoutAfterImagesLoad="true" AutoScroll="true">
+                        <Toolbars>
+                            <f:Toolbar ID="Toolbar11">
+                                <Items>
+                                    <f:ToolbarFill></f:ToolbarFill>
+                                    <f:ButtonGroup>
+                                        <f:Button ID="btnSaveClose11" Icon="SystemSave" Text="保存">
+                                        </f:Button>
+                                    </f:ButtonGroup>
+                                </Items>
+                            </f:Toolbar>
+                        </Toolbars>
+                        <Items>
+                            <f:TextBox Label="测试"></f:TextBox>
+                            <f:TextBox Label="测试"></f:TextBox>
+                            <f:TextBox Label="测试"></f:TextBox>
+                            <f:TextBox Label="测试"></f:TextBox>
+                            <f:TextBox Label="测试"></f:TextBox>
+                            <f:TextBox Label="测试"></f:TextBox>
+                            <f:TextBox Label="测试"></f:TextBox>
+                            <f:TextBox Label="测试"></f:TextBox>
+                            <f:TextBox Label="测试"></f:TextBox>
+                            <f:TextBox Label="测试"></f:TextBox>
+                            <f:TextBox Label="测试"></f:TextBox>
+                            <f:TextBox Label="测试"></f:TextBox>
+                            <f:TextBox Label="测试"></f:TextBox>
+                            <f:TextBox Label="测试"></f:TextBox>
+                            <f:TextBox Label="测试"></f:TextBox>
+                            <f:TextBox Label="测试"></f:TextBox>
+                            <f:TextBox Label="测试"></f:TextBox>
+                            <f:TextBox Label="测试"></f:TextBox>
+                            <f:TextBox Label="测试"></f:TextBox>
+                            <f:TextBox Label="测试"></f:TextBox>
+                        </Items>
+                    </f:Tab>
+                </Tabs>
+            </f:TabStrip>
+        </Items>
+    </f:Panel>
+
+}
