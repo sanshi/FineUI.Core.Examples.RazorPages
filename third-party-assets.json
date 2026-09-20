@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "auditStatus": "complete",
   "targetPath": "FineUI.Core.Examples.RazorPages/wwwroot/res",
-  "resourceTreeSha256": "43d225a5d3c32ea6c2ed5fdc1b6e2340d5be7cb00acda2a23505ecea81b8faab",
+  "resourceTreeSha256": "66bfc1c21ffcdc9708a182813449d97a69ccde3682790e914360299d313ad34a",
   "thirdPartyAssets": [
     {
       "name": "FamFamFam Silk Icons",
