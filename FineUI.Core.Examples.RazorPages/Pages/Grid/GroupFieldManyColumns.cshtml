@@ -1,0 +1,15 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.Grid.GroupFieldManyColumnsModel
+@{
+    ViewBag.Title = "Grid/GroupFieldManyColumns";
+    var F = Html.F();
+}
+
+
+@section body {
+
+    <f:Grid ID="Grid1" IsFluid="true" IsViewPort="true" ShowBorder="true" ShowHeader="true" EnableColumnLines="true" AllowColumnLocking="true"
+            Title="多级分组表头 + 大量列（约 425 列，验证表头/表体列线对齐）" DataIDField="Id" DataSource="@ViewBag.Grid1DataSource" Columns="@ViewBag.Grid1Columns">
+    </f:Grid>
+
+}
