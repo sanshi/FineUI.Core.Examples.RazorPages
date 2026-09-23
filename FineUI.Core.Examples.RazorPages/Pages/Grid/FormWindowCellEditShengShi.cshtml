@@ -219,6 +219,7 @@
 
             // 行内的删除图标：只删客户端的这一行，等点击【全部保存】才一次性回发
             grid1.el.on('click', '.f-grid-cell-Delete .action-btn.delete', function (event) {
+                // 删除链接是按钮型占位地址，先取消默认导航，避免执行脚本地址并触发 CSP。
                 event.preventDefault();
 
                 var rowData = grid1.getRowData($(this).closest('.f-grid-row'));
