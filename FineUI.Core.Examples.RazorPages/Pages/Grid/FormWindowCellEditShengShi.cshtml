@@ -98,7 +98,7 @@
         // 行内的编辑图标：表格的命令列只在 RazorForms 开发模式下由服务端渲染，
         // RazorPages 这一栈改用渲染函数画图标 + 在表格元素上做事件委托
         function renderEditAction(value, params) {
-            return $('<a>').addClass('action-btn edit').attr('href', 'javascript:;')
+            return $('<a>').addClass('action-btn edit').attr('href', '#')
                 .append($('<img>').addClass('f-grid-cell-icon').attr('src', F.resolveUrl('/res/icon/pencil.png')).attr('alt', 'Edit'));
         }
 
@@ -219,7 +219,7 @@
 
             // 行内的删除图标：只删客户端的这一行，等点击【全部保存】才一次性回发
             grid1.el.on('click', '.f-grid-cell-Delete .action-btn.delete', function (event) {
-                // 删除链接是按钮型占位地址，先取消默认导航，避免执行脚本地址并触发 CSP。
+                // 删除链接是按钮型占位地址，先取消默认导航，避免改写页面 hash。
                 event.preventDefault();
 
                 var rowData = grid1.getRowData($(this).closest('.f-grid-row'));

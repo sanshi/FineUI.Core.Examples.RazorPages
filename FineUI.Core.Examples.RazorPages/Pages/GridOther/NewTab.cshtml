@@ -83,14 +83,15 @@
         }
 
         function renderOpenNewTab(value, params) {
-            return '<a href="javascript:;" class="opennewtab">编辑</a>';
+            return '<a href="#" class="opennewtab">编辑</a>';
         }
 
 
         F.ready(function () {
 
             var grid1 = F.ui.Grid1;
-            grid1.el.on('click', 'a.opennewtab', function () {
+            grid1.el.on('click', 'a.opennewtab', function (event) {
+                event.preventDefault();
                 var rowData = grid1.getRowData($(this).closest('.f-grid-row'));
 
                 openNewTab(rowData.id, rowData.text);
