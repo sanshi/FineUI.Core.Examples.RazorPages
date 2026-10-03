@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc.Filters;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,12 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
     public class ExcelInputModel : BaseModel
     {
+        protected override bool ShouldInitializePageManager(PageHandlerExecutingContext context)
+        {
+            // 数据和下载请求不需要页面主题、语言等配置。
+            return context.HandlerMethod?.MethodInfo.Name != nameof(OnGetExportToExcel);
+        }
+
         public void OnGet()
         {
 

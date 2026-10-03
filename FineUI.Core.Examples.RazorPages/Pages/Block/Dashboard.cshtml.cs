@@ -11,6 +11,9 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Block
     {
         public void OnGet()
         {
+            var pm = PageManager.Instance;
+            pm.EnableWatermark = true;
+            pm.WatermarkText = "I❤︎FineUI";
 
         }
 

@@ -12,7 +12,10 @@ namespace FineUI.Core.Examples.RazorPages.Pages.CSP
     {
         public void OnGet()
         {
-            
+            var pm = PageManager.Instance;
+            pm.CspScripts = true;
+            pm.CspScriptsAllowNonce = true;
+
         }
 
         public IActionResult OnPostBtnEnable_Click()

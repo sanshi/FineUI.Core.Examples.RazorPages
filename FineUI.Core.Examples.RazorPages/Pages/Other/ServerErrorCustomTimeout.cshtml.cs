@@ -11,6 +11,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Other
     {
         public void OnGet()
         {
+            PageManager.Instance.AjaxTimeout = 2;
 
         }
 

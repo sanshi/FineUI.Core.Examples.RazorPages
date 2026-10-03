@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridDataUrl
 {
-    public class PagingSummaryCurrentPageDataModel : BaseModel
+    public class PagingSummaryCurrentPageDataModel : PageModel
     {
         // GET: GridDataUrl/PagingSummaryCurrentPageData
         public IActionResult OnGet()

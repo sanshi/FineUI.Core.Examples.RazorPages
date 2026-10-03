@@ -8,6 +8,9 @@ namespace FineUI.Core.Examples.RazorPages.Pages.GridPaging
     {
         public void OnGet()
         {
+            // 窄屏下分页栏放不下时，自动使用简洁分页。
+            PageManager.Instance.GridPagerAutoSimpleMode = true;
+
             LoadData();
         }
 

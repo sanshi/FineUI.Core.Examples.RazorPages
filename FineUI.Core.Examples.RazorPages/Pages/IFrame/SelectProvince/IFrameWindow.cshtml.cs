@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.IFrame.SelectProvince
 {
-    public class IFrameWindowModel : PageModel
+    public class IFrameWindowModel : BaseModel
     {
         public void OnGet()
         {

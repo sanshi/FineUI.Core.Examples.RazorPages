@@ -11,6 +11,10 @@ namespace FineUI.Core.Examples.RazorPages.Pages.CSP
     {
         public void OnGet()
         {
+            var pm = PageManager.Instance;
+            pm.CspScripts = true;
+            pm.CspScriptsAllowNonce = true;
+            pm.CspScriptsAllowUrls = new[] { "cdn.jsdelivr.net", "unpkg.com" };
 
         }
 

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.TabStrip
 {
-    public class IFrameDisabledTab1Model : PageModel
+    public class IFrameDisabledTab1Model : BaseModel
     {
         public void OnGet()
         {

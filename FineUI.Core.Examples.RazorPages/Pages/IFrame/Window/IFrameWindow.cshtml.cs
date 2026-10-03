@@ -11,6 +11,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.IFrame.Window
     {
         public void OnGet()
         {
+            PageManager.Instance.EnableFormChangeConfirm = true;
 
         }
 
