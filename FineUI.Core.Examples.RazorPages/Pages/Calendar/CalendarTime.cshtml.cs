@@ -5,7 +5,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Calendar
 {
     public class CalendarTimeModel : BaseModel
     {
-        public static readonly string Calendar1DateFormatString = "yyyy/MM/dd HH:mm:ss";
+        public static readonly string Calendar1DateFormatString = "yyyy-MM-dd HH:mm:ss";
 
         public void OnGet()
         {

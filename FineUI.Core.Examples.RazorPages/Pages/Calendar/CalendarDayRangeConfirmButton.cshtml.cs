@@ -19,7 +19,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Calendar
         }
 
 
-        public static readonly string Calendar1DateFormatString = "yyyy/MM/dd";
+        public static readonly string Calendar1DateFormatString = "yyyy-MM-dd";
 
         public void OnGet()
         {
