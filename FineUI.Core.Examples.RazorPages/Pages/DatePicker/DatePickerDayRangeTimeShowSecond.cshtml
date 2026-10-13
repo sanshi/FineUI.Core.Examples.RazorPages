@@ -12,7 +12,7 @@
         <Items>
             <f:DatePicker ID="DatePicker1" Required="true" DateFormatString="yyyy-MM-dd HH:mm" Label="日期范围" EmptyText="请选择日期范围" ShowRedStar="true"
                           RangeStartDate="@ViewBag.DatePicker1RangeStartDate" RangeEndDate="@ViewBag.DatePicker1RangeEndDate"
-                          DisplayType="DayRange" ShowTime="true">
+                          DisplayType="DayRange" ShowTime="true" ShowSecond="false">
             </f:DatePicker>
             <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="@Url.Handler("btnSubmit_Click")" OnClickFields="SimpleForm1"></f:Button>
         </Items>
