@@ -41,7 +41,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Grid
             // 1. 这里放置保存窗体中数据的逻辑
 
             // 2. 隐藏本窗体，然后执行JavaScript脚本（关闭当前激活的选项卡）
-            ActiveWindow.HideCallParentFunction("removeActiveTab");
+            ActiveWindow.HideInvokeFunction("removeActiveTab");
 
             return UIHelper.Result();
         }

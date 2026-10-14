@@ -18,7 +18,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Grid
         public IActionResult OnPostSelectColumnsIFrame_btnSaveContinue_Click(string[] columns)
         {
             // 关闭弹出窗体，然后执行父页面的JavaScript函数（exportToExcel）并传入参数
-            ActiveWindow.HideCallParentFunction("exportToExcel", new JArray(columns));
+            ActiveWindow.HideInvokeFunction("exportToExcel", new JArray(columns));
 
             return UIHelper.Result();
         }

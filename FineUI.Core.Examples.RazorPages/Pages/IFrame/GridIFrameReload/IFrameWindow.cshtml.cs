@@ -19,7 +19,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.IFrame.GridIFrameReload
             // 1. 这里放置保存窗体中数据的逻辑
 
             // 2. 不关闭窗体，直接回发父窗体
-            ActiveWindow.CallParentFunction("doCustomPostBack", "参数 - " + DateTime.Now.Millisecond);
+            ActiveWindow.InvokeFunction("doCustomPostBack", "参数 - " + DateTime.Now.Millisecond);
 
 
             return UIHelper.Result();
