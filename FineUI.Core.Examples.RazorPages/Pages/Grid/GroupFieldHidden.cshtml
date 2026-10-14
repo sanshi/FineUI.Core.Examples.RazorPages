@@ -42,11 +42,26 @@
     </f:Grid>
     <br>
     <br>
-    <f:Button ID="Button3" Text="显示/隐藏[安徽省]列" CssClass="marginr" OnClick="@Url.Handler("Button3_Click")" OnClickParameter1="@(new Parameter("anhuiHidden", "F.ui.Grid1.getColumn('anhui').hidden"))"></f:Button>
+    <f:Button ID="Button3" Text="显示/隐藏[安徽省]列" CssClass="marginr" OnClick="@Url.Handler("Button3_Click")" OnClickParameter1="@(Parameter.FromFunction("anhuiHidden", "getGrid1AnhuiHiddenPostbackValue"))"></f:Button>
 
-    <f:Button ID="Button1" Text="显示/隐藏[河南省/驻马店市]列" CssClass="marginr" OnClick="@Url.Handler("Button1_Click")" OnClickParameter1="@(new Parameter("zhumadianHidden", "F.ui.Grid1.getColumn('zhumadian').hidden"))"></f:Button>
+    <f:Button ID="Button1" Text="显示/隐藏[河南省/驻马店市]列" CssClass="marginr" OnClick="@Url.Handler("Button1_Click")" OnClickParameter1="@(Parameter.FromFunction("zhumadianHidden", "getGrid1ZhumadianHiddenPostbackValue"))"></f:Button>
     <br>
     <br>
     注：初始隐藏[河南省]下面的[驻马店]。
 
+}
+
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getGrid1AnhuiHiddenPostbackValue() {
+            return F.ui.Grid1.getColumn('anhui').hidden;
+        }
+
+        function getGrid1ZhumadianHiddenPostbackValue() {
+            return F.ui.Grid1.getColumn('zhumadian').hidden;
+        }
+
+    </script>
 }

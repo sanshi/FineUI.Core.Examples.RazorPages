@@ -15,7 +15,7 @@
             </f:TextBox>
             <f:TextBox ID="tbxPassword" Label="密码" EmptyText="请输入密码" TextMode="Password" Required="true" ShowRedStar="true">
             </f:TextBox>
-            <f:Button ID="btnSubmit" CssClass="marginr" _ValidateForms="SimpleForm1" Text="登录" OnClick="@Url.Handler("btnSubmit_Click")" OnClickParameter1="@(new Parameter("userName", "F.ui.tbxUserName.getValue()"))" OnClickParameter2="@(new Parameter("password", "F.ui.tbxPassword.getValue()"))"></f:Button>
+            <f:Button ID="btnSubmit" CssClass="marginr" _ValidateForms="SimpleForm1" Text="登录" OnClick="@Url.Handler("btnSubmit_Click")" OnClickParameter1="@(Parameter.FromFunction("userName", "gettbxUserNameUserNamePostbackValue"))" OnClickParameter2="@(Parameter.FromFunction("password", "gettbxPasswordPasswordPostbackValue"))"></f:Button>
             <f:Button ID="btnReset" ClickHandler="onResetClick" Text="重置"></f:Button>
         </Items>
     </f:SimpleForm>
@@ -25,6 +25,18 @@
 }
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function gettbxUserNameUserNamePostbackValue() {
+            return F.ui.tbxUserName.getValue();
+        }
+
+        function gettbxPasswordPasswordPostbackValue() {
+            return F.ui.tbxPassword.getValue();
+        }
+
+    </script>
+
 
     <script type="text/javascript">
 

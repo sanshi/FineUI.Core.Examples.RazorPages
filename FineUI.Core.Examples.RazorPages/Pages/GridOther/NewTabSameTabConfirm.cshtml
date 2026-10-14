@@ -17,7 +17,11 @@
             <f:RenderField HeaderText="入学年份" DataField="EntranceYear" FieldType="Int" />
             <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
             <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" BoxFlex="1" MinWidth="150" />
-            <f:RenderField HeaderText="新标签页打开" RendererFunction="renderOpenNewTab" />
+            <f:RenderField HeaderText="新标签页打开">
+                <Commands>
+                    <f:Command CommandName="Action1" Text="编辑" />
+                </Commands>
+            </f:RenderField>
         </Columns>
         <Toolbars>
             <f:Toolbar>
@@ -27,6 +31,9 @@
                 </Items>
             </f:Toolbar>
         </Toolbars>
+        <Listeners>
+            <f:Listener Event="rowcommand" Handler="onGrid1RowCommand" />
+        </Listeners>
     </f:Grid>
 
 }
@@ -83,21 +90,10 @@
             });
         }
 
-        function renderOpenNewTab(value, params) {
-            return '<a href="#" class="opennewtab">编辑</a>';
+        function onGrid1RowCommand(event, rowId, rowIndex, columnId, commandName) {
+            var rowData = this.getRowData(rowId);
+            openNewTab(rowData.id, rowData.text);
         }
-
-
-        F.ready(function () {
-
-            var grid1 = F.ui.Grid1;
-            grid1.el.on('click', 'a.opennewtab', function (event) {
-                event.preventDefault();
-                var rowData = grid1.getRowData($(this).closest('.f-grid-row'));
-
-                openNewTab(rowData.id, rowData.text);
-            });
-        });
 
     </script>
 

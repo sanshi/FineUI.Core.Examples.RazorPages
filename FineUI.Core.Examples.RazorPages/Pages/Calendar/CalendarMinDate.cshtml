@@ -10,7 +10,7 @@
 
     <f:Calendar ID="Calendar1" DateFormatString="@ViewBag.Calendar1DateFormatString" SelectedDate="@ViewBag.Calendar1SelectedDate"
                 MinDate="@ViewBag.Calendar1MinDate" MaxDate="@ViewBag.Calendar1MaxDate"
-                OnDateSelect="@Url.Handler("Calendar1_DateSelect")" OnDateSelectParameter1="@(new Parameter("selectedDate", "F.ui.Calendar1.getText()"))">
+                OnDateSelect="@Url.Handler("Calendar1_DateSelect")" OnDateSelectParameter1="@(Parameter.FromFunction("selectedDate", "getCalendar1SelectedDatePostbackValue"))">
     </f:Calendar>
     <br />
     <br />
@@ -22,3 +22,13 @@
 
 }
 
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getCalendar1SelectedDatePostbackValue() {
+            return F.ui.Calendar1.getText();
+        }
+
+    </script>
+}

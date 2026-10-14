@@ -14,8 +14,8 @@
             </f:HtmlEditor>
             <f:TextArea ID="TextArea1" Label="多行文本框" Height="150" Text="FineUI的使命是创建 No JavaScript，No CSS，No UpdatePanel，No ViewState 的网站应用程序">
             </f:TextArea>
-            <f:Button ID="Button1" Text="获取 HTML 编辑器的内容" CssClass="marginr" OnClick="@Url.Handler("Button1_Click")" OnClickParameter1="@(new Parameter("content", "F.ui.HtmlEditor1.getValue()"))"></f:Button>
-            <f:Button ID="Button2" Text="设置 HTML 编辑器的内容" OnClick="@Url.Handler("Button2_Click")" OnClickParameter1="@(new Parameter("content", "F.ui.TextArea1.getValue()"))"></f:Button>
+            <f:Button ID="Button1" Text="获取 HTML 编辑器的内容" CssClass="marginr" OnClick="@Url.Handler("Button1_Click")" OnClickParameter1="@(Parameter.FromFunction("content", "getHtmlEditor1ContentPostbackValue"))"></f:Button>
+            <f:Button ID="Button2" Text="设置 HTML 编辑器的内容" OnClick="@Url.Handler("Button2_Click")" OnClickParameter1="@(Parameter.FromFunction("content", "getTextArea1ContentPostbackValue"))"></f:Button>
         </Items>
     </f:SimpleForm>
     <br />
@@ -23,3 +23,17 @@
 
 }
 
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getHtmlEditor1ContentPostbackValue() {
+            return F.ui.HtmlEditor1.getValue();
+        }
+
+        function getTextArea1ContentPostbackValue() {
+            return F.ui.TextArea1.getValue();
+        }
+
+    </script>
+}

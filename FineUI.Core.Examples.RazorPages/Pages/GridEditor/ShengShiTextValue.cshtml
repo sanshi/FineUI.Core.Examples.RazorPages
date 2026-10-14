@@ -64,7 +64,8 @@
 
     <script>
 
-        @Html.Raw(ViewBag.StartupScript)
+        window._SHENG = @Json.Serialize(ViewBag.ProvinceData);
+        window._SHI = @Json.Serialize(ViewBag.CityData);
 
         // 省市的数据输出到前台，类似如下结构
         /*
@@ -127,7 +128,7 @@
                 for (var i = 0, count = window._SHENG.length; i < count; i++) {
                     sheng = window._SHENG[i];
                     if (shengValue == sheng[0]) {
-                        shengName = sheng[1];
+                        shengName = sheng[1] + '(' + sheng[0] + ')';
                         break;
                     }
                 }
@@ -142,7 +143,7 @@
                 for (var i = 0, count = shiData.length; i < count; i++) {
                     shi = shiData[i];
                     if (shiValue == shi[0]) {
-                        shiName = shi[1];
+                        shiName = shi[1] + '(' + shi[0] + ')';
                         break;
                     }
                 }

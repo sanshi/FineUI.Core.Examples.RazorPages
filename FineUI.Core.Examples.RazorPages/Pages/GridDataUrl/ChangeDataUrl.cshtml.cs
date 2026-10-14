@@ -17,6 +17,13 @@ namespace FineUI.Core.Examples.RazorPages.Pages.GridDataUrl
 
         }
 
+        public IActionResult OnPostBtnReload_Click()
+        {
+            // 不传地址，沿用页面当前数据源；客户端切换后重载也不会跳回首次地址。
+            global::FineUI.Core.PageContext.InvokeFunction("reloadCurrentDataUrl");
+            return UIHelper.Result();
+        }
+
 
         
         public IActionResult OnPostButton2_Click(string Grid1_sourceKey)

@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridOther
 {
-    public class NewTabHideUpdateWindowModel : BaseModel
+    public class NewTabHideUpdateWindowModel : BaseThirdPartyEditorModel
     {
         public void OnGet()
         {

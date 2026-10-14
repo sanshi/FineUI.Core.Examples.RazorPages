@@ -36,17 +36,17 @@
     </f:Panel>
     <br>
 
-    <f:Button ID="Button2" CssClass="marginr" Text="检查面板的折叠状态" OnClick="@Url.Handler("Button2_Click")" OnClickParameter1="@(new Parameter("collapsed", "F.ui.Panel1.collapsed"))"></f:Button>
+    <f:Button ID="Button2" CssClass="marginr" Text="检查面板的折叠状态" OnClick="@Url.Handler("Button2_Click")" OnClickParameter1="@(Parameter.FromFunction("collapsed", "getPanel1CollapsedPostbackValue"))"></f:Button>
     <f:Button ID="Button4" Text="更新面板的标题" OnClick="@Url.Handler("Button4_Click")"></f:Button>
     <br />
     <br />
-    <f:Button ID="Button3" Text="展开/折叠内容面板" OnClick="@Url.Handler("Button3_Click")" OnClickParameter1="@(new Parameter("collapsed", "F.ui.Panel2.collapsed"))"></f:Button>
+    <f:Button ID="Button3" Text="展开/折叠内容面板" OnClick="@Url.Handler("Button3_Click")" OnClickParameter1="@(Parameter.FromFunction("collapsed", "getPanel2CollapsedPostbackValue"))"></f:Button>
     <br />
     <br />
     <f:Button ID="Button5" CssClass="marginr" Text="更新工具条文本一的值" OnClick="@Url.Handler("Button5_Click")"></f:Button>
     <f:Button ID="Button6" Text="显示/隐藏工具条文本一" OnClick="@Url.Handler("Button6_Click")"
-              OnClickParameter1="@(new Parameter("textHidden", "F.ui.ToolbarText1.hidden"))"
-              OnClickParameter2="@(new Parameter("separatorHidden", "F.ui.ToolbarSeparator1.hidden"))"></f:Button>
+              OnClickParameter1="@(Parameter.FromFunction("textHidden", "getToolbarText1TextHiddenPostbackValue"))"
+              OnClickParameter2="@(Parameter.FromFunction("separatorHidden", "getToolbarSeparator1SeparatorHiddenPostbackValue"))"></f:Button>
     <br />
     <br />
 
@@ -55,7 +55,7 @@
     <f:Button ID="Button8" Text="显示工具栏" OnClick="@Url.Handler("Button8_Click")"></f:Button>
     <br />
     <br />
-    <f:Button ID="Button9" Text="点击修改面板图标（在三个图标之前切换）" CssClass="marginr" OnClick="@Url.Handler("Button9_Click")" OnClickParameter1="@(new Parameter("iconFont", "F.ui.Panel1.iconFont"))"></f:Button>
+    <f:Button ID="Button9" Text="点击修改面板图标（在三个图标之前切换）" CssClass="marginr" OnClick="@Url.Handler("Button9_Click")" OnClickParameter1="@(Parameter.FromFunction("iconFont", "getPanel1IconFontPostbackValue"))"></f:Button>
     <f:Button ID="Button10" Text="清空面板图标" CssClass="marginr" OnClick="@Url.Handler("Button10_Click")"></f:Button>
 
 
@@ -64,6 +64,30 @@
 
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getPanel1CollapsedPostbackValue() {
+            return F.ui.Panel1.collapsed;
+        }
+
+        function getPanel2CollapsedPostbackValue() {
+            return F.ui.Panel2.collapsed;
+        }
+
+        function getToolbarText1TextHiddenPostbackValue() {
+            return F.ui.ToolbarText1.hidden;
+        }
+
+        function getToolbarSeparator1SeparatorHiddenPostbackValue() {
+            return F.ui.ToolbarSeparator1.hidden;
+        }
+
+        function getPanel1IconFontPostbackValue() {
+            return F.ui.Panel1.iconFont;
+        }
+
+    </script>
+
 
     <script>
 

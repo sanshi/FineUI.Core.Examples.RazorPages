@@ -34,7 +34,17 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 
         private string GetSortFieldTip(string sortField, string sortDirection)
         {
-            return String.Format("{0}（{1}）", sortField, sortDirection == "ASC" ? "升序" : "降序");
+            // 用户看到的是列标题；后台排序仍使用稳定的数据字段名。
+            string fieldText = sortField switch
+            {
+                "EntranceYear" => "入学年份",
+                "Gender" => "性别",
+                "Name" => "姓名",
+                "Major" => "所学专业",
+                "Group" => "分组",
+                _ => sortField
+            };
+            return String.Format("{0}（{1}）", fieldText, sortDirection == "ASC" ? "升序" : "降序");
         }
 
         private string GetSortTip(string[] sortFields)

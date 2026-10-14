@@ -26,9 +26,10 @@
     <br>
     <br>
 
-    <f:Button Text="切换网址数据源" CssClass="marginr" ClickHandler="onButton1Click"></f:Button>
+    <f:Button ID="Button1" Text="切换网址数据源" CssClass="marginr" ClickHandler="onButton1Click"></f:Button>
+    <f:Button ID="btnReload" Text="重新加载当前网址数据源" CssClass="marginr" OnClick="@Url.Handler("btnReload_Click")"></f:Button>
 
-    <f:Button Text="切换网址数据源（服务器端）" CssClass="marginr" OnClick="@Url.Handler("Button2_Click")" OnClickParameter1="@(new Parameter("Grid1_sourceKey", "F.ui.Grid1.getAttr('data-source-key')"))">
+    <f:Button ID="Button2" Text="切换网址数据源（服务器端）" CssClass="marginr" OnClick="@Url.Handler("Button2_Click")" OnClickParameter1="@(Parameter.FromFunction("Grid1_sourceKey", "getGrid1Grid1_sourceKeyPostbackValue"))">
     </f:Button>
 
 
@@ -37,6 +38,14 @@
 
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getGrid1Grid1_sourceKeyPostbackValue() {
+            return F.ui.Grid1.getAttr('data-source-key');
+        }
+
+    </script>
+
 
     <script src="~/res/js/grid.js"></script>
 
@@ -52,6 +61,10 @@
                 grid1.setAttr('data-source-key', 'source1')
                 grid1.loadDataUrl('@Url.Content("~/GridDataUrl/GridDataUrlData")');
             }
+        }
+
+        function reloadCurrentDataUrl() {
+            F.ui.Grid1.loadDataUrl();
         }
 
     </script>

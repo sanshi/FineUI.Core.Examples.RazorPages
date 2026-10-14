@@ -30,8 +30,8 @@
                 <Items>
                     <f:Button Text="获取编辑器的值" ID="Button1"
                               OnClick="@Url.Handler("Button1_Click")"
-                              OnClickParameter2="@(new Parameter("text1", "F.ui.HtmlEditor1.getValue()"))"
-                              OnClickParameter3="@(new Parameter("text2", "F.ui.HtmlEditor2.getValue()"))"></f:Button>
+                              OnClickParameter2="@(Parameter.FromFunction("text1", "getHtmlEditor1Text1PostbackValue"))"
+                              OnClickParameter3="@(Parameter.FromFunction("text2", "getHtmlEditor2Text2PostbackValue"))"></f:Button>
                 </Items>
             </f:Toolbar>
         </Toolbars>
@@ -39,3 +39,17 @@
 
 }
 
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getHtmlEditor1Text1PostbackValue() {
+            return F.ui.HtmlEditor1.getValue();
+        }
+
+        function getHtmlEditor2Text2PostbackValue() {
+            return F.ui.HtmlEditor2.getValue();
+        }
+
+    </script>
+}

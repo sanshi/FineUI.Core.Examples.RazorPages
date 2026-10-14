@@ -40,10 +40,20 @@
                 </Attributes>
             </f:DataList>
             <f:LinkButton runat="server" CssClass="morebutton" Text="加载更多..." ID="btnMore"
-                          OnClick="@Url.Handler("btnMore_Click")" OnClickParameter1="@(new Parameter("dataIndex", "F.ui.DataList1.getAttr('data-index')"))"></f:LinkButton>
+                          OnClick="@Url.Handler("btnMore_Click")" OnClickParameter1="@(Parameter.FromFunction("dataIndex", "getDataList1DataIndexPostbackValue"))"></f:LinkButton>
         </Items>
     </f:Panel>
 
 
 }
 
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getDataList1DataIndexPostbackValue() {
+            return F.ui.DataList1.getAttr('data-index');
+        }
+
+    </script>
+}

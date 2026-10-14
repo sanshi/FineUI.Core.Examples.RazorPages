@@ -9,7 +9,7 @@
 @section body {
 
     <f:Calendar ID="Calendar1" DateFormatString="@ViewBag.Calendar1DateFormatString"
-                OnDateSelect="@Url.Handler("Calendar1_DateSelect")" OnDateSelectParameter1="@(new Parameter("text", "F.ui.Calendar1.getText()"))"
+                OnDateSelect="@Url.Handler("Calendar1_DateSelect")" OnDateSelectParameter1="@(Parameter.FromFunction("text", "getCalendar1TextPostbackValue"))"
                 RangeStartDate="@ViewBag.Calendar1RangeStartDate" RangeEndDate="@ViewBag.Calendar1RangeEndDate"
                 MinDate="@ViewBag.Calendar1MinDate" MaxDate="@ViewBag.Calendar1MaxDate"
                 DisplayType="DayRange">
@@ -23,3 +23,13 @@
     </f:Label>
 }
 
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getCalendar1TextPostbackValue() {
+            return F.ui.Calendar1.getText();
+        }
+
+    </script>
+}

@@ -21,8 +21,8 @@
             </f:Toolbar>
         </Toolbars>
         <Items>
-            <f:Button CssClass="marginr" ID="btnChangeButtonText" Text="修改[按钮四]的文本" OnClick="@Url.Handler("btnChangeButtonText_Click")" OnClickParameter1="@(new Parameter("text", "F.ui.Button4.getText()"))"></f:Button>
-            <f:Button ID="btnShowHideButton" Text="显示隐藏[按钮四]" OnClick="@Url.Handler("btnShowHideButton_Click")" OnClickParameter1="@(new Parameter("hidden", "F.ui.Button4.isHidden()"))"></f:Button>
+            <f:Button CssClass="marginr" ID="btnChangeButtonText" Text="修改[按钮四]的文本" OnClick="@Url.Handler("btnChangeButtonText_Click")" OnClickParameter1="@(Parameter.FromFunction("text", "getButton4TextPostbackValue"))"></f:Button>
+            <f:Button ID="btnShowHideButton" Text="显示隐藏[按钮四]" OnClick="@Url.Handler("btnShowHideButton_Click")" OnClickParameter1="@(Parameter.FromFunction("hidden", "getButton4HiddenPostbackValue"))"></f:Button>
         </Items>
     </f:Panel>
     <br />
@@ -33,8 +33,30 @@
         <f:Button ID="Button8" Text="按钮八" IconAlign="Bottom" IconFont="_Phone"  />
     </f:ButtonGroup>
     <br />
-    <f:Button CssClass="marginr" ID="btnChangeButtonText2" Text="修改[按钮八]的文本" OnClick="@Url.Handler("btnChangeButtonText2_Click")" OnClickParameter1="@(new Parameter("text", "F.ui.Button8.getText()"))"></f:Button>
-    <f:Button ID="btnShowHideButton2" Text="显示隐藏[按钮八]" OnClick="@Url.Handler("btnShowHideButton2_Click")" OnClickParameter1="@(new Parameter("hidden", "F.ui.Button8.isHidden()"))"></f:Button>
+    <f:Button CssClass="marginr" ID="btnChangeButtonText2" Text="修改[按钮八]的文本" OnClick="@Url.Handler("btnChangeButtonText2_Click")" OnClickParameter1="@(Parameter.FromFunction("text", "getButton8TextPostbackValue"))"></f:Button>
+    <f:Button ID="btnShowHideButton2" Text="显示隐藏[按钮八]" OnClick="@Url.Handler("btnShowHideButton2_Click")" OnClickParameter1="@(Parameter.FromFunction("hidden", "getButton8HiddenPostbackValue"))"></f:Button>
 
 }
 
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getButton4TextPostbackValue() {
+            return F.ui.Button4.getText();
+        }
+
+        function getButton4HiddenPostbackValue() {
+            return F.ui.Button4.isHidden();
+        }
+
+        function getButton8TextPostbackValue() {
+            return F.ui.Button8.getText();
+        }
+
+        function getButton8HiddenPostbackValue() {
+            return F.ui.Button8.isHidden();
+        }
+
+    </script>
+}

@@ -18,7 +18,7 @@
             <f:Panel CssClass="f-field" ShowBorder="false" ShowHeader="false">
                 <Items>
                     <f:Button ID="btnServerSetSelectedValue" CssClass="marginr" Text="选中上面列表中的第一项和第三项" OnClick="@Url.Handler("btnServerSetSelectedValue_Click")"></f:Button>
-                    <f:Button ID="btnServerGetSelectedValue" CssClass="marginr" Text="获取上面列表的选中项" OnClick="@Url.Handler("btnServerGetSelectedValue_Click")" OnClickParameter1="@(new Parameter("selected", "getCheckBoxList1Selected()"))"></f:Button>
+                    <f:Button ID="btnServerGetSelectedValue" CssClass="marginr" Text="获取上面列表的选中项" OnClick="@Url.Handler("btnServerGetSelectedValue_Click")" OnClickParameter1="@(Parameter.FromFunction("selected", "getCurrentControlSelectedPostbackValue"))"></f:Button>
                     <f:Button ID="btnClientGetSelectedValue" Text="获取上面列表的选中项（JavaScript 脚本）" ClickHandler="onAlertSelectedValueClick"></f:Button>
                 </Items>
             </f:Panel>
@@ -28,7 +28,7 @@
                             SelectedValueArray="@ViewBag.CheckBoxList2SelectedValueArray">
             </f:CheckBoxList>
             <f:Label></f:Label>
-            <f:CheckBoxList ID="CheckBoxList3" Label="列表三（选中项改变事件）" AutoColumnWidth="true" ColumnNumber="3" ShowRedStar="true" Required="true" OnSelectedIndexChanged="@Url.Handler("CheckBoxList3_SelectedIndexChanged")" OnSelectedIndexChangedParameter1="@(new Parameter("selected", "this.getValue()"))">
+            <f:CheckBoxList ID="CheckBoxList3" Label="列表三（选中项改变事件）" AutoColumnWidth="true" ColumnNumber="3" ShowRedStar="true" Required="true" OnSelectedIndexChanged="@Url.Handler("CheckBoxList3_SelectedIndexChanged")" OnSelectedIndexChangedParameter1="@(Parameter.FromFunction("selected", "getCurrentControlSelectedPostbackValue2"))">
                 <f:CheckItem Text="可选项 1（很长的可选项）" Value="value1" />
                 <f:CheckItem Text="可选项 2" Value="value2" />
                 <f:CheckItem Text="可选项 3" Value="value3" />
@@ -70,6 +70,18 @@
 
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getCurrentControlSelectedPostbackValue() {
+            return getCheckBoxList1Selected();
+        }
+
+        function getCurrentControlSelectedPostbackValue2() {
+            return this.getValue();
+        }
+
+    </script>
+
     <script type="text/javascript">
 
         function onAlertSelectedValueClick(event) {

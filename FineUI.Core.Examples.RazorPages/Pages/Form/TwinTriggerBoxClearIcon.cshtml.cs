@@ -50,7 +50,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Form
         // 更新客户端变量
         private void UpdateClientJSParameter(string text)
         {
-            RegisterStartupScript(String.Format("updateLastTriggerBoxValue({0});", JsHelper.Enquote(text)));
+            global::FineUI.Core.PageContext.InvokeFunction("updateLastTriggerBoxValue", text);
         }
 
     }

@@ -22,7 +22,8 @@ namespace FineUI.Core.Examples.RazorPages.Pages.IFrame
             var window1 = UIHelper.Window("Window1");
             string openUrl = String.Format("{0}?selected={1}", Url.Content("~/IFrame/PassValue/IFrameWindow"), HttpUtility.UrlEncode(province));
 
-            RegisterStartupScript(window1.GetSaveStateReference("tbxProvince") + window1.GetShowReference(openUrl));
+            window1.SaveStateControlIDs("tbxProvince");
+            window1.Show(openUrl);
 
             return UIHelper.Result();
         }

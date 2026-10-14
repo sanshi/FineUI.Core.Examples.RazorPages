@@ -18,7 +18,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Other
         
         public IActionResult OnPostButton3_Click()
         {
-            RegisterStartupScript("onCloseActiveTabClick();");
+            global::FineUI.Core.PageContext.InvokeFunction("onCloseActiveTabClick");
 
             return UIHelper.Result();
         }

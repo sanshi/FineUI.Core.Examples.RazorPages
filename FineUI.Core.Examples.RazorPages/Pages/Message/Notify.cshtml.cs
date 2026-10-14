@@ -81,7 +81,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Message
             }
 
 
-            notify.HideScript = "notifyHideCallback();";
+            notify.HideFunction = "notifyHideCallback";
 
 
             notify.Show();

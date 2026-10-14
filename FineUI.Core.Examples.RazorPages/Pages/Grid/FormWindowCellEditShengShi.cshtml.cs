@@ -18,7 +18,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Grid
             ViewBag.Grid1DataSource = GetSourceData();
 
             // 省和市的数据都放在客户端：省下拉列表的数据在后台绑定，市下拉列表的数据按省在前台动态加载
-            ViewBag.StartupScript = String.Format("window._SHI={0};", DataSourceUtil.SHI_JSON.ToString());
+            ViewBag.CityData = DataSourceUtil.SHI_JSON;
         }
 
 

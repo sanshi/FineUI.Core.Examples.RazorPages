@@ -51,17 +51,17 @@
             <f:MenuCheckBox ID="btnSelectAll" GroupName="AtSchool" Checked="true" Text="全部"
                             OnCheckedChanged="@Url.Handler("btnAtSchool_CheckedChanged")"
                             OnCheckedChangedFields="Grid1"
-                            OnCheckedChangedParameter1="@(new Parameter("menuStatus", "getMenuStatus()"))">
+                            OnCheckedChangedParameter1="@(Parameter.FromFunction("menuStatus", "getCurrentControlMenuStatusPostbackValue"))">
             </f:MenuCheckBox>
             <f:MenuCheckBox ID="btnSelectAtSchool" GroupName="AtSchool" Text="在校"
                             OnCheckedChanged="@Url.Handler("btnAtSchool_CheckedChanged")"
                             OnCheckedChangedFields="Grid1"
-                            OnCheckedChangedParameter1="@(new Parameter("menuStatus", "getMenuStatus()"))">
+                            OnCheckedChangedParameter1="@(Parameter.FromFunction("menuStatus", "getCurrentControlMenuStatusPostbackValue"))">
             </f:MenuCheckBox>
             <f:MenuCheckBox ID="btnSelectNotAtSchool" GroupName="AtSchool" Text="离校"
                             OnCheckedChanged="@Url.Handler("btnAtSchool_CheckedChanged")"
                             OnCheckedChangedFields="Grid1"
-                            OnCheckedChangedParameter1="@(new Parameter("menuStatus", "getMenuStatus()"))">
+                            OnCheckedChangedParameter1="@(Parameter.FromFunction("menuStatus", "getCurrentControlMenuStatusPostbackValue"))">
             </f:MenuCheckBox>
         </Items>
     </f:Menu>
@@ -70,12 +70,12 @@
             <f:MenuCheckBox ID="btnEntranceYearAll" GroupName="EntranceYear" Checked="true" Text="全部"
                             OnCheckedChanged="@Url.Handler("btnEntranceYear_CheckedChanged")"
                             OnCheckedChangedFields="Grid1"
-                            OnCheckedChangedParameter1="@(new Parameter("menuStatus", "getMenuStatus()"))">
+                            OnCheckedChangedParameter1="@(Parameter.FromFunction("menuStatus", "getCurrentControlMenuStatusPostbackValue"))">
             </f:MenuCheckBox>
             <f:MenuCheckBox ID="btnEntranceYearGreatThan2002" GroupName="EntranceYear" Text="入学年份大于2002"
                             OnCheckedChanged="@Url.Handler("btnEntranceYear_CheckedChanged")"
                             OnCheckedChangedFields="Grid1"
-                            OnCheckedChangedParameter1="@(new Parameter("menuStatus", "getMenuStatus()"))">
+                            OnCheckedChangedParameter1="@(Parameter.FromFunction("menuStatus", "getCurrentControlMenuStatusPostbackValue"))">
             </f:MenuCheckBox>
         </Items>
     </f:Menu>
@@ -85,6 +85,14 @@
 
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getCurrentControlMenuStatusPostbackValue() {
+            return getMenuStatus();
+        }
+
+    </script>
+
 
     <script src="~/res/js/grid.js"></script>
 

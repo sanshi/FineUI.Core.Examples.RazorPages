@@ -23,12 +23,20 @@
     </f:Grid>
     <br />
     <f:Button Text="选中了哪些行（客户端）" CssClass="marginr" ClickHandler="onNotifySelectedRowsClick"></f:Button>
-    <f:Button Text="选中了哪些行（服务端）" ID="Button1" OnClick="@Url.Handler("Button1_Click")" OnClickParameter1="@(new Parameter("selected", "getGridSelectedRows()"))"></f:Button>
+    <f:Button Text="选中了哪些行（服务端）" ID="Button1" OnClick="@Url.Handler("Button1_Click")" OnClickParameter1="@(Parameter.FromFunction("selected", "getCurrentControlSelectedPostbackValue"))"></f:Button>
 
 }
 
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getCurrentControlSelectedPostbackValue() {
+            return getGridSelectedRows();
+        }
+
+    </script>
+
 
     <script src="~/res/js/grid.js"></script>
 

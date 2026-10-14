@@ -37,7 +37,7 @@
                     <f:Attribute Key="data-index" Value="0"></f:Attribute>
                 </Attributes>
             </f:Grid>
-            <f:LinkButton CssClass="morebutton" Text="加载更多..." ID="btnMore" OnClick="@Url.Handler("btnMore_Click")" OnClickFields="Grid1" OnClickParameter1="@(new Parameter("dataIndex", "F.ui.Grid1.getAttr('data-index')"))"></f:LinkButton>
+            <f:LinkButton CssClass="morebutton" Text="加载更多..." ID="btnMore" OnClick="@Url.Handler("btnMore_Click")" OnClickFields="Grid1" OnClickParameter1="@(Parameter.FromFunction("dataIndex", "getGrid1DataIndexPostbackValue"))"></f:LinkButton>
         </Items>
     </f:Panel>
     <br />
@@ -49,6 +49,14 @@
 
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getGrid1DataIndexPostbackValue() {
+            return F.ui.Grid1.getAttr('data-index');
+        }
+
+    </script>
+
 
     <script src="~/res/js/grid.js"></script>
 

@@ -10,9 +10,12 @@
 
     <f:SimpleForm ID="SimpleForm1" IsFluid="true"  LabelWidth="150" Title="简单表单" EnableCollapse="false" BodyPadding="10" ShowBorder="true" ShowHeader="true">
         <Items>
-            <f:RadioButton ID="rbtnSingleRadio" Label="单选框" Text="可选项" >
+            <f:RadioButton ID="rbtnSingleRadio" Label="单选框" Text="可选项">
+                <Attributes>
+                    <f:Attribute Key="data-qtip" Value="通过Attributes属性设置的提示信息"></f:Attribute>
+                </Attributes>
             </f:RadioButton>
-            <f:Button ID="btnSelectSingleRadio" CssClass="marginr" Text="选择/反选单选框" OnClick="@Url.Handler("btnSelectSingleRadio_Click")" OnClickParameter1="@(new Parameter("isChecked", "F.ui.rbtnSingleRadio.getValue()"))"></f:Button>
+            <f:Button ID="btnSelectSingleRadio" CssClass="marginr" Text="选择/反选单选框" OnClick="@Url.Handler("btnSelectSingleRadio_Click")" OnClickParameter1="@(Parameter.FromFunction("isChecked", "getrbtnSingleRadioIsCheckedPostbackValue"))"></f:Button>
             <f:Button ID="btnChangeCheckStatus" CssClass="marginr" Text="选择/反选单选框（客户端脚本）" ClickHandler="onChangeCheckStatusClick"></f:Button>
             <f:Label >
             </f:Label>
@@ -22,14 +25,14 @@
             </f:RadioButton>
             <f:RadioButton ID="rbtnThird" GroupName="MyRadioGroup1" ShowEmptyLabel="true" Text="可选项 3" >
             </f:RadioButton>
-            <f:Button ID="btnSelectSecondRadio" Text="选中分组单选框中的下一个" OnClick="@Url.Handler("btnSelectSecondRadio_Click")" OnClickParameter1="@(new Parameter("checkedRadio", "$('[name=MyRadioGroup1]:checked').val()"))"></f:Button>
+            <f:Button ID="btnSelectSecondRadio" Text="选中分组单选框中的下一个" OnClick="@Url.Handler("btnSelectSecondRadio_Click")" OnClickParameter1="@(Parameter.FromFunction("checkedRadio", "getCurrentControlCheckedRadioPostbackValue"))"></f:Button>
             <f:Label>
             </f:Label>
-            <f:RadioButton ID="rbtnFirstAuto" Label="单选框（选中改变事件）" Checked="true" GroupName="MyRadioGroup2" Text="可选项 1"  OnCheckedChanged="@Url.Handler("rbtnAuto_CheckedChanged")" OnCheckedChangedParameter1="@(new Parameter("checkedRadio", "this.getInputLabel()"))">
+            <f:RadioButton ID="rbtnFirstAuto" Label="单选框（选中改变事件）" Checked="true" GroupName="MyRadioGroup2" Text="可选项 1"  OnCheckedChanged="@Url.Handler("rbtnAuto_CheckedChanged")" OnCheckedChangedParameter1="@(Parameter.FromFunction("checkedRadio", "getCurrentControlCheckedRadioPostbackValue2"))">
             </f:RadioButton>
-            <f:RadioButton ID="rbtnSecondAuto" GroupName="MyRadioGroup2" ShowEmptyLabel="true" Text="可选项 2"  OnCheckedChanged="@Url.Handler("rbtnAuto_CheckedChanged")" OnCheckedChangedParameter1="@(new Parameter("checkedRadio", "this.getInputLabel()"))">
+            <f:RadioButton ID="rbtnSecondAuto" GroupName="MyRadioGroup2" ShowEmptyLabel="true" Text="可选项 2"  OnCheckedChanged="@Url.Handler("rbtnAuto_CheckedChanged")" OnCheckedChangedParameter1="@(Parameter.FromFunction("checkedRadio", "getCurrentControlCheckedRadioPostbackValue2"))">
             </f:RadioButton>
-            <f:RadioButton ID="rbtnThirdAuto" GroupName="MyRadioGroup2" ShowEmptyLabel="true" Text="可选项 3"  OnCheckedChanged="@Url.Handler("rbtnAuto_CheckedChanged")" OnCheckedChangedParameter1="@(new Parameter("checkedRadio", "this.getInputLabel()"))">
+            <f:RadioButton ID="rbtnThirdAuto" GroupName="MyRadioGroup2" ShowEmptyLabel="true" Text="可选项 3"  OnCheckedChanged="@Url.Handler("rbtnAuto_CheckedChanged")" OnCheckedChangedParameter1="@(Parameter.FromFunction("checkedRadio", "getCurrentControlCheckedRadioPostbackValue2"))">
             </f:RadioButton>
         </Items>
     </f:SimpleForm>
@@ -37,6 +40,22 @@
 }
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getrbtnSingleRadioIsCheckedPostbackValue() {
+            return F.ui.rbtnSingleRadio.getValue();
+        }
+
+        function getCurrentControlCheckedRadioPostbackValue() {
+            return $('[name=MyRadioGroup1]:checked').val();
+        }
+
+        function getCurrentControlCheckedRadioPostbackValue2() {
+            return this.getInputLabel();
+        }
+
+    </script>
+
 
     <script>
 

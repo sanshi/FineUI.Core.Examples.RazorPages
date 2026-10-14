@@ -28,6 +28,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Grid
         public IActionResult OnPostButton1_Click(JArray selected)
         {
             StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("共选中了 {0} 行<br />", selected.Count);
             sb.Append("<table class=\"result\"><tr><th>ID</th><th>Text</th><th>性别</th><th>专业</th></tr>");
 
             foreach (JArray item in selected)

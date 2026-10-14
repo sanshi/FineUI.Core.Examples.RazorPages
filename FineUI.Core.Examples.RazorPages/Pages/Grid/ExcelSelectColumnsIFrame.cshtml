@@ -13,7 +13,7 @@
             <f:Toolbar>
                 <Items>
                     <f:Button ID="btnClose" Text="取消" Icon="SystemClose" ClickHandler="onCloseActiveWindowClick"></f:Button>
-                    <f:Button ID="btnSaveContinue" Text="导出" Icon="SystemSave" OnClick="@Url.Handler("SelectColumnsIFrame_btnSaveContinue_Click")" OnClickParameter1="@(new Parameter("columns", "F.ui.cblColumns.getValue()"))"></f:Button>
+                    <f:Button ID="btnSaveContinue" Text="导出" Icon="SystemSave" OnClick="@Url.Handler("SelectColumnsIFrame_btnSaveContinue_Click")" OnClickParameter1="@(Parameter.FromFunction("columns", "getcblColumnsColumnsPostbackValue"))"></f:Button>
                 </Items>
             </f:Toolbar>
         </Toolbars>
@@ -33,6 +33,14 @@
 }
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getcblColumnsColumnsPostbackValue() {
+            return F.ui.cblColumns.getValue();
+        }
+
+    </script>
+
 
     <script type="text/javascript">
 

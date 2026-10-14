@@ -13,7 +13,7 @@
             <f:DropDownList ID="DropDownList1" EnableEdit="true" AutoSelectFirstItem="false" ForceSelection="false" Text="初始自定义值">
             </f:DropDownList>
 
-            <f:Button ID="btnRebindData" Text="重新绑定数据" CssClass="marginr" OnClick="@Url.Handler("btnRebindData_Click")" OnClickParameter1="@(new Parameter("dataLength", "F.ui.DropDownList1.data.length"))"></f:Button>
+            <f:Button ID="btnRebindData" Text="重新绑定数据" CssClass="marginr" OnClick="@Url.Handler("btnRebindData_Click")" OnClickParameter1="@(Parameter.FromFunction("dataLength", "getDropDownList1DataLengthPostbackValue"))"></f:Button>
             <f:Button ID="btnSetText" Text="更新为[用户输入值]" CssClass="marginr" OnClick="@Url.Handler("btnSetText_Click")"></f:Button>
             <f:Button ID="btnGetSelection" Text="获取此下拉列表的选中项" OnClick="@Url.Handler("btnGetSelection_Click")" OnClickFields="DropDownList1"></f:Button>
         </Items>
@@ -32,3 +32,13 @@
 
 }
 
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getDropDownList1DataLengthPostbackValue() {
+            return F.ui.DropDownList1.data.length;
+        }
+
+    </script>
+}

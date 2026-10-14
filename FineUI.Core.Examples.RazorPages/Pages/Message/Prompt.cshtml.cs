@@ -76,7 +76,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Message
                 prompt.EnableClose = false;
             }
 
-            prompt.OkScript = "promptOKCallback(arguments[0]);";
+            prompt.OkFunction = "promptOKCallback";
 
             prompt.Show();
 

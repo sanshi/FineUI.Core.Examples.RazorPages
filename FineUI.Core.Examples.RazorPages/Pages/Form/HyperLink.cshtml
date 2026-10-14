@@ -19,11 +19,19 @@
                  ClickHandler="onHyperLink2Click">
     </f:HyperLink>
     <br />
-    <f:Button ID="btnChangeEnable" Text="启用/禁用最后一个链接" OnClick="@Url.Handler("btnChangeEnable_Click")" OnClickParameter1="@(new Parameter("enabled", "F.ui.HyperLink2.isEnabled()"))" />
+    <f:Button ID="btnChangeEnable" Text="启用/禁用最后一个链接" OnClick="@Url.Handler("btnChangeEnable_Click")" OnClickParameter1="@(Parameter.FromFunction("enabled", "getHyperLink2EnabledPostbackValue"))" />
 
 }
 
 @section script{
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getHyperLink2EnabledPostbackValue() {
+            return F.ui.HyperLink2.isEnabled();
+        }
+
+    </script>
+
     <script>
 
         // 本示例只弹出提示，返回 false 可阻止占位地址 # 改写当前页面地址。

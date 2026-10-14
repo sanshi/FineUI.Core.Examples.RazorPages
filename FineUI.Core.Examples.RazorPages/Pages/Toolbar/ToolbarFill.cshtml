@@ -49,11 +49,25 @@
         </Toolbars>
     </f:Panel>
     <br />
-    <f:Button ID="btnHideFill1" Text="显示隐藏[按钮一]和后面的ToolbarFill" OnClick="@Url.Handler("btnHideFill1_Click")" OnClickParameter1="@(new Parameter("hidden", "F.ui.Button1.isHidden()"))"></f:Button>
+    <f:Button ID="btnHideFill1" Text="显示隐藏[按钮一]和后面的ToolbarFill" OnClick="@Url.Handler("btnHideFill1_Click")" OnClickParameter1="@(Parameter.FromFunction("hidden", "getButton1HiddenPostbackValue"))"></f:Button>
     <br />
     <br />
-    <f:Button ID="btnHideFill2" Text="显示隐藏[按钮七]后面的ToolbarFill" OnClick="@Url.Handler("btnHideFill2_Click")" OnClickParameter1="@(new Parameter("hidden", "F.ui.ToolbarFill5.isHidden()"))"></f:Button>
+    <f:Button ID="btnHideFill2" Text="显示隐藏[按钮七]后面的ToolbarFill" OnClick="@Url.Handler("btnHideFill2_Click")" OnClickParameter1="@(Parameter.FromFunction("hidden", "getToolbarFill5HiddenPostbackValue"))"></f:Button>
 
 
 }
 
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getButton1HiddenPostbackValue() {
+            return F.ui.Button1.isHidden();
+        }
+
+        function getToolbarFill5HiddenPostbackValue() {
+            return F.ui.ToolbarFill5.isHidden();
+        }
+
+    </script>
+}

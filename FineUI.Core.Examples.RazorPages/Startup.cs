@@ -122,12 +122,10 @@ namespace FineUI.Core.Examples.RazorPages
 
             app.UseRouting();
 
+            // 在授权中间件之前加工 FineUI 回发；登录挑战提前返回302时也能输出JSON跳转命令。
+            // 文件和普通业务JSON直接发送，401/403仍按原状态进入回发失败处理。
+                        app.UseFineUI();
             app.UseAuthorization();
-
-            // 使用 FineUI 中间件（确保 UseFineUI 位于 UseEndpoints 的前面）
-            // 中间件只缓冲需要加工的响应——主要是 HTML（首次加载与回发都是 HTML），
-            // 图片、Excel、文件流等直接发出，不占内存也不延迟首字节，无需再配置任何排除清单。
-            app.UseFineUI();
 
 
             app.UseEndpoints(endpoints =>

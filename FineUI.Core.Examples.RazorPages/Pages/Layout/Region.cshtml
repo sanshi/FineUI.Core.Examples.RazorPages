@@ -37,7 +37,7 @@
                     <f:Button ID="Button4" Text="更新左侧面板的标题" OnClick="@Url.Handler("Button4_Click")"></f:Button>
                     <f:Label ID="Label7">
                     </f:Label>
-                    <f:Button ID="btnHideBottomRegion" Text="隐藏/显示底部面板" OnClick="@Url.Handler("btnHideBottomRegion_Click")" OnClickParameter1="@(new Parameter("hidden", "F.ui.panelBottomRegion.hidden"))"></f:Button>
+                    <f:Button ID="btnHideBottomRegion" Text="隐藏/显示底部面板" OnClick="@Url.Handler("btnHideBottomRegion_Click")" OnClickParameter1="@(Parameter.FromFunction("hidden", "getpanelBottomRegionHiddenPostbackValue"))"></f:Button>
                 </Items>
             </f:Panel>
             <f:Panel ID="panelRightRegion" RegionPosition="Right" RegionSplit="true" EnableCollapse="true"
@@ -60,3 +60,13 @@
 
 }
 
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getpanelBottomRegionHiddenPostbackValue() {
+            return F.ui.panelBottomRegion.hidden;
+        }
+
+    </script>
+}

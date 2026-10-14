@@ -61,19 +61,6 @@ namespace FineUI.Core.Examples.RazorPages
 
         #endregion
 
-        #region RegisterStartupScript
-
-        /// <summary>
-        /// 注册客户端脚本
-        /// </summary>
-        /// <param name="scripts"></param>
-        public void RegisterStartupScript(string scripts)
-        {
-            FineUI.Core.PageContext.RegisterStartupScript(scripts);
-        }
-
-        #endregion
-
         #region ViewBag
 
         private DynamicViewData _viewBag;
@@ -222,9 +209,9 @@ namespace FineUI.Core.Examples.RazorPages
         {
             base.OnPageHandlerExecuting(context);
 
-            if (HttpMethods.IsGet(Request.Method) && context.Result == null)
+            if (context.Result == null)
             {
-                // 公共偏好先于单页设置；AJAX 回发继续使用恢复后的页面配置。
+                // 公共偏好先于单页设置；原生 POST 也按本次请求配置，不依赖上一轮页面状态。
                 AppPageManagerInitializer.Initialize(PageManager.Instance, Request);
             }
 

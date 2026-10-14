@@ -15,7 +15,7 @@
                     <f:Listener Event="triggerclick" Handler="onTriggerBox1TriggerClick"></f:Listener>
                 </Listeners>
             </f:TriggerBox>
-            <f:TwinTriggerBox ID="TwinTriggerBox1" Label="TwinTriggerBox" OnTrigger1Click="@Url.Handler("TwinTriggerBox1_Trigger1Click")" OnTrigger2Click="@Url.Handler("TwinTriggerBox1_Trigger2Click")" OnTrigger2ClickParameter1="@(new Parameter("text", "F.ui.TwinTriggerBox1.getValue()"))" ShowTrigger1="false" EmptyText="搜索用户名" Trigger1IconUrl="~/res/icon/bullet_cross.png" Trigger2IconUrl="~/res/icon/zoom.png">
+            <f:TwinTriggerBox ID="TwinTriggerBox1" Label="TwinTriggerBox" OnTrigger1Click="@Url.Handler("TwinTriggerBox1_Trigger1Click")" OnTrigger2Click="@Url.Handler("TwinTriggerBox1_Trigger2Click")" OnTrigger2ClickParameter1="@(Parameter.FromFunction("text", "getTwinTriggerBox1TextPostbackValue"))" ShowTrigger1="false" EmptyText="搜索用户名" Trigger1IconUrl="~/res/icon/bullet_cross.png" Trigger2IconUrl="~/res/icon/zoom.png">
             </f:TwinTriggerBox>
         </Items>
     </f:SimpleForm>
@@ -29,6 +29,14 @@
 }
 
 @section script{
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getTwinTriggerBox1TextPostbackValue() {
+            return F.ui.TwinTriggerBox1.getValue();
+        }
+
+    </script>
+
     <script>
 
         function onTriggerBox1TriggerClick(event) {

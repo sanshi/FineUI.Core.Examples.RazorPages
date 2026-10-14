@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.IFrame.GridIFrameReload
 {
-    public class IFrameWindowModel : BaseModel
+    public class IFrameWindowModel : BaseThirdPartyEditorModel
     {
         public void OnGet()
         {
@@ -19,8 +19,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.IFrame.GridIFrameReload
             // 1. 这里放置保存窗体中数据的逻辑
 
             // 2. 不关闭窗体，直接回发父窗体
-            string scripts = String.Format("F.getActiveWindow().window.doCustomPostBack('{0}');", "参数 - " + DateTime.Now.Millisecond);
-            RegisterStartupScript(scripts);
+            ActiveWindow.CallParentFunction("doCustomPostBack", "参数 - " + DateTime.Now.Millisecond);
 
 
             return UIHelper.Result();

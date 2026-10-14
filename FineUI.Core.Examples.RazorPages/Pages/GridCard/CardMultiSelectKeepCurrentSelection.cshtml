@@ -9,7 +9,7 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" _SelectedRowIDArray="105,110" DataTextField="Name"
             DataSource="@DataSourceUtil.GetDataTable()"
             Height="500" DisplayType="Card" CardRendererFunction="renderCard" EnableCheckBoxSelect="true" KeepCurrentSelection="true">
         <Columns>
@@ -31,7 +31,7 @@
     <f:Button Text="选中第 2, 6, 8 行（客户端）" CssClass="marginr" ClickHandler="onSelectRowsClick"></f:Button>
     <br>
     <br>
-    <f:Button Text="选中了哪些行" CssClass="marginr" ID="Button1" OnClick="@Url.Handler("Button1_Click")" OnClickParameter1="@(new Parameter("selected", "getGridSelectedRows()"))"></f:Button>
+    <f:Button Text="选中了哪些行" CssClass="marginr" ID="Button1" OnClick="@Url.Handler("Button1_Click")" OnClickParameter1="@(Parameter.FromFunction("selected", "getCurrentControlSelectedPostbackValue"))"></f:Button>
 
     <f:Button Text="选中第 2, 6, 8 行" CssClass="marginr" ID="Button2" OnClick="@Url.Handler("Button2_Click")"></f:Button>
     <br>
@@ -44,6 +44,14 @@
 
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getCurrentControlSelectedPostbackValue() {
+            return getGridSelectedRows();
+        }
+
+    </script>
+
 
     <script src="~/res/js/grid.js"></script>
     <script src="~/res/js/gridcard.js"></script>

@@ -9,8 +9,8 @@
 @section body {
 
     <f:Tree ID="Tree1" IsFluid="true" ShowHeader="true" Title="树控件"
-            OnNodeExpand="@Url.Handler("Tree1_NodeExpand")" OnNodeExpandParameter1="@(new Parameter("nodeInfo", "getNodeInfo(arguments[1])"))"
-            OnNodeCollapse="@Url.Handler("Tree1_NodeCollapse")" OnNodeCollapseParameter1="@(new Parameter("nodeInfo", "getNodeInfo(arguments[1])"))">
+            OnNodeExpand="@Url.Handler("Tree1_NodeExpand")" OnNodeExpandParameter1="@(Parameter.FromFunction("nodeInfo", "getCurrentControlNodeInfoPostbackValue"))"
+            OnNodeCollapse="@Url.Handler("Tree1_NodeCollapse")" OnNodeCollapseParameter1="@(Parameter.FromFunction("nodeInfo", "getCurrentControlNodeInfoPostbackValue"))">
         <Nodes>
             <f:TreeNode Text="中国" Expanded="true" NodeID="china">
                 <f:TreeNode Text="河南省" Expanded="true" NodeID="henan">
@@ -40,6 +40,14 @@
 
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getCurrentControlNodeInfoPostbackValue() {
+            return getNodeInfo(arguments[1]);
+        }
+
+    </script>
+
 
     <script>
 

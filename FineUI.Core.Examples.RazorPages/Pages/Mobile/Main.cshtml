@@ -214,7 +214,7 @@
 
     <script>
 
-        @Html.Raw(ViewBag.StartupScript)
+        window.MENUSOURCE = @Json.Serialize(ViewBag.MenuSource);
 
             // 从二级菜单返回
             function onBacktoPanel1Click(event) {

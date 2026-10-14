@@ -10,12 +10,12 @@
 
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="简单表单">
         <Items>
-            <f:CheckBox ID="CheckBox1" ShowLabel="false" Checked="true" Text="复选框1（先执行客户端事件，再执行服务端事件）" OnCheckedChanged="@Url.Handler("CheckBox1_CheckedChanged")" OnCheckedChangedParameter1="@(new Parameter("isChecked", "F.ui.CheckBox1.isChecked()"))">
+            <f:CheckBox ID="CheckBox1" ShowLabel="false" Checked="true" Text="复选框1（先执行客户端事件，再执行服务端事件）" OnCheckedChanged="@Url.Handler("CheckBox1_CheckedChanged")" OnCheckedChangedParameter1="@(Parameter.FromFunction("isChecked", "getCheckBox1IsCheckedPostbackValue"))">
                 <Listeners>
                     <f:Listener Event="change" Handler="onCheckBox1Changed" />
                 </Listeners>
             </f:CheckBox>
-            <f:CheckBox ID="CheckBox2" ShowLabel="false" Checked="true" Text="复选框2（只执行客户端事件）" OnCheckedChanged="@Url.Handler("CheckBox2_CheckedChanged")" OnCheckedChangedParameter1="@(new Parameter("isChecked", "F.ui.CheckBox2.isChecked()"))">
+            <f:CheckBox ID="CheckBox2" ShowLabel="false" Checked="true" Text="复选框2（只执行客户端事件）" OnCheckedChanged="@Url.Handler("CheckBox2_CheckedChanged")" OnCheckedChangedParameter1="@(Parameter.FromFunction("isChecked", "getCheckBox2IsCheckedPostbackValue"))">
                 <Listeners>
                     <f:Listener Event="change" Handler="onCheckBox2Changed" />
                 </Listeners>
@@ -29,6 +29,18 @@
 
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getCheckBox1IsCheckedPostbackValue() {
+            return F.ui.CheckBox1.isChecked();
+        }
+
+        function getCheckBox2IsCheckedPostbackValue() {
+            return F.ui.CheckBox2.isChecked();
+        }
+
+    </script>
+
     <script>
 
         function onCheckBox1Changed(event, checked) {

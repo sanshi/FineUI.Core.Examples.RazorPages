@@ -51,7 +51,7 @@
                     </f:GroupPanel>
                     <f:GroupPanel ID="GroupPanel3" Layout="Anchor" Title="账单地址">
                         <Items>
-                            <f:CheckBox Checked="true" ID="cbxSameAsContactAddress" Text="和联系人地址相同" OnCheckedChanged="@Url.Handler("cbxSameAsContactAddress_CheckedChanged")" OnCheckedChangedParameter1="@(new Parameter("isChecked", "this.getValue()"))"></f:CheckBox>
+                            <f:CheckBox Checked="true" ID="cbxSameAsContactAddress" Text="和联系人地址相同" OnCheckedChanged="@Url.Handler("cbxSameAsContactAddress_CheckedChanged")" OnCheckedChangedParameter1="@(Parameter.FromFunction("isChecked", "getCurrentControlIsCheckedPostbackValue"))"></f:CheckBox>
                             <f:TextBox ID="tbxBillingAddress" Enabled="false" Label="详细地址" Required="true" ShowRedStar="true">
                             </f:TextBox>
                             <f:Panel ID="Panel3" Layout="HBox" BoxConfigAlign="Stretch" ShowHeader="false" ShowBorder="false">
@@ -114,3 +114,13 @@
 
 }
 
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getCurrentControlIsCheckedPostbackValue() {
+            return this.getValue();
+        }
+
+    </script>
+}

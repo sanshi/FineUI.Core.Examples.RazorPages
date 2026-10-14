@@ -34,7 +34,7 @@
         <Toolbars>
             <f:Toolbar ToolbarAlign="Right" Position="Bottom">
                 <Items>
-                    <f:Button ID="btnSwitchClass" Text="改变 Label 的样式" OnClick="@Url.Handler("btnSwitchClass_Click")" OnClickParameter1="@(new Parameter("hasClassRed", "F.ui.tbxUserName.el.hasClass('red')"))"></f:Button>
+                    <f:Button ID="btnSwitchClass" Text="改变 Label 的样式" OnClick="@Url.Handler("btnSwitchClass_Click")" OnClickParameter1="@(Parameter.FromFunction("hasClassRed", "gettbxUserNameHasClassRedPostbackValue"))"></f:Button>
                 </Items>
             </f:Toolbar>
         </Toolbars>
@@ -44,3 +44,13 @@
 
 }
 
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function gettbxUserNameHasClassRedPostbackValue() {
+            return F.ui.tbxUserName.el.hasClass('red');
+        }
+
+    </script>
+}

@@ -24,6 +24,16 @@
              ImageUrl="~/res/images/logo/favicon.ico">
     </f:Image>
     <br />
-    <f:Button Text="改变图片的大小" ID="Button1" OnClick="@Url.Handler("Button1_Click")" OnClickParameter1="@(new Parameter("imageWidth", "F.ui.Image3.getWidth()"))"></f:Button>
+    <f:Button Text="改变图片的大小" ID="Button1" OnClick="@Url.Handler("Button1_Click")" OnClickParameter1="@(Parameter.FromFunction("imageWidth", "getImage3ImageWidthPostbackValue"))"></f:Button>
 }
 
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getImage3ImageWidthPostbackValue() {
+            return F.ui.Image3.getWidth();
+        }
+
+    </script>
+}

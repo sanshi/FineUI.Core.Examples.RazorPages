@@ -9,7 +9,7 @@
 @section body {
 
     <f:Accordion ID="Accordion1" IsFluid="true" Title="手风琴控件" ShowHeader="false" Height="500" ShowBorder="true" ActivePaneIndex="1" EnableCollapse="false"
-                 OnPaneIndexChanged="@Url.Handler("Accordion1_PaneIndexChanged")" OnPaneIndexChangedParameter1="@(new Parameter("activeIndex", "F.ui.Accordion1.getActivePaneIndex()"))">
+                 OnPaneIndexChanged="@Url.Handler("Accordion1_PaneIndexChanged")" OnPaneIndexChangedParameter1="@(Parameter.FromFunction("activeIndex", "getAccordion1ActiveIndexPostbackValue"))">
         <Panes>
             <f:AccordionPane ID="AccordionPane1" Title="面板一" IconUrl="@Url.Content("~/res/images/16/1.png")" BodyPadding="2px 5px">
                 <Items>
@@ -33,13 +33,23 @@
     </f:Accordion>
     <br>
 
-    <f:Button ID="Button1" Text="获取当前展开的面板" OnClick="@Url.Handler("Button1_Click")" OnClickParameter1="@(new Parameter("activeIndex", "F.ui.Accordion1.getActivePaneIndex()"))"></f:Button>
+    <f:Button ID="Button1" Text="获取当前展开的面板" OnClick="@Url.Handler("Button1_Click")" OnClickParameter1="@(Parameter.FromFunction("activeIndex", "getAccordion1ActiveIndexPostbackValue"))"></f:Button>
     <br>
     <br>
 
-    <f:Button ID="Button2" Text="展开下一个面板" OnClick="@Url.Handler("Button2_Click")" OnClickParameter1="@(new Parameter("activeIndex", "F.ui.Accordion1.getActivePaneIndex()"))"></f:Button>
+    <f:Button ID="Button2" Text="展开下一个面板" OnClick="@Url.Handler("Button2_Click")" OnClickParameter1="@(Parameter.FromFunction("activeIndex", "getAccordion1ActiveIndexPostbackValue"))"></f:Button>
     <br>
 
 
 }
 
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getAccordion1ActiveIndexPostbackValue() {
+            return F.ui.Accordion1.getActivePaneIndex();
+        }
+
+    </script>
+}

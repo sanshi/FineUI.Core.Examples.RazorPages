@@ -27,7 +27,7 @@
             <f:Toolbar ID="Toolbar1" Title="列表" HeaderStyle="true">
                 <Items>
                     <f:Button Text="重新绑定" ID="btnReDataBind"
-                              OnClick="@Url.Handler("btnReDataBind_Click")" OnClickParameter1="@(new Parameter("source", "F.ui.DataList1.getAttr('data-source-key')"))"></f:Button>
+                              OnClick="@Url.Handler("btnReDataBind_Click")" OnClickParameter1="@(Parameter.FromFunction("source", "getDataList1SourcePostbackValue"))"></f:Button>
                 </Items>
             </f:Toolbar>
         </Toolbars>
@@ -43,3 +43,13 @@
 
 }
 
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getDataList1SourcePostbackValue() {
+            return F.ui.DataList1.getAttr('data-source-key');
+        }
+
+    </script>
+}

@@ -10,7 +10,7 @@
 @section body {
 
     <f:Tree ID="Tree1" IsFluid="true" ShowHeader="true" Title="树控件（点击树节点回发）" Nodes="@(TreeNode[])ViewBag.Tree1Nodes"
-            OnNodeClick="@Url.Handler("Tree1_NodeClick")" OnNodeClickParameter1="@(new Parameter("nodeInfo", "getNodeInfo(arguments[1])"))">
+            OnNodeClick="@Url.Handler("Tree1_NodeClick")" OnNodeClickParameter1="@(Parameter.FromFunction("nodeInfo", "getCurrentControlNodeInfoPostbackValue"))">
     </f:Tree>
 
     <f:Label ID="labResult" EncodeText="false"></f:Label>
@@ -26,6 +26,14 @@
 
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getCurrentControlNodeInfoPostbackValue() {
+            return getNodeInfo(arguments[1]);
+        }
+
+    </script>
+
 
     <script>
 

@@ -18,14 +18,14 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Grid
         
         public IActionResult OnPostButton1_Click()
         {
-            RegisterStartupScript(String.Format("changeColumnTitleAndWidth('入学年份（已修改）', 200);"));
+            global::FineUI.Core.PageContext.InvokeFunction("changeColumnTitleAndWidth", "入学年份（已修改）", 200);
 
             return UIHelper.Result();
         }
 
         public IActionResult OnPostButton2_Click()
         {
-            RegisterStartupScript(String.Format("changeColumnTitleAndWidth('入学年份', 120);"));
+            global::FineUI.Core.PageContext.InvokeFunction("changeColumnTitleAndWidth", "入学年份", 120);
 
             return UIHelper.Result();
         }

@@ -18,7 +18,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Toolbar
         
         public IActionResult OnPostButton3_Click()
         {
-            RegisterStartupScript(String.Format("updateIFrameUrl('{0}');", Url.Content("~/Basic/Login")));
+            global::FineUI.Core.PageContext.InvokeFunction("updateIFrameUrl", Url.Content("~/Basic/Login"));
 
             return UIHelper.Result();
         }

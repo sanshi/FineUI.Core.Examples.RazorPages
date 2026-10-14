@@ -16,11 +16,19 @@
     <f:LinkButton ID="LinkButton1" Enabled="false" Text="客户端事件（初始禁用）" ClickHandler="onLinkButtonClick">
     </f:LinkButton>
     <br />
-    <f:Button ID="btnChangeEnable" Text="启用/禁用最后一个链接按钮" OnClick="@Url.Handler("btnChangeEnable_Click")" OnClickParameter1="@(new Parameter("enabled", "F.ui.LinkButton1.isEnabled()"))" />
+    <f:Button ID="btnChangeEnable" Text="启用/禁用最后一个链接按钮" OnClick="@Url.Handler("btnChangeEnable_Click")" OnClickParameter1="@(Parameter.FromFunction("enabled", "getLinkButton1EnabledPostbackValue"))" />
 
 }
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getLinkButton1EnabledPostbackValue() {
+            return F.ui.LinkButton1.isEnabled();
+        }
+
+    </script>
+
     <script>
         function onLinkButtonClick(event) {
             top.F.alert("这是初始禁用的链接按钮的客户端事件！");

@@ -18,7 +18,8 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Message.AlertDownloadHideIFrame
         public IActionResult OnPostBtnOperation_Click()
         {
             // 不要在这里调用F.confirm，因为当前页面要被关闭，因此F.confirm的回调函数不能正确执行
-            RegisterStartupScript(ActiveWindow.GetHideReference() + "parent.showConfirm();");
+            ActiveWindow.Hide();
+            global::FineUI.Core.PageContext.InvokeParentFunction("showConfirm");
 
             return UIHelper.Result();
         }

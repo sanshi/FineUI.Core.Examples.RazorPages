@@ -43,8 +43,8 @@
             </f:TextBox>
             <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单"
                       OnClick="@Url.Handler("btnSubmit_Click")"
-                      OnClickParameter1="@(new Parameter("dateValue", "F.ui.DatePicker1.getText()"))"
-                      OnClickParameter2="@(new Parameter("textValue", "F.ui.tbxMyBox.getValue()"))"></f:Button>
+                      OnClickParameter1="@(Parameter.FromFunction("dateValue", "getDatePicker1DateValuePostbackValue"))"
+                      OnClickParameter2="@(Parameter.FromFunction("textValue", "gettbxMyBoxTextValuePostbackValue"))"></f:Button>
         </Items>
     </f:SimpleForm>
 
@@ -52,6 +52,18 @@
 
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getDatePicker1DateValuePostbackValue() {
+            return F.ui.DatePicker1.getText();
+        }
+
+        function gettbxMyBoxTextValuePostbackValue() {
+            return F.ui.tbxMyBox.getValue();
+        }
+
+    </script>
+
 
     <script src="~/res/third-party/spectrum/spectrum.js" type="text/javascript"></script>
     <script src="~/res/third-party/spectrum/i18n/jquery.spectrum-zh-cn.js" type="text/javascript"></script>

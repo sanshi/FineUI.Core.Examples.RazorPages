@@ -19,7 +19,7 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" Height="500" AllowPaging="true" PageSize="5" IsDatabasePaging="true" EnableCheckBoxSelect="true"
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" Height="500" AllowPaging="true" PageSize="15" IsDatabasePaging="true" EnableCheckBoxSelect="true"
             RecordCount="@ViewBag.Grid1RecordCount" DataSource="@ViewBag.Grid1DataSource" OnPageIndexChanged="@Url.Handler("Grid1_PageIndexChanged")" OnPageIndexChangedFields="Grid1" EnableSummary="true" SummaryPosition="Bottom" SummaryData="@ViewBag.Grid1SummaryData" 
 	    AllowColumnLocking="true" Width="1000">
         <Columns>

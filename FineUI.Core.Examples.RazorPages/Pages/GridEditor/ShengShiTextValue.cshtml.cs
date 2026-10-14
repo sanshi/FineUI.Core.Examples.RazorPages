@@ -26,7 +26,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.GridEditor
         {
             ViewBag.Grid1DataSource = GetSourceData();
 
-            // 注册脚本（省数据）
+            // 准备省数据
             JArray shengData = new JArray();
             shengData.Add(new JArray("001", "北京"));
             shengData.Add(new JArray("002", "河南"));
@@ -35,9 +35,8 @@ namespace FineUI.Core.Examples.RazorPages.Pages.GridEditor
             shengData.Add(new JArray("005", "湖北"));
             shengData.Add(new JArray("006", "广西"));
             shengData.Add(new JArray("007", "安徽"));
-            string shengScript = String.Format("window._SHENG={0};", shengData.ToString(Newtonsoft.Json.Formatting.None));
 
-            // 注册脚本（市数据）
+            // 准备市数据
             JObject shiData = new JObject();
             foreach (JArray item in shengData)
             {
@@ -59,9 +58,9 @@ namespace FineUI.Core.Examples.RazorPages.Pages.GridEditor
 
                 shiData[shengValue] = newSheng;
             }
-            string shiScript = String.Format("window._SHI={0};", shiData.ToString(Newtonsoft.Json.Formatting.None));
 
-            ViewBag.StartupScript = shengScript + shiScript;
+            ViewBag.ProvinceData = shengData;
+            ViewBag.CityData = shiData;
         }
 
         private string PaddingLeft(int value)

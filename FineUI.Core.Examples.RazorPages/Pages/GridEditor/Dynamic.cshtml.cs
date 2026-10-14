@@ -74,7 +74,8 @@ namespace FineUI.Core.Examples.RazorPages.Pages.GridEditor
 
             ViewBag.Grid1Columns = columns.ToArray();
 
-            ViewBag.StartupScript = String.Format("window._MINYEAR={0};window._MAXYEAR={1};", _minYear, _maxYear);
+            ViewBag.MinYear = _minYear;
+            ViewBag.MaxYear = _maxYear;
         }
 
 

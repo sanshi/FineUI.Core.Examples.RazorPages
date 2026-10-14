@@ -9,7 +9,7 @@
 @section body {
 
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" DataIDField="Id" DataTextField="Name" DataSource="@ViewBag.Grid1DataSource" EnableTree="true" TreeColumn="Name" DataParentIDField="ParentId" RowDataBoundFunction="onGrid1RowDataBound"
-            OnRowLazyLoad="@Url.Handler("Grid1_RowLazyLoad")" OnRowLazyLoadFields="Grid1" OnRowLazyLoadParameter1="@(new Parameter("rowId", "arguments[1]"))">
+            OnRowLazyLoad="@Url.Handler("Grid1_RowLazyLoad")" OnRowLazyLoadFields="Grid1" OnRowLazyLoadParameter1="@(Parameter.FromEventArgument("rowId", "rowId"))">
         <Columns>
             <f:RowNumberField />
             <f:RenderField ColumnID="Name" HeaderText="名称" DataField="Name" ExpandUnusedSpace="true" MinWidth="150" />

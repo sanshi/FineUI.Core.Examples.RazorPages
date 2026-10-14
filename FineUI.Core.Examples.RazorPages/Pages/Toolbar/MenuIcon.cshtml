@@ -34,8 +34,8 @@
             </f:Toolbar>
         </toolbars>
         <Items>
-            <f:Button Text="删除[化学与材料科学学院]菜单项的图标" CssClass="marginr" ID="Button1" OnClick="@Url.Handler("Button1_Click")" OnClickParameter1="@(new Parameter("icon", "F.ui.MenuHyperLink1.icon"))"></f:Button>
-            <f:Button Text="修改[管理学院]菜单项的图标" ID="Button2" OnClick="@Url.Handler("Button2_Click")" OnClickParameter1="@(new Parameter("icon", "F.ui.MenuHyperLink2.icon"))"></f:Button>
+            <f:Button Text="删除[化学与材料科学学院]菜单项的图标" CssClass="marginr" ID="Button1" OnClick="@Url.Handler("Button1_Click")" OnClickParameter1="@(Parameter.FromFunction("icon", "getMenuHyperLink1IconPostbackValue"))"></f:Button>
+            <f:Button Text="修改[管理学院]菜单项的图标" ID="Button2" OnClick="@Url.Handler("Button2_Click")" OnClickParameter1="@(Parameter.FromFunction("icon", "getMenuHyperLink2IconPostbackValue"))"></f:Button>
         </Items>
     </f:Panel>
 
@@ -43,3 +43,17 @@
 
 }
 
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getMenuHyperLink1IconPostbackValue() {
+            return F.ui.MenuHyperLink1.icon;
+        }
+
+        function getMenuHyperLink2IconPostbackValue() {
+            return F.ui.MenuHyperLink2.icon;
+        }
+
+    </script>
+}

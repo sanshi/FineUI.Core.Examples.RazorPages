@@ -38,10 +38,26 @@
     <f:Label ID="Label2" Text="文本二，注意观察文本的样式">
     </f:Label>
     <br />
-    <f:Button ID="Button2" OnClick="@Url.Handler("Button2_Click")" OnClickParameter1="@(new Parameter("hasClassRed", "F.ui.Label2.el.hasClass('red')"))" Text="通过 CssClass 修改文本的样式"></f:Button>
+    <f:Button ID="Button2" OnClick="@Url.Handler("Button2_Click")" OnClickParameter1="@(Parameter.FromFunction("hasClassRed", "getLabel2HasClassRedPostbackValue"))" Text="通过 CssClass 修改文本的样式"></f:Button>
     <f:Button ID="Button4" OnClick="@Url.Handler("Button4_Click")" Text="清空 CssClass 设置的样式"></f:Button>
 
 
 
 }
 
+@section script {
+    <script>
+        function clearLabelStyle() {
+            F.ui.Label1.el.attr('style', '');
+        }
+    </script>
+
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getLabel2HasClassRedPostbackValue() {
+            return F.ui.Label2.el.hasClass('red');
+        }
+
+    </script>
+}

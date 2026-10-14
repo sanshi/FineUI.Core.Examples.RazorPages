@@ -20,13 +20,13 @@
         <Items>
             <f:CheckBox ID="CheckBox1" ShowLabel="false" Text="复选框" Checked="true" DisplayType="Switch">
             </f:CheckBox>
-            <f:Button ID="btnSelectCheckBox" CssClass="marginr" Text="选择/反选复选框" OnClick="@Url.Handler("btnSelectCheckBox_Click")" OnClickParameter1="@(new Parameter("isChecked", "F.ui.CheckBox1.isChecked()"))"></f:Button>
+            <f:Button ID="btnSelectCheckBox" CssClass="marginr" Text="选择/反选复选框" OnClick="@Url.Handler("btnSelectCheckBox_Click")" OnClickParameter1="@(Parameter.FromFunction("isChecked", "getCheckBox1IsCheckedPostbackValue"))"></f:Button>
             <f:Button ID="btnChangeCheckStatus" CssClass="marginr" Text="选择/反选复选框（客户端脚本）" ClickHandler="onChangeCheckStatusClick"></f:Button>
             <f:Button ID="btnChangeEnabled" CssClass="marginr" Text="禁用/启用复选框（客户端脚本）" ClickHandler="onChangeEnabledClick"></f:Button>
-            <f:Button ID="btnDisable" CssClass="marginr" Text="启用/禁用复选框" OnClick="@Url.Handler("btnDisableCheckBox_Click")" OnClickParameter1="@(new Parameter("isDisabled", "F.ui.CheckBox1.isDisabled()"))"></f:Button>
+            <f:Button ID="btnDisable" CssClass="marginr" Text="启用/禁用复选框" OnClick="@Url.Handler("btnDisableCheckBox_Click")" OnClickParameter1="@(Parameter.FromFunction("isDisabled", "getCheckBox1IsDisabledPostbackValue"))"></f:Button>
             <f:Label>
             </f:Label>
-            <f:CheckBox ID="CheckBox2" ShowLabel="false" Checked="true" DisplayType="Switch" Text="复选框（OnCheckedChanged）" OnCheckedChanged="@Url.Handler("CheckBox2_CheckedChanged")" OnCheckedChangedParameter1="@(new Parameter("isChecked", "F.ui.CheckBox2.isChecked()"))">
+            <f:CheckBox ID="CheckBox2" ShowLabel="false" Checked="true" DisplayType="Switch" Text="复选框（OnCheckedChanged）" OnCheckedChanged="@Url.Handler("CheckBox2_CheckedChanged")" OnCheckedChangedParameter1="@(Parameter.FromFunction("isChecked", "getCheckBox2IsCheckedPostbackValue"))">
             </f:CheckBox>
             <f:Label>
             </f:Label>
@@ -45,6 +45,22 @@
 
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getCheckBox1IsCheckedPostbackValue() {
+            return F.ui.CheckBox1.isChecked();
+        }
+
+        function getCheckBox1IsDisabledPostbackValue() {
+            return F.ui.CheckBox1.isDisabled();
+        }
+
+        function getCheckBox2IsCheckedPostbackValue() {
+            return F.ui.CheckBox2.isChecked();
+        }
+
+    </script>
+
     <script>
 
         function onChangeCheckStatusClick(event) {

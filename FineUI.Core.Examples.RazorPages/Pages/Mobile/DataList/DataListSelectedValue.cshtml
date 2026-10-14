@@ -21,7 +21,7 @@
             <f:Toolbar ID="Toolbar1" Title="列表" HeaderStyle="true">
                 <Items>
                     <f:Button Text="获取选中项" ID="btnSubmit"
-                              OnClick="@Url.Handler("btnSubmit_Click")" OnClickParameter1="@(new Parameter("selected", "F.ui.DataList1.getSelectedItem()"))"></f:Button>
+                              OnClick="@Url.Handler("btnSubmit_Click")" OnClickParameter1="@(Parameter.FromFunction("selected", "getDataList1SelectedPostbackValue"))"></f:Button>
                 </Items>
             </f:Toolbar>
         </Toolbars>
@@ -34,3 +34,13 @@
 
 }
 
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getDataList1SelectedPostbackValue() {
+            return F.ui.DataList1.getSelectedItem();
+        }
+
+    </script>
+}

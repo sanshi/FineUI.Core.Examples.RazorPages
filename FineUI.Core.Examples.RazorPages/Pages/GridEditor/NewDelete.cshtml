@@ -40,7 +40,11 @@
                     <f:TextBox ID="tbxMajor" Required="true"></f:TextBox>
                 </Editor>
             </f:RenderField>
-            <f:RenderField EnableHeaderMenu="false" RendererFunction="renderDeleteAction"></f:RenderField>
+            <f:RenderField EnableHeaderMenu="false">
+                <Commands>
+                    <f:Command CommandName="Delete" Icon="Delete" ConfirmText="删除选中行？" ConfirmTarget="Top" />
+                </Commands>
+            </f:RenderField>
         </Columns>
         <Toolbars>
             <f:Toolbar>
@@ -52,6 +56,9 @@
                 </Items>
             </f:Toolbar>
         </Toolbars>
+        <Listeners>
+            <f:Listener Event="rowcommand" Handler="onGrid1RowCommand" />
+        </Listeners>
     </f:Grid>
 
     <br>
@@ -111,26 +118,10 @@
         }
 
 
-        F.ready(function () {
-
-            var grid1 = F.ui.Grid1;
-            grid1.el.on('click', 'a.action-btn.delete', function (event) {
-                // 删除链接是按钮型占位地址，先取消默认导航，避免改写页面 hash。
-                event.preventDefault();
-
-                var cnode = $(this);
-                var rowData = grid1.getRowData(cnode.closest('.f-grid-row'));
-
-                F.confirm({
-                    message: '删除选中行？',
-                    target: '_top',
-                    ok: function () {
-                        grid1.deleteRow(rowData);
-                    }
-                });
-            });
-
-        });
+        function onGrid1RowCommand(event, rowId, rowIndex, columnId, commandName) {
+            // 命令确认通过后才删除，仍保留未保存记录，点击“保存数据”后再写入后台。
+            F.ui.Grid1.deleteRow(rowId);
+        }
 
     </script>
 }

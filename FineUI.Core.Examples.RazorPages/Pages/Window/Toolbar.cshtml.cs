@@ -25,7 +25,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Window
 
         public IActionResult OnPostBtnChangeText_Click()
         {
-            RegisterStartupScript(String.Format("$('#mylabel').html('{0}')", "这是修改后的值！" + DateTime.Now.ToLongTimeString()));
+            global::FineUI.Core.PageContext.InvokeFunction("updateWindowLabel", "这是修改后的值！" + DateTime.Now.ToLongTimeString());
             
             return UIHelper.Result();
         }

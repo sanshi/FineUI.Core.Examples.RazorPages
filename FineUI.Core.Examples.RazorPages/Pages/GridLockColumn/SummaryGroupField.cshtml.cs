@@ -30,7 +30,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.GridLockColumn
             ViewBag.Grid1RecordCount = recordCount;
 
             // 2.获取当前分页数据
-            ViewBag.Grid1DataSource = DataSourceUtil.GetPagedDataTable(pageIndex: 0, pageSize: 15);
+            ViewBag.Grid1DataSource = DataSourceUtil.GetPagedDataTable(pageIndex: 0, pageSize: 5);
 
             // 3. 合计行数据
             ViewBag.Grid1SummaryData = GetSummaryData();
@@ -69,7 +69,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.GridLockColumn
             grid1.RecordCount(recordCount);
 
             // 2.获取当前分页数据
-            var dataSource = DataSourceUtil.GetPagedDataTable(pageIndex: Grid1_pageIndex, pageSize: 15);
+            var dataSource = DataSourceUtil.GetPagedDataTable(pageIndex: Grid1_pageIndex, pageSize: 5);
             grid1.DataSource(dataSource, Grid1_fields);
 
             return UIHelper.Result();

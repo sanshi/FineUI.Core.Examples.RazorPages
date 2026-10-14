@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class HtmlEditorModel : BaseModel
+    public class HtmlEditorModel : BaseThirdPartyEditorModel
     {
         public void OnGet()
         {

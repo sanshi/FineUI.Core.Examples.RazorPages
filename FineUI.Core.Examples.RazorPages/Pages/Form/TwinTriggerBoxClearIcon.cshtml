@@ -10,7 +10,7 @@
 
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="表单" ShowHeader="true">
         <Items>
-            <f:TwinTriggerBox ID="TwinTriggerBox1" ShowLabel="false" Trigger1Icon="Clear" ShowTrigger1="false" EmptyText="搜索用户名" Trigger2Icon="Search" OnTrigger1Click="@Url.Handler("TwinTriggerBox1_Trigger1Click")" OnTrigger2Click="@Url.Handler("TwinTriggerBox1_Trigger2Click")" OnTrigger2ClickParameter1="@(new Parameter("text", "F.ui.TwinTriggerBox1.getValue()"))"
+            <f:TwinTriggerBox ID="TwinTriggerBox1" ShowLabel="false" Trigger1Icon="Clear" ShowTrigger1="false" EmptyText="搜索用户名" Trigger2Icon="Search" OnTrigger1Click="@Url.Handler("TwinTriggerBox1_Trigger1Click")" OnTrigger2Click="@Url.Handler("TwinTriggerBox1_Trigger2Click")" OnTrigger2ClickParameter1="@(Parameter.FromFunction("text", "getTwinTriggerBox1TextPostbackValue"))"
                               AutoShowClearIcon="true">
                 <Listeners>
                     <f:Listener Event="change" Handler="onTwinTriggerBox1Change"></f:Listener>
@@ -23,6 +23,14 @@
 }
 
 @section script{
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getTwinTriggerBox1TextPostbackValue() {
+            return F.ui.TwinTriggerBox1.getValue();
+        }
+
+    </script>
+
     <script>
 
         // 记录上一次 TwinTriggerBox1 的值

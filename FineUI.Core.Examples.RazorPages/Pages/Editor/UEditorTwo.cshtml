@@ -24,12 +24,12 @@
             <Items>
                 <f:Button ID="Button1" _ValidateForms="Form1" Text="获取文章内容"
                           OnClick="@Url.Handler("Button1_Click")"
-                          OnClickParameter1="@(new Parameter("title", "F.ui.tbxTitle.getValue()"))"
-                          OnClickParameter2="@(new Parameter("text1", "F.ui.HtmlEditor1.getValue()"))"
-                          OnClickParameter3="@(new Parameter("text2", "F.ui.HtmlEditor2.getValue()"))"></f:Button>
+                          OnClickParameter1="@(Parameter.FromFunction("title", "gettbxTitleTitlePostbackValue"))"
+                          OnClickParameter2="@(Parameter.FromFunction("text1", "getHtmlEditor1Text1PostbackValue"))"
+                          OnClickParameter3="@(Parameter.FromFunction("text2", "getHtmlEditor2Text2PostbackValue"))"></f:Button>
                 <f:Button ID="Button2" Text="更新文章摘要"
                           OnClick="@Url.Handler("Button2_Click")"
-                          OnClickParameter1="@(new Parameter("text1", "F.ui.HtmlEditor1.getValue()"))"></f:Button>
+                          OnClickParameter1="@(Parameter.FromFunction("text1", "getHtmlEditor1Text1PostbackValue"))"></f:Button>
             </Items>
         </f:Toolbar>
     </Toolbars>
@@ -37,3 +37,21 @@
 
 }
 
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function gettbxTitleTitlePostbackValue() {
+            return F.ui.tbxTitle.getValue();
+        }
+
+        function getHtmlEditor1Text1PostbackValue() {
+            return F.ui.HtmlEditor1.getValue();
+        }
+
+        function getHtmlEditor2Text2PostbackValue() {
+            return F.ui.HtmlEditor2.getValue();
+        }
+
+    </script>
+}

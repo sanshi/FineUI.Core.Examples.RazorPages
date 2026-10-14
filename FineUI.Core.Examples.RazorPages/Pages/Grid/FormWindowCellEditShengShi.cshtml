@@ -93,7 +93,7 @@
 
     <script>
 
-        @Html.Raw(ViewBag.StartupScript)
+        window._SHI = @Json.Serialize(ViewBag.CityData);
 
         // 行内的编辑图标：表格的命令列只在 RazorForms 开发模式下由服务端渲染，
         // RazorPages 这一栈改用渲染函数画图标 + 在表格元素上做事件委托

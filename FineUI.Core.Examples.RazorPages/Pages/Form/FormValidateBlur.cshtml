@@ -10,7 +10,7 @@
 
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="用户注册表单">
         <Items>
-            <f:TextBox ID="tbxUserName" Label="用户名" Required="true" NextFocusControl="tbxPassword" ShowRedStar="true" Text="admin" OnBlur="@Url.Handler("tbxUserName_Blur")" OnBlurParameter1="@(new Parameter("userName", "F.ui.tbxUserName.getValue()"))">
+            <f:TextBox ID="tbxUserName" Label="用户名" Required="true" NextFocusControl="tbxPassword" ShowRedStar="true" Text="admin" OnBlur="@Url.Handler("tbxUserName_Blur")" OnBlurParameter1="@(Parameter.FromFunction("userName", "gettbxUserNameUserNamePostbackValue"))">
             </f:TextBox>
             <f:TextBox ID="tbxPassword" Label="密码" Required="true" ShowRedStar="true" NextClickControl="btnRegister" TextMode="Password">
             </f:TextBox>
@@ -35,3 +35,13 @@
 
 }
 
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function gettbxUserNameUserNamePostbackValue() {
+            return F.ui.tbxUserName.getValue();
+        }
+
+    </script>
+}

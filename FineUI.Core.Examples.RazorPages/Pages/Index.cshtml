@@ -89,9 +89,9 @@
                                         <span class="breadcrumb-last">首页</span>
                                     </div>
                                     <div class="breadcrumb-icons">
-                                        <a data-qtip="查看源代码" href="javascript:onToolSourceCodeClick();"><i class="f-icon f-iconfont f-iconfont-code"></i></a>
-                                        <a data-qtip="刷新本页" href="javascript:onToolRefreshClick();"><i class="f-icon f-iconfont f-iconfont-refresh"></i></a>
-                                        <a data-qtip="在新标签页中打开" href="javascript:onToolNewWindowClick();"><i class="f-icon f-iconfont f-iconfont-new-tab"></i></a>
+                                        <a data-qtip="查看源代码" href="#" data-tool-action="onToolSourceCodeClick"><i class="f-icon f-iconfont f-iconfont-code"></i></a>
+                                        <a data-qtip="刷新本页" href="#" data-tool-action="onToolRefreshClick"><i class="f-icon f-iconfont f-iconfont-refresh"></i></a>
+                                        <a data-qtip="在新标签页中打开" href="#" data-tool-action="onToolNewWindowClick"><i class="f-icon f-iconfont f-iconfont-new-tab"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -319,4 +319,20 @@
     <script src="~/res/js/index-examples.js?v@(GlobalConfig.ProductVersion)"></script>
     <script src="~/res/js/mobileview.js?v@(GlobalConfig.ProductVersion)"></script>
 
+
+    <script>
+        F.ready(function () {
+            // 面包屑工具使用普通点击事件，严格 CSP 下不执行链接中的脚本。
+            $('.breadcrumb-icons').on('click', 'a[data-tool-action]', function (event) {
+                event.preventDefault();
+                var action = $(this).attr('data-tool-action');
+                var handlers = {
+                    onToolSourceCodeClick: onToolSourceCodeClick,
+                    onToolRefreshClick: onToolRefreshClick,
+                    onToolNewWindowClick: onToolNewWindowClick
+                };
+                handlers[action](event);
+            });
+        });
+    </script>
 }

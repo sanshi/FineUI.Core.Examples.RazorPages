@@ -17,7 +17,8 @@ namespace FineUI.Core.Examples.RazorPages.Pages.IFrame.PassValue
 
         public IActionResult OnPostDdlSheng_SelectedIndexChanged(string province)
         {
-            RegisterStartupScript(ActiveWindow.GetWriteBackValueReference(province) + ActiveWindow.GetHideReference());
+            ActiveWindow.WriteBackValue(province);
+            ActiveWindow.Hide();
 
             return UIHelper.Result();
         }

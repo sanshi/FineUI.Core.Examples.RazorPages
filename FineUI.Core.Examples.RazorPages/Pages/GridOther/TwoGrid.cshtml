@@ -13,7 +13,7 @@
             <f:Region ID="Region1" ShowBorder="false" ShowHeader="false" RegionPosition="Left" BodyPadding="0 5 0 0" Width="200" Layout="Fit">
                 <Items>
                     <f:Grid ID="Grid2" ShowBorder="true" ShowHeader="true" Title="表格（班级）" EnableMultiSelect="false" DataIDField="Id" DataTextField="Name"
-                            OnRowSelect="@Url.Handler("Grid2_RowSelect")" OnRowSelectFields="Grid1" OnRowSelectParameter1="@(new Parameter("selectedRowId", "this.getSelectedRow()"))"
+                            OnRowSelect="@Url.Handler("Grid2_RowSelect")" OnRowSelectFields="Grid1" OnRowSelectParameter1="@(Parameter.FromFunction("selectedRowId", "getCurrentControlSelectedRowIdPostbackValue"))"
                             ShowGridHeader="false" DataSource="@ViewBag.Grid2DataSource" SelectedRowID="@ViewBag.Grid2SelectedRowID">
                         <Columns>
                             <f:RowNumberField></f:RowNumberField>
@@ -54,6 +54,14 @@
 
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getCurrentControlSelectedRowIdPostbackValue() {
+            return this.getSelectedRow();
+        }
+
+    </script>
+
 
     <script src="~/res/js/grid.js"></script>
 

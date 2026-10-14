@@ -18,7 +18,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Grid
         
         public IActionResult OnPostGrid1_RowClick(string rowId, string rowText, int rowIndex, string columnText)
         {
-            ShowNotify(String.Format("你点击了第 {0} 行，行ID：{1}，姓名：{2}，列：{3}",
+            ShowNotify(String.Format("你单击了第 {0} 行，行ID：{1}，姓名：{2}，列：{3}",
                 rowIndex + 1, rowId, rowText, columnText));
 
             return UIHelper.Result();

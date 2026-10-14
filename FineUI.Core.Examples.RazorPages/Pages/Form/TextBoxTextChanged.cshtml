@@ -10,9 +10,9 @@
 
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" LabelAlign="Top" Title="简单表单" ShowHeader="true">
         <Items>
-            <f:TextBox ID="TextBox1" Label="文本框一（文本改变事件）" EmptyText="输入字符会立即触发TextChanged事件" OnTextChanged="@Url.Handler("TextBox1_TextChanged")" OnTextChangedParameter1="@(new Parameter("text", "F.ui.TextBox1.getValue()"))">
+            <f:TextBox ID="TextBox1" Label="文本框一（文本改变事件）" EmptyText="输入字符会立即触发TextChanged事件" OnTextChanged="@Url.Handler("TextBox1_TextChanged")" OnTextChangedParameter1="@(Parameter.FromFunction("text", "getTextBox1TextPostbackValue"))">
             </f:TextBox>
-            <f:TextBox ID="TextBox2" Label="文本框二（失去焦点事件）" EmptyText="输入字符后失去焦点，会触发Blur事件" OnBlur="@Url.Handler("TextBox2_Blur")" OnBlurParameter1="@(new Parameter("text", "F.ui.TextBox2.getValue()"))">
+            <f:TextBox ID="TextBox2" Label="文本框二（失去焦点事件）" EmptyText="输入字符后失去焦点，会触发Blur事件" OnBlur="@Url.Handler("TextBox2_Blur")" OnBlurParameter1="@(Parameter.FromFunction("text", "getTextBox2TextPostbackValue"))">
             </f:TextBox>
         </Items>
     </f:SimpleForm>
@@ -23,3 +23,17 @@
 
 }
 
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getTextBox1TextPostbackValue() {
+            return F.ui.TextBox1.getValue();
+        }
+
+        function getTextBox2TextPostbackValue() {
+            return F.ui.TextBox2.getValue();
+        }
+
+    </script>
+}

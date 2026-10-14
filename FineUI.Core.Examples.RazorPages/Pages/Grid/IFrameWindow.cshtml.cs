@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class IFrameWindowModel : BaseModel
+    public class IFrameWindowModel : BaseThirdPartyEditorModel
     {
         public void OnGet()
         {
@@ -21,7 +21,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Grid
             // 1. 这里放置保存窗体中数据的逻辑
 
             // 2. 关闭本窗体（触发窗体的关闭事件）
-            RegisterStartupScript(ActiveWindow.GetHidePostBackReference());
+            ActiveWindow.HidePostBack();
 
             return UIHelper.Result();
         }
@@ -31,7 +31,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Grid
             // 1. 这里放置保存窗体中数据的逻辑
 
             // 2. 隐藏本窗体，然后刷新父窗体
-            RegisterStartupScript(ActiveWindow.GetHideRefreshReference());
+            ActiveWindow.HideRefresh();
 
             return UIHelper.Result();
         }
@@ -41,7 +41,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Grid
             // 1. 这里放置保存窗体中数据的逻辑
 
             // 2. 隐藏本窗体，然后执行JavaScript脚本（关闭当前激活的选项卡）
-            RegisterStartupScript(ActiveWindow.GetHideExecuteScriptReference("parent.removeActiveTab();"));
+            ActiveWindow.HideCallParentFunction("removeActiveTab");
 
             return UIHelper.Result();
         }

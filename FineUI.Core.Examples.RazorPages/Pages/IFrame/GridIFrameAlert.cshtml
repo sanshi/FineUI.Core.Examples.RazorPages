@@ -36,7 +36,7 @@
     </f:Grid>
 
     <f:Window ID="Window1" Title="弹出窗体" Hidden="true" EnableIFrame="true" EnableMaximize="true" Target="Top" EnableResize="true" IsModal="true" Width="800" Height="550" CloseAction="HidePostBack"
-              OnClose="@Url.Handler("Window1_Close")" OnCloseFields="Grid1" OnCloseParameter1="@(new Parameter("Grid1_sourceKey", "F.ui.Grid1.getAttr('data-source-key')"))">
+              OnClose="@Url.Handler("Window1_Close")" OnCloseFields="Grid1" OnCloseParameter1="@(Parameter.FromFunction("Grid1_sourceKey", "getGrid1Grid1_sourceKeyPostbackValue"))">
     </f:Window>
 
 
@@ -44,6 +44,14 @@
 
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getGrid1Grid1_sourceKeyPostbackValue() {
+            return F.ui.Grid1.getAttr('data-source-key');
+        }
+
+    </script>
+
 
     <script src="~/res/js/grid.js"></script>
 

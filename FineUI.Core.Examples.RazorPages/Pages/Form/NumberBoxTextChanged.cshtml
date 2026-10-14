@@ -11,8 +11,8 @@
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" LabelAlign="Top" EnableCollapse="false"
                   Title="简单表单" LabelWidth="120">
         <Items>
-            <f:NumberBox Label="非负整数" ID="NumberBox3" EmptyText="比如 99" NoDecimal="true" NoNegative="true" Required="true" ShowRedStar="true" OnTextChanged="@Url.Handler("NumberBox3_TextChanged")" OnTextChangedParameter1="@(new Parameter("text", "F.ui.NumberBox3.getValue()"))" />
-            <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="@Url.Handler("btnSubmit_Click")" OnClickParameter1="@(new Parameter("text", "F.ui.NumberBox3.getValue()"))"></f:Button>
+            <f:NumberBox Label="非负整数" ID="NumberBox3" EmptyText="比如 99" NoDecimal="true" NoNegative="true" Required="true" ShowRedStar="true" OnTextChanged="@Url.Handler("NumberBox3_TextChanged")" OnTextChangedParameter1="@(Parameter.FromFunction("text", "getNumberBox3TextPostbackValue"))" />
+            <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="@Url.Handler("btnSubmit_Click")" OnClickParameter1="@(Parameter.FromFunction("text", "getNumberBox3TextPostbackValue"))"></f:Button>
         </Items>
     </f:SimpleForm>
     <br />
@@ -22,3 +22,13 @@
 
 }
 
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getNumberBox3TextPostbackValue() {
+            return F.ui.NumberBox3.getValue();
+        }
+
+    </script>
+}

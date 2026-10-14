@@ -35,7 +35,7 @@
     <br>
     <br>
 
-    <f:Button ID="btnGetSelectedValues" OnClick="@Url.Handler("btnGetSelectedValues_Click")" OnClickParameter1="@(new Parameter("selectedNodes", "getSelectedNodes()"))" CssClass="marginr" Text="获取选中的节点列表"></f:Button>
+    <f:Button ID="btnGetSelectedValues" OnClick="@Url.Handler("btnGetSelectedValues_Click")" OnClickParameter1="@(Parameter.FromFunction("selectedNodes", "getCurrentControlSelectedNodesPostbackValue"))" CssClass="marginr" Text="获取选中的节点列表"></f:Button>
 
     <f:Button ID="btnSelectOthers" OnClick="@Url.Handler("btnSelectOthers_Click")" Text="继续选中[合肥市]和[黄山市]"></f:Button>
     <br>
@@ -50,6 +50,14 @@
 
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getCurrentControlSelectedNodesPostbackValue() {
+            return getSelectedNodes();
+        }
+
+    </script>
+
 
     <script>
         function getSelectedNodes() {

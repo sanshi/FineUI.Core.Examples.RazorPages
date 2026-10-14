@@ -22,7 +22,7 @@
         <PageItems>
             <f:Button Text="清空数据" ID="btnClearData" OnClick="@Url.Handler("btnClearData_Click")"></f:Button>
             <f:ToolbarFill></f:ToolbarFill>
-            <f:Button Text="重新绑定数据" ID="btnRebind" Icon="Reload" OnClick="@Url.Handler("btnRebindData_Click")" OnClickParameter1="@(new Parameter("fields", "F.ui.Grid1.fields"))"></f:Button>
+            <f:Button Text="重新绑定数据" ID="btnRebind" Icon="Reload" OnClick="@Url.Handler("btnRebindData_Click")" OnClickParameter1="@(Parameter.FromFunction("fields", "getGrid1FieldsPostbackValue"))"></f:Button>
             <f:ToolbarFill></f:ToolbarFill>
             <f:Button Text="选中所有行" ID="btnSelectAll" OnClick="@Url.Handler("btnSelectAll_Click")"></f:Button>
         </PageItems>
@@ -34,6 +34,14 @@
 
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getGrid1FieldsPostbackValue() {
+            return F.ui.Grid1.fields;
+        }
+
+    </script>
+
 
     <script src="~/res/js/grid.js"></script>
 

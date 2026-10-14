@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.IFrame.GridIFrameAlertScript
 {
-    public class IFrameWindowModel : BaseModel
+    public class IFrameWindowModel : BaseThirdPartyEditorModel
     {
         public void OnGet()
         {
@@ -20,8 +20,13 @@ namespace FineUI.Core.Examples.RazorPages.Pages.IFrame.GridIFrameAlertScript
 
             // 2. 先弹出提示对话框，再回发父窗体
             // 2. 如果无需传递参数，可以将 GetHideExecuteScriptReference 改为 GetHidePostBackReference 即可！
-            string scripts = String.Format("doCustomPostBack('{0}');", "参数 - " + DateTime.Now.Millisecond);
-            Alert.ShowInTop("保存成功！", String.Empty, MessageBoxIcon.Success, ActiveWindow.GetHideExecuteScriptReference(scripts));
+            new Alert
+            {
+                Message = "保存成功！",
+                MessageBoxIcon = MessageBoxIcon.Success,
+                Target = Target.Top,
+                OkCommand = ClientCommand.HideActiveWindowCallParentFunction("doCustomPostBack", "参数 - " + DateTime.Now.Millisecond)
+            }.Show();
 
 
             return UIHelper.Result();

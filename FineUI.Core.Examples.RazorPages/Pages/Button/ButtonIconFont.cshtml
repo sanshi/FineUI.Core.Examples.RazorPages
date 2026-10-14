@@ -15,7 +15,7 @@
     <f:Button ID="btnIcon4" Text="图标在下面" IconAlign="Bottom" IconFont="_Phone" />
     <br />
     <br />
-    <f:Button ID="btnCustomIconFont" Text="点击修改图标（在三个图标之前切换）" IconFont="_VolumeUp" OnClick="@Url.Handler("btnCustomIconFont_Click")" OnClickParameter1="@(new Parameter("iconFont", "this.iconFont"))" />
+    <f:Button ID="btnCustomIconFont" Text="点击修改图标（在三个图标之前切换）" IconFont="_VolumeUp" OnClick="@Url.Handler("btnCustomIconFont_Click")" OnClickParameter1="@(Parameter.FromFunction("iconFont", "getCurrentControlIconFontPostbackValue"))" />
     <br />
     <br />
     只有图片的按钮：
@@ -40,3 +40,13 @@
     <br />
 }
 
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getCurrentControlIconFontPostbackValue() {
+            return this.iconFont;
+        }
+
+    </script>
+}

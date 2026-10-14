@@ -45,7 +45,7 @@
     </f:ButtonGroup>
     <br />
     <f:Label Text="可以不选（AllowNonePress=true）："></f:Label>
-    <f:ButtonGroup ID="ButtonGroup4" EnablePressGroup="true" AllowNonePress="true" OnPressChanged="@Url.Handler("ButtonGroup_PressChanged")" OnPressChangedParameter1="@(new Parameter("pressedInfo", "getPressedInfo(this)"))">
+    <f:ButtonGroup ID="ButtonGroup4" EnablePressGroup="true" AllowNonePress="true" OnPressChanged="@Url.Handler("ButtonGroup_PressChanged")" OnPressChangedParameter1="@(Parameter.FromFunction("pressedInfo", "getCurrentControlPressedInfoPostbackValue"))">
         <f:Button ID="Button15" Text="按钮一" EnablePress="true" Size="Large" IconAlign="Top" Icon="Email" />
         <f:Button ID="Button16" Text="按钮二" EnablePress="true" Size="Large" IconAlign="Bottom" Icon="Star" />
         <f:Button ID="Button17" Text="按钮三" EnablePress="true" Pressed="true" Size="Large" IconAlign="Top" IconFont="_Camera" />
@@ -53,7 +53,7 @@
     </f:ButtonGroup>
     <br />
     <f:Label Text="可以多选（AllowMultiPress=true）："></f:Label>
-    <f:ButtonGroup ID="ButtonGroup5" EnablePressGroup="true" AllowMultiPress="true" OnPressChanged="@Url.Handler("ButtonGroup_PressChanged")" OnPressChangedParameter1="@(new Parameter("pressedInfo", "getPressedInfo(this)"))">
+    <f:ButtonGroup ID="ButtonGroup5" EnablePressGroup="true" AllowMultiPress="true" OnPressChanged="@Url.Handler("ButtonGroup_PressChanged")" OnPressChangedParameter1="@(Parameter.FromFunction("pressedInfo", "getCurrentControlPressedInfoPostbackValue"))">
         <f:Button ID="Button19" Text="按钮一" EnablePress="true" Size="Large" IconAlign="Top" Icon="Email" />
         <f:Button ID="Button20" Text="按钮二" EnablePress="true" Size="Large" IconAlign="Bottom" Icon="Star" />
         <f:Button ID="Button21" Text="按钮三" EnablePress="true" Size="Large" IconAlign="Top" IconFont="_Camera" />
@@ -64,6 +64,14 @@
 
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getCurrentControlPressedInfoPostbackValue() {
+            return getPressedInfo(this);
+        }
+
+    </script>
+
 
     <script>
 

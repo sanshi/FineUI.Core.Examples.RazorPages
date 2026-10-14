@@ -100,7 +100,7 @@
 
     <script>
 
-        @Html.Raw(ViewBag.StartupScript)
+        window.GRID_COLUMNCONFIG_DEFAULT = @Json.Serialize(ViewBag.DefaultColumnConfig);
 
         function onRefreshClick(event) {
             window.location.reload();

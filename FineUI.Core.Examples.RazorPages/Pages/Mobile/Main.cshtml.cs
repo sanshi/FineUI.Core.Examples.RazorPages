@@ -42,7 +42,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Mobile
 
 
             // 移动菜单数据源
-            ViewBag.StartupScript = String.Format("window.MENUSOURCE = {0};", menuSource.ToString());
+            ViewBag.MenuSource = menuSource;
             
         }
 

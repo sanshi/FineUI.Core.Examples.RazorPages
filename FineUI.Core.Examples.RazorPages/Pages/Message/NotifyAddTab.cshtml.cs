@@ -23,7 +23,8 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Message
 
             Notify n = new Notify();
             n.ID = notifyId;
-            n.MessageRawHtml = new RawHtml("<div class=\"addtabcontainer\"><a href=\"javascript:openExampleHello('" + notifyId + "');\">向父页面添加选项卡</a></div>");
+            // 通知 ID 是本次生成的 GUID；链接只传数据，由页面的委托事件执行动作。
+            n.MessageRawHtml = new RawHtml("<div class=\"addtabcontainer\"><a class=\"addtablink\" href=\"#\" data-notify-id=\"" + notifyId + "\">向父页面添加选项卡</a></div>");
             n.MessageBoxIcon = MessageBoxIcon.None;
             n.PositionX = Position.Right;
             n.PositionY = Position.Bottom;

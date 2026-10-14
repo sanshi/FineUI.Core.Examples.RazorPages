@@ -31,7 +31,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 
             // 重新绑定表格，并回到「新增」状态（等同于模拟点击新增按钮）
             UIHelper.Grid("Grid1").DataSource(table, Grid1_fields);
-            RegisterStartupScript("onNewButtonClick();");
+            global::FineUI.Core.PageContext.InvokeFunction("onNewButtonClick");
 
             return UIHelper.Result();
         }
@@ -77,7 +77,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 
             // 重新绑定表格，并选中当前编辑或者新增的行
             UIHelper.Grid("Grid1").DataSource(table, Grid1_fields);
-            RegisterStartupScript(String.Format("F.ui.Grid1.selectRow('{0}');", rowData["Id"]));
+            UIHelper.Grid("Grid1").SelectedRowIDArray(rowData["Id"].ToString());
 
             return UIHelper.Result();
         }

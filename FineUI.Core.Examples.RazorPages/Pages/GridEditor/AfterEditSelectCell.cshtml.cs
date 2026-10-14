@@ -45,7 +45,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.GridEditor
             UIHelper.Label("labResult").Text(String.Format("用户修改的数据：<pre>{0}</pre>", EncodeJson(Grid1_modifiedData)));
 
             // 重新选中之前的单元格
-            RegisterStartupScript(String.Format("F.ui.Grid1.selectCell('{0}','{1}');", selectedCell[0], selectedCell[1]));
+            UIHelper.Grid("Grid1").SelectedCell(selectedCell[0], selectedCell[1]);
 
             // 这个提示在父页面弹出，会让当前表格所在的页面失去焦点，从而无法进行后续的 TAB、ENTER 操作
             //

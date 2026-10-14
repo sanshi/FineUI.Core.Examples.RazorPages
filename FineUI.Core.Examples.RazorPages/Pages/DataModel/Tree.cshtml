@@ -32,7 +32,7 @@
     </f:Tree>
     <br>
 
-    <f:Button ID="btnGetCheckedValues" OnClick="@Url.Handler("btnGetCheckedValues_Click")" OnClickParameter1="@(new Parameter("CheckedNodes", "getCheckedNodes()"))" Text="获取选中的项"></f:Button>
+    <f:Button ID="btnGetCheckedValues" OnClick="@Url.Handler("btnGetCheckedValues_Click")" OnClickParameter1="@(Parameter.FromFunction("CheckedNodes", "getCurrentControlCheckedNodesPostbackValue"))" Text="获取选中的项"></f:Button>
     <br>
 
     <f:Label ID="labResult" EncodeText="false"></f:Label>
@@ -42,6 +42,14 @@
 
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getCurrentControlCheckedNodesPostbackValue() {
+            return getCheckedNodes();
+        }
+
+    </script>
+
 
     <script>
         function getCheckedNodes() {

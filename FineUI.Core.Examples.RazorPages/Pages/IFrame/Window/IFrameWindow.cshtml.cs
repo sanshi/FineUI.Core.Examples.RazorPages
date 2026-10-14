@@ -21,7 +21,8 @@ namespace FineUI.Core.Examples.RazorPages.Pages.IFrame.Window
 
             // 然后关闭本窗体
             var panel1 = UIHelper.Panel("Panel1");
-            RegisterStartupScript(panel1.GetClearDirtyReference() + ActiveWindow.GetHideReference());
+            panel1.ClearDirty();
+            ActiveWindow.Hide();
 
             return UIHelper.Result();
         }

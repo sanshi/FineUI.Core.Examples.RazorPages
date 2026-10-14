@@ -22,13 +22,21 @@
     @{
         Button btn = new Button();
         btn.Text = "工具栏中的按钮数（动态添加的按钮）";
-        btn.OnClick = new Event("click", Url.Handler("btnDynamic_Click"), new Parameter("count", "F.ui.Toolbar1.items.length"));
+        btn.OnClick = new Event("click", Url.Handler("btnDynamic_Click"), Parameter.FromFunction("count", "getToolbar1CountPostbackValue"));
         F.GetControl<Toolbar>("Toolbar1").Items.Add(btn);
     }
 
 }
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getToolbar1CountPostbackValue() {
+            return F.ui.Toolbar1.items.length;
+        }
+
+    </script>
+
 
     <script type="text/javascript">
 

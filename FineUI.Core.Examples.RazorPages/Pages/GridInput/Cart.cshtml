@@ -46,7 +46,7 @@
                         总计：<span id="totalPrice" style="color: red; font-size: 1.5em; font-weight: bold;"></span>
                     </div>
                     <div>
-                        <f:Button Text="去结算" Enabled="false" Size="Large" ID="btnGotoPay" OnClick="@Url.Handler("btnGotoPay_Click")" OnClickParameter1="@(new Parameter("inputs", "getUserInputs()"))"></f:Button>
+                        <f:Button Text="去结算" Enabled="false" Size="Large" ID="btnGotoPay" OnClick="@Url.Handler("btnGotoPay_Click")" OnClickParameter1="@(Parameter.FromFunction("inputs", "getCurrentControlInputsPostbackValue"))"></f:Button>
                     </div>
                 </div>
             </f:ContentPanel>
@@ -58,6 +58,14 @@
 
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getCurrentControlInputsPostbackValue() {
+            return getUserInputs();
+        }
+
+    </script>
+
 
     <script src="~/res/js/grid.js"></script>
 

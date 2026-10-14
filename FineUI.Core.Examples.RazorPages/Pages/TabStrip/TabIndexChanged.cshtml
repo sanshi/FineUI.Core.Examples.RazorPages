@@ -9,7 +9,7 @@
 @section body {
 
     <f:TabStrip ID="TabStrip1" IsFluid="true" Height="350" ShowBorder="true" TabPosition="Top" EnableTabCloseMenu="false" ActiveTabIndex="1"
-                OnTabIndexChanged="@Url.Handler("TabStrip1_TabIndexChanged")" OnTabIndexChangedParameter1="@(new Parameter("activeIndex", "F.ui.TabStrip1.getActiveTabIndex()"))">
+                OnTabIndexChanged="@Url.Handler("TabStrip1_TabIndexChanged")" OnTabIndexChangedParameter1="@(Parameter.FromFunction("activeIndex", "getTabStrip1ActiveIndexPostbackValue"))">
         <Tabs>
             <f:Tab Title="标签一" BodyPadding="10" Layout="Fit">
                 <Items>
@@ -42,8 +42,18 @@
 
     <f:Button ID="Button2" CssClass="marginr" _ValidateForms="SimpleForm1" Text="验证第一个标签中的表单"></f:Button>
 
-    <f:Button ID="Button3" Text="打开下一个标签" OnClick="@Url.Handler("Button3_Click")" OnClickParameter1="@(new Parameter("activeIndex", "F.ui.TabStrip1.getActiveTabIndex()"))"></f:Button>
+    <f:Button ID="Button3" Text="打开下一个标签" OnClick="@Url.Handler("Button3_Click")" OnClickParameter1="@(Parameter.FromFunction("activeIndex", "getTabStrip1ActiveIndexPostbackValue"))"></f:Button>
 
 
 }
 
+@section script {
+
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getTabStrip1ActiveIndexPostbackValue() {
+            return F.ui.TabStrip1.getActiveTabIndex();
+        }
+
+    </script>
+}

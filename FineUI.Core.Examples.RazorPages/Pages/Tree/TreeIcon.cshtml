@@ -33,7 +33,7 @@
     </f:Tree>
     <br>
 
-    <f:Button ID="btnGetSelectedNode" OnClick="@Url.Handler("btnGetSelectedNode_Click")" OnClickParameter1="@(new Parameter("selectedNode", "getSelectedNode()"))" CssClass="marginr" Text="获取选中的节点"></f:Button>
+    <f:Button ID="btnGetSelectedNode" OnClick="@Url.Handler("btnGetSelectedNode_Click")" OnClickParameter1="@(Parameter.FromFunction("selectedNode", "getCurrentControlSelectedNodePostbackValue"))" CssClass="marginr" Text="获取选中的节点"></f:Button>
     <br>
 
     <f:Label ID="labResult" EncodeText="false"></f:Label>
@@ -43,6 +43,14 @@
 
 
 @section script {
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getCurrentControlSelectedNodePostbackValue() {
+            return getSelectedNode();
+        }
+
+    </script>
+
 
     <script>
         function getSelectedNode() {

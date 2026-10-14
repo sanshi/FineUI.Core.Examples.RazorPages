@@ -34,7 +34,7 @@
               CssClass="marginr" Badge="true" BadgeType="Success" BadgeAnimationType="Fade" />
     <br />
     <br />
-    <f:Button ID="btnCustomIcon" Text="自定义图标（点击修改图标）" IconUrl="~/res/images/16/1.png" CssClass="marginr" Badge="true" OnClick="@Url.Handler("btnCustomIcon_Click")" OnClickParameter1="@(new Parameter("iconUrl", "this.icon"))" />
+    <f:Button ID="btnCustomIcon" Text="自定义图标（点击修改图标）" IconUrl="~/res/images/16/1.png" CssClass="marginr" Badge="true" OnClick="@Url.Handler("btnCustomIcon_Click")" OnClickParameter1="@(Parameter.FromFunction("iconUrl", "getCurrentControlIconUrlPostbackValue"))" />
     <br />
     <br />
             只有图片的按钮：
@@ -46,7 +46,7 @@
               CssClass="marginr" Badge="true" BadgeText="10" BadgeType="Success" />
     <br />
     <br />
-    <f:Button ID="btnChangeBadge" Text="徽标数字加一" OnClick="@Url.Handler("btnChangeBadge_Click")" OnClickParameter1="@(new Parameter("badgeNumber", "F.ui.btnBadgeNumber.badgeText", ParameterMode.Script))" />
+    <f:Button ID="btnChangeBadge" Text="徽标数字加一" OnClick="@Url.Handler("btnChangeBadge_Click")" OnClickParameter1="@(Parameter.FromFunction("badgeNumber", "getbtnBadgeNumberBadgeNumberPostbackValue"))" />
 
     <br />
     <br />
@@ -67,7 +67,17 @@
     <br />
 }
 
+@section script {
 
+    <script>
+        // 请求发送前读取当前值；取消确认或发送前检查未通过时不读取。
+        function getCurrentControlIconUrlPostbackValue() {
+            return this.icon;
+        }
 
+        function getbtnBadgeNumberBadgeNumberPostbackValue() {
+            return F.ui.btnBadgeNumber.badgeText;
+        }
 
-
+    </script>
+}

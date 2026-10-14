@@ -18,7 +18,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Other
         
         public IActionResult OnPostButton4_Click()
         {
-            RegisterStartupScript("test();");
+            global::FineUI.Core.PageContext.InvokeFunction("test");
 
             return UIHelper.Result();
         }

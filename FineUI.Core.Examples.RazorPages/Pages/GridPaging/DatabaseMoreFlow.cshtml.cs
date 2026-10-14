@@ -48,7 +48,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.GridPaging
 
             if (dataIndex == pageCount - 1)
             {
-                RegisterStartupScript("disableMoreButton();");
+                global::FineUI.Core.PageContext.InvokeFunction("disableMoreButton");
             }
             return UIHelper.Result();
         }
