@@ -25,7 +25,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.IFrame.GridIFrameAlertScript
                 Message = "保存成功！",
                 MessageBoxIcon = MessageBoxIcon.Success,
                 Target = Target.Top,
-                OkCommand = ActiveWindow.CreateHideInvokeFunctionCommand("doCustomPostBack", "参数 - " + DateTime.Now.Millisecond)
+                OkCommand = ActiveWindow.HideInvokeFunctionCommand("doCustomPostBack", "参数 - " + DateTime.Now.Millisecond)
             }.Show();
 
 
