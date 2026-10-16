@@ -74,8 +74,9 @@ namespace FineUI.Core.Examples.RazorPages.Pages.GridEditor
 
             ViewBag.Grid1Columns = columns.ToArray();
 
-            ViewBag.MinYear = _minYear;
-            ViewBag.MaxYear = _maxYear;
+            // 客户端编辑与服务端动态建列读取同一份年份范围。
+            ViewBag.YearRangeJson = Newtonsoft.Json.JsonConvert.SerializeObject(
+                new { minYear = _minYear, maxYear = _maxYear });
         }
 
 

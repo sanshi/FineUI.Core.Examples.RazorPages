@@ -96,11 +96,13 @@
 
 @section script {
 
+    <script type="application/json" id="defaultColumnConfig">@Html.Raw(ViewBag.DefaultColumnConfigJson)</script>
+
     <script src="~/res/js/grid.js"></script>
 
     <script>
 
-        window.GRID_COLUMNCONFIG_DEFAULT = @Json.Serialize(ViewBag.DefaultColumnConfig);
+        window.GRID_COLUMNCONFIG_DEFAULT = JSON.parse(document.getElementById('defaultColumnConfig').textContent);
 
         function onRefreshClick(event) {
             window.location.reload();

@@ -31,12 +31,15 @@
 
 @section script {
 
+    <script type="application/json" id="yearRange">@Html.Raw(ViewBag.YearRangeJson)</script>
+
     <script src="~/res/js/grid.js"></script>
 
     <script>
 
-        window._MINYEAR = @Json.Serialize(ViewBag.MinYear);
-        window._MAXYEAR = @Json.Serialize(ViewBag.MaxYear);
+        var yearRange = JSON.parse(document.getElementById('yearRange').textContent);
+        window._MINYEAR = yearRange.minYear;
+        window._MAXYEAR = yearRange.maxYear;
 
         function updateTotalCell(grid, rowId) {
             var me = grid, total = 0;

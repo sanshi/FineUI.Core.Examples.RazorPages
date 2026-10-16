@@ -41,8 +41,13 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Mobile
             }
 
 
-            // 移动菜单数据源
-            ViewBag.MenuSource = menuSource;
+            // 菜单标题和链接作为数据输出，避免把 XML 内容拼进可执行脚本。
+            ViewBag.MenuDataJson = Newtonsoft.Json.JsonConvert.SerializeObject(
+                menuSource,
+                new Newtonsoft.Json.JsonSerializerSettings
+                {
+                    StringEscapeHandling = Newtonsoft.Json.StringEscapeHandling.EscapeHtml
+                });
             
         }
 

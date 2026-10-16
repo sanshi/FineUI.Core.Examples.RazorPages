@@ -3,6 +3,12 @@
 @{
     ViewBag.Title = "ThirdParty/EChartsDynamicBarIFrame";
     Layout = null;
+    var safeBarOptionsJson = Newtonsoft.Json.JsonConvert.SerializeObject(
+        Newtonsoft.Json.Linq.JToken.Parse((string)ViewBag.BarOptions),
+        new Newtonsoft.Json.JsonSerializerSettings
+        {
+            StringEscapeHandling = Newtonsoft.Json.StringEscapeHandling.EscapeHtml
+        });
 }
 
 <!DOCTYPE html>
@@ -15,10 +21,11 @@
     <div id="container" style="height: 100%"></div>
 
     <script src="~/res/third-party/echarts/echarts.min.js"></script>
+    <script id="bar-options-data" type="application/json">@Html.Raw(safeBarOptionsJson)</script>
     <script>
         var dom = document.getElementById("container");
         var myChart = echarts.init(dom);
-        myChart.setOption(JSON.parse('@Html.Raw(ViewBag.BarOptions)'));
+        myChart.setOption(JSON.parse(document.getElementById('bar-options-data').textContent));
     </script>
 </body>
 </html>

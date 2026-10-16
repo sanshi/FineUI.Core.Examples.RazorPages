@@ -65,7 +65,13 @@ namespace FineUI.Core.Examples.RazorPages.Pages.GridMove
         {
             ViewBag.Grid1Columns = GetSavedColumns();
 
-            ViewBag.DefaultColumnConfig = GRID_COLUMNCONFIG_DEFAULT;
+            // 还原按钮使用服务端的默认列配置，标题变动后也只维护这一份数据。
+            ViewBag.DefaultColumnConfigJson = Newtonsoft.Json.JsonConvert.SerializeObject(
+                GRID_COLUMNCONFIG_DEFAULT,
+                new Newtonsoft.Json.JsonSerializerSettings
+                {
+                    StringEscapeHandling = Newtonsoft.Json.StringEscapeHandling.EscapeHtml
+                });
         }
 
 

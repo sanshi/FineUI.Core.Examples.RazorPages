@@ -212,9 +212,11 @@
 
 @section script {
 
+    <script id="mobile-menu-data" type="application/json">@Html.Raw(ViewBag.MenuDataJson)</script>
+
     <script>
 
-        window.MENUSOURCE = @Json.Serialize(ViewBag.MenuSource);
+        var MENUSOURCE = JSON.parse(document.getElementById('mobile-menu-data').textContent);
 
             // 从二级菜单返回
             function onBacktoPanel1Click(event) {

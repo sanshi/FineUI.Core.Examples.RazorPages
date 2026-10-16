@@ -64,11 +64,13 @@
 
 @section script {
 
+    <script type="application/json" id="hobbyData">@Html.Raw(ViewBag.HobbyDataJson)</script>
+
     <script src="~/res/js/grid.js"></script>
 
     <script>
 
-        @Html.Raw(ViewBag.hobbyTableScript)
+        window.hobbyTable = JSON.parse(document.getElementById('hobbyData').textContent);
 
         function getTextByHobbies(value) {
             var hobbies = value.split(',');

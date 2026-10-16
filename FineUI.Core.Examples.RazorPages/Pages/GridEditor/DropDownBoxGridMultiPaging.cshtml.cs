@@ -30,8 +30,11 @@ namespace FineUI.Core.Examples.RazorPages.Pages.GridEditor
 
             ViewBag.Grid2DataSource = hobbyTable;
 
-            string hobbyTableScript = String.Format("window.hobbyTable={0};", JsonConvert.SerializeObject(hobbyTable));
-            ViewBag.hobbyTableScript = hobbyTableScript;
+            // 分页编辑时仍需查其它分页的爱好名称，输出完整列表供页面解析。
+            ViewBag.HobbyDataJson = JsonConvert.SerializeObject(hobbyTable, new JsonSerializerSettings
+            {
+                StringEscapeHandling = StringEscapeHandling.EscapeHtml
+            });
         }
 
 
