@@ -26,8 +26,8 @@
                            Renderer="Date" RendererArgument="yyyy-MM-dd" Width="150" Hidden="true" />
             <f:RenderCheckField HeaderText="是否在校" ColumnID="AtSchool" DataField="AtSchool" EnableColumnEdit="false" />
             <f:RenderField HeaderText="所学专业" ColumnID="Major" DataField="Major" ExpandUnusedSpace="true" MinWidth="150" />
-            <f:RenderField HeaderText="省" ColumnID="Sheng" DataField="Sheng" Width="100" />
-            <f:RenderField HeaderText="市" ColumnID="Shi" DataField="Shi" Width="150" />
+            <f:RenderField HeaderText="省" ColumnID="Sheng" DataField="Sheng" Width="100" RendererFunction="renderSheng" />
+            <f:RenderField HeaderText="市" ColumnID="Shi" DataField="Shi" Width="150" RendererFunction="renderShi" />
             <f:RenderField ColumnID="Edit" Width="50" TextAlign="Center" EnableHeaderMenu="false" RendererFunction="renderEditAction" />
             <f:RenderField ColumnID="Delete" Width="50" TextAlign="Center" EnableHeaderMenu="false" RendererFunction="renderDeleteAction" />
         </Columns>
@@ -60,7 +60,7 @@
                         <f:ListItem Text="计算机科学与工程系" Value="计算机科学与工程系" />
                     </f:DropDownList>
                     <f:DropDownList ID="ddlSheng" Label="省" ShowRedStar="true" Required="true" AutoSelectFirstItem="false"
-                                    DataSource="@DataSourceUtil.SHENG_JSON">
+                                    DataSource="@ProvinceCityCountyData.Provinces" DataTextField="Name" DataValueField="Code">
                         <Listeners>
                             <f:Listener Event="change" Handler="onShengChange"></f:Listener>
                         </Listeners>
@@ -89,11 +89,34 @@
 
 @section script {
 
+    <script type="application/json" id="provinceCityData">@Html.Raw(ProvinceCityCountyData.ProvinceCityJson)</script>
+
     <script src="~/res/js/grid.js"></script>
 
     <script>
 
-        window._SHI = @Json.Serialize(ViewBag.CityData);
+        var provinceCityData = JSON.parse(document.getElementById('provinceCityData').textContent);
+        window._SHENG = provinceCityData.provinces;
+        window._SHI = provinceCityData.cities;
+        // 表格保存编码，显示时从同一份省市数据查询名称。
+        function findPlaceName(items, code) {
+            for (var i = 0; i < items.length; i++) {
+                if (items[i][0] === code) {
+                    return items[i][1];
+                }
+            }
+            return '';
+        }
+
+        function renderSheng(value) {
+            return findPlaceName(window._SHENG, value);
+        }
+
+        function renderShi(value, params) {
+            var provinceCode = params.rowValue['Sheng'];
+            return findPlaceName(window._SHI[provinceCode] || [], value);
+        }
+
 
         // 行内的编辑图标：表格的命令列只在 RazorForms 开发模式下由服务端渲染，
         // RazorPages 这一栈改用渲染函数画图标 + 在表格元素上做事件委托

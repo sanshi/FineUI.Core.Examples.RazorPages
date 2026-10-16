@@ -17,7 +17,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.IFrame.PassValue
 
         public IActionResult OnPostDdlSheng_SelectedIndexChanged(string province)
         {
-            ActiveWindow.WriteBackValue(province);
+            ActiveWindow.WriteBackValue(ProvinceCityCountyData.ProvinceName(province));
             ActiveWindow.Hide();
 
             return UIHelper.Result();

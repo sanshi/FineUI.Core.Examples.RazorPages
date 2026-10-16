@@ -18,7 +18,7 @@
             </f:RenderField>
             <f:RenderField HeaderText="所在省" ColumnID="Sheng" DataField="Sheng" Width="150" RendererFunction="renderSheng ">
                 <Editor>
-                    <f:DropDownList ID="ddlSheng" Required="true" DataSource="@DataSourceUtil.SHENG_JSON"></f:DropDownList>
+                    <f:DropDownList ID="ddlSheng" Required="true" DataSource="@ProvinceCityCountyData.Provinces" DataTextField="Name" DataValueField="Code"></f:DropDownList>
                 </Editor>
             </f:RenderField>
             <f:RenderField HeaderText="所在市" ColumnID="Shi" DataField="Shi" Width="150" RendererFunction="renderShi">
@@ -60,50 +60,16 @@
 
 @section script {
 
+    <script type="application/json" id="provinceCityData">@Html.Raw(ProvinceCityCountyData.ProvinceCityJson)</script>
+
     <script src="~/res/js/grid.js"></script>
 
     <script>
 
-        window._SHENG = @Json.Serialize(ViewBag.ProvinceData);
-        window._SHI = @Json.Serialize(ViewBag.CityData);
-
-        // 省市的数据输出到前台，类似如下结构
-        /*
-        window._SHENG = [
-            ["001", "北京"],
-            ["002", "河南"],
-            ["003", "河北"],
-            ["004", "湖南"],
-            ["005", "湖北"],
-            ["006", "广西"],
-            ["007", "安徽"]
-        ];
-        window._SHI = {
-            "001": [
-                ["001001", "北京市"]
-            ],
-            "002": [
-                ["002001", "郑州市"],
-                ["002002", "开封市"],
-                ["002003", "洛阳市"],
-                ["002004", "平顶山市"],
-                ["002005", "安阳市"],
-                ["002006", "鹤壁市"],
-                ["002007", "新乡市"],
-                ["002008", "焦作市"],
-                ["002009", "濮阳市"],
-                ["002010", "许昌市"],
-                ["002011", "漯河市"],
-                ["002012", "三门峡市"],
-                ["002013", "南阳市"],
-                ["002014", "商丘市"],
-                ["002015", "信阳市"],
-                ["002016", "周口市"],
-                ["002017", "驻马店市"],
-                ["002018", "济源市"]
-            ]
-        };
-        */
+        // 省市编码和显示名称来自非执行 JSON 数据块。
+        var provinceCityData = JSON.parse(document.getElementById('provinceCityData').textContent);
+        window._SHENG = provinceCityData.provinces;
+        window._SHI = provinceCityData.cities;
 
         // 渲染性别单元格
         function renderGender(value) {

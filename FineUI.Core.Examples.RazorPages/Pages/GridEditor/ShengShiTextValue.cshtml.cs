@@ -25,56 +25,6 @@ namespace FineUI.Core.Examples.RazorPages.Pages.GridEditor
         private void LoadData()
         {
             ViewBag.Grid1DataSource = GetSourceData();
-
-            // 准备省数据
-            JArray shengData = new JArray();
-            shengData.Add(new JArray("001", "北京"));
-            shengData.Add(new JArray("002", "河南"));
-            shengData.Add(new JArray("003", "河北"));
-            shengData.Add(new JArray("004", "湖南"));
-            shengData.Add(new JArray("005", "湖北"));
-            shengData.Add(new JArray("006", "广西"));
-            shengData.Add(new JArray("007", "安徽"));
-
-            // 准备市数据
-            JObject shiData = new JObject();
-            foreach (JArray item in shengData)
-            {
-                string shengValue = item[0].Value<string>();
-                string shengText = item[1].Value<string>();
-
-                JArray newSheng = new JArray();
-                JArray sheng = DataSourceUtil.SHI_JSON[shengText] as JArray;
-                int num = 1;
-                foreach (string shi in sheng)
-                {
-                    JArray newShi = new JArray();
-                    newShi.Add(shengValue + PaddingLeft(num));
-                    newShi.Add(shi);
-                    num++;
-
-                    newSheng.Add(newShi);
-                }
-
-                shiData[shengValue] = newSheng;
-            }
-
-            ViewBag.ProvinceData = shengData;
-            ViewBag.CityData = shiData;
-        }
-
-        private string PaddingLeft(int value)
-        {
-            StringBuilder sb = new StringBuilder();
-
-            string str = value.ToString();
-            for (int i = 0, count = 3 - str.Length; i < count; i++)
-            {
-                sb.Append("0");
-            }
-            sb.Append(str);
-
-            return sb.ToString();
         }
 
 

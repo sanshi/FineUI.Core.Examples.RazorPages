@@ -24,8 +24,6 @@ namespace FineUI.Core.Examples.RazorPages.Pages.GridEditor
         private void LoadData()
         {
             ViewBag.Grid1DataSource = GetSourceData();
-
-            ViewBag.CityData = DataSourceUtil.SHI_JSON;
         }
 
 
@@ -94,8 +92,8 @@ namespace FineUI.Core.Examples.RazorPages.Pages.GridEditor
             row[0] = 101;
             row[1] = "张萍萍";
             row[2] = 0;
-            row[3] = "河南";
-            row[4] = "驻马店市";
+            row[3] = "002";
+            row[4] = "002017";
             table.Rows.Add(row);
 
 
@@ -103,8 +101,8 @@ namespace FineUI.Core.Examples.RazorPages.Pages.GridEditor
             row[0] = 102;
             row[1] = "陈飞";
             row[2] = 1;
-            row[3] = "安徽";
-            row[4] = "合肥市";
+            row[3] = "007";
+            row[4] = "007001";
             table.Rows.Add(row);
 
 
@@ -112,8 +110,8 @@ namespace FineUI.Core.Examples.RazorPages.Pages.GridEditor
             row[0] = 103;
             row[1] = "董婷婷";
             row[2] = 0;
-            row[3] = "北京";
-            row[4] = "北京市";
+            row[3] = "001";
+            row[4] = "001001";
             table.Rows.Add(row);
 
             row = table.NewRow();

@@ -25,11 +25,11 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Mobile.Window
             List<ListItem> items = new List<ListItem>();
             ListItem item = new ListItem();
             items.Add(new ListItem("选择省份", "-1"));
-            foreach (string sheng in DataSourceUtil.SHENG_JSON)
+            foreach (ProvinceCityCountyItem sheng in ProvinceCityCountyData.Provinces)
             {
                 item = new ListItem();
-                item.Text = sheng;
-                item.Value = sheng;
+                item.Text = sheng.Name;
+                item.Value = sheng.Code;
                 items.Add(item);
             }
 
@@ -60,11 +60,11 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Mobile.Window
             items.Add(new ListItem("选择地区市", "-1", true));
             if (!String.IsNullOrEmpty(sheng) && sheng != "-1")
             {
-                foreach (string shi in DataSourceUtil.SHI_JSON.Value<JArray>(sheng))
+                foreach (ProvinceCityCountyItem shi in ProvinceCityCountyData.Cities(sheng))
                 {
                     ListItem item = new ListItem();
-                    item.Text = shi;
-                    item.Value = shi;
+                    item.Text = shi.Name;
+                    item.Value = shi.Code;
                     items.Add(item);
                 }
             }
@@ -86,11 +86,11 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Mobile.Window
 
             if (!String.IsNullOrEmpty(shi) && shi != "-1")
             {
-                foreach (string xian in DataSourceUtil.XIAN_JSON.Value<JArray>(shi))
+                foreach (ProvinceCityCountyItem xian in ProvinceCityCountyData.Counties(shi))
                 {
                     ListItem item = new ListItem();
-                    item.Text = xian;
-                    item.Value = xian;
+                    item.Text = xian.Name;
+                    item.Value = xian.Code;
                     items.Add(item);
                 }
             }
@@ -112,7 +112,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Mobile.Window
             UIHelper.Window("Window1").Hidden(true);
 
             // 弹出选中的值
-            ShowNotify("您选择的省市县：" + sheng + " | " + shi + (xian == "-1" ? "" : " | " + xian));
+            ShowNotify("您选择的省市县：" + ProvinceCityCountyData.ProvinceName(sheng) + " | " + ProvinceCityCountyData.CityName(shi) + (xian == "-1" ? "" : " | " + ProvinceCityCountyData.CountyName(xian)));
             
             return UIHelper.Result();
         }
