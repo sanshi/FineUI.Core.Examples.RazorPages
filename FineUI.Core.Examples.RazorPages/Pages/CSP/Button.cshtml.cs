@@ -10,14 +10,6 @@ namespace FineUI.Core.Examples.RazorPages.Pages.CSP
 {
     public class ButtonModel : BaseModel
     {
-        public void OnGet()
-        {
-            var pm = PageManager.Instance;
-            pm.CspScripts = true;
-            pm.CspScriptsAllowNonce = true;
-
-        }
-
         public IActionResult OnPostBtnEnable_Click()
         {
             ShowNotify("你点击了刚刚启用的按钮");
