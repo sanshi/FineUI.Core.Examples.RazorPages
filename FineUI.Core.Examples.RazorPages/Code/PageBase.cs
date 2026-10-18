@@ -9,12 +9,11 @@ using System.Web;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages
 {
-    public class PageBase : PageModel
+    public class PageBase : FineUI.Core.FineUIPageBase
     {
         #region HtmlEncode / EncodeJson
 
@@ -42,21 +41,6 @@ namespace FineUI.Core.Examples.RazorPages
         protected string EncodeJson(object data)
         {
             return HtmlEncode(Newtonsoft.Json.JsonConvert.SerializeObject(data, Newtonsoft.Json.Formatting.Indented));
-        }
-
-        #endregion
-
-        #region IsPostBack
-
-        /// <summary>
-        /// 是否页面回发
-        /// </summary>
-        public bool IsPostBack
-        {
-            get
-            {
-                return FineUI.Core.PageContext.IsFineUIAjaxPostBack();
-            }
         }
 
         #endregion
