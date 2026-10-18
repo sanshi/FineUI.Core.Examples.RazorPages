@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.TabStrip
 {
-    public class NoHeaderButtonGroupModel : BaseModel
+    public class NoHeaderButtonGroupModel : PageBase
     {
         public void OnGet()
         {

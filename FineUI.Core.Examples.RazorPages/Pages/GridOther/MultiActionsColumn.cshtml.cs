@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridOther
 {
-    public class MultiActionsColumnModel : BaseModel
+    public class MultiActionsColumnModel : PageBase
     {
         public void OnGet()
         {

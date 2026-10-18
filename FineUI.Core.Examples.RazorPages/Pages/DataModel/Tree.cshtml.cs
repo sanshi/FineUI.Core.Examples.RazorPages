@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DataModel
 {
-    public class TreeModel : BaseModel
+    public class TreeModel : PageBase
     {
         public void OnGet()
         {

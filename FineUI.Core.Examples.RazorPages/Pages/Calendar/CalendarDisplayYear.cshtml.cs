@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Calendar
 {
-    public class CalendarDisplayYearModel : BaseModel
+    public class CalendarDisplayYearModel : PageBase
     {
         public void OnGet()
         {

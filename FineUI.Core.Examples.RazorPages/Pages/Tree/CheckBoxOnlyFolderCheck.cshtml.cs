@@ -9,7 +9,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Tree
 {
-    public class CheckBoxOnlyFolderCheckModel : BaseModel
+    public class CheckBoxOnlyFolderCheckModel : PageBase
     {
         public void OnGet()
         {

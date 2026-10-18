@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.TabStrip
 {
-    public class BorderColorSeparatedModel : BaseModel
+    public class BorderColorSeparatedModel : PageBase
     {
         public void OnGet()
         {

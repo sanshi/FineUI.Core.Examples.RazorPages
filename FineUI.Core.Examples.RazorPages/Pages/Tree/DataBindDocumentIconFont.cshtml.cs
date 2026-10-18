@@ -9,7 +9,7 @@ using System.Xml;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Tree
 {
-    public class DataBindDocumentIconFontModel : BaseModel
+    public class DataBindDocumentIconFontModel : PageBase
     {
         public void OnGet()
         {

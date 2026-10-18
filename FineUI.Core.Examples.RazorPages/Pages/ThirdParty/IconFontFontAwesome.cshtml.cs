@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.ThirdParty
 {
-    public class IconFontFontAwesomeModel : BaseModel
+    public class IconFontFontAwesomeModel : PageBase
     {
         public void OnGet()
         {

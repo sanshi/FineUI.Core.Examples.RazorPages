@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Calendar
 {
-    public class CalendarIndependentRangePanelsModel : BaseModel
+    public class CalendarIndependentRangePanelsModel : PageBase
     {
         public void OnGet()
         {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Mobile.Window
 {
-    public class PositionActionSheetButtonGroupVerticalModel : BaseMobileModel
+    public class PositionActionSheetButtonGroupVerticalModel : MobilePageBase
     {
         public void OnGet()
         {

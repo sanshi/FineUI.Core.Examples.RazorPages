@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Tree
 {
-    public class TreeLazyLoadSmartModel : BaseModel
+    public class TreeLazyLoadSmartModel : PageBase
     {
         public void OnGet()
         {

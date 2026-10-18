@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class CheckBoxListModel : BaseModel
+    public class CheckBoxListModel : PageBase
     {
         public void OnGet()
         {

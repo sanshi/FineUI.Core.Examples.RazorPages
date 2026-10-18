@@ -10,7 +10,7 @@ using System.Xml;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Tree
 {
-    public class DataBindDocumentCustomAttributesModel : BaseModel
+    public class DataBindDocumentCustomAttributesModel : PageBase
     {
         public void OnGet()
         {

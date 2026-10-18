@@ -11,7 +11,7 @@ using System.Text;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridEditor
 {
-    public class ShengShiTextValueModel : BaseModel
+    public class ShengShiTextValueModel : PageBase
     {
         public void OnGet()
         {

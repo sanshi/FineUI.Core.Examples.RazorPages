@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DropDownList
 {
-    public class MultiSelectTagsEnableEditModel : BaseModel
+    public class MultiSelectTagsEnableEditModel : PageBase
     {
         public void OnGet()
         {

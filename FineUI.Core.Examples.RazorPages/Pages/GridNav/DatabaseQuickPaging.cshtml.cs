@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridNav
 {
-    public class DatabaseQuickPagingModel : BaseModel
+    public class DatabaseQuickPagingModel : PageBase
     {
         public void OnGet()
         {

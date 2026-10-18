@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridTree
 {
-    public class SelectAllModel : BaseModel
+    public class SelectAllModel : PageBase
     {
         public void OnGet()
         {

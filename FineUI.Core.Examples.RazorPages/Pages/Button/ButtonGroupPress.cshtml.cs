@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Button
 {
-    public class ButtonGroupPressModel : BaseModel
+    public class ButtonGroupPressModel : PageBase
     {
         public void OnGet()
         {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.ThirdParty
 {
-    public class AutoCompleteInlineWindowModel : BaseModel
+    public class AutoCompleteInlineWindowModel : PageBase
     {
         public void OnGet()
         {

@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class SortingPagingModel : BaseModel
+    public class SortingPagingModel : PageBase
     {
         public void OnGet()
         {

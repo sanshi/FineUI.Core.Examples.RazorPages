@@ -4,7 +4,7 @@ using System.Data;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class DynamicColumnsPostBackLockModel : BaseModel
+    public class DynamicColumnsPostBackLockModel : PageBase
     {
         public void OnGet()
         {

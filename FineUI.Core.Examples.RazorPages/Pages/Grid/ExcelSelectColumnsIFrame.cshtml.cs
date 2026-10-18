@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class ExcelSelectColumnsIFrame : BaseModel
+    public class ExcelSelectColumnsIFrame : PageBase
     {
         public void OnGet()
         {

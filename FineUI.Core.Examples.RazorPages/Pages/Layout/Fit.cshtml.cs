@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Layout
 {
-    public class FitModel : BaseModel
+    public class FitModel : PageBase
     {
         public void OnGet()
         {

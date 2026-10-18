@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class RadioButtonListModel : BaseModel
+    public class RadioButtonListModel : PageBase
     {
         public void OnGet()
         {

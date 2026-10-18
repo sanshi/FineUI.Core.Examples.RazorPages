@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class RowSelectClientModel : BaseModel
+    public class RowSelectClientModel : PageBase
     {
         public void OnGet()
         {

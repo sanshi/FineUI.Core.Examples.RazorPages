@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class NumberBoxSeparatorModel : BaseModel
+    public class NumberBoxSeparatorModel : PageBase
     {
         public void OnGet()
         {

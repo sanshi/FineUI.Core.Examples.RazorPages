@@ -4,7 +4,7 @@ using System;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Message
 {
-    public class NotifyModel : BaseModel
+    public class NotifyModel : PageBase
     {
         public void OnGet()
         {

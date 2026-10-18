@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class FormCompareModel : BaseModel
+    public class FormCompareModel : PageBase
     {
         public void OnGet()
         {

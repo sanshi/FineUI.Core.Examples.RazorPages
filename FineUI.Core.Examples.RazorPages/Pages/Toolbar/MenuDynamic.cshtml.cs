@@ -10,7 +10,7 @@ using System.Xml;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Toolbar
 {
-    public class MenuDynamicModel : BaseModel
+    public class MenuDynamicModel : PageBase
     {
         public void OnGet()
         {

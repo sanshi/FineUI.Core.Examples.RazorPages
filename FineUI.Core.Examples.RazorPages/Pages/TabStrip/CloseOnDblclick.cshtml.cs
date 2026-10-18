@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.TabStrip
 {
-    public class CloseOnDblclickModel : BaseModel
+    public class CloseOnDblclickModel : PageBase
     {
         public void OnGet()
         {

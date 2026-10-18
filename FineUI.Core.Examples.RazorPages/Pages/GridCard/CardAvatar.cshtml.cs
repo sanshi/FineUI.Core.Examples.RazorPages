@@ -1,6 +1,6 @@
 namespace FineUI.Core.Examples.RazorPages.Pages.GridCard
 {
-    public class CardAvatarModel : BaseModel
+    public class CardAvatarModel : PageBase
     {
         public void OnGet()
         {

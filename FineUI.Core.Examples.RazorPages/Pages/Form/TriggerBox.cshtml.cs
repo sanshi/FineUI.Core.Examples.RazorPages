@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class TriggerBoxModel : BaseModel
+    public class TriggerBoxModel : PageBase
     {
         public void OnGet()
         {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Toolbar
 {
-    public class ToolbarLayoutModel : BaseModel
+    public class ToolbarLayoutModel : PageBase
     {
         public void OnGet()
         {

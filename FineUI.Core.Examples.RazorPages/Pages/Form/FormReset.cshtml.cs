@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class FormResetModel : BaseModel
+    public class FormResetModel : PageBase
     {
         public void OnGet()
         {

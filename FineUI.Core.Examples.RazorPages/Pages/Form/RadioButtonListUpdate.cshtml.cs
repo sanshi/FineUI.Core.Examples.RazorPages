@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class RadioButtonListUpdateModel : BaseModel
+    public class RadioButtonListUpdateModel : PageBase
     {
         public void OnGet()
         {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Button
 {
-    public class ButtonWidthHeightModel : BaseModel
+    public class ButtonWidthHeightModel : PageBase
     {
         public void OnGet()
         {

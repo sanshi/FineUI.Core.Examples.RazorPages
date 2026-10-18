@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Block
 {
-    public class SameWidthModel : BaseModel
+    public class SameWidthModel : PageBase
     {
         public void OnGet()
         {

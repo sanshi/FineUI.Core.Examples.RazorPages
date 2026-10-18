@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Mobile.Window
 {
-    public class HideOnMaskClickModel : BaseMobileModel
+    public class HideOnMaskClickModel : MobilePageBase
     {
         public void OnGet()
         {

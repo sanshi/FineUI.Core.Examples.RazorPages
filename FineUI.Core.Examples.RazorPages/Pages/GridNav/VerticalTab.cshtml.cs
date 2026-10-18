@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridNav
 {
-    public class VerticalTabModel : BaseModel
+    public class VerticalTabModel : PageBase
     {
         public void OnGet()
         {

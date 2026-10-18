@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Panel
 {
-    public class ToolsCustomExpandModel : BaseModel
+    public class ToolsCustomExpandModel : PageBase
     {
         public void OnGet()
         {

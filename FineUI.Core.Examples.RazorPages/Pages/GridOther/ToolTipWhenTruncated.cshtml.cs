@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridOther
 {
-    public class ToolTipWhenTruncatedModel : BaseModel
+    public class ToolTipWhenTruncatedModel : PageBase
     {
         public void OnGet()
         {

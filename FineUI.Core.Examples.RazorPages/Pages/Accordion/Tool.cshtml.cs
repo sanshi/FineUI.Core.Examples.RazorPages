@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Accordion
 {
-    public class ToolModel : BaseModel
+    public class ToolModel : PageBase
     {
         public void OnGet()
         {

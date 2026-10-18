@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.IFrame
 {
-    public class IFrameAutoHeightModel : BaseModel
+    public class IFrameAutoHeightModel : PageBase
     {
         public void OnGet()
         {

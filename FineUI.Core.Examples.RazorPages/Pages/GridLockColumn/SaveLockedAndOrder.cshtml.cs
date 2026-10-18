@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridLockColumn
 {
-    public class SaveLockedAndOrderModel : BaseModel
+    public class SaveLockedAndOrderModel : PageBase
     {
         private static readonly JArray GRID_COLUMNCONFIG_DEFAULT = new JArray
         {

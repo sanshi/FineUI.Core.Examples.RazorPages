@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class NumberBoxCommasModel : BaseModel
+    public class NumberBoxCommasModel : PageBase
     {
         public void OnGet()
         {

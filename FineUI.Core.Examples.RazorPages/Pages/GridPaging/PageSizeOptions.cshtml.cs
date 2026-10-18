@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridPaging
 {
-    public class PageSizeOptionsModel : BaseModel
+    public class PageSizeOptionsModel : PageBase
     {
         public void OnGet()
         {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Mobile.Window
 {
-    public class PositionPercentModel : BaseMobileModel
+    public class PositionPercentModel : MobilePageBase
     {
         public void OnGet()
         {

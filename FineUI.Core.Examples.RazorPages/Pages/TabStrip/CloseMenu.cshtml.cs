@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.TabStrip
 {
-    public class CloseMenuModel : BaseModel
+    public class CloseMenuModel : PageBase
     {
         public void OnGet()
         {

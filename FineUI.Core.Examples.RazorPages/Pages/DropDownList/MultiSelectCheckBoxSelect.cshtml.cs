@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DropDownList
 {
-    public class MultiSelectCheckBoxSelectModel : BaseModel
+    public class MultiSelectCheckBoxSelectModel : PageBase
     {
         public void OnGet()
         {

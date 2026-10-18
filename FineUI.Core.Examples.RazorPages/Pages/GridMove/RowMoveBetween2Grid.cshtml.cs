@@ -11,7 +11,7 @@ using System.Text;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridMove
 {
-    public class RowMoveBetween2GridModel : BaseModel
+    public class RowMoveBetween2GridModel : PageBase
     {
         public void OnGet()
         {

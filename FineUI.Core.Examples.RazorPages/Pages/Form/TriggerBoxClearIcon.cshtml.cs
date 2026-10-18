@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class TriggerBoxClearIconModel : BaseModel
+    public class TriggerBoxClearIconModel : PageBase
     {
         public void OnGet()
         {

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridOther
 {
-    public class ToolTipModel : BaseModel
+    public class ToolTipModel : PageBase
     {
         public void OnGet()
         {

@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridRowHeight
 {
-    public class Grid100LineClampModel : BaseModel
+    public class Grid100LineClampModel : PageBase
     {
         public void OnGet()
         {

@@ -4,7 +4,7 @@ using System;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DatePicker
 {
-    public class DatePickerTimeStackModel : BaseModel
+    public class DatePickerTimeStackModel : PageBase
     {
         public void OnGet()
         {

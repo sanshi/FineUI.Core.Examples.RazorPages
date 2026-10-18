@@ -10,7 +10,7 @@ using FineUI.Core.Examples.RazorPages.Pages.DataModel.Models;
 namespace FineUI.Core.Examples.RazorPages.Pages.MultiLang
 {
 
-    public partial class UICompareAnnotationModel : BaseMultilangModel
+    public partial class UICompareAnnotationModel : MultilangPageBase
     {
         public void OnGet()
         {

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridEditor
 {
-    public class EditableDateTimezoneModel : BaseModel
+    public class EditableDateTimezoneModel : PageBase
     {
         public void OnGet()
         {

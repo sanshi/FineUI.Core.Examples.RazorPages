@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Editor
 {
-    public class TinyMCEConfigModel : BaseThirdPartyEditorModel
+    public class TinyMCEConfigModel : ThirdPartyEditorPageBase
     {
         public void OnGet()
         {

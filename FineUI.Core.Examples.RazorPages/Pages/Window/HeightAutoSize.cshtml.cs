@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Window
 {
-    public class HeightAutoSizeModel : BaseModel
+    public class HeightAutoSizeModel : PageBase
     {
         public void OnGet()
         {

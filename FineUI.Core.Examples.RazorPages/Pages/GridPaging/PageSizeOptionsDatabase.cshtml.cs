@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridPaging
 {
-    public class PageSizeOptionsDatabaseModel : BaseModel
+    public class PageSizeOptionsDatabaseModel : PageBase
     {
         public void OnGet()
         {

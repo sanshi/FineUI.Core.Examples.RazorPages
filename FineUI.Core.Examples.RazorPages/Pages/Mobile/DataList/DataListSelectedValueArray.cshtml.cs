@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Mobile.DataList
 {
-    public class DataListSelectedValueArrayModel : BaseMobileModel
+    public class DataListSelectedValueArrayModel : MobilePageBase
     {
         public void OnGet()
         {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DropDownList
 {
-    public class MatchFieldWidthRightModel : BaseModel
+    public class MatchFieldWidthRightModel : PageBase
     {
         public void OnGet()
         {

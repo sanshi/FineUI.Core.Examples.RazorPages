@@ -1,6 +1,6 @@
 namespace FineUI.Core.Examples.RazorPages.Pages.Home
 {
-    public class LoadingCSSModel : BaseModel
+    public class LoadingCSSModel : PageBase
     {
         public void OnGet()
         {

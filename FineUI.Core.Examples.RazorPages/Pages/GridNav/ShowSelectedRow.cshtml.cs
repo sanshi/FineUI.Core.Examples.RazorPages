@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridNav
 {
-    public class ShowSelectedRowModel : BaseModel
+    public class ShowSelectedRowModel : PageBase
     {
         public void OnGet()
         {

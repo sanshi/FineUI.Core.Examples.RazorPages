@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Layout
 {
-    public class RegionMultiLeftModel : BaseModel
+    public class RegionMultiLeftModel : PageBase
     {
         public void OnGet()
         {

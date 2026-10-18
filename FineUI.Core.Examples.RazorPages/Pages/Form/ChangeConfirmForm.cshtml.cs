@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class ChangeConfirmFormModel : BaseModel
+    public class ChangeConfirmFormModel : PageBase
     {
         public void OnGet()
         {

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DatePicker
 {
-    public class DatePickerYearRangeConfirmButtonModel : BaseModel
+    public class DatePickerYearRangeConfirmButtonModel : PageBase
     {
         public void OnGet()
         {

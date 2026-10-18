@@ -5,7 +5,7 @@ using System.Data;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class SummaryScrollbarBottomModel : BaseModel
+    public class SummaryScrollbarBottomModel : PageBase
     {
         public void OnGet()
         {

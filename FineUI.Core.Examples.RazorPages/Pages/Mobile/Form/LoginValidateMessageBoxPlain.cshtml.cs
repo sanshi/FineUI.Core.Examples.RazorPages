@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Mobile.Form
 {
-    public class LoginValidateMessageBoxPlainModel : BaseMobileModel
+    public class LoginValidateMessageBoxPlainModel : MobilePageBase
     {
         public void OnGet()
         {

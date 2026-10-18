@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridLockColumn
 {
-    public class RightSummaryModel : BaseModel
+    public class RightSummaryModel : PageBase
     {
         public void OnGet()
         {

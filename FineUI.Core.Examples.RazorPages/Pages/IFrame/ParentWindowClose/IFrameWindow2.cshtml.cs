@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.IFrame.ParentWindowClose
 {
-    public class IFrameWindow2Model : BaseModel
+    public class IFrameWindow2Model : PageBase
     {
         public void OnGet()
         {

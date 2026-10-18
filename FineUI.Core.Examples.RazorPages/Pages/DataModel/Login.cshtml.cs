@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DataModel
 {
-    public class LoginModel : BaseModel
+    public class LoginModel : PageBase
     {
         public void OnGet()
         {

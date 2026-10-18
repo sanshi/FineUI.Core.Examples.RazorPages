@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Tree
 {
-    public class TreeSelectMultiSelectableModel : BaseModel
+    public class TreeSelectMultiSelectableModel : PageBase
     {
         public void OnGet()
         {

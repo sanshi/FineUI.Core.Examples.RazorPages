@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridOther
 {
-    public class NewTabHideRefreshModel : BaseModel
+    public class NewTabHideRefreshModel : PageBase
     {
         public void OnGet()
         {

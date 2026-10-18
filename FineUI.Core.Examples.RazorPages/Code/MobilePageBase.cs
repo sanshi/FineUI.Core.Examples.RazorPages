@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace FineUI.Core.Examples.RazorPages
 {
-    public class BaseMobileModel : BaseModel
+    public class MobilePageBase : PageBase
     {
         #region static readonly
 

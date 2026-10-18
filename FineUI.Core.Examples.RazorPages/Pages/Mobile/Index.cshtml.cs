@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Mobile
 {
-    public class IndexModel : BaseMobileModel
+    public class IndexModel : MobilePageBase
     {
         public void OnGet()
         {

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Tree
 {
-    public class CheckBoxDisabledModel : BaseModel
+    public class CheckBoxDisabledModel : PageBase
     {
         public void OnGet()
         {

@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridOther
 {
-    public class LineWrapLineClampModel : BaseModel
+    public class LineWrapLineClampModel : PageBase
     {
         public void OnGet()
         {

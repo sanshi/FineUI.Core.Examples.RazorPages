@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridEditor
 {
-    public class ClientHtmlEncodeToolTipModel : BaseModel
+    public class ClientHtmlEncodeToolTipModel : PageBase
     {
         public void OnGet()
         {

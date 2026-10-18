@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DropDownList
 {
-    public class MultiSelectTagsClearIconClickModel : BaseModel
+    public class MultiSelectTagsClearIconClickModel : PageBase
     {
         public void OnGet()
         {

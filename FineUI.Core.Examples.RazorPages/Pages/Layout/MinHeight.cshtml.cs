@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Layout
 {
-    public class MinHeightModel : BaseModel
+    public class MinHeightModel : PageBase
     {
         public void OnGet()
         {

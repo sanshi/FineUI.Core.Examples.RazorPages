@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridPaging
 {
-    public class DatabaseUpdatePageIndexModel : BaseModel
+    public class DatabaseUpdatePageIndexModel : PageBase
     {
         public void OnGet()
         {

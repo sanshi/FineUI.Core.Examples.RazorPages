@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Mobile.DataList
 {
-    public class DataListModel : BaseMobileModel
+    public class DataListModel : MobilePageBase
     {
         public void OnGet()
         {

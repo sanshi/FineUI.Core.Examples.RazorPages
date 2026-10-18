@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class TextBoxQtipModel : BaseModel
+    public class TextBoxQtipModel : PageBase
     {
         public void OnGet()
         {

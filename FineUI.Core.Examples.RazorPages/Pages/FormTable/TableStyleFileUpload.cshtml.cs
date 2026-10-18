@@ -9,7 +9,7 @@ using System.IO;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.FormTable
 {
-    public class TableStyleFileUploadModel : BaseUploadModel
+    public class TableStyleFileUploadModel : UploadPageBase
     {
         public void OnGet()
         {

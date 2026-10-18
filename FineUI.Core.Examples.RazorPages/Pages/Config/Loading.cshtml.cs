@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Config
 {
-    public class LoadingModel : BaseModel
+    public class LoadingModel : PageBase
     {
         public void OnGet()
         {

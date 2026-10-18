@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Message
 {
-    public class NotifyGroupModel : BaseModel
+    public class NotifyGroupModel : PageBase
     {
         public void OnGet()
         {

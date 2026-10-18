@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.FormLayout
 {
-    public class LayoutMultiLineButtonsModel : BaseModel
+    public class LayoutMultiLineButtonsModel : PageBase
     {
         public void OnGet()
         {

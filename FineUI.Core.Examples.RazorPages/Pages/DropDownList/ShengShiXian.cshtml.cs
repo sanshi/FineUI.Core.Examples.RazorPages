@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DropDownList
 {
-    public class ShengShiXianModel : BaseModel
+    public class ShengShiXianModel : PageBase
     {
         public void OnGet()
         {

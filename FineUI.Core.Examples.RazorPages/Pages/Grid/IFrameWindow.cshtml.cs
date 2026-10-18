@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class IFrameWindowModel : BaseThirdPartyEditorModel
+    public class IFrameWindowModel : ThirdPartyEditorPageBase
     {
         public void OnGet()
         {

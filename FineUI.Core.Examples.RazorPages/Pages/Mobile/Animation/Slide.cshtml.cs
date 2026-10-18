@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Mobile.Animation
 {
-    public class SlideModel : BaseMobileModel
+    public class SlideModel : MobilePageBase
     {
         public void OnGet()
         {

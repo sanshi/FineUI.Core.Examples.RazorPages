@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Accordion
 {
-    public class AccordionModel : BaseModel
+    public class AccordionModel : PageBase
     {
         public void OnGet()
         {

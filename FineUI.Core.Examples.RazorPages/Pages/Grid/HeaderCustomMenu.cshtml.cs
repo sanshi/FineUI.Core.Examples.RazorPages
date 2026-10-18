@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class HeaderCustomMenuModel : BaseModel
+    public class HeaderCustomMenuModel : PageBase
     {
         public void OnGet()
         {

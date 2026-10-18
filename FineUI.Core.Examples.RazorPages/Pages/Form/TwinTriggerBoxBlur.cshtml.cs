@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class TwinTriggerBoxBlurModel : BaseModel
+    public class TwinTriggerBoxBlurModel : PageBase
     {
         public void OnGet()
         {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Other
 {
-    public class CssStyleModel : BaseModel
+    public class CssStyleModel : PageBase
     {
         public void OnGet()
         {

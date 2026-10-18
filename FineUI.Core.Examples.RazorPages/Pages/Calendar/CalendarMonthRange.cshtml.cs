@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Calendar
 {
-    public class CalendarMonthRangeModel : BaseModel
+    public class CalendarMonthRangeModel : PageBase
     {
         private DateTime startDate = DateTime.Now.AddMonths(2);
         private DateTime endDate = DateTime.Now.AddMonths(10);

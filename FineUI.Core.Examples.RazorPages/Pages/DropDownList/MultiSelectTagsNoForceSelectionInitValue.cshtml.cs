@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DropDownList
 {
-    public class MultiSelectTagsNoForceSelectionInitValueModel : BaseModel
+    public class MultiSelectTagsNoForceSelectionInitValueModel : PageBase
     {
         public void OnGet()
         {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.ThirdParty
 {
-    public class ColorPickerModel : BaseModel
+    public class ColorPickerModel : PageBase
     {
         public void OnGet()
         {

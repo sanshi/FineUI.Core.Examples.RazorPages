@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridMove
 {
-    public class ColumnMoveLockColumnModel : BaseModel
+    public class ColumnMoveLockColumnModel : PageBase
     {
         public void OnGet()
         {

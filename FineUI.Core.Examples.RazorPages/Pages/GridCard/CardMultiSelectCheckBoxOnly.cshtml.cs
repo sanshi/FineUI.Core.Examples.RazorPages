@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridCard
 {
-    public class CardMultiSelectCheckBoxOnlyModel : BaseModel
+    public class CardMultiSelectCheckBoxOnlyModel : PageBase
     {
         public void OnGet()
         {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class HeaderChangeTextWidthModel : BaseModel
+    public class HeaderChangeTextWidthModel : PageBase
     {
         public void OnGet()
         {

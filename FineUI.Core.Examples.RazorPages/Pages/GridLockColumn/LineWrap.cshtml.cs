@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridLockColumn
 {
-    public class LineWrapModel : BaseModel
+    public class LineWrapModel : PageBase
     {
         public void OnGet()
         {

@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridOther
 {
-    public class HideColumnModel : BaseModel
+    public class HideColumnModel : PageBase
     {
         public void OnGet()
         {

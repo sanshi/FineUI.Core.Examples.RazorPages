@@ -9,7 +9,7 @@ using FineUI.Core.Examples.RazorPages.Pages.DataModel.Models;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DataModel
 {
-    public class CheckBoxListModel : BaseModel
+    public class CheckBoxListModel : PageBase
     {
         public void OnGet()
         {

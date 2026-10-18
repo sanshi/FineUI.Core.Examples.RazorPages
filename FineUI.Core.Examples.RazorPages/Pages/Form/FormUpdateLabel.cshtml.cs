@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class FormUpdateLabelModel : BaseModel
+    public class FormUpdateLabelModel : PageBase
     {
         public void OnGet()
         {

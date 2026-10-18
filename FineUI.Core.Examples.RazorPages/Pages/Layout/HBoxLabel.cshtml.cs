@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Layout
 {
-    public class HBoxLabelModel : BaseModel
+    public class HBoxLabelModel : PageBase
     {
         public void OnGet()
         {

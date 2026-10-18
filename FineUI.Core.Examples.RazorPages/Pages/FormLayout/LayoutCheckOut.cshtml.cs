@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.FormLayout
 {
-    public class LayoutCheckOutModel : BaseModel
+    public class LayoutCheckOutModel : PageBase
     {
         public void OnGet()
         {

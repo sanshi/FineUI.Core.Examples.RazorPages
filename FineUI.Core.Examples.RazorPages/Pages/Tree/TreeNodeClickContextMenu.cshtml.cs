@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Tree
 {
-    public class TreeNodeClickContextMenuModel : BaseModel
+    public class TreeNodeClickContextMenuModel : PageBase
     {
         public void OnGet()
         {

@@ -9,7 +9,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridOther
 {
-    public class DateOnlyModel : BaseModel
+    public class DateOnlyModel : PageBase
     {
         public void OnGet()
         {

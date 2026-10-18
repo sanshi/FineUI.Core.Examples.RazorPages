@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridMerge
 {
-    public class ColumnsModel : BaseModel
+    public class ColumnsModel : PageBase
     {
         public void OnGet()
         {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.ThirdParty
 {
-    public class EChartsTabStripModel : BaseModel
+    public class EChartsTabStripModel : PageBase
     {
         public void OnGet()
         {

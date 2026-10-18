@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class NumberBoxProgressModel : BaseModel
+    public class NumberBoxProgressModel : PageBase
     {
         public void OnGet()
         {

@@ -3,7 +3,7 @@ using System;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Calendar
 {
-    public class CalendarTimeConfirmButtonModel : BaseModel
+    public class CalendarTimeConfirmButtonModel : PageBase
     {
         public static readonly string Calendar1DateFormatString = "yyyy-MM-dd HH:mm:ss";
 

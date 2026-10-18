@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridInput
 {
-    public class CheckBoxListModel : BaseModel
+    public class CheckBoxListModel : PageBase
     {
         public void OnGet()
         {

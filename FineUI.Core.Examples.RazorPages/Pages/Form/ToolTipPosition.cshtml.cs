@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class ToolTipPositionModel : BaseModel
+    public class ToolTipPositionModel : PageBase
     {
         public void OnGet()
         {

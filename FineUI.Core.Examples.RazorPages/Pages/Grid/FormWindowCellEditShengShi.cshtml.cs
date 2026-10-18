@@ -11,7 +11,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class FormWindowCellEditShengShiModel : BaseModel
+    public class FormWindowCellEditShengShiModel : PageBase
     {
         public void OnGet()
         {

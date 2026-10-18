@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Mobile.Form
 {
-    public class LoginModel : BaseMobileModel
+    public class LoginModel : MobilePageBase
     {
         public void OnGet()
         {

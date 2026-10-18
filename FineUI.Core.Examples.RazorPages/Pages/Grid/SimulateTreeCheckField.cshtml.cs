@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class SimulateTreeCheckFieldModel : BaseModel
+    public class SimulateTreeCheckFieldModel : PageBase
     {
         public void OnGet()
         {

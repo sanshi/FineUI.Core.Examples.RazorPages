@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class FormValidateBlurModel : BaseModel
+    public class FormValidateBlurModel : PageBase
     {
         public void OnGet()
         {

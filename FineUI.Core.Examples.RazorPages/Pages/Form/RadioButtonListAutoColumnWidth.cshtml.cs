@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class RadioButtonListAutoColumnWidthModel : BaseModel
+    public class RadioButtonListAutoColumnWidthModel : PageBase
     {
         public void OnGet()
         {

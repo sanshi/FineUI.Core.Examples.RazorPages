@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridEditor
 {
-    public class DropDownBoxGridMultiModel : BaseModel
+    public class DropDownBoxGridMultiModel : PageBase
     {
         public void OnGet()
         {

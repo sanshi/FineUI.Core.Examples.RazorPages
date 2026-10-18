@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.IFrame
 {
-    public class PassValueScriptModel : BaseModel
+    public class PassValueScriptModel : PageBase
     {
         public void OnGet()
         {

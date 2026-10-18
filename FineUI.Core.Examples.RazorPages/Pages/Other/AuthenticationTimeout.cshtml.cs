@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Other
 {
-    public class AuthenticationTimeoutModel : BaseModel
+    public class AuthenticationTimeoutModel : PageBase
     {
         public void OnGet()
         {

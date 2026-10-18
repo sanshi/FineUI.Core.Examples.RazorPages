@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridRowGroup
 {
-    public class ExpandedModel : BaseModel
+    public class ExpandedModel : PageBase
     {
         public void OnGet()
         {

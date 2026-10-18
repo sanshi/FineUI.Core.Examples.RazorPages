@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.FormLayout
 {
-    public class LayoutPanelModel : BaseModel
+    public class LayoutPanelModel : PageBase
     {
         public void OnGet()
         {

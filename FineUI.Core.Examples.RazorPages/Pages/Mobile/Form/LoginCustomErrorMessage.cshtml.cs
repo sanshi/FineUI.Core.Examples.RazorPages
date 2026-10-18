@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Mobile.Form
 {
-    public class LoginCustomErrorMessageModel : BaseMobileModel
+    public class LoginCustomErrorMessageModel : MobilePageBase
     {
         public void OnGet()
         {

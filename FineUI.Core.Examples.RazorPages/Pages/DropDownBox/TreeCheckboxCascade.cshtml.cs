@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DropDownBox
 {
-    public class TreeCheckboxCascadeModel : BaseModel
+    public class TreeCheckboxCascadeModel : PageBase
     {
         public void OnGet()
         {

@@ -1,6 +1,6 @@
 namespace FineUI.Core.Examples.RazorPages.Pages.GridCard
 {
-    public class CardSwitchModel : BaseModel
+    public class CardSwitchModel : PageBase
     {
         public void OnGet()
         {

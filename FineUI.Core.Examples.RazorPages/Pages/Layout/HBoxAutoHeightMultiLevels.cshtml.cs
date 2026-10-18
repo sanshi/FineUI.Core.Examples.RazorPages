@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Layout
 {
-    public class HBoxAutoHeightMultiLevelsModel : BaseModel
+    public class HBoxAutoHeightMultiLevelsModel : PageBase
     {
         public void OnGet()
         {

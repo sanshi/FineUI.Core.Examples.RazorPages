@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridInput
 {
-    public class SelectRowModel : BaseModel
+    public class SelectRowModel : PageBase
     {
         public void OnGet()
         {

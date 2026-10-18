@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridBigData
 {
-    public class BigData10000PagingDatabaseModel : BaseModel
+    public class BigData10000PagingDatabaseModel : PageBase
     {
         public void OnGet()
         {

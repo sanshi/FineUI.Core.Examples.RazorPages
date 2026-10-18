@@ -11,7 +11,7 @@ using System.Xml;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Tree
 {
-    public class TreeIconFontColorXmlModel : BaseModel
+    public class TreeIconFontColorXmlModel : PageBase
     {
         public void OnGet()
         {

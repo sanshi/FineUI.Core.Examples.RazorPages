@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.IFrame
 {
-    public class IFrameCloseAllModel : BaseModel
+    public class IFrameCloseAllModel : PageBase
     {
         public void OnGet()
         {

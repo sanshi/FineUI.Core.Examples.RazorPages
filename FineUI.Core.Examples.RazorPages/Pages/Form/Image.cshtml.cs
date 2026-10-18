@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class ImageModel : BaseModel
+    public class ImageModel : PageBase
     {
         public void OnGet()
         {

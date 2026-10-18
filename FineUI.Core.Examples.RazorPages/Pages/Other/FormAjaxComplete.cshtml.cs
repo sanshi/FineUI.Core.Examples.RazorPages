@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Other
 {
-    public class FormAjaxCompleteModel : BaseModel
+    public class FormAjaxCompleteModel : PageBase
     {
         public void OnGet()
         {

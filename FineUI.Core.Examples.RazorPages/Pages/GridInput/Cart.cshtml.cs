@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridInput
 {
-    public class CartModel : BaseModel
+    public class CartModel : PageBase
     {
         public void OnGet()
         {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DropDownList
 {
-    public class CustomItemTooltipModel : BaseModel
+    public class CustomItemTooltipModel : PageBase
     {
         public void OnGet()
         {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class WidthForceFitMinWidthModel : BaseModel
+    public class WidthForceFitMinWidthModel : PageBase
     {
         public void OnGet()
         {

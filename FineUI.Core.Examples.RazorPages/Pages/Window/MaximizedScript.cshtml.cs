@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Window
 {
-    public class MaximizedScriptModel : BaseModel
+    public class MaximizedScriptModel : PageBase
     {
         public void OnGet()
         {

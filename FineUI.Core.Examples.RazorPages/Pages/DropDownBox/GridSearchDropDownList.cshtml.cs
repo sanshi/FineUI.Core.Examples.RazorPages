@@ -7,7 +7,7 @@ using System.Data;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DropDownBox
 {
-    public class GridSearchDropDownListModel : BaseModel
+    public class GridSearchDropDownListModel : PageBase
     {
         public void OnGet()
         {

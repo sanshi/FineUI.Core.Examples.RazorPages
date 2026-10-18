@@ -4,7 +4,7 @@ using System.Data;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridDelayRender
 {
-    public class Grid500LockColumnRowHeightDelayRenderModel : BaseModel
+    public class Grid500LockColumnRowHeightDelayRenderModel : PageBase
     {
         public void OnGet()
         {

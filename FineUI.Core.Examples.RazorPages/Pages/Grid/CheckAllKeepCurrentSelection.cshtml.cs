@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class CheckAllKeepCurrentSelectionModel : BaseModel
+    public class CheckAllKeepCurrentSelectionModel : PageBase
     {
         public void OnGet()
         {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DropDownList
 {
-    public class BeforeSelectEnableEditModel : BaseModel
+    public class BeforeSelectEnableEditModel : PageBase
     {
         public void OnGet()
         {

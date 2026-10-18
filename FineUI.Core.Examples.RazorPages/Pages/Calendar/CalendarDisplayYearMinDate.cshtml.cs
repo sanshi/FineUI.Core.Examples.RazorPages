@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Calendar
 {
-    public class CalendarDisplayYearMinDateModel : BaseModel
+    public class CalendarDisplayYearMinDateModel : PageBase
     {
         public void OnGet()
         {

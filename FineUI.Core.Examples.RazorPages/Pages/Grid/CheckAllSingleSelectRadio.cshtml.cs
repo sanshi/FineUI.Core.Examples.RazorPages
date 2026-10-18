@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class CheckAllSingleSelectRadioModel : BaseModel
+    public class CheckAllSingleSelectRadioModel : PageBase
     {
         public void OnGet()
         {

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class GroupFieldModel : BaseModel
+    public class GroupFieldModel : PageBase
     {
         public void OnGet()
         {

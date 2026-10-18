@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Message
 {
-    public class NotifyGroupNewestTopModel : BaseModel
+    public class NotifyGroupNewestTopModel : PageBase
     {
         public void OnGet()
         {

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridOther
 {
-    public class GridNumberTrailingZeroModel : BaseModel
+    public class GridNumberTrailingZeroModel : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

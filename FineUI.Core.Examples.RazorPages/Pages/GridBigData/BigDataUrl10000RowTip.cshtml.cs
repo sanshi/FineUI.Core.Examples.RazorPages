@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridBigData
 {
-    public class BigDataUrl10000RowTipModel : BaseModel
+    public class BigDataUrl10000RowTipModel : PageBase
     {
         public void OnGet()
         {

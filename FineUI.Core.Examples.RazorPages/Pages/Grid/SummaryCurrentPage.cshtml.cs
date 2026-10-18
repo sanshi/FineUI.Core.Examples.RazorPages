@@ -5,7 +5,7 @@ using System.Data;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class SummaryCurrentPageModel : BaseModel
+    public class SummaryCurrentPageModel : PageBase
     {
         public void OnGet()
         {

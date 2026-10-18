@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Window
 {
-    public class FixedPositionModel : BaseModel
+    public class FixedPositionModel : PageBase
     {
         public void OnGet()
         {

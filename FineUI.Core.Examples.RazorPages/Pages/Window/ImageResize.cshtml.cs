@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Window
 {
-    public class ImageResizeModel : BaseModel
+    public class ImageResizeModel : PageBase
     {
         public void OnGet()
         {

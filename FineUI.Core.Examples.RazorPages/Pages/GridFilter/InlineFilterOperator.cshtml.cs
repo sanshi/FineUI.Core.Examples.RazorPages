@@ -5,7 +5,7 @@ using System.Data;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridFilter
 {
-    public class InlineFilterOperatorModel : BaseModel
+    public class InlineFilterOperatorModel : PageBase
     {
         public void OnGet()
         {

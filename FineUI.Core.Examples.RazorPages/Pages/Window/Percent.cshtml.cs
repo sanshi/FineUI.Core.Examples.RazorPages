@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Window
 {
-    public class PercentModel : BaseModel
+    public class PercentModel : PageBase
     {
         public void OnGet()
         {

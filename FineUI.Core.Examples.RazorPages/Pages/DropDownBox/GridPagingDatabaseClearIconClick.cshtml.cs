@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DropDownBox
 {
-    public class GridPagingDatabaseClearIconClickModel : BaseModel
+    public class GridPagingDatabaseClearIconClickModel : PageBase
     {
         public void OnGet()
         {

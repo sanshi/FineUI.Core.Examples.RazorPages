@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DropDownBox
 {
-    public class CheckBoxListModel : BaseModel
+    public class CheckBoxListModel : PageBase
     {
         public void OnGet()
         {

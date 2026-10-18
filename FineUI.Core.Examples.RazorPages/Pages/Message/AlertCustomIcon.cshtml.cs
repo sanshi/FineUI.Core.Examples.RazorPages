@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Message
 {
-    public class AlertCustomIconModel : BaseModel
+    public class AlertCustomIconModel : PageBase
     {
         public void OnGet()
         {

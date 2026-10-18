@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class WidthExpandUnusedSpaceModel : BaseModel
+    public class WidthExpandUnusedSpaceModel : PageBase
     {
         public void OnGet()
         {

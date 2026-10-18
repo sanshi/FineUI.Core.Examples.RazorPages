@@ -5,7 +5,7 @@ using System.Data;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridOther
 {
-    public class GridSelectionMessageRendererModel : BaseModel
+    public class GridSelectionMessageRendererModel : PageBase
     {
         public void OnGet()
         {

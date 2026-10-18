@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Button
 {
-    public class ButtonIconFontModel : BaseModel
+    public class ButtonIconFontModel : PageBase
     {
         public void OnGet()
         {

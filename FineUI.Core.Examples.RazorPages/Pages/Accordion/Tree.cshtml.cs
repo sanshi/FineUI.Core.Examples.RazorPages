@@ -9,7 +9,7 @@ using System.Xml;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Accordion
 {
-    public class TreeModel : BaseModel
+    public class TreeModel : PageBase
     {
         public void OnGet()
         {

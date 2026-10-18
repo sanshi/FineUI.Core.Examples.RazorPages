@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Tree
 {
-    public class TreeLineWrapLineClampModel : BaseModel
+    public class TreeLineWrapLineClampModel : PageBase
     {
         public void OnGet()
         {

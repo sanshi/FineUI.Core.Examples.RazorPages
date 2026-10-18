@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class FormValidateValidatorModel : BaseModel
+    public class FormValidateValidatorModel : PageBase
     {
         public void OnGet()
         {

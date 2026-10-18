@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Calendar
 {
-    public class CalendarDayRangeMinDateModel : BaseModel
+    public class CalendarDayRangeMinDateModel : PageBase
     {
         private DateTime startDate = DateTime.Now.AddDays(2);
         private DateTime endDate = DateTime.Now.AddDays(20);

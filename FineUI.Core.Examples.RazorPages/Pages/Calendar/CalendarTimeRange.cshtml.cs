@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Calendar
 {
-    public class CalendarTimeRangeModel : BaseModel
+    public class CalendarTimeRangeModel : PageBase
     {
         
         public static readonly string Calendar1DateFormatString = "HH:mm:ss";

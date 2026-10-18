@@ -1,6 +1,6 @@
 namespace FineUI.Core.Examples.RazorPages.Pages.GridBigData
 {
-    public class BigData10000RowTipModel : BaseModel
+    public class BigData10000RowTipModel : PageBase
     {
         public void OnGet()
         {

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.TabStrip
 {
-    public class InkBarTitleVerticalModel : BaseModel
+    public class InkBarTitleVerticalModel : PageBase
     {
         public void OnGet()
         {

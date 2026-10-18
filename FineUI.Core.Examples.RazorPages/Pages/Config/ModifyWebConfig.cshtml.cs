@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Config
 {
-    public class ModifyWebConfigModel : BaseModel
+    public class ModifyWebConfigModel : PageBase
     {
         public void OnGet()
         {

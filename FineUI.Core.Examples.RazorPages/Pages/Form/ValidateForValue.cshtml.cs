@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class ValidateForValueModel : BaseModel
+    public class ValidateForValueModel : PageBase
     {
         public void OnGet()
         {

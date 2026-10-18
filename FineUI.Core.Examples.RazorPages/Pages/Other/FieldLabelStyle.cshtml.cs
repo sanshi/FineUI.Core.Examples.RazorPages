@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Other
 {
-    public class FieldLabelStyleModel : BaseModel
+    public class FieldLabelStyleModel : PageBase
     {
         public void OnGet()
         {

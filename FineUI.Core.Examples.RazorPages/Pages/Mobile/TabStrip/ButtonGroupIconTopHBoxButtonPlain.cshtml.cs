@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Mobile.TabStrip
 {
-    public class ButtonGroupIconTopHBoxButtonPlainModel : BaseMobileModel
+    public class ButtonGroupIconTopHBoxButtonPlainModel : MobilePageBase
     {
         public void OnGet()
         {

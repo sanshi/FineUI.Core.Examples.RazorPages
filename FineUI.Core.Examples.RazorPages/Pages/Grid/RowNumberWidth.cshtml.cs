@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class RowNumberWidthModel : BaseModel
+    public class RowNumberWidthModel : PageBase
     {
         public void OnGet()
         {

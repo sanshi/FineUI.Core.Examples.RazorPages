@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Other
 {
-    public class AddTabModel : BaseModel
+    public class AddTabModel : PageBase
     {
         public void OnGet()
         {

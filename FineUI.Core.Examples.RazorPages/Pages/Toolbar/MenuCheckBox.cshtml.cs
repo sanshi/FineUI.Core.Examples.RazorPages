@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Toolbar
 {
-    public class MenuCheckBoxModel : BaseModel
+    public class MenuCheckBoxModel : PageBase
     {
         public void OnGet()
         {

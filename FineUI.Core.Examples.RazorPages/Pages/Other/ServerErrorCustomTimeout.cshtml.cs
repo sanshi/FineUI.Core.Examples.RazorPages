@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Other
 {
-    public class ServerErrorCustomTimeoutModel : BaseModel
+    public class ServerErrorCustomTimeoutModel : PageBase
     {
         public void OnGet()
         {

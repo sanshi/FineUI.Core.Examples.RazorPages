@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Other
 {
-    public class EventOnOffModel : BaseModel
+    public class EventOnOffModel : PageBase
     {
         public void OnGet()
         {

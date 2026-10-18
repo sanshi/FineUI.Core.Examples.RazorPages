@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Calendar
 {
-    public class CalendarDayRangeTimeShowSecondModel : BaseModel
+    public class CalendarDayRangeTimeShowSecondModel : PageBase
     {
         private DateTime GetStartDate()
         {

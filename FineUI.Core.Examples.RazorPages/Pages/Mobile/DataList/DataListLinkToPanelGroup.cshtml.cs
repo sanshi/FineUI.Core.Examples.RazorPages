@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Mobile.DataList
 {
-    public class DataListLinkToPanelGroupModel : BaseMobileModel
+    public class DataListLinkToPanelGroupModel : MobilePageBase
     {
         public void OnGet()
         {

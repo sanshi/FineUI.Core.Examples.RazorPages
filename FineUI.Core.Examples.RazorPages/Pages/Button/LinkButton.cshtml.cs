@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Button
 {
-    public class LinkButtonModel : BaseModel
+    public class LinkButtonModel : PageBase
     {
         public IActionResult OnPostLinkButton3_Click()
         {

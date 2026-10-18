@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.IFrame.GridIFrameReload
 {
-    public class IFrameWindowModel : BaseThirdPartyEditorModel
+    public class IFrameWindowModel : ThirdPartyEditorPageBase
     {
         public void OnGet()
         {

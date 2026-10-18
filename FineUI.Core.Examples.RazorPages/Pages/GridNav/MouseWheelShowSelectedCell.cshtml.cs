@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridNav
 {
-    public class MouseWheelShowSelectedCellModel : BaseModel
+    public class MouseWheelShowSelectedCellModel : PageBase
     {
         public void OnGet()
         {

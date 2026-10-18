@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Home
 {
-    public class SourceFileModel : BaseModel
+    public class SourceFileModel : PageBase
     {
         public void OnGet()
         {

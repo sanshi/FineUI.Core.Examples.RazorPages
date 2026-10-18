@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.TabStrip
 {
-    public class BeforehideFConfirmModel : BaseModel
+    public class BeforehideFConfirmModel : PageBase
     {
         public void OnGet()
         {

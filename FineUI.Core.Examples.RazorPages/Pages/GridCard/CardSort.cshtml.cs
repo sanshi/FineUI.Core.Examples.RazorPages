@@ -4,7 +4,7 @@ using System.Data;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridCard
 {
-    public class CardSortModel : BaseModel
+    public class CardSortModel : PageBase
     {
         public void OnGet()
         {

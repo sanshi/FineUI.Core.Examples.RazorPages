@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Message
 {
-    public class ConfirmButtonsModel : BaseModel
+    public class ConfirmButtonsModel : PageBase
     {
         public void OnGet()
         {

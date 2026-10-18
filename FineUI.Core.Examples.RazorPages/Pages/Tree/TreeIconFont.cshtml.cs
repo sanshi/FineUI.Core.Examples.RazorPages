@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Tree
 {
-    public class TreeIconFontModel : BaseModel
+    public class TreeIconFontModel : PageBase
     {
         public void OnGet()
         {

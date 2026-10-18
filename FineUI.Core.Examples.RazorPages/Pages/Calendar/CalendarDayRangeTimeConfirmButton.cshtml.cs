@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Calendar
 {
-    public class CalendarDayRangeTimeConfirmButtonModel : BaseModel
+    public class CalendarDayRangeTimeConfirmButtonModel : PageBase
     {
         private DateTime GetStartDate()
         {

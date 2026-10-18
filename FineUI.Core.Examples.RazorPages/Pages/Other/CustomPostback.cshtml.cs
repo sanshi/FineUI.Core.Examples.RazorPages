@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Other
 {
-    public class CustomPostbackModel : BaseModel
+    public class CustomPostbackModel : PageBase
     {
         public void OnGet()
         {

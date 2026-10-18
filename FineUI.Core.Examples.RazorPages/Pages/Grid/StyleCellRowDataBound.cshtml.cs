@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class StyleCellRowDataBoundModel : BaseModel
+    public class StyleCellRowDataBoundModel : PageBase
     {
         public void OnGet()
         {

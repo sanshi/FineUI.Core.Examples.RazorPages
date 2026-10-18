@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Window
 {
-    public class KeepLastPositionModel : BaseModel
+    public class KeepLastPositionModel : PageBase
     {
         public void OnGet()
         {

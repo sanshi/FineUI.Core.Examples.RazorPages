@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DropDownBox
 {
-    public class RadioButtonListEnableEditDefaultModel : BaseModel
+    public class RadioButtonListEnableEditDefaultModel : PageBase
     {
         public void OnGet()
         {

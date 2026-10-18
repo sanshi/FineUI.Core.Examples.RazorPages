@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridEditor
 {
-    public class UpdateCellValueTaxModel : BaseModel
+    public class UpdateCellValueTaxModel : PageBase
     {
         public void OnGet()
         {

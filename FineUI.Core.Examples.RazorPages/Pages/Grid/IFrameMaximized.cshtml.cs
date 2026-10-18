@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class IFrameMaximizedModel : BaseModel
+    public class IFrameMaximizedModel : PageBase
     {
         public void OnGet()
         {

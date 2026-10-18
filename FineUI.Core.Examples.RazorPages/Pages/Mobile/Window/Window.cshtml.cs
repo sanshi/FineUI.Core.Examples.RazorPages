@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Mobile.Window
 {
-    public class WindowModel : BaseMobileModel
+    public class WindowModel : MobilePageBase
     {
         public void OnGet()
         {

@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridMove
 {
-    public class RowMoveColumnConfigModel : BaseModel
+    public class RowMoveColumnConfigModel : PageBase
     {
         private static readonly JArray GRID_COLUMNCONFIG_DEFAULT = new JArray
         {

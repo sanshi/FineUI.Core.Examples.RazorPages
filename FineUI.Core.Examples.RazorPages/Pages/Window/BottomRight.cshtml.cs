@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Window
 {
-    public class BottomRightModel : BaseModel
+    public class BottomRightModel : PageBase
     {
         public void OnGet()
         {

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.TabStrip
 {
-    public class PositionToolsTitleVerticalModel : BaseModel
+    public class PositionToolsTitleVerticalModel : PageBase
     {
         public void OnGet()
         {

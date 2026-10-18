@@ -9,7 +9,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Mobile
 {
-    public class MainModel : BaseMobileModel
+    public class MainModel : MobilePageBase
     {
         public void OnGet()
         {

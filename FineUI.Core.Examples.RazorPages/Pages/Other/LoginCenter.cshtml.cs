@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Other
 {
-    public class LoginCenterModel : BaseModel
+    public class LoginCenterModel : PageBase
     {
         public void OnGet()
         {

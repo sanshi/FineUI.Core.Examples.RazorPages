@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.DataProtection.KeyManagement;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridOther
 {
-    public class EmptyTextModel : BaseModel
+    public class EmptyTextModel : PageBase
     {
         public void OnGet()
         {

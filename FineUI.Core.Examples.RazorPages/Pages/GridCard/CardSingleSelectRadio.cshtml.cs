@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridCard
 {
-    public class CardSingleSelectRadioModel : BaseModel
+    public class CardSingleSelectRadioModel : PageBase
     {
         public void OnGet()
         {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DropDownList
 {
-    public class CustomItemDataDisplayFieldsModel : BaseModel
+    public class CustomItemDataDisplayFieldsModel : PageBase
     {
         public void OnGet()
         {

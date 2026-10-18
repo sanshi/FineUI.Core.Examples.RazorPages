@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridOther
 {
-    public class CurrencyModel : BaseModel
+    public class CurrencyModel : PageBase
     {
         public void OnGet()
         {

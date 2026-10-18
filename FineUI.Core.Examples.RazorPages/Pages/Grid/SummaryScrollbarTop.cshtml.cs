@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class SummaryScrollbarTopModel : BaseModel
+    public class SummaryScrollbarTopModel : PageBase
     {
         public void OnGet()
         {

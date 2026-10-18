@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridEditor
 {
-    public class RowEditingModel : BaseModel
+    public class RowEditingModel : PageBase
     {
         public void OnGet()
         {

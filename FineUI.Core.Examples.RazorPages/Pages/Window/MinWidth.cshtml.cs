@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Window
 {
-    public class MinWidthModel : BaseModel
+    public class MinWidthModel : PageBase
     {
         public void OnGet()
         {

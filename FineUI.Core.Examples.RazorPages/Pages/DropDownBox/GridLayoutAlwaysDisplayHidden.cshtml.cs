@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DropDownBox
 {
-    public class GridLayoutAlwaysDisplayHiddenModel : BaseModel
+    public class GridLayoutAlwaysDisplayHiddenModel : PageBase
     {
         public void OnGet()
         {

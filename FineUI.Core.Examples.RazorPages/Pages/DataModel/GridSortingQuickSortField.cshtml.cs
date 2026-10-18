@@ -10,7 +10,7 @@ using FineUI.Core.Examples.RazorPages.Pages.DataModel.Models;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DataModel
 {
-    public class GridSortingQuickSortFieldModel : BaseModel
+    public class GridSortingQuickSortFieldModel : PageBase
     {
         public IList<Student> Students { get; set; }
 

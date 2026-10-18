@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Layout
 {
-    public class RegionMultiRegionsModel : BaseModel
+    public class RegionMultiRegionsModel : PageBase
     {
         public void OnGet()
         {

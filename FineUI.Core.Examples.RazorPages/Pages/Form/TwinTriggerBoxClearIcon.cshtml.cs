@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class TwinTriggerBoxClearIconModel : BaseModel
+    public class TwinTriggerBoxClearIconModel : PageBase
     {
         public void OnGet()
         {

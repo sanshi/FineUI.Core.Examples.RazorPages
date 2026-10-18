@@ -10,7 +10,7 @@ using System.Text;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridTree
 {
-    public class CheckBoxOnlyFolderCheckModel : BaseModel
+    public class CheckBoxOnlyFolderCheckModel : PageBase
     {
         public void OnGet()
         {

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Tree
 {
-    public class TreeContextMenuModel : BaseModel
+    public class TreeContextMenuModel : PageBase
     {
         public void OnGet()
         {

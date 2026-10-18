@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DropDownList
 {
-    public class SelectedIndexChangedEnableEditModel : BaseModel
+    public class SelectedIndexChangedEnableEditModel : PageBase
     {
         public void OnGet()
         {

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class NumberBoxRoundModel : BaseModel
+    public class NumberBoxRoundModel : PageBase
     {
         public void OnGet()
         {

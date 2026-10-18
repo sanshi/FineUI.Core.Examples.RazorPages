@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class CheckBoxListTooltipModel : BaseModel
+    public class CheckBoxListTooltipModel : PageBase
     {
         public void OnGet()
         {

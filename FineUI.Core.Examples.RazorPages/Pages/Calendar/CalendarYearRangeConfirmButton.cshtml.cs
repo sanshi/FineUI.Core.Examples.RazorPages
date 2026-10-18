@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Calendar
 {
-    public class CalendarYearRangeConfirmButtonModel : BaseModel
+    public class CalendarYearRangeConfirmButtonModel : PageBase
     {
         private DateTime startDate = DateTime.Now.AddYears(2);
         private DateTime endDate = DateTime.Now.AddYears(10);

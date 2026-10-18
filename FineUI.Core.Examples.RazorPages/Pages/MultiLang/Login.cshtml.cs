@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc.Localization;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.MultiLang
 {
-    public partial class LoginModel : BaseMultilangModel
+    public partial class LoginModel : MultilangPageBase
     {
         public void OnGet()
         {

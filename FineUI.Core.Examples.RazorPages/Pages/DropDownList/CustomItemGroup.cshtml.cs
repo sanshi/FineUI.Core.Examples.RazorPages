@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DropDownList
 {
-    public class CustomItemGroupModel : BaseModel
+    public class CustomItemGroupModel : PageBase
     {
         public void OnGet()
         {

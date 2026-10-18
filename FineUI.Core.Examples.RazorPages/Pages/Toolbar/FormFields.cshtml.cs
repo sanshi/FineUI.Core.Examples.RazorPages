@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Toolbar
 {
-    public class FormFieldsModel : BaseModel
+    public class FormFieldsModel : PageBase
     {
         public void OnGet()
         {

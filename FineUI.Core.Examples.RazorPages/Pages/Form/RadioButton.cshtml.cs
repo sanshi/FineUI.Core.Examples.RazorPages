@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class RadioButtonModel : BaseModel
+    public class RadioButtonModel : PageBase
     {
         public void OnGet()
         {

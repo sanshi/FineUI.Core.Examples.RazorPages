@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.FormLayout
 {
-    public class LayoutPanelColumnModel : BaseModel
+    public class LayoutPanelColumnModel : PageBase
     {
         public void OnGet()
         {

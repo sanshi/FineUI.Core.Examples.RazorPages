@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridCard
 {
-    public class CardMultiSelectKeepCurrentSelectionModel : BaseModel
+    public class CardMultiSelectKeepCurrentSelectionModel : PageBase
     {
         public void OnGet()
         {

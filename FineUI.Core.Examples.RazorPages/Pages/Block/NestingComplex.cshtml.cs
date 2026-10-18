@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Block
 {
-    public class NestingComplexModel : BaseModel
+    public class NestingComplexModel : PageBase
     {
         public void OnGet()
         {

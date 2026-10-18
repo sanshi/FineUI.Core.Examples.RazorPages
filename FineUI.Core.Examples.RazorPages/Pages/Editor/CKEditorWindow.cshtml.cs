@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Editor
 {
-    public class CKEditorWindowModel : BaseThirdPartyEditorModel
+    public class CKEditorWindowModel : ThirdPartyEditorPageBase
     {
         public void OnGet()
         {

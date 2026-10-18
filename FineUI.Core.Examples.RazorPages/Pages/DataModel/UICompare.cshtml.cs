@@ -9,7 +9,7 @@ using FineUI.Core.Examples.RazorPages.Pages.DataModel.Models;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DataModel
 {
-    public class UICompareModel : BaseModel
+    public class UICompareModel : PageBase
     {
         public void OnGet()
         {

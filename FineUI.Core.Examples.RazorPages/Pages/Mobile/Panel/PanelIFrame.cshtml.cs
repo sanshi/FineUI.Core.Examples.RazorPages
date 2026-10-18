@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Mobile.Panel
 {
-    public class PanelIFrameModel : BaseMobileModel
+    public class PanelIFrameModel : MobilePageBase
     {
         public void OnGet()
         {

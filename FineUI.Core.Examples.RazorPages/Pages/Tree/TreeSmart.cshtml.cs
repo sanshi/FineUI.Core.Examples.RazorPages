@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Tree
 {
-    public class TreeSmartModel : BaseModel
+    public class TreeSmartModel : PageBase
     {
         public void OnGet()
         {

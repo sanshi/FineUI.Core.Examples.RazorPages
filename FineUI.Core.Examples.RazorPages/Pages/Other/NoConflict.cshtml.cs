@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Other
 {
-    public class NoConflictModel : BaseModel
+    public class NoConflictModel : PageBase
     {
         public void OnGet()
         {

@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridOther
 {
-    public class NewTabSameTabConfirmModel : BaseModel
+    public class NewTabSameTabConfirmModel : PageBase
     {
         public void OnGet()
         {

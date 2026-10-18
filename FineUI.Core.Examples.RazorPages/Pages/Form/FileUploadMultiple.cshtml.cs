@@ -6,7 +6,7 @@ using System.IO;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class FileUploadMultipleModel : BaseUploadModel
+    public class FileUploadMultipleModel : UploadPageBase
     {
         public void OnGet()
         {

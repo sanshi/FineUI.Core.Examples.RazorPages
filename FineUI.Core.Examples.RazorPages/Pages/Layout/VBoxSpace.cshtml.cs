@@ -1,6 +1,6 @@
 namespace FineUI.Core.Examples.RazorPages.Pages.Layout
 {
-    public class VBoxSpaceModel : BaseModel
+    public class VBoxSpaceModel : PageBase
     {
         public void OnGet()
         {

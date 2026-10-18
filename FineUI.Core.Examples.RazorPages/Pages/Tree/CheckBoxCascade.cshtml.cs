@@ -9,7 +9,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Tree
 {
-    public class CheckBoxCascadeModel : BaseModel
+    public class CheckBoxCascadeModel : PageBase
     {
         public void OnGet()
         {

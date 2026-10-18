@@ -4,7 +4,7 @@ using System;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.ThirdParty
 {
-    public class WebUploaderTabsModel : BaseWebUploaderModel
+    public class WebUploaderTabsModel : WebUploaderPageBase
     {
         private static readonly string KEY_FOR_DATASOURCE_1_SESSION = "webuploader.webuploader_tabs.1";
         private static readonly string KEY_FOR_DATASOURCE_2_SESSION = "webuploader.webuploader_tabs.2";

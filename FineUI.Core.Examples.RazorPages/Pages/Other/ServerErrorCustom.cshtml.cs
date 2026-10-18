@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Other
 {
-    public class ServerErrorCustomModel : BaseModel
+    public class ServerErrorCustomModel : PageBase
     {
         public void OnGet()
         {

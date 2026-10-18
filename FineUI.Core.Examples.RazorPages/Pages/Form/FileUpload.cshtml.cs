@@ -9,7 +9,7 @@ using System.IO;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class FileUploadModel : BaseUploadModel
+    public class FileUploadModel : UploadPageBase
     {
         public void OnGet()
         {

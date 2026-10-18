@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.IFrame
 {
-    public class WindowModel : BaseModel
+    public class WindowModel : PageBase
     {
         public void OnGet()
         {

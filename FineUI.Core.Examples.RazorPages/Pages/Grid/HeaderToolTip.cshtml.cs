@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class HeaderToolTipModel : BaseModel
+    public class HeaderToolTipModel : PageBase
     {
         public void OnGet()
         {

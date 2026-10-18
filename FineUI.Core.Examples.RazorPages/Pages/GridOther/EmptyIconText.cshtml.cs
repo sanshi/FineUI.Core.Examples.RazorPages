@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridOther
 {
-    public class EmptyIconTextModel : BaseModel
+    public class EmptyIconTextModel : PageBase
     {
         public void OnGet()
         {

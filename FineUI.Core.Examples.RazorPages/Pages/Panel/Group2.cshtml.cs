@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Panel
 {
-    public class Group2Model : BaseModel
+    public class Group2Model : PageBase
     {
         public void OnGet()
         {

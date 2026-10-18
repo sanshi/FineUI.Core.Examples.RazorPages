@@ -11,7 +11,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class FormWindowCellEditModel : BaseModel
+    public class FormWindowCellEditModel : PageBase
     {
         public void OnGet()
         {

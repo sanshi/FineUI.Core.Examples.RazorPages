@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DatePicker
 {
-    public class DatePickerMinDateModel : BaseModel
+    public class DatePickerMinDateModel : PageBase
     {
         public void OnGet()
         {

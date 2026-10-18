@@ -9,7 +9,7 @@ using FineUI.Core.Examples.RazorPages.Pages.DataModel.Models;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DataModel
 {
-    public class DropDownListModel : BaseModel
+    public class DropDownListModel : PageBase
     {
         public void OnGet()
         {

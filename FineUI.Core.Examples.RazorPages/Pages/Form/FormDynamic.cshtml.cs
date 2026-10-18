@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class FormDynamicModel : BaseModel
+    public class FormDynamicModel : PageBase
     {
         public void OnGet()
         {

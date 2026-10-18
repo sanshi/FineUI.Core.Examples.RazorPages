@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Message
 {
-    public class AlertModel : BaseModel
+    public class AlertModel : PageBase
     {
         public void OnGet()
         {

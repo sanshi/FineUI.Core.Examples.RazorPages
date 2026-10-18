@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.FormLayout
 {
-    public class LayoutCenterLabelModel : BaseModel
+    public class LayoutCenterLabelModel : PageBase
     {
         public void OnGet()
         {

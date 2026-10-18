@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.EmptyProject.RazorPages.Pages
 {
-    public class WindowModel : FineUI.Core.Examples.RazorPages.BaseModel
+    public class WindowModel : FineUI.Core.Examples.RazorPages.PageBase
     {
         public void OnGet()
         {

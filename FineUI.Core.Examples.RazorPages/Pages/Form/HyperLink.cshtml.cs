@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class HyperLinkModel : BaseModel
+    public class HyperLinkModel : PageBase
     {
         public void OnGet()
         {

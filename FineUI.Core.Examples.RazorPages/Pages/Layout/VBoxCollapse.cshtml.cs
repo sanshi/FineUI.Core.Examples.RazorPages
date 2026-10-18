@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Layout
 {
-    public class VBoxCollapseModel : BaseModel
+    public class VBoxCollapseModel : PageBase
     {
         public void OnGet()
         {

@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class FormAttributesModel : BaseModel
+    public class FormAttributesModel : PageBase
     {
         public void OnGet()
         {

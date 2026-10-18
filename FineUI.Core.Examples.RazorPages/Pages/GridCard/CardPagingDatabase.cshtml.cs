@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridCard
 {
-    public class CardPagingDatabaseModel : BaseModel
+    public class CardPagingDatabaseModel : PageBase
     {
         public void OnGet()
         {

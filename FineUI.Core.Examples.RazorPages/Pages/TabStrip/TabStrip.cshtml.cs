@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.TabStrip
 {
-    public class TabStripModel : BaseModel
+    public class TabStripModel : PageBase
     {
         public void OnGet()
         {

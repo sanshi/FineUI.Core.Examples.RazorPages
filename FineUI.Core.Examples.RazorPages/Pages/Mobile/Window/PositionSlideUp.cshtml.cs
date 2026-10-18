@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Mobile.Window
 {
-    public class PositionSlideUpModel : BaseMobileModel
+    public class PositionSlideUpModel : MobilePageBase
     {
         public void OnGet()
         {

@@ -3,7 +3,7 @@ using System;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class CheckBoxModel : BaseModel
+    public class CheckBoxModel : PageBase
     {
         public void OnGet()
         {

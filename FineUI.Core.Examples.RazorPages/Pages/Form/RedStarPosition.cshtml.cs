@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class RedStarPositionModel : BaseModel
+    public class RedStarPositionModel : PageBase
     {
         public void OnGet()
         {

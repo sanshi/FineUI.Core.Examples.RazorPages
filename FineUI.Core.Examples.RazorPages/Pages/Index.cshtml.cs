@@ -10,7 +10,7 @@ using System.Xml;
 
 namespace FineUI.Core.Examples.RazorPages.Pages
 {
-    public class IndexModel : BaseModel
+    public class IndexModel : PageBase
     {
         public void OnGet()
         {

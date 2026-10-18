@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Toolbar
 {
-    public class ToolbarButtonBadgeModel : BaseModel
+    public class ToolbarButtonBadgeModel : PageBase
     {
         public void OnGet()
         {

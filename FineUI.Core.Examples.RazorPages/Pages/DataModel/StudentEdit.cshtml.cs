@@ -13,7 +13,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.DataModel
     /// 会把已有数据清零），而要<b>按主键重新读出实体、只覆盖表单里出现过的字段</b>。
     /// </para>
     /// </summary>
-    public class StudentEditModel : BaseModel
+    public class StudentEditModel : PageBase
     {
         /// <summary>
         /// 表单绑定根：首屏由 OnGet 加载供回显；回发时模型绑定器新建空壳承载表单值。

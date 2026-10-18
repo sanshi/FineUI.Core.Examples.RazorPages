@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class RadioButtonListImageItemModel : BaseModel
+    public class RadioButtonListImageItemModel : PageBase
     {
         public void OnGet()
         {

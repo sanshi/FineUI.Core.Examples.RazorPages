@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Mobile.Window
 {
-    public class PositionCalendarModel : BaseMobileModel
+    public class PositionCalendarModel : MobilePageBase
     {
         public void OnGet()
         {

@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 namespace FineUI.Core.Examples.RazorPages.Pages.MultiLang
 {
     
-    public partial class GridAnnotationModel : BaseMultilangModel
+    public partial class GridAnnotationModel : MultilangPageBase
     {
         public void OnGet()
         {

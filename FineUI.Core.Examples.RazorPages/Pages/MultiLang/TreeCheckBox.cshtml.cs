@@ -9,7 +9,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.MultiLang
 {
-    public partial class TreeCheckBoxModel : BaseMultilangModel
+    public partial class TreeCheckBoxModel : MultilangPageBase
     {
         public void OnGet()
         {

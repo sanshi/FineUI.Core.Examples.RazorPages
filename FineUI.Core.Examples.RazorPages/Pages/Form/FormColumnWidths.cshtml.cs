@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class FormColumnWidthsModel : BaseModel
+    public class FormColumnWidthsModel : PageBase
     {
         public void OnGet()
         {

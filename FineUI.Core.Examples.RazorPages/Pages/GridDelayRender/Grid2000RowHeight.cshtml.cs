@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridDelayRender
 {
-    public class Grid2000RowHeightModel : BaseModel
+    public class Grid2000RowHeightModel : PageBase
     {
         public void OnGet()
         {

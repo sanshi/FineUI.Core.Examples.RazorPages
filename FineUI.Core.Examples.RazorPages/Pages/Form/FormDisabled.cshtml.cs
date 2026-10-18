@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class FormDisabledModel : BaseModel
+    public class FormDisabledModel : PageBase
     {
         public void OnGet()
         {

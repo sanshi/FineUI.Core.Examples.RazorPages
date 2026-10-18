@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Tree
 {
-    public class TreeShowSelectedNodeModel : BaseModel
+    public class TreeShowSelectedNodeModel : PageBase
     {
         public void OnGet()
         {

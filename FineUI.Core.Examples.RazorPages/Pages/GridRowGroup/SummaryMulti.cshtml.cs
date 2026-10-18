@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridRowGroup
 {
-    public class SummaryMultiModel : BaseModel
+    public class SummaryMultiModel : PageBase
     {
         public void OnGet()
         {

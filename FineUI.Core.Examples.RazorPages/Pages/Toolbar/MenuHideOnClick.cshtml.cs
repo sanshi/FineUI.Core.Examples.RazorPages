@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Toolbar
 {
-    public class MenuHideOnClickModel : BaseModel
+    public class MenuHideOnClickModel : PageBase
     {
         public void OnGet()
         {

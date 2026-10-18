@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Panel
 {
-    public class ToolsTextModel : BaseModel
+    public class ToolsTextModel : PageBase
     {
         public void OnGet()
         {

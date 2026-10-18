@@ -3,7 +3,7 @@ using System.Data;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridOther
 {
-    public class LongPrecisionModel : BaseModel
+    public class LongPrecisionModel : PageBase
     {
         public void OnGet()
         {

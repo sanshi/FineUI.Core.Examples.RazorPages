@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Panel
 {
-    public class BgImageModel : BaseModel
+    public class BgImageModel : PageBase
     {
         public void OnGet()
         {

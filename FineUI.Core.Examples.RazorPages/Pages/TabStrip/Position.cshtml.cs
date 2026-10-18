@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.TabStrip
 {
-    public class PositionModel : BaseModel
+    public class PositionModel : PageBase
     {
         public void OnGet()
         {

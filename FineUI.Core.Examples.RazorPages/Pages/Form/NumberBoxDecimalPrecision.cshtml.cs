@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class NumberBoxDecimalPrecisionModel : BaseModel
+    public class NumberBoxDecimalPrecisionModel : PageBase
     {
         public void OnGet()
         {

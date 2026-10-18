@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Mobile.Message
 {
-    public class AlertModel : BaseMobileModel
+    public class AlertModel : MobilePageBase
     {
         public void OnGet()
         {

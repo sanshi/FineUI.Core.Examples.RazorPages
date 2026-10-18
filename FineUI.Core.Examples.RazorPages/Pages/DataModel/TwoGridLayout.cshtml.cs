@@ -9,7 +9,7 @@ using FineUI.Core.Examples.RazorPages.Pages.DataModel.Models;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DataModel
 {
-    public class TwoGridLayoutModel : BaseModel
+    public class TwoGridLayoutModel : PageBase
     {
         public void OnGet()
         {

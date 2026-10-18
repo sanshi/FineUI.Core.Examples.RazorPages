@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class HeaderDisableMenuModel : BaseModel
+    public class HeaderDisableMenuModel : PageBase
     {
         public void OnGet()
         {

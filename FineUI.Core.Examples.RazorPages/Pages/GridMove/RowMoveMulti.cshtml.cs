@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridMove
 {
-    public class RowMoveMultiModel : BaseModel
+    public class RowMoveMultiModel : PageBase
     {
         public void OnGet()
         {

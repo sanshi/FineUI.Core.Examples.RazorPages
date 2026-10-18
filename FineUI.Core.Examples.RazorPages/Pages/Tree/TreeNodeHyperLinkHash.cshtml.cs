@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Tree
 {
-    public class TreeNodeHyperLinkHashModel : BaseModel
+    public class TreeNodeHyperLinkHashModel : PageBase
     {
         public void OnGet()
         {

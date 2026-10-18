@@ -5,7 +5,7 @@ using System.Data;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridFilter
 {
-    public class InlineFilterDropDownListNoForceSelectionModel : BaseModel
+    public class InlineFilterDropDownListNoForceSelectionModel : PageBase
     {
         public void OnGet()
         {

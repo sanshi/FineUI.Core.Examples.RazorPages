@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DropDownList
 {
-    public class MultiSelectTagsEnableEditEmptyTextModel : BaseModel
+    public class MultiSelectTagsEnableEditEmptyTextModel : PageBase
     {
         public void OnGet()
         {

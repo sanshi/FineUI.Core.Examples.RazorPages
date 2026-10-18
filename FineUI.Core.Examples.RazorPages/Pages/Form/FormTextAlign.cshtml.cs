@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class FormTextAlignModel : BaseModel
+    public class FormTextAlignModel : PageBase
     {
         public void OnGet()
         {

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Message
 {
-    public class AlertDownloadHideIFrameModel : BaseModel
+    public class AlertDownloadHideIFrameModel : PageBase
     {
         public void OnGet()
         {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Layout
 {
-    public class VBoxScrollBarModel : BaseModel
+    public class VBoxScrollBarModel : PageBase
     {
         public void OnGet()
         {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridRowGroup
 {
-    public class SummaryRendererModel : BaseModel
+    public class SummaryRendererModel : PageBase
     {
         public void OnGet()
         {

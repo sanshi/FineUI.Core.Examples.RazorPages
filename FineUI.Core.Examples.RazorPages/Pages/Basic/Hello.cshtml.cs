@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Basic
 {
-    public class HelloModel : BaseModel
+    public class HelloModel : PageBase
     {
         public void OnGet()
         {

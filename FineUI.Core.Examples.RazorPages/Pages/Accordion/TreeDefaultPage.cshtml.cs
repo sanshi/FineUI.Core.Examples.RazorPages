@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Accordion
 {
-    public class TreeDefaultPageModel : BaseModel
+    public class TreeDefaultPageModel : PageBase
     {
         public void OnGet()
         {

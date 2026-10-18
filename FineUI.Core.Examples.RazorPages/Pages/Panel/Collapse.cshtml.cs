@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Panel
 {
-    public class CollapseModel : BaseModel
+    public class CollapseModel : PageBase
     {
         public void OnGet()
         {

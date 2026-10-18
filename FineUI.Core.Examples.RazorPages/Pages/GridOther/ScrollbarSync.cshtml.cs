@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridOther
 {
-    public class ScrollbarSyncModel : BaseModel
+    public class ScrollbarSyncModel : PageBase
     {
         public void OnGet()
         {

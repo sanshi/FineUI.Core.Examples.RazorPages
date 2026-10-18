@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class CheckBoxListRadioAtLeastOneModel : BaseModel
+    public class CheckBoxListRadioAtLeastOneModel : PageBase
     {
         public void OnGet()
         {

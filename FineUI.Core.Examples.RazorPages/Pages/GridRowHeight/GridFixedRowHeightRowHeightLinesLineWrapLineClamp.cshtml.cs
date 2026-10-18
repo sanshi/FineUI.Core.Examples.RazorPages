@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.GridRowHeight
 {
-    public class GridFixedRowHeightRowHeightLinesLineWrapLineClampModel : BaseModel
+    public class GridFixedRowHeightRowHeightLinesLineWrapLineClampModel : PageBase
     {
         public void OnGet()
         {

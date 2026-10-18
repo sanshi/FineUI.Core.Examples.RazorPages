@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Form
 {
-    public class CheckBoxListAutoColumnWidthModel : BaseModel
+    public class CheckBoxListAutoColumnWidthModel : PageBase
     {
         public void OnGet()
         {

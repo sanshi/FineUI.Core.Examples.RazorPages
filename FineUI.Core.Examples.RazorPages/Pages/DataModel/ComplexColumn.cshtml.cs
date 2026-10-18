@@ -8,7 +8,7 @@ using FineUI.Core.Examples.RazorPages.Pages.DataModel.Models;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DataModel
 {
-    public class ComplexColumnModel : BaseModel
+    public class ComplexColumnModel : PageBase
     {
         public void OnGet()
         {

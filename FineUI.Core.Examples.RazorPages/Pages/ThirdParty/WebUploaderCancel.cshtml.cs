@@ -4,7 +4,7 @@ using System;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.ThirdParty
 {
-    public class WebUploaderCancelModel : BaseWebUploaderModel
+    public class WebUploaderCancelModel : WebUploaderPageBase
     {
         private static readonly string KEY_FOR_DATASOURCE_SESSION = "webuploader.webuploader_cancel";
 

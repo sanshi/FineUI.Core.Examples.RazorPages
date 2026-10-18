@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.ThirdParty
 {
-    public class AutoCompleteCustomDisplayModel : BaseModel
+    public class AutoCompleteCustomDisplayModel : PageBase
     {
         public void OnGet()
         {

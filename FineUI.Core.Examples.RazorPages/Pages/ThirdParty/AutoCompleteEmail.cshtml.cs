@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.ThirdParty
 {
-    public class AutoCompleteEmailModel : BaseModel
+    public class AutoCompleteEmailModel : PageBase
     {
         public void OnGet()
         {

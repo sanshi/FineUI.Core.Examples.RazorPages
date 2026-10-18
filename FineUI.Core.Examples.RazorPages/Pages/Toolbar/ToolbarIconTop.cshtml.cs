@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Toolbar
 {
-    public class ToolbarIconTopModel : BaseUploadModel
+    public class ToolbarIconTopModel : UploadPageBase
     {
         public void OnGet()
         {

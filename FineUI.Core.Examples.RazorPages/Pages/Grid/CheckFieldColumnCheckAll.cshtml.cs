@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class CheckFieldColumnCheckAllModel : BaseModel
+    public class CheckFieldColumnCheckAllModel : PageBase
     {
         public void OnGet()
         {

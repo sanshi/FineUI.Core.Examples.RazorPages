@@ -10,7 +10,7 @@ using FineUI.Core.Examples.RazorPages.Pages.DataModel.Models;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DataModel
 {
-    public class FormSecondaryPropertyModel : BaseModel
+    public class FormSecondaryPropertyModel : PageBase
     {
         public void OnGet()
         {

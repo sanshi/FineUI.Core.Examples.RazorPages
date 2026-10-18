@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Partial
 {
-    public class PartialModel : BaseModel
+    public class PartialModel : PageBase
     {
         public void OnGet()
         {

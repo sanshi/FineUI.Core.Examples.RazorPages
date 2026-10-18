@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Grid
 {
-    public class RowDoubleClickModel : BaseModel
+    public class RowDoubleClickModel : PageBase
     {
         public void OnGet()
         {

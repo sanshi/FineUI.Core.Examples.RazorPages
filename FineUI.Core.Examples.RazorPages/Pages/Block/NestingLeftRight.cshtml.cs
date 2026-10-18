@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Block
 {
-    public class NestingLeftRightModel : BaseModel
+    public class NestingLeftRightModel : PageBase
     {
         public void OnGet()
         {

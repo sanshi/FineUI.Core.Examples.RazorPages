@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.DropDownBox
 {
-    public class NestingModel : BaseModel
+    public class NestingModel : PageBase
     {
         public void OnGet()
         {

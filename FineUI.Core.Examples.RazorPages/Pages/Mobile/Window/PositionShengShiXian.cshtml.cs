@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.Mobile.Window
 {
-    public class PositionShengShiXianModel : BaseMobileModel
+    public class PositionShengShiXianModel : MobilePageBase
     {
         public void OnGet()
         {
