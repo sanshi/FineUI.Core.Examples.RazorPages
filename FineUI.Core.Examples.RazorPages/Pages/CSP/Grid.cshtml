@@ -23,6 +23,14 @@
     <br />
     <f:Button Text="选中了哪些行" ClickHandler="onShowSelectedNamesClick"></f:Button>
 
+    <br />
+    <br />
+    注：
+    <ul>
+        <li>示例站已全局开启严格 CSP 和 nonce，页面模板中的普通内联脚本会自动获得 nonce。本页只需额外允许下方两个 CDN 脚本来源。</li>
+        <li>说明：<a target="_blank" href="https://fineui.com/docs/#/FineUICore_RazorForms/1700_CSP_nonce">CSP 与外部脚本来源的配置</a></li>
+    </ul>
+
 }
 
 
@@ -33,7 +41,7 @@
     <script type="text/javascript" src="https://unpkg.com/underscore@1.13.7/underscore-umd-min.js"></script>
 
 
-    <script nonce="@PageManager.Instance.CspScriptsNonceValue" type="text/javascript">
+    <script type="text/javascript">
 
         function renderGender(value, params) {
             return value == 1 ? '男' : '女';
