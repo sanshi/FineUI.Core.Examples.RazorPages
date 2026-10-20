@@ -30,10 +30,10 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Grid
             ViewBag.Grid1DataSource = pagedDataTable;
 
             // 3. 合计行数据
-            ViewBag.Grid1SummaryData = GetSummaryData(pagedDataTable);
+            ViewBag.Grid1SummaryData = CalculateSummaryData(pagedDataTable);
         }
 
-        private JObject GetSummaryData(DataTable source)
+        private JObject CalculateSummaryData(DataTable source)
         {
             float extraFeeTotal = 0.0f;
             float feeTotal = 0.0f;
@@ -68,7 +68,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Grid
             grid1.DataSource(dataSource, Grid1_fields);
 
             // 3. 更新合计行数据
-            grid1.SummaryData(GetSummaryData(dataSource));
+            grid1.SummaryData(CalculateSummaryData(dataSource));
 
             return UIHelper.Result();
         }

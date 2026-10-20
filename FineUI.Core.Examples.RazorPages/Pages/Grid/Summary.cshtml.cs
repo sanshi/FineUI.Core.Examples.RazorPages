@@ -29,10 +29,10 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Grid
             ViewBag.Grid1DataSource = DataSourceUtil.GetPagedDataTable(pageIndex: 0, pageSize: 5);
 
             // 3. 合计行数据
-            ViewBag.Grid1SummaryData = GetSummaryData();
+            ViewBag.Grid1SummaryData = CalculateSummaryData();
         }
 
-        private JObject GetSummaryData()
+        private JObject CalculateSummaryData()
         {
             DataTable source = DataSourceUtil.GetDataTable2();
 
