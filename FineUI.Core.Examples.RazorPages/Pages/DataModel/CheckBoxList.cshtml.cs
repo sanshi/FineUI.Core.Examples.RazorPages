@@ -45,7 +45,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.DataModel
                 },
                 new RadioItem {
                     Text = "可选项 3",
-                    Value = "Value2"
+                    Value = "Value3"
                 }
             };
 
