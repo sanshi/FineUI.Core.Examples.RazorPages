@@ -60,11 +60,15 @@ namespace FineUI.Core.Examples.RazorPages.Pages.DataModel
         public Models.CheckBoxListModel TheModel { get; set; }
         
 
-        public IActionResult OnPostBtnSubmit_Click()
+        public IActionResult OnPostBtnSubmit_Click([FromForm(Name = "TheModel_GenderType_2_text")] string otherGender)
         {
             if (ModelState.IsValid)
             {
-                ShowNotify(new RawHtml("用户提交的数据：<br/><pre>{0}</pre>", EncodeJson(TheModel)));
+                // 独立下拉列表的显示文字由 Name 加 _text 的表单参数读取，不写入表单模型。
+                ShowNotify(new RawHtml(
+                    "用户提交的数据：<br/><pre>{0}</pre>"
+                        + "模型性别：{1}<br/>独立下拉列表 TheModel_GenderType_2：{2}",
+                    EncodeJson(TheModel), EncodeJson(TheModel.GenderType), EncodeJson(otherGender)));
             }
 
             return UIHelper.Result();
