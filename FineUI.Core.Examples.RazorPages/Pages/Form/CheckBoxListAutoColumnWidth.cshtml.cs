@@ -94,7 +94,10 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Form
                 sb.Append("<ul>");
                 foreach (JObject selectedItem in selected)
                 {
-                    sb.AppendFormat("<li>{0}（{1}）</li>", selectedItem["label"], selectedItem["value"]);
+                    // 选项文字和值来自提交数据，按文字编码后再放入固定列表模板。
+                    sb.AppendFormat("<li>{0}（{1}）</li>",
+                        HtmlEncode(selectedItem["label"]?.ToString()),
+                        HtmlEncode(selectedItem["value"]?.ToString()));
                 }
                 sb.Append("</ul>");
                 ShowNotify(new RawHtml(sb.ToString()));

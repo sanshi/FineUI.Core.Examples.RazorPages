@@ -103,7 +103,8 @@ namespace FineUI.Core.Examples.RazorPages
                 {
                     continue;
                 }
-                sb.AppendFormat("<li>{0}: {1}</li>", key, values[key]);
+                // 只信任固定的列表标签，字段名和值都按文字编码，避免用户输入变成 HTML 元素。
+                sb.AppendFormat("<li>{0}: {1}</li>", HtmlEncode(key), HtmlEncode(values[key].ToString()));
             }
             sb.Append("</ul>");
 
