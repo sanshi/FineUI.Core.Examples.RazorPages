@@ -44,7 +44,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Tree
 
         public IActionResult OnPostBtnClear_Click()
         {
-            UIHelper.Tree("Tree1").DataSource(null);
+            UIHelper.Tree("Tree1").ClearData();
             
             return UIHelper.Result();
         }
