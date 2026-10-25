@@ -193,43 +193,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Grid
             return columns;
         }
 
-        private DataTable GetDataTable2()
-        {
-            DataTable table = new DataTable();
-            table.Columns.Add(new DataColumn("Guid", typeof(Guid)));
-            table.Columns.Add(new DataColumn("Year", typeof(int)));
-            table.Columns.Add(new DataColumn("HZData1", typeof(int)));
-            table.Columns.Add(new DataColumn("HZData2", typeof(int)));
-            table.Columns.Add(new DataColumn("HLData1", typeof(int)));
-            table.Columns.Add(new DataColumn("HLData2", typeof(int)));
-            table.Columns.Add(new DataColumn("AHData1", typeof(int)));
-            table.Columns.Add(new DataColumn("AHData2", typeof(int)));
-            table.Columns.Add(new DataColumn("LogTime", typeof(DateTime)));
 
-
-            DataRow row;
-
-            Random rd = new Random();
-            for (int i = 0; i < 10; i++)
-            {
-                int year = 2000 + i;
-
-                row = table.NewRow();
-                row[0] = Guid.NewGuid();
-                row[1] = year;
-                row[2] = rd.Next(1000, 9999);
-                row[3] = rd.Next(1000, 9999);
-                row[4] = rd.Next(1000, 9999);
-                row[5] = rd.Next(1000, 9999);
-                row[6] = rd.Next(1000, 9999);
-                row[7] = rd.Next(1000, 9999);
-                row[8] = DateTime.Parse(String.Format("{0}-09-01", year));
-
-                table.Rows.Add(row);
-            }
-
-            return table;
-        }
 
 
         public IActionResult OnPostDropDownList1_SelectedIndexChanged(string selected)
@@ -246,7 +210,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Grid
                     DataTextField = "Name",
                     EnableCheckBoxSelect = false,
                     EnableMultiSelect = false,
-                }, DataSourceUtil.GetDataTable());
+                }, DynamicColumnsData.GetStudents());
             }
             else
             {
@@ -255,11 +219,11 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Grid
                 // 重新配置表头并绑定数据
                 Grid1.ConfigColumns(CreateGrid2Columns(), new GridConfigOptions()
                 {
-                    DataIDField = "Guid",
+                    DataIDField = "Id",
                     DataTextField = "Year",
                     EnableCheckBoxSelect = true,
                     EnableMultiSelect = true,
-                }, GetDataTable2());
+                }, DynamicColumnsData.GetStatistics());
             }
 
 
