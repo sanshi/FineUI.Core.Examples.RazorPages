@@ -1,0 +1,32 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.Grid.HeaderChangePropertiesModel
+@{
+    ViewBag.Title = "UIHelper修改标题和宽度";
+}
+
+@section body {
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格"
+            DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true" DataSource="@DataSourceUtil.GetDataTable()">
+        <Columns>
+            <f:RowNumberField />
+            <f:RenderField HeaderText="姓名" DataField="Name" />
+            <f:RenderField HeaderText="性别" DataField="Gender" FieldType="Int" RendererFunction="renderGender" />
+            <f:RenderField ColumnID="EntranceYear" HeaderText="入学年份" Width="120" DataField="EntranceYear" FieldType="Int" />
+            <f:RenderCheckField HeaderText="是否在校" DataField="AtSchool" RenderAsStaticField="true" />
+            <f:RenderField HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150" />
+        </Columns>
+    </f:Grid>
+    <br>
+    <f:Button ID="Button1" CssClass="marginr" Text="修改[入学年份]的标题文本和宽度" OnClick="@Url.Handler("Button1_Click")" />
+    <f:Button ID="Button2" CssClass="marginr" Text="还原[入学年份]" OnClick="@Url.Handler("Button2_Click")" />
+    <f:Button ID="Button3" Text="再次回发（保留列设置）" OnClick="@Url.Handler("Button3_Click")" />
+    <br>
+    <br>
+    <f:Label ID="LabelResult" Text="修改后可再次回发，观察列设置和已有数据。" />
+    <p>后台用 UIHelper.RenderField 指定表格 ID 和 ColumnID，再调用 HeaderText 和 Width 更新标题文本与列宽。</p>
+    <p>可先勾选几行再修改或还原；再次回发只更新提示文字，保留浏览器中的列设置、行数据及选择。</p>
+}
+
+@section script {
+    <script src="~/res/js/grid.js"></script>
+}
