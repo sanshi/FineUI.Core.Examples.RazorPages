@@ -1,0 +1,32 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.Grid.RowCommandWindowModel
+@{
+    ViewBag.Title = "Grid/RowCommandWindow";
+    ViewBag.SourceFiles = "~/Grid/RowCommandWindowDetails";
+    var rows = new[]
+    {
+        new { ID = 105, Slug = "customer-105", DisplayName = "张三" },
+        new { ID = 106, Slug = "customer-106", DisplayName = "李四" }
+    };
+}
+
+@section body {
+    <p>点击“查看客户”，使用该行的客户标识打开详情，并把客户姓名显示在窗体标题中。</p>
+    @* Slug 和 DisplayName 只供命令使用，无需增加隐藏列或 DataAttributeFields。 *@
+    <f:Grid ID="Grid1" Title="客户列表" ShowHeader="true" ShowBorder="true" IsFluid="true"
+            DataIDField="ID" DataSource="@rows">
+        <Columns>
+            <f:RenderField HeaderText="客户编号" DataField="ID" Width="150" />
+            <f:RenderField HeaderText="操作" ExpandUnusedSpace="true">
+                <Commands>
+                    <f:Command Text="查看客户" CommandName="View" WindowID="Details"
+                               WindowIFrameUrlFormatString="@Url.Content("~/Grid/RowCommandWindowDetails?slug={0}")"
+                               _WindowIFrameUrlFields="Slug"
+                               WindowTitleFormatString="客户 - {0}" _WindowTitleFields="DisplayName" />
+                </Commands>
+            </f:RenderField>
+        </Columns>
+    </f:Grid>
+    <f:Window ID="Details" Title="客户详情" Width="500" Height="300"
+              IsModal="true" EnableIFrame="true" Hidden="true" />
+}
