@@ -739,7 +739,7 @@
 		<TreeNode Text="事件">
 			<TreeNode Text="行内按钮事件" NavigateUrl="~/Grid/RowCommand">
 			</TreeNode>
-			<TreeNode Text="行命令弹窗（独立网址和标题字段）" NavigateUrl="~/Grid/RowCommandWindow">
+			<TreeNode Text="行命令弹窗（网址和标题字段）" NavigateUrl="~/Grid/RowCommandWindow">
 			</TreeNode>
 			<TreeNode Text="行内按钮事件（自定义回发）" NavigateUrl="~/Grid/RowCommandCustom">
 			</TreeNode>
