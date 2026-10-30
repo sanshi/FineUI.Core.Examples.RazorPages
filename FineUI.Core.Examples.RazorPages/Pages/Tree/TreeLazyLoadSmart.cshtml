@@ -9,7 +9,7 @@
 @section body {
 
     <f:Tree ID="Tree1" Width="300" Height="400" EnableCollapse="false" ShowHeader="false" AutoLeafIdentification="false" EnableSingleClickExpand="true"
-            OnNodeLazyLoad="@Url.Handler("Tree1_NodeLazyLoad")" OnNodeLazyLoadParameter1="@(Parameter.FromEventArgument("nodeId", "nodeId"))">
+            OnNodeLazyLoad="@Url.Handler("Tree1_NodeLazyLoad")" OnNodeLazyLoadParameter1="@(Parameter.FromEventArgument("nodeId", 1))">
         <Nodes>
             <f:TreeNode Text="中国" Expanded="true" IconFont="_Home">
                 <f:TreeNode Text="河南省" Expanded="true">

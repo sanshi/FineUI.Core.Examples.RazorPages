@@ -9,7 +9,7 @@
 @section body {
 
     <f:Tree ID="Tree1" IsFluid="true" EnableCollapse="false" ShowHeader="true" Title="延迟加载的树控件" AutoLeafIdentification="false"
-            OnNodeLazyLoad="@Url.Handler("Tree1_NodeLazyLoad")" OnNodeLazyLoadParameter1="@(Parameter.FromEventArgument("nodeId", "nodeId"))">
+            OnNodeLazyLoad="@Url.Handler("Tree1_NodeLazyLoad")" OnNodeLazyLoadParameter1="@(Parameter.FromEventArgument("nodeId", 1))">
         <Nodes>
             <f:TreeNode Text="中国" Expanded="true">
                 <f:TreeNode Text="河南省" Expanded="true">
