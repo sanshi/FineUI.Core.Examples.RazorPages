@@ -79,7 +79,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.DropDownBox
 
         public IActionResult OnPostBtnClearValue_Click()
         {
-            UIHelper.DropDownBox("DropDownBox1").Values("");
+            UIHelper.DropDownBox("DropDownBox1").ClearSelection();
 
             return UIHelper.Result();
         }
