@@ -11,7 +11,7 @@
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" ShowBorder="true" Title="表单" ShowHeader="true">
         <Items>
             <f:TriggerBox ID="TriggerBox1" ShowLabel="false" Text="默认值"
-                          TriggerIcon="Clear" ShowTrigger="false" AutoShowClearIcon="true">
+                          TriggerIcon="Clear" AutoShowClearIcon="true">
             </f:TriggerBox>
             <f:Button ID="btnSubmit" Text="提交表单" OnClick="@Url.Handler("btnSubmit_Click")" OnClickParameter1="@(Parameter.FromFunction("box1Value", "getTriggerBox1Box1ValuePostbackValue"))"></f:Button>
         </Items>
