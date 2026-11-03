@@ -1,0 +1,23 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.DataList.DataListModel
+@{
+    ViewBag.Title = "数据列表";
+}
+
+@section body {
+    <f:Panel ID="Panel1" IsFluid="true" MaxWidth="650" Title="基础列表" BodyPadding="10">
+        <Items>
+            <f:DataList ID="DataList1">
+                <Items>
+                    <f:DataListItem Value="beijing" Text="北京" />
+                    <f:DataListItem Value="shanghai"
+                        TextRawHtml="@(new RawHtml("<img src=\"{0}\" alt=\"城市\" /> 上海", Url.Content("~/res/images/16/4.png")))" />
+                    <f:DataListItem Value="guangzhou" Text="广州" />
+                    <f:DataListItem Value="hefei" Text="合肥" NavigateUrl="https://fineui.com/" Target="_blank" />
+                </Items>
+            </f:DataList>
+        </Items>
+    </f:Panel>
+    <p>DataList 可显示普通文字、可信的图片文字和超链接。点击“合肥”在新窗口打开官网。</p>
+    <p>列表项使用稳定且非空的 Value；包含动态内容的 HTML 模板应先对内容进行编码。</p>
+}

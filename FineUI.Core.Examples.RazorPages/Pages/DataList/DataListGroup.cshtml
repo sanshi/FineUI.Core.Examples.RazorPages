@@ -1,0 +1,40 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.DataList.DataListGroupModel
+@{
+    ViewBag.Title = "数据列表的分组与模板";
+}
+
+@section body {
+    <f:Panel ID="Panel1" IsFluid="true" MaxWidth="650" Title="分组与模板" BodyPadding="10">
+        <Items>
+            <f:DataList ID="DataList1" EnableGroup="true" EnableSelect="true">
+                <Listeners>
+                    <f:Listener Event="itemclick" Handler="onDataListItemClick" />
+                </Listeners>
+                <Items>
+                    <f:DataListItem Value="beijing" Group="华北" NavigateUrl="#details" ShowArrow="true"
+                        TextRawHtml="@(new RawHtml("<strong>北京</strong><br />首都"))" />
+                    <f:DataListItem Value="tianjin" Group="华北" NavigateUrl="#details" ShowArrow="true"
+                        TextRawHtml="@(new RawHtml("<strong>天津</strong><br />海河之城"))" />
+                    <f:DataListItem Value="shanghai" Group="华东" NavigateUrl="#details" ShowArrow="true"
+                        TextRawHtml="@(new RawHtml("<strong>上海</strong><br />国际都市"))" />
+                    <f:DataListItem Value="hangzhou" Group="华东" NavigateUrl="#details" ShowArrow="true"
+                        TextRawHtml="@(new RawHtml("<strong>杭州</strong><br />西湖之城"))" />
+                </Items>
+            </f:DataList>
+        </Items>
+    </f:Panel>
+    <br />
+    <f:Label ID="labResult" Text="点击城市查看项值。" />
+    <p>按 Group 将相邻城市分组；可信 HTML 模板显示标题与说明，ShowArrow 显示链接箭头。</p>
+    <p>点击项由具名客户端函数处理，显示稳定的项值，不进行移动面板切换。动态模板内容必须先编码。</p>
+}
+
+@section script {
+    <script>
+        function onDataListItemClick(event, itemValue) {
+            event.preventDefault();
+            F.ui.labResult.setValue('点击项：' + itemValue);
+        }
+    </script>
+}

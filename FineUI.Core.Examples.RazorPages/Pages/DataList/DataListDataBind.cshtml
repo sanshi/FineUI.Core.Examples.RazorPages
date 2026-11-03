@@ -1,0 +1,31 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.DataList.DataListDataBindModel
+@{
+    ViewBag.Title = "数据列表的数据绑定";
+}
+
+@section body {
+    <f:Panel ID="Panel1" IsFluid="true" MaxWidth="650" Title="数据绑定" BodyPadding="10">
+        <Items>
+            <f:DataList ID="DataList1" Items="@Model.DataListItems" />
+        </Items>
+    </f:Panel>
+    <br />
+    <f:Button ID="btnReload" Text="重新加载" CssClass="marginr" OnClick="@Url.Handler("btnReload_Click")" />
+    <f:Button ID="btnAppend" Text="追加数据" OnClick="@Url.Handler("btnAppend_Click")"
+        OnClickParameter1="@(Parameter.FromFunction("appendCount", "getAppendCount"))" />
+    <f:HiddenField ID="hfAppendCount" Text="0" />
+    <br />
+    <br />
+    <f:Label ID="labResult" Text="已加载 3 项。" />
+    <p>首次在后台绑定城市数据；重新加载会反转初始三项的顺序，并重置追加批次。</p>
+    <p>每次追加深圳和杭州两项，值包含批次编号，连续追加时已有数据保留且项值不重复。</p>
+}
+
+@section script {
+    <script>
+        function getAppendCount() {
+            return F.ui.hfAppendCount.getValue();
+        }
+    </script>
+}

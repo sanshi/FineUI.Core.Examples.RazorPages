@@ -1,0 +1,75 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.DataList.DataListSelectionModel
+@{
+    ViewBag.Title = "数据列表的选择与清空";
+}
+
+@section body {
+    <f:Panel ID="Panel1" IsFluid="true" MaxWidth="1000" Layout="Block" BlockConfigSpace="20" MarginBottom="20"
+        ShowHeader="false" ShowBorder="false">
+        <Items>
+            <f:Panel ID="PanelSingle" Block="12" BlockMD="4" Title="单选" BodyPadding="10">
+                <Items>
+                    <f:DataList ID="DataListSingle" EnableSelect="true" SelectedValue="beijing">
+                        <Items>
+                            <f:DataListItem Value="beijing" Text="北京" />
+                            <f:DataListItem Value="shanghai" Text="上海" />
+                            <f:DataListItem Value="guangzhou" Text="广州" />
+                        </Items>
+                    </f:DataList>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="PanelMulti" Block="12" BlockMD="4" Title="多选" BodyPadding="10">
+                <Items>
+                    <f:DataList ID="DataListMulti" EnableSelect="true" EnableMultiSelect="true" _SelectedValueArray="beijing,shanghai">
+                        <Items>
+                            <f:DataListItem Value="beijing" Text="北京" />
+                            <f:DataListItem Value="shanghai" Text="上海" />
+                            <f:DataListItem Value="guangzhou" Text="广州" />
+                        </Items>
+                    </f:DataList>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="PanelKeep" Block="12" BlockMD="4" Title="多选，保持当前选择" BodyPadding="10">
+                <Items>
+                    <f:DataList ID="DataListKeep" EnableSelect="true" EnableMultiSelect="true"
+                        KeepCurrentSelection="true" _SelectedValueArray="beijing,shanghai">
+                        <Items>
+                            <f:DataListItem Value="beijing" Text="北京" />
+                            <f:DataListItem Value="shanghai" Text="上海" />
+                            <f:DataListItem Value="guangzhou" Text="广州" />
+                        </Items>
+                    </f:DataList>
+                </Items>
+            </f:Panel>
+        </Items>
+    </f:Panel>
+    <f:Button ID="btnRead" Text="读取选择" CssClass="marginr" OnClick="@Url.Handler("btnRead_Click")"
+        OnClickParameter1="@(Parameter.FromFunction("single", "getSingleSelection"))"
+        OnClickParameter2="@(Parameter.FromFunction("multi", "getMultiSelection"))"
+        OnClickParameter3="@(Parameter.FromFunction("keep", "getKeepSelection"))" />
+    <f:Button ID="btnAssign" Text="后台赋值" CssClass="marginr" OnClick="@Url.Handler("btnAssign_Click")" />
+    <f:Button ID="btnClear" Text="清空选择" OnClick="@Url.Handler("btnClear_Click")" />
+    <br />
+    <br />
+    <f:Label ID="labResult" Text="请修改选择，再点击“读取选择”。" />
+    <p>普通多选按 Ctrl 累积选择；开启 KeepCurrentSelection 后，普通点击即可切换当前项，其他选择保留。</p>
+    <p>清空选择保留列表数据。后台赋值与清空通过 UIHelper 更新浏览器，再次读取时提交浏览器当前的选择。</p>
+}
+
+@section script {
+    <script>
+        // 原生提交只传当前选择值，后台读取本次参数，不依赖页面控件状态。
+        function getSingleSelection() {
+            return F.ui.DataListSingle.getSelectedItems();
+        }
+
+        function getMultiSelection() {
+            return F.ui.DataListMulti.getSelectedItems();
+        }
+
+        function getKeepSelection() {
+            return F.ui.DataListKeep.getSelectedItems();
+        }
+    </script>
+}

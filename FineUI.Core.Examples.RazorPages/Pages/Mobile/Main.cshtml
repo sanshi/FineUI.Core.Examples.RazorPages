@@ -324,7 +324,7 @@
 
         F.ready(function () {
 
-            // 社区版不支持DataList
+            // 本页还使用企业版移动工具栏和动画；列表未创建时不初始化移动菜单。
             if (!F.ui.DataList1) {
                 return;
             }
