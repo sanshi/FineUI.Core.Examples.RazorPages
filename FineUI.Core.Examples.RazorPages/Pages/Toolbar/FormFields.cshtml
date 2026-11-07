@@ -19,7 +19,7 @@
                                   CompareControl="dpStartDate" DateFormatString="yyyy-MM-dd" CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期" EmptyText="请选择结束日期"
                                   ShowLabel="false" Label="销毁统计时间段" EnableEdit="false">
                     </f:DatePicker>
-                    <f:Button ID="btnClearDate" Text="重置起止时间" OnClick="@Url.Handler("btnClearDate_Click")"></f:Button>
+                    <f:Button ID="btnClearDate" Text="重置起止时间" OnClick="@Url.Handler("btnClearDate_Click")" OnClickFields="Grid1"></f:Button>
                     <f:ToolbarSeparator></f:ToolbarSeparator>
                     <f:Button ID="btnSearch" Text="查询" _ValidateForms="Toolbar1" OnClick="@Url.Handler("btnSearch_Click")" OnClickFields="Grid1"></f:Button>
                 </Items>
