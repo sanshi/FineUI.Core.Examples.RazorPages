@@ -50,7 +50,9 @@
                 <Items>
                     <f:Panel ID="Panel2" ShowBorder="false" ShowHeader="false">
                         <Items>
-                            <f:Button ID="btnSubmitForm2" Text="验证表单并提交" CssClass="marginr" OnClick="btnSubmitForm2_Click" _ValidateForms="Form2"></f:Button>
+                            <f:Button ID="btnSubmitForm2" Text="验证表单并提交" CssClass="marginr"
+                                      OnClick="@Url.Handler("BtnSubmit_Click")" OnClickFields="Form2"
+                                      _ValidateForms="Form2"></f:Button>
                         </Items>
                     </f:Panel>
                 </Items>

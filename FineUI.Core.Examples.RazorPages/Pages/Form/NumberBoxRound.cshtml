@@ -14,7 +14,7 @@
             <f:NumberBox Label="小数（两位精度，初始值：1.2367）" ID="NumberBox1" Text="1.2367" Required="true" ShowRedStar="true" />
             <f:NumberBox Label="小数（两位精度，禁用四舍五入，初始值：1.2367）" ID="NumberBox2" Text="1.2367" EnableRound="false" Required="true" ShowRedStar="true" />
             <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单"
-                      OnClick="Url.Handler("btnSubmit_Click")" OnClickFields="SimpleForm1"></f:Button>
+                      OnClick="@Url.Handler("btnSubmit_Click")" OnClickFields="SimpleForm1"></f:Button>
         </Items>
     </f:SimpleForm>
     <br />
