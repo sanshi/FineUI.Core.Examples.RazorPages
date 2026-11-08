@@ -4,7 +4,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FineUI.Core.Examples.RazorPages.Pages.HtmlEditor
 {
-    public class SourceModel : PageBase
+    public class FullToolbarModel : PageBase
     {
         public IActionResult OnPostButton1_Click(string content)
         {
