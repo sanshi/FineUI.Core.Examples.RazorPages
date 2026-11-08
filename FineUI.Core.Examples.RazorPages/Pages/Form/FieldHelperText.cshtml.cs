@@ -18,7 +18,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Form
 
         public IActionResult OnPostRead(string helperText)
         {
-            UIHelper.Label("labResult").Text(helperText);
+            UIHelper.Label("labResult").Text("当前填写说明：" + helperText);
             return UIHelper.Result();
         }
     }
