@@ -1,0 +1,32 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.Chart.Line.DateRangeModel
+@using FineUI.Core
+@{
+    ViewBag.SourceFiles = "~/Pages/Chart/ChartInteractionData.cs";
+    ViewBag.Title = "日期范围筛选折线图";
+    var F = Html.F();
+}
+
+@section body {
+    @(F.Panel().IsFluid(true).Title("每日访问趋势").ShowHeader(true).ShowBorder(true).BodyPadding(8)
+        .Toolbars(F.Toolbar().Position(ToolbarPosition.Top).Items(
+            F.ToolbarText().ID("ToolbarTextChartScope").Text(ViewData["Scope"] as string)))
+        .Items(
+            F.SimpleForm().ID("SimpleFormDateRange").IsFluid(true).ShowHeader(false).ShowBorder(false).LabelWidth(78)
+                .Items(
+                    F.DatePicker().ID("dpVisitRange").Label("日期范围").DateFormatString("yyyy-MM-dd")
+                        .DisplayType(CalendarDisplayType.DayRange).EnableEdit(false)
+                        .Text(ViewData["VisitRange"] as string).OnTextChanged(Url.Handler("QueryVisits"), "dpVisitRange")),
+            F.Chart().ID("ChartVisitRange").Height(550).CategoryField("Category")
+                .Series("amount", ChartSeriesType.Line, "访问量", "Amount")
+                .DataSource((object)ViewData["Rows"])))
+
+    <p>在日期范围选择器中选完起止日期，折线和访问量汇总会自动更新。演示数据覆盖 2026 年 9 月 1 日至 12 日。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li><code>.DisplayType(CalendarDisplayType.DayRange)</code> 在同一个弹层中选择开始和结束日期，两端都计入统计。选完第二个日期时触发更新。</li>
+            <li><code>UIHelper.Chart(...).LoadData(...)</code> 同一批查询结果同时用于绘制折线、计算天数和访问量。</li>
+        </ul>
+    </section>
+}

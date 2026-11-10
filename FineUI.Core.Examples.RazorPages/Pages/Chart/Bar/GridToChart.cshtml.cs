@@ -1,0 +1,26 @@
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
+
+namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Bar
+{
+    public class GridToChartModel : PageBase
+    {
+        public void OnGet()
+        {
+            ViewData["Regions"] = ChartInteractionData.RegionTotals();
+            ViewData["Rows"] = ChartInteractionData.RegionTrend("east");
+            ViewData["Scope"] = "华东 · 月度销售额";
+        }
+
+        public IActionResult OnPostSelectRegion(string rowId)
+        {
+            var region = ChartInteractionData.RegionName(rowId);
+            if (region != null)
+            {
+                UIHelper.Chart("ChartRegionMonths").LoadData(JArray.FromObject(ChartInteractionData.RegionTrend(rowId)));
+                UIHelper.ToolbarText("ToolbarTextChartScope").Text(region + " · 月度销售额");
+            }
+            return UIHelper.Result();
+        }
+    }
+}

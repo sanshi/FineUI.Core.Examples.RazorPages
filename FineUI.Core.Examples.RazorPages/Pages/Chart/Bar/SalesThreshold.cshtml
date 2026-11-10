@@ -1,0 +1,30 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.Chart.Bar.SalesThresholdModel
+@using FineUI.Core
+@{
+    ViewBag.SourceFiles = "~/Pages/Chart/ChartInteractionData.cs";
+    ViewBag.Title = "金额门槛筛选柱状图";
+    var F = Html.F();
+}
+
+@section body {
+    @(F.Panel().IsFluid(true).Title("区域销售额").ShowHeader(true).ShowBorder(true).BodyPadding(8)
+        .Toolbars(F.Toolbar().Position(ToolbarPosition.Top).Items(F.ToolbarText().ID("ToolbarTextChartScope").Text(ViewData["Scope"] as string)))
+        .Items(
+            F.SimpleForm().IsFluid(true).ShowHeader(false).ShowBorder(false).LabelWidth(108)
+                .Items(
+                    F.NumberBox().ID("nbxMinimum").Label("最低金额（元）").NoDecimal(true).NoNegative(true).Text("0"),
+                    F.Button().ID("btnFilter").Text("筛选").OnClick(Url.Handler("FilterSales"), "nbxMinimum")),
+            F.Chart().ID("ChartSalesThreshold").Height(550).CategoryField("Category")
+                .Series("amount", ChartSeriesType.Bar, "销售额（元）", "Amount")
+                .DataSource((object)ViewData["Rows"])))
+
+    <p>输入最低销售额并点击「筛选」，只保留达到门槛的区域。输入 0 显示全部，超出所有区域金额时显示空结果。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li><code>NumberBox</code> 后台校验输入为非负整数。门槛包含等于该金额的区域。</li>
+            <li><code>.OnClick(...)</code> 在点击筛选后一次性更新柱图和命中数。</li>
+        </ul>
+    </section>
+}

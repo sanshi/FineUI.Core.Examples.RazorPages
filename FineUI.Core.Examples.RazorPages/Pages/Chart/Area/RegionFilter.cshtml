@@ -1,0 +1,41 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.Chart.Area.RegionFilterModel
+@using FineUI.Core
+@{
+    ViewBag.SourceFiles = "~/Pages/Chart/ChartInteractionData.cs";
+    ViewBag.Title = "复选筛选面积图";
+    var F = Html.F();
+}
+
+@section body {
+    @(F.Panel().IsFluid(true).Title("所选区域月度销售额（元）").ShowHeader(true).ShowBorder(true).BodyPadding(8)
+        .Toolbars(F.Toolbar().Position(ToolbarPosition.Top).Items(
+            F.ToolbarText().ID("ToolbarTextChartScope").Text(ViewData["Scope"] as string)))
+        .Items(
+            F.CheckBoxList().ID("cblRegions").ShowLabel(false).ColumnNumber(3).AutoColumnWidth(true)
+                .OnSelectedIndexChanged(Url.Handler("FilterRegions"), Parameter.FromFunction("selected", "readChartRegions"))
+                .Items(
+                    F.CheckItem().Text("华东").Value("east").Selected(true),
+                    F.CheckItem().Text("华北").Value("north"),
+                    F.CheckItem().Text("华南").Value("south")),
+            F.Chart().ID("ChartAreaSales").Height(550).CategoryField("Category")
+                .Series("amount", ChartSeriesType.Area, "销售额（元）", "Amount")
+                .DataSource((object)ViewData["Rows"])))
+
+    <p>勾选一个或多个区域，面积图展示所选区域每个月的销售额合计。取消全部勾选会清空图表。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li><code>.OnSelectedIndexChanged(...)</code> 选项变动时立即提交当前完整选项集合，后台按月合计。</li>
+            <li><code>UIHelper.Chart(...).LoadData(...)</code> 空选择对应空结果，后台提交空数据以清除原来的面积。</li>
+        </ul>
+    </section>
+}
+
+@section script {
+    <script>
+        function readChartRegions() {
+            return this.getValue();
+        }
+    </script>
+}

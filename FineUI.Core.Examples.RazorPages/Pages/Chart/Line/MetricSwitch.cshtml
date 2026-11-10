@@ -1,0 +1,41 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.Chart.Line.MetricSwitchModel
+@using FineUI.Core
+@{
+    ViewBag.SourceFiles = "~/Pages/Chart/ChartInteractionData.cs";
+    ViewBag.Title = "单选切换折线指标";
+    var F = Html.F();
+}
+
+@section body {
+    @(F.Panel().IsFluid(true).Title("每日指标趋势").ShowHeader(true).ShowBorder(true).BodyPadding(8)
+        .Toolbars(F.Toolbar().Position(ToolbarPosition.Top).Items(F.ToolbarText().ID("ToolbarTextChartScope").Text(ViewData["Scope"] as string)))
+        .Items(
+            F.SimpleForm().IsFluid(true).ShowHeader(false).ShowBorder(false).LabelWidth(108)
+                .Items(
+                    F.RadioButtonList().ID("rblMetric").Label("指标").ColumnNumber(2)
+                        .OnSelectedIndexChanged(Url.Handler("ChangeMetric"), Parameter.FromFunction("metric", "readChartFilter"))
+                        .Items(
+                            F.RadioItem().Text("访问量").Value("visits").Selected(true),
+                            F.RadioItem().Text("转化量").Value("conversions"))),
+            F.Chart().ID("ChartMetricTrend").Height(550).CategoryField("Category")
+                .Series("amount", ChartSeriesType.Line, "人数", "Amount")
+                .DataSource((object)ViewData["Rows"])))
+
+    <p>选择「访问量」或「转化量」，在同一张折线图上查看对应指标。日期范围保持一致，汇总随指标更新。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li><code>RadioButtonList</code> 使用稳定选项键 visits 和 conversions 切换统计口径。</li>
+            <li><code>.OnSelectedIndexChanged(...)</code> 选项改变后重新绑定系列数值，分类日期保持一致。</li>
+        </ul>
+    </section>
+}
+
+@section script {
+    <script>
+        function readChartFilter() {
+            return this.getValue();
+        }
+    </script>
+}

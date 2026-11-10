@@ -1,0 +1,29 @@
+@page
+@model FineUI.Core.Examples.RazorPages.Pages.Chart.Bar.DrillDownModel
+@using FineUI.Core
+@{
+    ViewBag.SourceFiles = "~/Pages/Chart/ChartInteractionData.cs";
+    ViewBag.Title = "柱状图钻取与返回";
+    var F = Html.F();
+}
+
+@section body {
+    @(F.Panel().IsFluid(true).Title("区域销售分析").ShowHeader(true).ShowBorder(true).BodyPadding(8)
+        .Toolbars(F.Toolbar().Position(ToolbarPosition.Top).Items(
+            F.Button().ID("btnBack").Text("返回区域").Enabled(false).CssClass("marginr").OnClick(Url.Handler("ResetRegions")),
+            F.ToolbarText().ID("ToolbarTextChartScope").Text(ViewData["Scope"] as string)))
+        .Items(
+            F.Chart().ID("ChartRegionSales").Height(550).CategoryField("Category")
+                .Series("amount", ChartSeriesType.Bar, "销售额（元）", "Amount")
+                .DataSource((object)ViewData["Rows"])
+                .DataKeyField("Key").OnPointClick(Url.Handler("DrillRegion"))))
+
+    <p>先查看各区域的销售额，再点击区域柱钻取城市明细。「返回区域」恢复汇总。</p>
+    <section aria-label="关键属性">
+        <p><strong>关键属性</strong></p>
+        <ul>
+            <li><code>.DataKeyField("Key")</code> 用区域编号识别被点击的柱，例如 east 表示华东。</li>
+            <li><code>.OnPointClick(...)</code> 后台在同一张图表中重绑城市数据；城市是末级，点击后保持当前视图。</li>
+        </ul>
+    </section>
+}

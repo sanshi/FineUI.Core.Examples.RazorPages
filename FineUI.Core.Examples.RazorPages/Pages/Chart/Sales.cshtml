@@ -3,6 +3,7 @@
 @using FineUI.Core
 @using FineUI.Core.Examples.RazorPages.Pages.Chart
 @{
+    ViewBag.SourceFiles = "~/Pages/Chart/ChartSamples.cs";
     ViewBag.Title = "图表绑定与 Grid 联动";
     var F = Html.F();
     var orders = ChartSamples.Details();
@@ -11,15 +12,15 @@
 @section body {
     @(F.Panel().IsFluid(true).Layout(LayoutType.Block).BlockConfigSpace(16).ShowHeader(false).ShowBorder(false)
         .Items(
-            F.Panel().BlockLG(7).ShowHeader(true).ShowBorder(true).Title("月度销售额（元）").BodyPadding(8)
+            F.Panel().BlockLG(7).Height(550).Layout(LayoutType.Fit).ShowHeader(true).ShowBorder(true).Title("月度销售额（元）").BodyPadding(8)
                 .Toolbars(F.Toolbar().Position(ToolbarPosition.Top).Items(
                     F.Button().ID("btnRecent").Text("最近两个月").CssClass("marginr").OnClick(Url.Handler("Recent")),
                     F.Button().ID("btnReset").Text("显示全部").OnClick(Url.Handler("Reset"))))
-                .Items(F.Chart().ID("ChartSales").Height(286).CategoryField("Category")
+                .Items(F.Chart().ID("ChartSales").CategoryField("Category")
                     .Series("sales", ChartSeriesType.Bar, "销售额", "Amount")
                     .DataSource(ChartSamples.Months())
                     .DataKeyField("Month").OnPointClick(Url.Handler("PointClick"))),
-            F.Grid().ID("GridOrders").BlockLG(5).Height(386).Title("订单明细").ShowHeader(true).ShowBorder(true)
+            F.Grid().ID("GridOrders").BlockLG(5).Height(550).Title("订单明细").ShowHeader(true).ShowBorder(true)
                 .Toolbars(F.Toolbar().Position(ToolbarPosition.Top).Items(
                     F.ToolbarText().ID("ToolbarTextOrderScope").Text(ChartSamples.OrderScope(null, false, orders.Length))))
                 .Columns(
