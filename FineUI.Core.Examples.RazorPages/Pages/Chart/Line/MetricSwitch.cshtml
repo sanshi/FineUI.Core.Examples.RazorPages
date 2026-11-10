@@ -14,7 +14,7 @@
             F.SimpleForm().IsFluid(true).ShowHeader(false).ShowBorder(false).LabelWidth(108)
                 .Items(
                     F.RadioButtonList().ID("rblMetric").Label("指标").ColumnNumber(2)
-                        .OnSelectedIndexChanged(Url.Handler("ChangeMetric"), Parameter.FromFunction("metric", "readChartFilter"))
+                        .OnSelectedIndexChanged(Url.Handler("rblMetric_SelectedIndexChanged"), Parameter.FromFunction("metric", "readChartFilter"))
                         .Items(
                             F.RadioItem().Text("访问量").Value("visits").Selected(true),
                             F.RadioItem().Text("转化量").Value("conversions"))),

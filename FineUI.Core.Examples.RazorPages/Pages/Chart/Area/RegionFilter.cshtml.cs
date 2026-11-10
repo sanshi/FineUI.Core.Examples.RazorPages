@@ -12,7 +12,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Area
             ViewData["Scope"] = ChartInteractionData.AreaSummary(totals);
         }
 
-        public IActionResult OnPostFilterRegions(string[] selected)
+        public IActionResult OnPostCblRegions_SelectedIndexChanged(string[] selected)
         {
             var totals = ChartInteractionData.RegionTrend(selected);
             UIHelper.Chart("ChartAreaSales").LoadData(JArray.FromObject(totals));

@@ -12,7 +12,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Bar
             ViewData["Scope"] = ChartInteractionData.ThresholdSummary(rows);
         }
 
-        public IActionResult OnPostFilterSales(string nbxMinimum)
+        public IActionResult OnPostBtnFilter_Click(string nbxMinimum)
         {
             var rows = ChartInteractionData.RegionThreshold(nbxMinimum);
             if (rows != null)

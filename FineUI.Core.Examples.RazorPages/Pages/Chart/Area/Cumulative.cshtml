@@ -14,7 +14,7 @@
             F.SimpleForm().IsFluid(true).ShowHeader(false).ShowBorder(false).LabelWidth(108)
                 .Items(
                     F.CheckBox().ID("cbxCumulative").ShowLabel(false).Text("按月累计")
-                        .OnCheckedChanged(Url.Handler("ChangeAreaMode"), Parameter.FromFunction("cumulative", "readChartFilter"))),
+                        .OnCheckedChanged(Url.Handler("cbxCumulative_CheckedChanged"), Parameter.FromFunction("cumulative", "readChartFilter"))),
             F.Chart().ID("ChartCumulativeSales").Height(550).CategoryField("Category")
                 .Series("amount", ChartSeriesType.Area, "销售额（元）", "Amount")
                 .DataSource((object)ViewData["Rows"])))

@@ -12,7 +12,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Pie
             ViewData["Scope"] = "全部渠道 · 月度访问趋势";
         }
 
-        public IActionResult OnPostSelectChannel(string seriesKey, string dataKey)
+        public IActionResult OnPostChartChannels_PointClick(string seriesKey, string dataKey)
         {
             var channel = ChartInteractionData.ChannelName(dataKey);
             if (seriesKey == "amount" && channel != null)
@@ -23,7 +23,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Pie
             return UIHelper.Result();
         }
 
-        public IActionResult OnPostResetChannels()
+        public IActionResult OnPostBtnAllChannels_Click()
         {
             UIHelper.Chart("ChartChannelTrend").LoadData(JArray.FromObject(ChartInteractionData.ChannelTrend()));
             UIHelper.ToolbarText("ToolbarTextChartScope").Text("全部渠道 · 月度访问趋势");

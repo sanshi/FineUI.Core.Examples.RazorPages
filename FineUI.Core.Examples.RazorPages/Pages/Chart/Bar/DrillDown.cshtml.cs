@@ -11,7 +11,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Bar
             ViewData["Scope"] = "各区域销售额";
         }
 
-        public IActionResult OnPostDrillRegion(string seriesKey, string dataKey)
+        public IActionResult OnPostChartRegionSales_PointClick(string seriesKey, string dataKey)
         {
             var cities = ChartInteractionData.CityTotals(dataKey);
             if (seriesKey == "amount" && cities.Length > 0)
@@ -23,7 +23,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Bar
             return UIHelper.Result();
         }
 
-        public IActionResult OnPostResetRegions()
+        public IActionResult OnPostBtnBack_Click()
         {
             UIHelper.Chart("ChartRegionSales").LoadData(JArray.FromObject(ChartInteractionData.RegionTotals()));
             UIHelper.ToolbarText("ToolbarTextChartScope").Text("各区域销售额");

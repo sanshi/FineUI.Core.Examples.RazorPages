@@ -15,10 +15,10 @@
                     F.Chart().ID("ChartChannelDetails").CategoryField("Category")
                         .Series("amount", ChartSeriesType.Pie, "访问量", "Amount")
                         .DataSource((object)ViewData["Rows"])
-                        .DataKeyField("Key").OnPointClick(Url.Handler("ReadChannel"))),
+                        .DataKeyField("Key").OnPointClick(Url.Handler("ChartChannelDetails_PointClick"))),
             F.Grid().ID("GridChannelMonths").BlockLG(6).Title("月度访问明细").ShowHeader(true).ShowBorder(true).Height(550)
                 .Toolbars(F.Toolbar().Position(ToolbarPosition.Top).Items(
-                    F.Button().ID("btnClear").Text("清除选择").CssClass("marginr").OnClick(Url.Handler("ClearChannel")),
+                    F.Button().ID("btnClear").Text("清除选择").CssClass("marginr").OnClick(Url.Handler("btnClear_Click")),
                     F.ToolbarText().ID("ToolbarTextChartScope").Text(ViewData["Scope"] as string)))
                 .Columns(
                     F.RenderField().DataField("Category").HeaderText("月份").ExpandUnusedSpace(true),

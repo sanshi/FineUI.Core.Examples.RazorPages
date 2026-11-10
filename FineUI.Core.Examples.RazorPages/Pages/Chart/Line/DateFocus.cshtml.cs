@@ -12,7 +12,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Line
             ViewData["Scope"] = ChartInteractionData.VisitFocusSummary(ChartInteractionData.FirstDate);
         }
 
-        public IActionResult OnPostFocusDate(string seriesKey, string dataKey)
+        public IActionResult OnPostChartDateFocus_PointClick(string seriesKey, string dataKey)
         {
             if (seriesKey == "amount" && ChartInteractionData.FindVisit(dataKey) != null)
             {
@@ -24,7 +24,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Line
             return UIHelper.Result();
         }
 
-        public IActionResult OnPostReadDate(string dpFocus)
+        public IActionResult OnPostBtnFocus_Click(string dpFocus)
         {
             var rows = ChartInteractionData.DailyFocus(dpFocus);
             UIHelper.Chart("ChartDateFocus").LoadData(JArray.FromObject(rows));

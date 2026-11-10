@@ -13,7 +13,7 @@
             F.ToolbarText().ID("ToolbarTextChartScope").Text(ViewData["Scope"] as string)))
         .Items(
             F.CheckBoxList().ID("cblRegions").ShowLabel(false).ColumnNumber(3).AutoColumnWidth(true)
-                .OnSelectedIndexChanged(Url.Handler("FilterRegions"), Parameter.FromFunction("selected", "readChartRegions"))
+                .OnSelectedIndexChanged(Url.Handler("cblRegions_SelectedIndexChanged"), Parameter.FromFunction("selected", "readChartRegions"))
                 .Items(
                     F.CheckItem().Text("华东").Value("east").Selected(true),
                     F.CheckItem().Text("华北").Value("north"),

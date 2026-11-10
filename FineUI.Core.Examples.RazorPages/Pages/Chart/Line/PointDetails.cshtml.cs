@@ -9,7 +9,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Line
             ViewData["Rows"] = ChartInteractionData.DailyVisits();
         }
 
-        public IActionResult OnPostVisitDetails(string seriesKey, string dataKey)
+        public IActionResult OnPostChartDailyVisits_PointClick(string seriesKey, string dataKey)
         {
             var details = ChartInteractionData.FindVisit(dataKey);
             if (seriesKey == "amount" && details != null)

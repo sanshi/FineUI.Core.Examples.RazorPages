@@ -14,7 +14,7 @@
             F.SimpleForm().IsFluid(true).ShowHeader(false).ShowBorder(false).LabelWidth(108)
                 .Items(
                     F.NumberBox().ID("nbxMinimum").Label("最低金额（元）").NoDecimal(true).NoNegative(true).Text("0"),
-                    F.Button().ID("btnFilter").Text("筛选").OnClick(Url.Handler("FilterSales"), "nbxMinimum")),
+                    F.Button().ID("btnFilter").Text("筛选").OnClick(Url.Handler("btnFilter_Click"), "nbxMinimum")),
             F.Chart().ID("ChartSalesThreshold").Height(550).CategoryField("Category")
                 .Series("amount", ChartSeriesType.Bar, "销售额（元）", "Amount")
                 .DataSource((object)ViewData["Rows"])))

@@ -12,7 +12,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Line
             ViewData["Scope"] = ChartInteractionData.MetricSummary("visits", rows);
         }
 
-        public IActionResult OnPostChangeMetric(string metric)
+        public IActionResult OnPostRblMetric_SelectedIndexChanged(string metric)
         {
             var rows = ChartInteractionData.DailyMetric(metric);
             UIHelper.Chart("ChartMetricTrend").LoadData(JArray.FromObject(rows));

@@ -15,10 +15,10 @@
                     F.Chart().ID("ChartChannels").CategoryField("Category")
                         .Series("amount", ChartSeriesType.Pie, "访问量", "Amount")
                         .DataSource((object)ViewData["Rows"])
-                        .DataKeyField("Key").OnPointClick(Url.Handler("SelectChannel"))),
+                        .DataKeyField("Key").OnPointClick(Url.Handler("ChartChannels_PointClick"))),
             F.Panel().BlockLG(7).Height(550).Layout(LayoutType.Fit).Title("月度访问趋势").ShowHeader(true).ShowBorder(true).BodyPadding(8)
                 .Toolbars(F.Toolbar().Position(ToolbarPosition.Top).Items(
-                    F.Button().ID("btnAllChannels").Text("查看全部渠道").CssClass("marginr").OnClick(Url.Handler("ResetChannels")),
+                    F.Button().ID("btnAllChannels").Text("查看全部渠道").CssClass("marginr").OnClick(Url.Handler("btnAllChannels_Click")),
                     F.ToolbarText().ID("ToolbarTextChartScope").Text(ViewData["Scope"] as string)))
                 .Items(
                     F.Chart().ID("ChartChannelTrend").CategoryField("Category")

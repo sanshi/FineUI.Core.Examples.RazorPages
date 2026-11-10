@@ -7,7 +7,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart
     {
         public void OnGet() { }
 
-        public IActionResult OnPostPointClick(string seriesKey, string dataKey)
+        public IActionResult OnPostChartSales_PointClick(string seriesKey, string dataKey)
         {
             if (seriesKey == "sales" && ChartSamples.HasMonth(dataKey))
             {
@@ -16,14 +16,14 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart
             return UIHelper.Result();
         }
 
-        public IActionResult OnPostRecent()
+        public IActionResult OnPostBtnRecent_Click()
         {
             UIHelper.Chart("ChartSales").LoadData(JArray.FromObject(ChartSamples.Months(true)));
             BindOrders(recent: true);
             return UIHelper.Result();
         }
 
-        public IActionResult OnPostReset()
+        public IActionResult OnPostBtnReset_Click()
         {
             UIHelper.Chart("ChartSales").LoadData(JArray.FromObject(ChartSamples.Months()));
             BindOrders();

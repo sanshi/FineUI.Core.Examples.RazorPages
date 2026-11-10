@@ -11,7 +11,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Pie
             ViewData["Scope"] = ChartInteractionData.ChannelDetailsSummary(null, null);
         }
 
-        public IActionResult OnPostReadChannel(string seriesKey, string dataKey)
+        public IActionResult OnPostChartChannelDetails_PointClick(string seriesKey, string dataKey)
         {
             if (seriesKey == "amount" && ChartInteractionData.ChannelName(dataKey) != null)
             {
@@ -22,7 +22,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Pie
             return UIHelper.Result();
         }
 
-        public IActionResult OnPostClearChannel()
+        public IActionResult OnPostBtnClear_Click()
         {
             var rows = new ChartInteractionData.ChartRow[0];
             UIHelper.Grid("GridChannelMonths").DataSource(rows, new[] { "Category", "Amount" });

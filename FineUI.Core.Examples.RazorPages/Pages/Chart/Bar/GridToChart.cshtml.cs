@@ -12,7 +12,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Bar
             ViewData["Scope"] = "华东 · 月度销售额";
         }
 
-        public IActionResult OnPostSelectRegion(string rowId)
+        public IActionResult OnPostGridRegions_RowClick(string rowId)
         {
             var region = ChartInteractionData.RegionName(rowId);
             if (region != null)

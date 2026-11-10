@@ -12,7 +12,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Area
             ViewData["Scope"] = ChartInteractionData.AreaModeSummary(false);
         }
 
-        public IActionResult OnPostChangeAreaMode(bool cumulative)
+        public IActionResult OnPostCbxCumulative_CheckedChanged(bool cumulative)
         {
             var rows = ChartInteractionData.AreaAmounts(cumulative);
             UIHelper.Chart("ChartCumulativeSales").LoadData(JArray.FromObject(rows));

@@ -10,13 +10,13 @@
 @section body {
     @(F.Panel().IsFluid(true).Title("区域销售分析").ShowHeader(true).ShowBorder(true).BodyPadding(8)
         .Toolbars(F.Toolbar().Position(ToolbarPosition.Top).Items(
-            F.Button().ID("btnBack").Text("返回区域").Enabled(false).CssClass("marginr").OnClick(Url.Handler("ResetRegions")),
+            F.Button().ID("btnBack").Text("返回区域").Enabled(false).CssClass("marginr").OnClick(Url.Handler("btnBack_Click")),
             F.ToolbarText().ID("ToolbarTextChartScope").Text(ViewData["Scope"] as string)))
         .Items(
             F.Chart().ID("ChartRegionSales").Height(550).CategoryField("Category")
                 .Series("amount", ChartSeriesType.Bar, "销售额（元）", "Amount")
                 .DataSource((object)ViewData["Rows"])
-                .DataKeyField("Key").OnPointClick(Url.Handler("DrillRegion"))))
+                .DataKeyField("Key").OnPointClick(Url.Handler("ChartRegionSales_PointClick"))))
 
     <p>先查看各区域的销售额，再点击区域柱钻取城市明细。「返回区域」恢复汇总。</p>
     <section aria-label="关键属性">

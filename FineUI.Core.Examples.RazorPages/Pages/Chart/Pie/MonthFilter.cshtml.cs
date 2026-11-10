@@ -12,7 +12,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Pie
             ViewData["Scope"] = ChartInteractionData.DistributionSummary("all", rows);
         }
 
-        public IActionResult OnPostFilterMonth(string month)
+        public IActionResult OnPostDdlMonth_SelectedIndexChanged(string month)
         {
             var rows = ChartInteractionData.ChannelDistribution(month);
             if (rows.Length > 0)

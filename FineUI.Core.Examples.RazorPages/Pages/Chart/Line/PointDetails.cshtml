@@ -13,7 +13,7 @@
             F.Chart().ID("ChartDailyVisits").Height(550).CategoryField("Category")
                 .Series("amount", ChartSeriesType.Line, "访问量", "Amount")
                 .DataSource((object)ViewData["Rows"])
-                .DataKeyField("Key").OnPointClick(Url.Handler("VisitDetails"))))
+                .DataKeyField("Key").OnPointClick(Url.Handler("ChartDailyVisits_PointClick"))))
     @(F.Window().ID("WindowVisitDetails").Title("访问详情").Hidden(true).IsModal(true).EnableClose(true)
         .Width(320).Height(210).BodyPadding(16)
         .Items(

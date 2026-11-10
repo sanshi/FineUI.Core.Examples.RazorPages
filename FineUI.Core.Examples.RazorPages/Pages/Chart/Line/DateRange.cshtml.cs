@@ -13,7 +13,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Line
             ViewData["Scope"] = ChartInteractionData.VisitSummary(visits);
         }
 
-        public IActionResult OnPostQueryVisits(string dpVisitRange)
+        public IActionResult OnPostDpVisitRange_TextChanged(string dpVisitRange)
         {
             // 范围选择器提交一段完整文本，例如 2026-09-03 - 2026-09-05。
             var dates = dpVisitRange?.Split(new[] { " - " }, System.StringSplitOptions.None);
