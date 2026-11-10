@@ -13,24 +13,27 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Line
             ViewData["Scope"] = VisitFocusSummary(DailyVisitData.FirstDate);
         }
 
-        public IActionResult OnPostChartDateFocus_PointClick(string seriesKey, string pointId)
+        public IActionResult OnPostChartDateFocus_PointClick(string pointId)
         {
-            if (seriesKey == "amount" && DailyVisitData.FindVisit(pointId) != null)
+            if (DailyVisitData.FindVisit(pointId) != null)
             {
                 UIHelper.DatePicker("dpFocus").Text(pointId);
-                var rows = DailyFocus(pointId);
-                UIHelper.Chart("ChartDateFocus").LoadData(JArray.FromObject(rows));
-                UIHelper.ToolbarText("ToolbarTextChartScope").Text(VisitFocusSummary(pointId));
+                UpdateDateFocus(pointId);
             }
             return UIHelper.Result();
         }
 
-        public IActionResult OnPostBtnFocus_Click(string dpFocus)
+        public IActionResult OnPostDpFocus_TextChanged(string dpFocus)
         {
-            var rows = DailyFocus(dpFocus);
-            UIHelper.Chart("ChartDateFocus").LoadData(JArray.FromObject(rows));
-            UIHelper.ToolbarText("ToolbarTextChartScope").Text(VisitFocusSummary(dpFocus));
+            UpdateDateFocus(dpFocus);
             return UIHelper.Result();
+        }
+
+        private void UpdateDateFocus(string date)
+        {
+            var rows = DailyFocus(date);
+            UIHelper.Chart("ChartDateFocus").LoadData(JArray.FromObject(rows));
+            UIHelper.ToolbarText("ToolbarTextChartScope").Text(VisitFocusSummary(date));
         }
 
         private static object DailyFocus(string key)
@@ -40,6 +43,8 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Line
                 row.Id,
                 row.Category,
                 row.Amount,
+                // 只在选中的日期显示标记和数值，其余日期的访问趋势由主折线保留。
+                FocusAmount = row.Id == key ? (int?)row.Amount : null,
                 Color = row.Id == key ? "#d9480f" : ""
             }).ToArray();
         }

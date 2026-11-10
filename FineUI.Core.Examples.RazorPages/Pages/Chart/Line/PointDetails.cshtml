@@ -8,26 +8,28 @@
 }
 
 @section body {
-    @(F.Panel().IsFluid(true).Title("每日访问量").ShowHeader(true).ShowBorder(true).BodyPadding(8)
+    @(F.Panel().Layout(LayoutType.Block).BlockConfigSpace(16).IsFluid(true).ShowHeader(false).ShowBorder(false)
         .Items(
-            F.Chart().ID("ChartDailyVisits").Height(550).DataCategoryField("Category")
-                .Series("amount", ChartSeriesType.Line, "访问量", "Amount")
-                .DataSource((object)ViewData["Rows"])
-                .DataIDField("Id").OnPointClick(Url.Handler("ChartDailyVisits_PointClick"))))
-    @(F.Window().ID("WindowVisitDetails").Title("访问详情").Hidden(true).IsModal(true).EnableClose(true)
-        .Width(320).Height(210).BodyPadding(16)
-        .Items(
-            F.Label().ID("labVisitDate").ShowLabel(false),
-            F.Label().ID("labVisitCount").ShowLabel(false),
-            F.Label().ID("labConversionCount").ShowLabel(false),
-            F.Label().ID("labConversionRate").ShowLabel(false)))
+            F.Panel().BlockLG(8).Height(550).Layout(LayoutType.Fit).Title("每日访问量").ShowHeader(true).ShowBorder(true).BodyPadding(8)
+                .Items(
+                    F.Chart().ID("ChartDailyVisits").DataCategoryField("Category")
+                        .Series("amount", ChartSeriesType.Line, "访问量", "Amount")
+                        .DataSource((object)ViewData["Rows"])
+                        .DataIDField("Id").OnPointClick(Url.Handler("ChartDailyVisits_PointClick"))),
+            F.SimpleForm().ID("SimpleFormVisitDetails").BlockLG(4).Height(550).Title("当日访问详情")
+                .ShowHeader(true).ShowBorder(true).BodyPadding(16).LabelWidth(72)
+                .Items(
+                    F.Label().ID("labVisitDate").Label("日期").Text("—"),
+                    F.Label().ID("labVisitCount").Label("访问量").Text("—"),
+                    F.Label().ID("labConversionCount").Label("转化量").Text("—"),
+                    F.Label().ID("labConversionRate").Label("转化率").Text("—"))))
 
-    <p>点击折线上的日期数据点，弹出当日访问量、转化量和转化率。</p>
+    <p>点击折线上的日期点，右侧表单显示当天的访问量、转化量和转化率。</p>
     <section aria-label="关键属性">
         <p><strong>关键属性</strong></p>
         <ul>
             <li><code>.DataIDField("Id")</code> 以完整日期识别记录，例如 2026-09-03。</li>
-            <li><code>.OnPointClick(...)</code> 后台按日期读取完整记录，填充详情 Window，再打开窗口。</li>
+            <li><code>.OnPointClick(...)</code> 按日期读取完整记录，更新只读表单中的 Label。</li>
         </ul>
     </section>
 }

@@ -15,12 +15,11 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Line
             var details = DailyVisitData.FindVisit(pointId);
             if (seriesKey == "amount" && details != null)
             {
-                UIHelper.Label("labVisitDate").Text("日期：" + pointId);
-                UIHelper.Label("labVisitCount").Text("访问量：" + details.Visits);
-                UIHelper.Label("labConversionCount").Text("转化量：" + details.Conversions);
+                UIHelper.Label("labVisitDate").Text(pointId);
+                UIHelper.Label("labVisitCount").Text(details.Visits.ToString(CultureInfo.InvariantCulture));
+                UIHelper.Label("labConversionCount").Text(details.Conversions.ToString(CultureInfo.InvariantCulture));
                 var rate = (details.Conversions * 100.0 / details.Visits).ToString("0.0", CultureInfo.InvariantCulture);
-                UIHelper.Label("labConversionRate").Text("转化率：" + rate + "%");
-                UIHelper.Window("WindowVisitDetails").Show();
+                UIHelper.Label("labConversionRate").Text(rate + "%");
             }
             return UIHelper.Result();
         }
