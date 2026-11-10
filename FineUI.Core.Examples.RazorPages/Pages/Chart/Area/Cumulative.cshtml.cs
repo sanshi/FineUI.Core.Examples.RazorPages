@@ -35,7 +35,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Area
             return rows.Select(row =>
             {
                 total += row.Amount;
-                return new ChartRow(row.Key, row.Category, total);
+                return new ChartRow(row.Id, row.Category, total);
             }).ToArray();
         }
 

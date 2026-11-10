@@ -12,12 +12,12 @@
         .Toolbars(F.Toolbar().Position(ToolbarPosition.Top).Items(
             F.ToolbarText().ID("ToolbarTextChartScope").Text(ViewData["Scope"] as string)))
         .Items(
-            F.SimpleForm().ID("SimpleFormDateRange").IsFluid(true).ShowHeader(false).ShowBorder(false).LabelWidth(78)
+            F.SimpleForm().ID("SimpleFormDateRange").IsFluid(true).MaxWidth(280).ShowHeader(false).ShowBorder(false).LabelAlign(LabelAlign.Top)
                 .Items(
                     F.DatePicker().ID("dpVisitRange").Label("日期范围").DateFormatString("yyyy-MM-dd")
                         .DisplayType(CalendarDisplayType.DayRange).EnableEdit(false)
                         .Text(ViewData["VisitRange"] as string).OnTextChanged(Url.Handler("dpVisitRange_TextChanged"), "dpVisitRange")),
-            F.Chart().ID("ChartVisitRange").Height(550).CategoryField("Category")
+            F.Chart().ID("ChartVisitRange").Height(550).DataCategoryField("Category")
                 .Series("amount", ChartSeriesType.Line, "访问量", "Amount")
                 .DataSource((object)ViewData["Rows"])))
 

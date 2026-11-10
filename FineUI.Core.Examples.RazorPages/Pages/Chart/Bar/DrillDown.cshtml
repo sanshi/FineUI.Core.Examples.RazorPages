@@ -13,16 +13,16 @@
             F.Button().ID("btnBack").Text("返回区域").Enabled(false).CssClass("marginr").OnClick(Url.Handler("btnBack_Click")),
             F.ToolbarText().ID("ToolbarTextChartScope").Text(ViewData["Scope"] as string)))
         .Items(
-            F.Chart().ID("ChartRegionSales").Height(550).CategoryField("Category")
+            F.Chart().ID("ChartRegionSales").Height(550).DataCategoryField("Category")
                 .Series("amount", ChartSeriesType.Bar, "销售额（元）", "Amount")
                 .DataSource((object)ViewData["Rows"])
-                .DataKeyField("Key").OnPointClick(Url.Handler("ChartRegionSales_PointClick"))))
+                .DataIDField("Id").OnPointClick(Url.Handler("ChartRegionSales_PointClick"))))
 
     <p>先查看各区域的销售额，再点击区域柱钻取城市明细。「返回区域」恢复汇总。</p>
     <section aria-label="关键属性">
         <p><strong>关键属性</strong></p>
         <ul>
-            <li><code>.DataKeyField("Key")</code> 用区域编号识别被点击的柱，例如 east 表示华东。</li>
+            <li><code>.DataIDField("Id")</code> 用区域编号识别被点击的柱，例如 east 表示华东。</li>
             <li><code>.OnPointClick(...)</code> 后台在同一张图表中重绑城市数据；城市是末级，点击后保持当前视图。</li>
         </ul>
     </section>

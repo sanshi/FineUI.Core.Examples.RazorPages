@@ -18,7 +18,7 @@
                         .Items(
                             F.RadioItem().Text("访问量").Value("visits").Selected(true),
                             F.RadioItem().Text("转化量").Value("conversions"))),
-            F.Chart().ID("ChartMetricTrend").Height(550).CategoryField("Category")
+            F.Chart().ID("ChartMetricTrend").Height(550).DataCategoryField("Category")
                 .Series("amount", ChartSeriesType.Line, "人数", "Amount")
                 .DataSource((object)ViewData["Rows"])))
 

@@ -12,10 +12,10 @@
         .Items(
             F.Panel().BlockLG(6).Height(550).Layout(LayoutType.Fit).Title("访问渠道占比").ShowHeader(true).ShowBorder(true).BodyPadding(8)
                 .Items(
-                    F.Chart().ID("ChartChannelDetails").CategoryField("Category")
+                    F.Chart().ID("ChartChannelDetails").DataCategoryField("Category")
                         .Series("amount", ChartSeriesType.Pie, "访问量", "Amount")
                         .DataSource((object)ViewData["Rows"])
-                        .DataKeyField("Key").OnPointClick(Url.Handler("ChartChannelDetails_PointClick"))),
+                        .DataIDField("Id").OnPointClick(Url.Handler("ChartChannelDetails_PointClick"))),
             F.Grid().ID("GridChannelMonths").BlockLG(6).Title("月度访问明细").ShowHeader(true).ShowBorder(true).Height(550)
                 .Toolbars(F.Toolbar().Position(ToolbarPosition.Top).Items(
                     F.Button().ID("btnClear").Text("清除选择").CssClass("marginr").OnClick(Url.Handler("btnClear_Click")),
@@ -28,7 +28,7 @@
     <section aria-label="关键属性">
         <p><strong>关键属性</strong></p>
         <ul>
-            <li><code>.DataKeyField("Key")</code> 扇区提交渠道编号，例如 search 表示搜索。</li>
+            <li><code>.DataIDField("Id")</code> 扇区提交渠道编号，例如 search 表示搜索。</li>
             <li><code>.OnPointClick(...)</code> 按渠道查询月度记录，刷新 Grid 和当前选择说明。</li>
         </ul>
     </section>

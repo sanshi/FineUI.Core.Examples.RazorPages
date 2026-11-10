@@ -21,7 +21,7 @@
                     F.CheckItem().Text("华中").Value("central"),
                     F.CheckItem().Text("西南").Value("southwest"),
                     F.CheckItem().Text("西北").Value("northwest")),
-            F.Chart().ID("ChartAreaSales").Height(550).CategoryField("Category")
+            F.Chart().ID("ChartAreaSales").Height(550).DataCategoryField("Category")
                 .Series("amount", ChartSeriesType.Area, "销售额（元）", "Amount")
                 .DataSource((object)ViewData["Rows"])))
 

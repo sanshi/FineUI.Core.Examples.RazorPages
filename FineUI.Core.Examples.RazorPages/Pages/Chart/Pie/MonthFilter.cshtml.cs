@@ -28,7 +28,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Pie
 
         private static string DistributionSummary(string month, ChartRow[] rows)
         {
-            var range = month == "all" ? "全部月份" : Array.Find(ChannelVisitData.ChannelTrend(), row => row.Key == month)?.Category;
+            var range = month == "all" ? "全部月份" : Array.Find(ChannelVisitData.ChannelTrend(), row => row.Id == month)?.Category;
             return $"{range} · 总访问量 {rows.Sum(row => row.Amount)}";
         }
     }

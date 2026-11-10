@@ -7,11 +7,11 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Bar
     {
         public void OnGet() { }
 
-        public IActionResult OnPostChartSales_PointClick(string seriesKey, string dataKey)
+        public IActionResult OnPostChartSales_PointClick(string seriesKey, string pointId)
         {
-            if (seriesKey == "sales" && SalesOrderData.HasMonth(dataKey))
+            if (seriesKey == "sales" && SalesOrderData.HasMonth(pointId))
             {
-                BindOrders(dataKey);
+                BindOrders(pointId);
             }
             return UIHelper.Result();
         }

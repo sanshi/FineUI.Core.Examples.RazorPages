@@ -13,14 +13,14 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Line
             ViewData["Scope"] = VisitFocusSummary(DailyVisitData.FirstDate);
         }
 
-        public IActionResult OnPostChartDateFocus_PointClick(string seriesKey, string dataKey)
+        public IActionResult OnPostChartDateFocus_PointClick(string seriesKey, string pointId)
         {
-            if (seriesKey == "amount" && DailyVisitData.FindVisit(dataKey) != null)
+            if (seriesKey == "amount" && DailyVisitData.FindVisit(pointId) != null)
             {
-                UIHelper.DatePicker("dpFocus").Text(dataKey);
-                var rows = DailyFocus(dataKey);
+                UIHelper.DatePicker("dpFocus").Text(pointId);
+                var rows = DailyFocus(pointId);
                 UIHelper.Chart("ChartDateFocus").LoadData(JArray.FromObject(rows));
-                UIHelper.ToolbarText("ToolbarTextChartScope").Text(VisitFocusSummary(dataKey));
+                UIHelper.ToolbarText("ToolbarTextChartScope").Text(VisitFocusSummary(pointId));
             }
             return UIHelper.Result();
         }
@@ -37,10 +37,10 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Line
         {
             return DailyVisitData.DailyVisits().Select(row => new
             {
-                row.Key,
+                row.Id,
                 row.Category,
                 row.Amount,
-                Color = row.Key == key ? "#d9480f" : ""
+                Color = row.Id == key ? "#d9480f" : ""
             }).ToArray();
         }
 

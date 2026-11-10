@@ -13,13 +13,13 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Pie
             ViewData["Scope"] = ChannelDetailsSummary(null, null);
         }
 
-        public IActionResult OnPostChartChannelDetails_PointClick(string seriesKey, string dataKey)
+        public IActionResult OnPostChartChannelDetails_PointClick(string seriesKey, string pointId)
         {
-            if (seriesKey == "amount" && ChannelVisitData.ChannelName(dataKey) != null)
+            if (seriesKey == "amount" && ChannelVisitData.ChannelName(pointId) != null)
             {
-                var rows = ChannelVisitData.ChannelTrend(dataKey);
+                var rows = ChannelVisitData.ChannelTrend(pointId);
                 UIHelper.Grid("GridChannelMonths").DataSource(rows, new[] { "Category", "Amount" });
-                UIHelper.ToolbarText("ToolbarTextChartScope").Text(ChannelDetailsSummary(dataKey, rows));
+                UIHelper.ToolbarText("ToolbarTextChartScope").Text(ChannelDetailsSummary(pointId, rows));
             }
             return UIHelper.Result();
         }

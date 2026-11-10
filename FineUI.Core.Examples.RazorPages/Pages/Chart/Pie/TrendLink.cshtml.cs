@@ -12,12 +12,12 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Pie
             ViewData["Scope"] = "全部渠道 · 月度访问趋势";
         }
 
-        public IActionResult OnPostChartChannels_PointClick(string seriesKey, string dataKey)
+        public IActionResult OnPostChartChannels_PointClick(string seriesKey, string pointId)
         {
-            var channel = ChannelVisitData.ChannelName(dataKey);
+            var channel = ChannelVisitData.ChannelName(pointId);
             if (seriesKey == "amount" && channel != null)
             {
-                UIHelper.Chart("ChartChannelTrend").LoadData(JArray.FromObject(ChannelVisitData.ChannelTrend(dataKey)));
+                UIHelper.Chart("ChartChannelTrend").LoadData(JArray.FromObject(ChannelVisitData.ChannelTrend(pointId)));
                 UIHelper.ToolbarText("ToolbarTextChartScope").Text(channel + " · 月度访问趋势");
             }
             return UIHelper.Result();

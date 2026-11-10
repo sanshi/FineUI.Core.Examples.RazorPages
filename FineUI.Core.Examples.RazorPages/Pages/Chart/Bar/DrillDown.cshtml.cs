@@ -11,13 +11,13 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Bar
             ViewData["Scope"] = "各区域销售额";
         }
 
-        public IActionResult OnPostChartRegionSales_PointClick(string seriesKey, string dataKey)
+        public IActionResult OnPostChartRegionSales_PointClick(string seriesKey, string pointId)
         {
-            var cities = RegionSalesData.CityTotals(dataKey);
+            var cities = RegionSalesData.CityTotals(pointId);
             if (seriesKey == "amount" && cities.Length > 0)
             {
                 UIHelper.Chart("ChartRegionSales").LoadData(JArray.FromObject(cities));
-                UIHelper.ToolbarText("ToolbarTextChartScope").Text(RegionSalesData.RegionName(dataKey) + " · 城市销售额");
+                UIHelper.ToolbarText("ToolbarTextChartScope").Text(RegionSalesData.RegionName(pointId) + " · 城市销售额");
                 UIHelper.Button("btnBack").Enabled(true);
             }
             return UIHelper.Result();

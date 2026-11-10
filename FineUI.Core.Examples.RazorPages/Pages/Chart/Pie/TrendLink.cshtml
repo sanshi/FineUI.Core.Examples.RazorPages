@@ -12,16 +12,16 @@
         .Items(
             F.Panel().BlockLG(5).Height(550).Layout(LayoutType.Fit).Title("渠道访问占比").ShowHeader(true).ShowBorder(true).BodyPadding(8)
                 .Items(
-                    F.Chart().ID("ChartChannels").CategoryField("Category")
+                    F.Chart().ID("ChartChannels").DataCategoryField("Category")
                         .Series("amount", ChartSeriesType.Pie, "访问量", "Amount")
                         .DataSource((object)ViewData["Rows"])
-                        .DataKeyField("Key").OnPointClick(Url.Handler("ChartChannels_PointClick"))),
+                        .DataIDField("Id").OnPointClick(Url.Handler("ChartChannels_PointClick"))),
             F.Panel().BlockLG(7).Height(550).Layout(LayoutType.Fit).Title("月度访问趋势").ShowHeader(true).ShowBorder(true).BodyPadding(8)
                 .Toolbars(F.Toolbar().Position(ToolbarPosition.Top).Items(
                     F.Button().ID("btnAllChannels").Text("查看全部渠道").CssClass("marginr").OnClick(Url.Handler("btnAllChannels_Click")),
                     F.ToolbarText().ID("ToolbarTextChartScope").Text(ViewData["Scope"] as string)))
                 .Items(
-                    F.Chart().ID("ChartChannelTrend").CategoryField("Category")
+                    F.Chart().ID("ChartChannelTrend").DataCategoryField("Category")
                         .Series("amount", ChartSeriesType.Line, "访问量", "Amount")
                         .DataSource((object)ViewData["Trend"]))))
 
@@ -29,7 +29,7 @@
     <section aria-label="关键属性">
         <p><strong>关键属性</strong></p>
         <ul>
-            <li><code>.DataKeyField("Key")</code> 扇区的业务键是渠道编号，例如 search 表示搜索。</li>
+            <li><code>.DataIDField("Id")</code> 扇区的业务键是渠道编号，例如 search 表示搜索。</li>
             <li><code>.OnPointClick(...)</code> 后台按渠道刷新趋势图。饼图继续展示全部渠道，以便换选。</li>
         </ul>
     </section>
