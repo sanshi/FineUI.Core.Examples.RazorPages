@@ -2,7 +2,7 @@
 @model FineUI.Core.Examples.RazorPages.Pages.Chart.Pie.MonthFilterModel
 @using FineUI.Core
 @{
-    ViewBag.SourceFiles = "~/Pages/Chart/ChartInteractionData.cs";
+    ViewBag.SourceFiles = "~/Pages/Chart/Data/ChannelVisitData.cs;~/Pages/Chart/Data/ChartDataRows.cs";
     ViewBag.Title = "下拉筛选饼图月份";
     var F = Html.F();
 }
@@ -11,9 +11,9 @@
     @(F.Panel().IsFluid(true).Title("访问渠道构成").ShowHeader(true).ShowBorder(true).BodyPadding(8)
         .Toolbars(F.Toolbar().Position(ToolbarPosition.Top).Items(F.ToolbarText().ID("ToolbarTextChartScope").Text(ViewData["Scope"] as string)))
         .Items(
-            F.SimpleForm().IsFluid(true).ShowHeader(false).ShowBorder(false).LabelWidth(108)
+            F.SimpleForm().IsFluid(true).ShowHeader(false).ShowBorder(false).LabelWidth(64)
                 .Items(
-                    F.DropDownList().ID("ddlMonth").Label("月份")
+                    F.DropDownList().ID("ddlMonth").Label("月份").Width(240)
                         .OnSelectedIndexChanged(Url.Handler("ddlMonth_SelectedIndexChanged"), Parameter.FromFunction("month", "readChartFilter"))
                         .Items(
                             F.ListItem().Text("全部月份").Value("all").Selected(true),

@@ -1,6 +1,6 @@
-namespace FineUI.Core.Examples.RazorPages.Pages.Chart
+namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Pie
 {
-    public class PieModel : PageBase
+    public class BasicModel : PageBase
     {
         public object ChartRows { get; private set; }
 

@@ -1,4 +1,4 @@
-namespace FineUI.Core.Examples.RazorPages.Pages.Chart
+namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Bar
 {
     public class CombinationModel : PageBase
     {

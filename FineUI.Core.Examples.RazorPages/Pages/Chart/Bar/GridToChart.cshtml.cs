@@ -7,17 +7,17 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Bar
     {
         public void OnGet()
         {
-            ViewData["Regions"] = ChartInteractionData.RegionTotals();
-            ViewData["Rows"] = ChartInteractionData.RegionTrend("east");
+            ViewData["Regions"] = RegionSalesData.RegionTotals();
+            ViewData["Rows"] = RegionSalesData.RegionTrend("east");
             ViewData["Scope"] = "华东 · 月度销售额";
         }
 
         public IActionResult OnPostGridRegions_RowClick(string rowId)
         {
-            var region = ChartInteractionData.RegionName(rowId);
+            var region = RegionSalesData.RegionName(rowId);
             if (region != null)
             {
-                UIHelper.Chart("ChartRegionMonths").LoadData(JArray.FromObject(ChartInteractionData.RegionTrend(rowId)));
+                UIHelper.Chart("ChartRegionMonths").LoadData(JArray.FromObject(RegionSalesData.RegionTrend(rowId)));
                 UIHelper.ToolbarText("ToolbarTextChartScope").Text(region + " · 月度销售额");
             }
             return UIHelper.Result();

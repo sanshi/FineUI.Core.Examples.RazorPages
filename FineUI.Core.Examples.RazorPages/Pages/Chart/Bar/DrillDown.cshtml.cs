@@ -7,17 +7,17 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Bar
     {
         public void OnGet()
         {
-            ViewData["Rows"] = ChartInteractionData.RegionTotals();
+            ViewData["Rows"] = RegionSalesData.RegionTotals();
             ViewData["Scope"] = "各区域销售额";
         }
 
         public IActionResult OnPostChartRegionSales_PointClick(string seriesKey, string dataKey)
         {
-            var cities = ChartInteractionData.CityTotals(dataKey);
+            var cities = RegionSalesData.CityTotals(dataKey);
             if (seriesKey == "amount" && cities.Length > 0)
             {
                 UIHelper.Chart("ChartRegionSales").LoadData(JArray.FromObject(cities));
-                UIHelper.ToolbarText("ToolbarTextChartScope").Text(ChartInteractionData.RegionName(dataKey) + " · 城市销售额");
+                UIHelper.ToolbarText("ToolbarTextChartScope").Text(RegionSalesData.RegionName(dataKey) + " · 城市销售额");
                 UIHelper.Button("btnBack").Enabled(true);
             }
             return UIHelper.Result();
@@ -25,7 +25,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Bar
 
         public IActionResult OnPostBtnBack_Click()
         {
-            UIHelper.Chart("ChartRegionSales").LoadData(JArray.FromObject(ChartInteractionData.RegionTotals()));
+            UIHelper.Chart("ChartRegionSales").LoadData(JArray.FromObject(RegionSalesData.RegionTotals()));
             UIHelper.ToolbarText("ToolbarTextChartScope").Text("各区域销售额");
             UIHelper.Button("btnBack").Enabled(false);
             return UIHelper.Result();

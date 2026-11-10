@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 
-namespace FineUI.Core.Examples.RazorPages.Pages.Chart
+namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Bar
 {
     public class SalesModel : PageBase
     {
@@ -9,7 +9,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart
 
         public IActionResult OnPostChartSales_PointClick(string seriesKey, string dataKey)
         {
-            if (seriesKey == "sales" && ChartSamples.HasMonth(dataKey))
+            if (seriesKey == "sales" && SalesOrderData.HasMonth(dataKey))
             {
                 BindOrders(dataKey);
             }
@@ -18,23 +18,23 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart
 
         public IActionResult OnPostBtnRecent_Click()
         {
-            UIHelper.Chart("ChartSales").LoadData(JArray.FromObject(ChartSamples.Months(true)));
+            UIHelper.Chart("ChartSales").LoadData(JArray.FromObject(SalesOrderData.Months(true)));
             BindOrders(recent: true);
             return UIHelper.Result();
         }
 
         public IActionResult OnPostBtnReset_Click()
         {
-            UIHelper.Chart("ChartSales").LoadData(JArray.FromObject(ChartSamples.Months()));
+            UIHelper.Chart("ChartSales").LoadData(JArray.FromObject(SalesOrderData.Months()));
             BindOrders();
             return UIHelper.Result();
         }
 
         private static void BindOrders(string month = null, bool recent = false)
         {
-            var orders = ChartSamples.Details(month, recent);
+            var orders = SalesOrderData.Details(month, recent);
             UIHelper.Grid("GridOrders").DataSource(orders, new[] { "Number", "Customer", "Month", "Amount" });
-            UIHelper.ToolbarText("ToolbarTextOrderScope").Text(ChartSamples.OrderScope(month, recent, orders.Length));
+            UIHelper.ToolbarText("ToolbarTextOrderScope").Text(SalesOrderData.OrderScope(month, recent, orders.Length));
         }
     }
 }

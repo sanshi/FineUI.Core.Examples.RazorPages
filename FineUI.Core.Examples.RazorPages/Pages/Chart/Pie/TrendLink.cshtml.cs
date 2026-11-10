@@ -7,17 +7,17 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Pie
     {
         public void OnGet()
         {
-            ViewData["Rows"] = ChartInteractionData.ChannelTotals();
-            ViewData["Trend"] = ChartInteractionData.ChannelTrend();
+            ViewData["Rows"] = ChannelVisitData.ChannelTotals();
+            ViewData["Trend"] = ChannelVisitData.ChannelTrend();
             ViewData["Scope"] = "全部渠道 · 月度访问趋势";
         }
 
         public IActionResult OnPostChartChannels_PointClick(string seriesKey, string dataKey)
         {
-            var channel = ChartInteractionData.ChannelName(dataKey);
+            var channel = ChannelVisitData.ChannelName(dataKey);
             if (seriesKey == "amount" && channel != null)
             {
-                UIHelper.Chart("ChartChannelTrend").LoadData(JArray.FromObject(ChartInteractionData.ChannelTrend(dataKey)));
+                UIHelper.Chart("ChartChannelTrend").LoadData(JArray.FromObject(ChannelVisitData.ChannelTrend(dataKey)));
                 UIHelper.ToolbarText("ToolbarTextChartScope").Text(channel + " · 月度访问趋势");
             }
             return UIHelper.Result();
@@ -25,7 +25,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Chart.Pie
 
         public IActionResult OnPostBtnAllChannels_Click()
         {
-            UIHelper.Chart("ChartChannelTrend").LoadData(JArray.FromObject(ChartInteractionData.ChannelTrend()));
+            UIHelper.Chart("ChartChannelTrend").LoadData(JArray.FromObject(ChannelVisitData.ChannelTrend()));
             UIHelper.ToolbarText("ToolbarTextChartScope").Text("全部渠道 · 月度访问趋势");
             return UIHelper.Result();
         }

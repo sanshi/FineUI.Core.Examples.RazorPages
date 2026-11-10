@@ -2,7 +2,7 @@
 @model FineUI.Core.Examples.RazorPages.Pages.Chart.Area.RegionFilterModel
 @using FineUI.Core
 @{
-    ViewBag.SourceFiles = "~/Pages/Chart/ChartInteractionData.cs";
+    ViewBag.SourceFiles = "~/Pages/Chart/Data/RegionSalesData.cs;~/Pages/Chart/Data/ChartDataRows.cs";
     ViewBag.Title = "复选筛选面积图";
     var F = Html.F();
 }
@@ -12,12 +12,15 @@
         .Toolbars(F.Toolbar().Position(ToolbarPosition.Top).Items(
             F.ToolbarText().ID("ToolbarTextChartScope").Text(ViewData["Scope"] as string)))
         .Items(
-            F.CheckBoxList().ID("cblRegions").ShowLabel(false).ColumnNumber(3).AutoColumnWidth(true)
+            F.CheckBoxList().ID("cblRegions").ShowLabel(false).AutoColumnWidth(true)
                 .OnSelectedIndexChanged(Url.Handler("cblRegions_SelectedIndexChanged"), Parameter.FromFunction("selected", "readChartRegions"))
                 .Items(
                     F.CheckItem().Text("华东").Value("east").Selected(true),
                     F.CheckItem().Text("华北").Value("north"),
-                    F.CheckItem().Text("华南").Value("south")),
+                    F.CheckItem().Text("华南").Value("south"),
+                    F.CheckItem().Text("华中").Value("central"),
+                    F.CheckItem().Text("西南").Value("southwest"),
+                    F.CheckItem().Text("西北").Value("northwest")),
             F.Chart().ID("ChartAreaSales").Height(550).CategoryField("Category")
                 .Series("amount", ChartSeriesType.Area, "销售额（元）", "Amount")
                 .DataSource((object)ViewData["Rows"])))

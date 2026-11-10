@@ -1,12 +1,12 @@
 @page
-@model FineUI.Core.Examples.RazorPages.Pages.Chart.SalesModel
+@model FineUI.Core.Examples.RazorPages.Pages.Chart.Bar.SalesModel
 @using FineUI.Core
-@using FineUI.Core.Examples.RazorPages.Pages.Chart
+@using FineUI.Core.Examples.RazorPages.Pages.Chart.Bar
 @{
-    ViewBag.SourceFiles = "~/Pages/Chart/ChartSamples.cs";
+    ViewBag.SourceFiles = "~/Pages/Chart/Bar/SalesOrderData.cs";
     ViewBag.Title = "图表绑定与 Grid 联动";
     var F = Html.F();
-    var orders = ChartSamples.Details();
+    var orders = SalesOrderData.Details();
 }
 
 @section body {
@@ -18,11 +18,11 @@
                     F.Button().ID("btnReset").Text("显示全部").OnClick(Url.Handler("btnReset_Click"))))
                 .Items(F.Chart().ID("ChartSales").CategoryField("Category")
                     .Series("sales", ChartSeriesType.Bar, "销售额", "Amount")
-                    .DataSource(ChartSamples.Months())
+                    .DataSource(SalesOrderData.Months())
                     .DataKeyField("Month").OnPointClick(Url.Handler("ChartSales_PointClick"))),
             F.Grid().ID("GridOrders").BlockLG(5).Height(550).Title("订单明细").ShowHeader(true).ShowBorder(true)
                 .Toolbars(F.Toolbar().Position(ToolbarPosition.Top).Items(
-                    F.ToolbarText().ID("ToolbarTextOrderScope").Text(ChartSamples.OrderScope(null, false, orders.Length))))
+                    F.ToolbarText().ID("ToolbarTextOrderScope").Text(SalesOrderData.OrderScope(null, false, orders.Length))))
                 .Columns(
                     F.RenderField().ColumnID("Number").DataField("Number").HeaderText("订单号").Width(80),
                     F.RenderField().ColumnID("Customer").DataField("Customer").HeaderText("客户").Width(78).ExpandUnusedSpace(true),
