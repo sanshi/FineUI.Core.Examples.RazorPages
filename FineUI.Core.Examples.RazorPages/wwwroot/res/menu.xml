@@ -22,8 +22,6 @@
 			</TreeNode>
 			<TreeNode Text="图标字体（FontAwesome）" NavigateUrl="~/config/IconFontsFA">
 			</TreeNode>
-			<TreeNode Text="CssClass与CssStyle属性" NavigateUrl="~/Other/CssStyle">
-			</TreeNode>
 		</TreeNode>
 	</TreeNode>
 	<TreeNode Text="表单" IconFont="_Edit">
@@ -2528,7 +2526,11 @@
 				</TreeNode>
 			</TreeNode>
 		</TreeNode>
-		<TreeNode Text="释放window.F命名空间" NavigateUrl="~/Other/NoConflict">
+		<TreeNode Text="杂项">
+			<TreeNode Text="CssClass与CssStyle属性" NavigateUrl="~/Other/CssStyle">
+			</TreeNode>
+			<TreeNode Text="释放window.F命名空间" NavigateUrl="~/Other/NoConflict">
+			</TreeNode>
 		</TreeNode>
 	</TreeNode>
 </Tree>
