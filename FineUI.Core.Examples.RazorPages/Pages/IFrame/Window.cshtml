@@ -30,3 +30,19 @@
 
     </script>
 }
+
+@section exampleDescription {
+<section aria-label="页面描述">
+    <p>演示在 <code>iframe</code> 窗体中加载独立表单页面，关闭窗体后保留外层页面。</p>
+    <h3><i class="f-iconfont f-iconfont-window" aria-hidden="true"></i>打开与关闭内联表单</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control="Button1" title="弹出窗体">弹出窗体</strong>。<br />结果：本页窗体加载独立子页。</li>
+        <li>在子页填写字段，再关闭当前窗体。<br />结果：子页输入属于独立 <code>iframe</code>，外层页面及其加载时间继续保留。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体一">窗体一</strong>）：窗体内容由独立子页面提供。 本页使用<code>true</code>。</li>
+        <li><code>Target</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体一">窗体一</strong>）：指定窗体在哪一层页面显示。 本页使用<code>Top</code>。</li>
+    </ul>
+</section>
+}
