@@ -37,7 +37,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Grid
         }
 
 
-        public IActionResult OnPostButton2_Click(string[] fields)
+        public IActionResult OnPostBtnSortEntranceYearDescending_Click(string[] fields)
         {
             var sortDirection = "DESC";
             var sortField = "EntranceYear";
