@@ -19,7 +19,7 @@
     <br />
     <f:Label ID="labResult" Text="已加载 3 项。" />
     <p>首次在后台绑定城市数据；重新加载会反转初始三项的顺序，并重置追加批次。</p>
-    <p>每次追加深圳和杭州两项，值包含批次编号，连续追加时已有数据保留且项值不重复。</p>
+
 }
 
 @section script {
@@ -37,6 +37,8 @@
     <ol>
         <li>点击<strong class="example-control-reference" data-example-control="btnReload" title="重新加载">重新加载</strong>。<br />结果：用重新准备的三项数据替换列表，并把数量与追加批次重置。</li>
     </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>数据与项值</h3>
+<p>每次追加深圳和杭州两项，值包含批次编号，连续追加时已有数据保留且项值不重复。</p>
     <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
         <li><code>DataTextField</code>（<strong class="example-control-reference" data-example-control="DataList1" title="数据列表">数据列表</strong>）：使用 <code>Name</code> 字段作为显示文字。</li>
