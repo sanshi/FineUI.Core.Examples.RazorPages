@@ -19,7 +19,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.GridDataUrl
 
 
         
-        public IActionResult OnPostButton2_Click()
+        public IActionResult OnPostBtnSelectNamedRows_Click()
         {
             UIHelper.Grid("Grid1").SelectedRowIDArray("102", "106", "108");
 

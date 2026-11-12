@@ -19,7 +19,7 @@ namespace FineUI.Core.Examples.RazorPages.Pages.GridDataUrl
 
 
         
-        public IActionResult OnPostButton2_Click(string Grid1_sourceKey)
+        public IActionResult OnPostBtnSwitchDataUrlServer_Click(string Grid1_sourceKey)
         {
             var grid1 = UIHelper.Grid("Grid1");
 
