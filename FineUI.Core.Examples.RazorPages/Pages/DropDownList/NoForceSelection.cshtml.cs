@@ -22,11 +22,15 @@ namespace FineUI.Core.Examples.RazorPages.Pages.DropDownList
 
             if (!String.IsNullOrEmpty(DropDownList1))
             {
-                labResult.Text(String.Format("选中项：{0}（值：{1}）", DropDownList1_text, DropDownList1));
+                // 用户输入按文字回显，先编码动态文字，避免结果区把输入当作 HTML 标签解析。
+                labResult.Text(String.Format(
+                    "选中项：{0}（值：{1}）",
+                    HtmlEncode(DropDownList1_text),
+                    HtmlEncode(DropDownList1)));
             }
             else
             {
-                labResult.Text(String.IsNullOrEmpty(DropDownList1_text) ? "无选中项" : String.Format("用户输入值：{0}", DropDownList1_text));
+                labResult.Text(String.IsNullOrEmpty(DropDownList1_text) ? "无选中项" : String.Format("用户输入值：{0}", HtmlEncode(DropDownList1_text)));
             }
 
             return UIHelper.Result();

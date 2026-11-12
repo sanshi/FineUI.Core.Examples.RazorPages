@@ -36,3 +36,22 @@
 
 }
 
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>演示在初次加载时显示列表之外的自定义文字，以及真实选项与自定义初值的组合。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>核对自定义初始文字</h3>
+        <ol>
+            <li>
+                打开页面后查看输入区。<br />
+                结果：初始显示“&#64;ViewBag.DropDownList1Text”，可保留不在现有列表中的文字。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>SelectedValueArray</code>：后台用 UIHelper 设置选择；读取当前值时由客户端作为请求参数提交。</li>
+            <li><code>ForceSelection</code>：为 false 时允许保存列表之外的用户输入；为 true 时需要匹配现有选项。 本页声明值为 false。</li>
+            <li><code>Text</code>：提供本页的初始显示文字。</li>
+        </ul>
+    </section>
+}

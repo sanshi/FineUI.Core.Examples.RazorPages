@@ -28,6 +28,8 @@ namespace FineUI.Core.Examples.RazorPages.Pages.FormTable
                 // 校验：扩展名白名单 + 文件大小
                 if (!ValidateUploadFile(filePhoto, out string error))
                 {
+                    // 清空被拒绝的文件，避免下次提交重复上传同一个不合格文件。
+                    UIHelper.FileUpload("filePhoto").Reset();
                     ShowNotify(error);
                 }
                 else
@@ -35,8 +37,9 @@ namespace FineUI.Core.Examples.RazorPages.Pages.FormTable
                     // 保存到 wwwroot 之外的目录，图片地址指向公共下载页（/Home/Download，带 inline=1 内联显示）
                     string savedName = SaveUploadFile(filePhoto);
 
+                    // 结果保留头像等固定 HTML，用户名先编码，避免用户输入被当作标签解析。
                     UIHelper.Label("labResult").Text("<p>文件路径：" + HtmlEncode(originalName) + "</p>" +
-                        "<p>用户名：" + values["tbxUserName"] + "</p>" +
+                        "<p>用户名：" + HtmlEncode(values["tbxUserName"].ToString()) + "</p>" +
                         "<p>头像：<br /><img src=\"" + GetImageUrl(savedName) + "\" /></p>");
 
                     // 清空表单字段（清空上传控件，否则提交表单时会再次上传！）

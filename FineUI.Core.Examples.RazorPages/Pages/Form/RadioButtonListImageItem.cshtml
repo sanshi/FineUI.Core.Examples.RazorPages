@@ -26,10 +26,8 @@
         </Toolbars>
     </f:SimpleForm>
 
-    <br />
-    <br />
-    注：RazorPages（标签模式）演示「DataBind + DataTextRaw」与「手工构建 Items（TextRawHtml）」两种方式，二者功能与安全性等价——都只信任图标模板与 URL、对数据字段 HtmlEncode 转义。
-    OnItemDataBound 为 RazorForms / Pro 专用，RazorPages 不适用（可用上述两种方式替代）。
+
+
 
     @{
         // ② 手工构建 Items：把后端构建好的 RadioItem[] 加入控件（RazorPages 标签无 Items 数组属性，用 GetControl 追加）
@@ -41,4 +39,27 @@
         RadioButtonList2.SelectedValue = "us";
     }
 
+}
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>用带国旗图标的选项展示可信 HTML 文本的几种数据供给方式。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-radio-button-checked" aria-hidden="true"></i>选择带图标的国家</h3>
+        <ol>
+            <li>
+                在第一组中选择德国国旗对应的选项。<br />
+                结果：第一组仅选中德国，值为 de；其它组保持自己的选择。
+            </li>
+            <li>
+                点击“提交表单”。<br />
+                结果：回发后由后台显示当前各组的选中数据；本页实际提供 2 组列表。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：RazorPages（标签模式）演示「DataBind + DataTextRaw」与「手工构建 Items（TextRawHtml）」两种方式，二者功能与安全性等价——都只信任图标模板与 URL、对数据字段 HtmlEncode 转义。 OnItemDataBound 为 RazorForms / Pro 专用，RazorPages 不适用（可用上述两种方式替代）。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DataTextRaw</code>：固定国旗 HTML 按可信内容输出，动态国家名称仍应先编码；普通字符串不会因此自动获得可信身份。</li>
+        </ul>
+    </section>
 }

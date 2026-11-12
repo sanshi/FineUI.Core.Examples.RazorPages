@@ -66,17 +66,8 @@
     <br />
     <f:Button ID="btnShowHideFormRow2" Text="显示隐藏第二行" CssClass="marginr" ClickHandler="onToggleFormRow2Click"></f:Button>
     <f:Button ID="btnShowHideFormRow3" Text="显示隐藏第三行（隐藏后显示空白行）" CssClass="marginr" ClickHandler="onToggleFormRow3Click"></f:Button>
-    <br>
-    <br>
-    注：
-    <ul>
-        <li>
-            对比隐藏[标题]和隐藏[电话]的不同之处（[标题]的HideMode=Visibility）
-        </li>
-        <li>
-            对比隐藏第二行和隐藏第三行的不同之处（FormRow3的HideMode=Visibility）
-        </li>
-    </ul>
+
+
 
 
 }
@@ -136,10 +127,16 @@
                 结果：相应字段或整行恢复显示；各次切换都在浏览器完成，无需回发。
             </li>
         </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：</p>
+        <ul>
+            <li> 对比隐藏[标题]和隐藏[电话]的不同之处（[标题]的HideMode=Visibility） </li>
+            <li> 对比隐藏第二行和隐藏第三行的不同之处（FormRow3的HideMode=Visibility） </li>
+        </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
             <li><code>HideMode</code>：标题和第三行设为 Visibility，隐藏后占位；电话和第二行使用默认 Display，隐藏后释放空间。</li>
-            <li><code>ClickHandler</code>：按钮绑定客户端函数，调用对应控件的 toggleVisible() 切换显示。</li>
+            <li><code>toggleVisible()</code>：在浏览器切换字段或整行的显示状态。</li>
         </ul>
     </section>
 }

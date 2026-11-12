@@ -26,8 +26,8 @@
             </f:Toolbar>
         </Toolbars>
     </f:SimpleForm>
-    <br />
-    注：为数字输入框设置了TrimEndZero=false，所以不会去掉末尾的零（比如精度为3时，会显示0.360，而不是0.36）。
+
+
 }
 
 @section script {
@@ -63,12 +63,13 @@
                 结果：回发后由后台改为 2 位小数和 0.01 的步长，输入框显示 0.40；提交后由后台显示当前数字值。
             </li>
         </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：为数字输入框设置了TrimEndZero=false，所以不会去掉末尾的零（比如精度为3时，会显示0.360，而不是0.36）。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
             <li><code>DecimalPrecision</code>：控制小数位数，三个按钮分别设置为 1、2、3。</li>
             <li><code>Increment</code>：随精度分别设置为 0.1、0.01、0.001。</li>
             <li><code>TrimEndZero</code>：设为 false，0.36 在 3 位精度下显示为 0.360。</li>
-            <li><code>OnClick</code>：按钮回发后通过 UIHelper 返回精度和步长的更新。</li>
         </ul>
     </section>
 }

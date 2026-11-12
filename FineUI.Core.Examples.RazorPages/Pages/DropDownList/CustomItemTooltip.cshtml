@@ -34,9 +34,8 @@
     <f:Label ID="labResult" EncodeText="false">
     </f:Label>
 
-    <br />
-    <br />
-    注：在页面视图上，通过遍历数据源来更新下拉列表每一项的属性。
+
+
 
     @{
         DropDownList DropDownList1 = F.GetControl<DropDownList>("DropDownList1");
@@ -54,4 +53,24 @@
 
     }
 
+}
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>为人员下拉项设置悬停提示，保持选中文字和业务值独立。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>查看数据项提示</h3>
+        <ol>
+            <li>
+                展开面板，将鼠标移到“张萍萍”的选项上。<br />
+                结果：显示包含该人员信息的悬停提示，选择值仍为 101。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：在页面视图上，通过遍历数据源来更新下拉列表每一项的属性。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DataBind()</code>：在视图访问 Items 前显式绑定，确保选项已经生成。</li>
+            <li><code>Attributes[&quot;data-qtip&quot;]</code>：遍历数据源时为对应列表项写入提示信息。</li>
+        </ul>
+    </section>
 }

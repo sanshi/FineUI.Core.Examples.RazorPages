@@ -58,9 +58,10 @@ namespace FineUI.Core.Examples.RazorPages.Pages.Form
             }
             else
             {
-                UIHelper.Label("labResult").Text("用户名：" + values["tbxUserName"] + "<br/>" +
-                        "邮箱：" + values["tbxEmail"] + "<br/>" +
-                        "<p>头像：<br /><img src=\"" + imgPhotoUrl + "\" /></p>");
+                // 结果保留头像等固定 HTML，用户名和邮箱先编码，避免用户输入被当作标签解析。
+                UIHelper.Label("labResult").Text("用户名：" + HtmlEncode(values["tbxUserName"].ToString()) + "<br/>" +
+                        "邮箱：" + HtmlEncode(values["tbxEmail"].ToString()) + "<br/>" +
+                        "<p>头像：<br /><img src=\"" + HtmlEncode(imgPhotoUrl) + "\" /></p>");
 
                 // 清空表单字段（清空上传控件，否则提交表单时会再次上传！）
                 UIHelper.Image("imgPhoto").ImageUrl(Url.Content("~/res/images/blank.png"));

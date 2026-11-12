@@ -92,9 +92,8 @@
     <br />
     <f:Button ID="btnSubmitAll" Text="验证两个表单并提交" CssClass="marginr" OnClick="@Url.Handler("btnSubmitAll_Click")" OnClickFields="Form1,Form2" _ValidateForms="Form1,Form2"></f:Button>
     <f:Button ID="btnResetAll" Text="重置表单1和表单2" ClickHandler="onResetAllClick"></f:Button>
-    <br>
-    <br>
-    注：下拉列表设置属性 Required="true" 和 AutoSelectFirstItem="false"，这样初始没有选中值，提交表单时不能为空。
+
+
 
 
 }
@@ -143,12 +142,11 @@
                 结果：两个表单都恢复初始值，验证错误清除；重置在浏览器完成，无需回发。
             </li>
         </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：下拉列表设置属性 Required="true" 和 AutoSelectFirstItem="false"，这样初始没有选中值，提交表单时不能为空。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>ClickHandler</code>：重置按钮绑定客户端函数，分别调用 Form1.reset()、Form2.reset()。</li>
-            <li><code>AutoSelectFirstItem</code>：下拉列表设为 false，使初始状态可以没有选中项。</li>
-            <li><code>EmptyText</code>：未选择时显示“请选择一项”或“请选择审批人”。</li>
-            <li><code>_ValidateForms</code>：指定 Form1 或 Form2 验证单个表单，指定 Form1,Form2 同时验证两个表单。</li>
+            <li><code>reset()</code>：恢复表单的初始字段值，并清除当前验证错误；可以针对一个表单或逐个重置多个表单。</li>
         </ul>
     </section>
 }

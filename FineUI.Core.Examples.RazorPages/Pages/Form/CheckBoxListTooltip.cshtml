@@ -29,9 +29,8 @@
         </Toolbars>
     </f:SimpleForm>
 
-    <br />
-    <br />
-    注：在页面视图上，通过遍历数据源来更新下拉列表每一项的属性。
+
+
 
     @{
         CheckBoxList CheckBoxList1 = F.GetControl<CheckBoxList>("CheckBoxList1");
@@ -63,4 +62,29 @@
 
     }
 
+}
+
+@section exampleDescription {
+    <section aria-label="页面描述">
+        <p>在视图中为声明项和数据绑定项逐项设置悬停提示。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>查看每个选项的提示</h3>
+        <ol>
+            <li>
+                将鼠标移到列表一的“可选项 1”。<br />
+                结果：显示“这是第一个选项的提示信息”。
+            </li>
+            <li>
+                将鼠标移到列表二的“数据绑定值 1”。<br />
+                结果：该数据项的提示显示“数据绑定值 1（值：item1）”；本页在视图中绑定后遍历选项补充提示。
+            </li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+        <p>注：在页面视图上，通过遍历数据源来更新下拉列表每一项的属性。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>Attributes[&quot;data-qtip&quot;]</code>：给选项写入悬停提示文字；按选项索引设置固定提示，数据项提示按当前项的文字和值生成。</li>
+            <li><code>ColumnNumber</code>：决定列表分为几列。 本页“列表二（一列）”声明值为 1。</li>
+            <li><code>SelectedValueArray</code>：指定初始或后台设置的多个选中值。</li>
+        </ul>
+    </section>
 }

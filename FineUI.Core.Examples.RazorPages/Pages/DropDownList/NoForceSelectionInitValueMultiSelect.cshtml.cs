@@ -23,11 +23,15 @@ namespace FineUI.Core.Examples.RazorPages.Pages.DropDownList
 
             if (DropDownList1 != null && DropDownList1.Length > 0)
             {
-                labResult.Text(String.Format("选中项文本：{0}<br/>选中项值：{1}", DropDownList1_text, String.Join(", ", DropDownList1)));
+                // 用户输入按文字回显，先编码动态文字，避免结果区把输入当作 HTML 标签解析。
+                labResult.Text(String.Format(
+                    "选中项文本：{0}<br/>选中项值：{1}",
+                    HtmlEncode(DropDownList1_text),
+                    HtmlEncode(String.Join(", ", DropDownList1))));
             }
             else
             {
-                labResult.Text(String.Format("用户输入值：{0}", DropDownList1_text));
+                labResult.Text(String.Format("用户输入值：{0}", HtmlEncode(DropDownList1_text)));
             }
 
 
