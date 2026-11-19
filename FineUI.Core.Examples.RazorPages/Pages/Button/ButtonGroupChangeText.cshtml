@@ -12,28 +12,30 @@
             <f:Toolbar>
                 <Items>
                     <f:ButtonGroup ID="ButtonGroup1">
-                        <f:Button ID="Button1" Text="按钮一" IconAlign="Top" Icon="Email"  />
-                        <f:Button ID="Button2" Text="按钮二" IconAlign="Bottom" Icon="Star"  />
-                        <f:Button ID="Button3" Text="按钮三" IconAlign="Top" IconFont="_Camera"  />
-                        <f:Button ID="Button4" Text="按钮四" IconAlign="Bottom" IconFont="_Phone"  />
+                        <f:Button ID="Button1" Text="按钮一" IconAlign="Top" Icon="Email" />
+                        <f:Button ID="Button2" Text="按钮二" IconAlign="Bottom" Icon="Star" />
+                        <f:Button ID="Button3" Text="按钮三" IconAlign="Top" IconFont="_Camera" />
+                        <f:Button ID="Button4" Text="按钮四" IconAlign="Bottom" IconFont="_Phone" />
                     </f:ButtonGroup>
                 </Items>
             </f:Toolbar>
         </Toolbars>
         <Items>
-            <f:Button CssClass="marginr" ID="btnChangeButtonText" Text="修改[按钮四]的文本" OnClick="@Url.Handler("btnChangeButtonText_Click")" OnClickParameter1="@(Parameter.FromFunction("text", "getButton4TextPostbackValue"))"></f:Button>
+            <f:Button CssClass="marginr" ID="btnChangeButtonText" Text="修改[按钮四]的文本" OnClick="@Url.Handler("btnChangeButtonText_Click")"
+                OnClickParameter1="@(Parameter.FromFunction("text", "getButton4TextPostbackValue"))"></f:Button>
             <f:Button ID="btnShowHideButton" Text="显示隐藏[按钮四]" OnClick="@Url.Handler("btnShowHideButton_Click")" OnClickParameter1="@(Parameter.FromFunction("hidden", "getButton4HiddenPostbackValue"))"></f:Button>
         </Items>
     </f:Panel>
     <br />
     <f:ButtonGroup ID="ButtonGroup2">
-        <f:Button ID="Button5" Text="按钮五" IconAlign="Top" Icon="Email"  />
-        <f:Button ID="Button6" Text="按钮六" IconAlign="Bottom" Icon="Star"  />
-        <f:Button ID="Button7" Text="按钮七" IconAlign="Top" IconFont="_Camera"  />
-        <f:Button ID="Button8" Text="按钮八" IconAlign="Bottom" IconFont="_Phone"  />
+        <f:Button ID="Button5" Text="按钮五" IconAlign="Top" Icon="Email" />
+        <f:Button ID="Button6" Text="按钮六" IconAlign="Bottom" Icon="Star" />
+        <f:Button ID="Button7" Text="按钮七" IconAlign="Top" IconFont="_Camera" />
+        <f:Button ID="Button8" Text="按钮八" IconAlign="Bottom" IconFont="_Phone" />
     </f:ButtonGroup>
     <br />
-    <f:Button CssClass="marginr" ID="btnChangeButtonText2" Text="修改[按钮八]的文本" OnClick="@Url.Handler("btnChangeButtonText2_Click")" OnClickParameter1="@(Parameter.FromFunction("text", "getButton8TextPostbackValue"))"></f:Button>
+    <f:Button CssClass="marginr" ID="btnChangeButtonText2" Text="修改[按钮八]的文本" OnClick="@Url.Handler("btnChangeButtonText2_Click")" OnClickParameter1="@(Parameter.FromFunction("text", "getButton8TextPostbackValue"))">
+    </f:Button>
     <f:Button ID="btnShowHideButton2" Text="显示隐藏[按钮八]" OnClick="@Url.Handler("btnShowHideButton2_Click")" OnClickParameter1="@(Parameter.FromFunction("hidden", "getButton8HiddenPostbackValue"))"></f:Button>
 
 }
@@ -81,8 +83,10 @@
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>Text</code>（<strong class="example-control-reference" data-example-control="Button4" title="按钮四">按钮四</strong>、<strong class="example-control-reference" data-example-control="Button8" title="按钮八">按钮八</strong>）：后台在原按钮上更新文字。</li>
-            <li><code>Hidden</code>（<strong class="example-control-reference" data-example-control="Button4" title="按钮四">按钮四</strong>、<strong class="example-control-reference" data-example-control="Button8" title="按钮八">按钮八</strong>）：隐藏组内按钮并释放其布局空间。</li>
+            <li><code>Text</code>（<strong class="example-control-reference" data-example-control="Button4" title="按钮四">按钮四</strong>、<strong
+                    class="example-control-reference" data-example-control="Button8" title="按钮八">按钮八</strong>）：后台在原按钮上更新文字。</li>
+            <li><code>Hidden</code>（<strong class="example-control-reference" data-example-control="Button4" title="按钮四">按钮四</strong>、<strong
+                    class="example-control-reference" data-example-control="Button8" title="按钮八">按钮八</strong>）：隐藏组内按钮并释放其布局空间。</li>
         </ul>
     </section>
 }

@@ -16,13 +16,14 @@
                 <f:RadioItem Text="可选项 3" Value="value3" />
             </f:RadioButtonList>
             <f:RadioButtonList ID="RadioButtonList2" Label="列表二（一列）" ColumnNumber="1" DataTextField="Name" DataValueField="Id"
-                               DataSource="@ViewBag.RadioButtonList2DataSource" SelectedValue="@ViewBag.RadioButtonList2SelectedValue">
+                DataSource="@ViewBag.RadioButtonList2DataSource" SelectedValue="@ViewBag.RadioButtonList2SelectedValue">
             </f:RadioButtonList>
         </Items>
         <Toolbars>
             <f:Toolbar ID="Toolbar1" Position="Bottom" ToolbarAlign="Right">
                 <Items>
-                    <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="@Url.Handler("btnSubmit_Click")" OnClickFields="SimpleForm1"></f:Button>
+                    <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="@Url.Handler("btnSubmit_Click")" OnClickFields="SimpleForm1">
+                    </f:Button>
                 </Items>
             </f:Toolbar>
         </Toolbars>
@@ -75,7 +76,8 @@
                 结果：显示“这是第一个选项的提示信息”。
             </li>
             <li>
-                将鼠标移到<strong class="example-control-reference" data-example-control="RadioButtonList2" title="列表二（一列）">列表二</strong>的“数据绑定值 <code>1</code>”。<br />
+                将鼠标移到<strong class="example-control-reference" data-example-control="RadioButtonList2" title="列表二（一列）">列表二</strong>的“数据绑定值
+                <code>1</code>”。<br />
                 结果：该数据项的提示显示“数据绑定值 <code>1</code>（值：<code>item1</code>）”；本页在视图中绑定后遍历选项补充提示。
             </li>
         </ol>
@@ -83,9 +85,14 @@
         <p>注：在页面视图上，通过遍历数据源来更新下拉列表每一项的属性。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>Attributes[&quot;data-qtip&quot;]</code>（<strong class="example-control-reference" data-example-control="RadioButtonList1" title="列表一">列表一</strong>、<strong class="example-control-reference" data-example-control="RadioButtonList2" title="列表二（一列）">列表二（一列）</strong>）：给选项写入悬停提示文字；按选项索引设置固定提示，数据项提示按当前项的文字和值生成。</li>
-            <li><code>ColumnNumber</code>（<strong class="example-control-reference" data-example-control="RadioButtonList2" title="列表二（一列）">列表二（一列）</strong>）：决定列表分为几列。 本页<strong class="example-control-reference" data-example-control="RadioButtonList2" title="列表二（一列）">列表二（一列）</strong>声明值为 <code>1</code>。</li>
-            <li><code>SelectedValue</code>（<strong class="example-control-reference" data-example-control="RadioButtonList2" title="列表二（一列）">列表二（一列）</strong>）：指定初始或后台设置的单个选中值。</li>
+            <li><code>Attributes[&quot;data-qtip&quot;]</code>（<strong class="example-control-reference" data-example-control="RadioButtonList1"
+                    title="列表一">列表一</strong>、<strong class="example-control-reference" data-example-control="RadioButtonList2"
+                    title="列表二（一列）">列表二（一列）</strong>）：给选项写入悬停提示文字；按选项索引设置固定提示，数据项提示按当前项的文字和值生成。</li>
+            <li><code>ColumnNumber</code>（<strong class="example-control-reference" data-example-control="RadioButtonList2"
+                    title="列表二（一列）">列表二（一列）</strong>）：决定列表分为几列。 本页<strong class="example-control-reference" data-example-control="RadioButtonList2"
+                    title="列表二（一列）">列表二（一列）</strong>声明值为 <code>1</code>。</li>
+            <li><code>SelectedValue</code>（<strong class="example-control-reference" data-example-control="RadioButtonList2"
+                    title="列表二（一列）">列表二（一列）</strong>）：指定初始或后台设置的单个选中值。</li>
         </ul>
     </section>
 }

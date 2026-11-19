@@ -8,7 +8,8 @@
 
 @section body {
 
-    <f:SimpleForm ID="SimpleForm1" IsFluid="true" LabelWidth="160" EnableCollapse="false" BodyPadding="10" ShowBorder="true" ShowHeader="true" MessageTarget="Qtip" Title="简单表单">
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" LabelWidth="160" EnableCollapse="false" BodyPadding="10" ShowBorder="true" ShowHeader="true"
+        MessageTarget="Qtip" Title="简单表单">
         <Items>
             <f:SimpleForm ID="SimpleForm3" ShowBorder="false" ShowHeader="false" EnableTableStyle="true">
                 <Items>
@@ -22,20 +23,23 @@
             <f:Panel ShowBorder="false" ShowHeader="false" MarginTop="5" MarginBottom="5">
                 <Items>
                     <f:Button ID="btnServerSetSelectedValue" CssClass="marginr" Text="选中上面列表中的第一项和第三项" OnClick="@Url.Handler("btnServerSetSelectedValue_Click")"></f:Button>
-                    <f:Button ID="btnServerGetSelectedValue" CssClass="marginr" Text="获取上面列表的选中项" OnClick="@Url.Handler("btnServerGetSelectedValue_Click")" OnClickParameter1="@(Parameter.FromFunction("selected", "getCurrentControlSelectedPostbackValue"))"></f:Button>
+                    <f:Button ID="btnServerGetSelectedValue" CssClass="marginr" Text="获取上面列表的选中项" OnClick="@Url.Handler("btnServerGetSelectedValue_Click")"
+                        OnClickParameter1="@(Parameter.FromFunction("selected", "getCurrentControlSelectedPostbackValue"))"></f:Button>
                     <f:Button ID="btnClientGetSelectedValue" Text="获取上面列表的选中项（JavaScript 脚本）" ClickHandler="onAlertSelectedValueClick"></f:Button>
                 </Items>
             </f:Panel>
 
             <f:SimpleForm ID="SimpleForm2" ShowBorder="false" ShowHeader="false" EnableTableStyle="true">
                 <Items>
-                    <f:CheckBoxList ID="CheckBoxList2" Label="列表二（一列）" ColumnNumber="1" DataTextField="Name" DataValueField="Id" DataSource="@ViewBag.CheckBoxList2DataSource" SelectedValueArray="@ViewBag.CheckBoxList2SelectedValueArray">
+                    <f:CheckBoxList ID="CheckBoxList2" Label="列表二（一列）" ColumnNumber="1" DataTextField="Name" DataValueField="Id"
+                        DataSource="@ViewBag.CheckBoxList2DataSource" SelectedValueArray="@ViewBag.CheckBoxList2SelectedValueArray">
                     </f:CheckBoxList>
                     <f:CheckBoxList ID="RadioButtonList3" Label="列表二（三列）" ColumnNumber="3">
                         <f:CheckItem Text="可选项 1" Value="value1" />
                         <f:CheckItem Text="可选项 2" Value="value2" />
                     </f:CheckBoxList>
-                    <f:CheckBoxList ID="CheckBoxList3" OnSelectedIndexChanged="@Url.Handler("CheckBoxList3_SelectedIndexChanged")" OnSelectedIndexChangedParameter1="@(Parameter.FromFunction("selected", "getCurrentControlSelectedPostbackValue2"))" Label="列表三（选中改变事件）" ColumnNumber="3" ShowRedStar="true" Required="true">
+                    <f:CheckBoxList ID="CheckBoxList3" OnSelectedIndexChanged="@Url.Handler("CheckBoxList3_SelectedIndexChanged")"
+                        OnSelectedIndexChangedParameter1="@(Parameter.FromFunction("selected", "getCurrentControlSelectedPostbackValue2"))" Label="列表三（选中改变事件）" ColumnNumber="3" ShowRedStar="true" Required="true">
                         <f:CheckItem Text="可选项 1（很长很长很长很长很长很长的可选项）" Value="value1" />
                         <f:CheckItem Text="可选项 2" Value="value2" />
                         <f:CheckItem Text="可选项 3" Value="value3" />
@@ -61,7 +65,8 @@
         <Toolbars>
             <f:Toolbar Position="Bottom" ToolbarAlign="Right">
                 <Items>
-                    <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="@Url.Handler("btnSubmit_Click")" OnClickFields="SimpleForm1"></f:Button>
+                    <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="@Url.Handler("btnSubmit_Click")" OnClickFields="SimpleForm1">
+                    </f:Button>
                 </Items>
             </f:Toolbar>
         </Toolbars>
@@ -129,7 +134,9 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>EnableTableStyle</code>（<strong class="example-control-reference" data-example-control="SimpleForm3" title="第 2 个表单">第 2 个表单</strong>、<strong class="example-control-reference" data-example-control="SimpleForm2" title="第 3 个表单">第 3 个表单</strong>）：嵌套的表单启用表格风格，列表仍可独立设置。</li>
+            <li><code>EnableTableStyle</code>（<strong class="example-control-reference" data-example-control="SimpleForm3" title="第 2 个表单">第 2
+                    个表单</strong>、<strong class="example-control-reference" data-example-control="SimpleForm2" title="第 3 个表单">第 3
+                    个表单</strong>）：嵌套的表单启用表格风格，列表仍可独立设置。</li>
         </ul>
     </section>
 }

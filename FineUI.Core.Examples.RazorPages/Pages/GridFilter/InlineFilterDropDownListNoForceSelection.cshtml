@@ -8,7 +8,9 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()" AllowFilters="true" InlineFilters="true" OnFilterChanged="@Url.Handler("Grid1_FilterChanged")" OnFilterChangedFields="Grid1">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
+        DataSource="@DataSourceUtil.GetDataTable()" AllowFilters="true" InlineFilters="true" OnFilterChanged="@Url.Handler("Grid1_FilterChanged")"
+        OnFilterChangedFields="Grid1">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />

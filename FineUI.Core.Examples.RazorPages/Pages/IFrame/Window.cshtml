@@ -10,8 +10,8 @@
 @section body {
 
     <f:Button ID="Button1" Text="弹出窗体" ClickHandler="onOpenWindow1Click"></f:Button>
-    <f:Window ID="Window1" Hidden="true" EnableIFrame="true" Target="Top" IFrameUrl="@Url.Content("~/IFrame/Window/IFrameWindow")"
-              EnableMaximize="true" EnableResize="true" Height="500" Width="800" Title="窗体一">
+    <f:Window ID="Window1" Hidden="true" EnableIFrame="true" Target="Top" IFrameUrl="@Url.Content("~/IFrame/Window/IFrameWindow")" EnableMaximize="true" EnableResize="true"
+        Height="500" Width="800" Title="窗体一">
     </f:Window>
     <br />
 
@@ -32,17 +32,19 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>演示在 <code>iframe</code> 窗体中加载独立表单页面，关闭窗体后保留外层页面。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>打开与关闭内联表单</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control="Button1" title="弹出窗体">弹出窗体</strong>。<br />结果：本页窗体加载独立子页。</li>
-        <li>在子页填写字段，再关闭当前窗体。<br />结果：子页输入属于独立 <code>iframe</code>，外层页面及其加载时间继续保留。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体一">窗体一</strong>）：初始为<code>true</code>，窗体内容由独立子页面提供。</li>
-        <li><code>Target</code>（<strong class="example-control-reference" data-example-control="Window1" title="窗体一">窗体一</strong>）：初始为<code>Top</code>，指定窗体在哪一层页面显示。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>演示在 <code>iframe</code> 窗体中加载独立表单页面，关闭窗体后保留外层页面。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>打开与关闭内联表单</h3>
+        <ol>
+            <li>点击<strong class="example-control-reference" data-example-control="Button1" title="弹出窗体">弹出窗体</strong>。<br />结果：本页窗体加载独立子页。</li>
+            <li>在子页填写字段，再关闭当前窗体。<br />结果：子页输入属于独立 <code>iframe</code>，外层页面及其加载时间继续保留。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control="Window1"
+                    title="窗体一">窗体一</strong>）：初始为<code>true</code>，窗体内容由独立子页面提供。</li>
+            <li><code>Target</code>（<strong class="example-control-reference" data-example-control="Window1"
+                    title="窗体一">窗体一</strong>）：初始为<code>Top</code>，指定窗体在哪一层页面显示。</li>
+        </ul>
+    </section>
 }

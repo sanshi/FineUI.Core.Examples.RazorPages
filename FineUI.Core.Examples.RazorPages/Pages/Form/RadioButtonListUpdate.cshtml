@@ -16,19 +16,24 @@
                 <f:RadioItem Text="可选项 3" Value="value3" />
             </f:RadioButtonList>
             <f:Button ID="btnUpdateList1" CssClass="marginr" Text="更新列表一" OnClick="@Url.Handler("btnUpdateList1_Click")"></f:Button>
-            <f:Button ID="btnCheckedItemsList1" Text="获取列表一的选中项" OnClick="@Url.Handler("btnCheckedItemsList_Click")" OnClickParameter1="@(Parameter.FromData("name", "列表一"))" OnClickParameter2="@(Parameter.FromFunction("selected", "getCurrentControlSelectedPostbackValue"))"></f:Button>
+            <f:Button ID="btnCheckedItemsList1" Text="获取列表一的选中项" OnClick="@Url.Handler("btnCheckedItemsList_Click")" OnClickParameter1="@(Parameter.FromData("name", "列表一"))"
+                OnClickParameter2="@(Parameter.FromFunction("selected", "getCurrentControlSelectedPostbackValue"))"></f:Button>
             <f:Label>
             </f:Label>
-            <f:RadioButtonList ID="RadioButtonList2" Label="列表二（竖排）" ColumnNumber="3" ColumnVertical="true" DataTextField="Name" DataValueField="Id" DataSource="@ViewBag.RadioButtonList2DataSource" SelectedValue="@ViewBag.RadioButtonList2SelectedValue">
+            <f:RadioButtonList ID="RadioButtonList2" Label="列表二（竖排）" ColumnNumber="3" ColumnVertical="true" DataTextField="Name" DataValueField="Id"
+                DataSource="@ViewBag.RadioButtonList2DataSource" SelectedValue="@ViewBag.RadioButtonList2SelectedValue">
             </f:RadioButtonList>
             <f:Button ID="btnUpdateList2" CssClass="marginr" Text="更新列表二" OnClick="@Url.Handler("btnUpdateList2_Click")"></f:Button>
-            <f:Button ID="btnCheckedItemsList2" Text="获取列表二的选中项" OnClick="@Url.Handler("btnCheckedItemsList_Click")" OnClickParameter1="@(Parameter.FromData("name", "列表二"))" OnClickParameter2="@(Parameter.FromFunction("selected", "getCurrentControlSelectedPostbackValue2"))"></f:Button>
+            <f:Button ID="btnCheckedItemsList2" Text="获取列表二的选中项" OnClick="@Url.Handler("btnCheckedItemsList_Click")" OnClickParameter1="@(Parameter.FromData("name", "列表二"))"
+                OnClickParameter2="@(Parameter.FromFunction("selected", "getCurrentControlSelectedPostbackValue2"))"></f:Button>
             <f:Label ID="Label1">
             </f:Label>
             <f:RadioButtonList ID="RadioButtonList4" Label="列表四" ColumnNumber="3" ColumnVertical="true">
             </f:RadioButtonList>
-            <f:Button ID="btnUpdateList4" CssClass="marginr" Text="更新列表四（可反复操作）" OnClick="@Url.Handler("btnUpdateList4_Click")" OnClickParameter1="@(Parameter.FromFunction("count", "getRadioButtonList4CountPostbackValue"))"></f:Button>
-            <f:Button ID="btnCheckedItemsList4" Text="获取列表四的选中项" OnClick="@Url.Handler("btnCheckedItemsList_Click")" OnClickParameter1="@(Parameter.FromData("name", "列表四"))" OnClickParameter2="@(Parameter.FromFunction("selected", "getCurrentControlSelectedPostbackValue3"))"></f:Button>
+            <f:Button ID="btnUpdateList4" CssClass="marginr" Text="更新列表四（可反复操作）" OnClick="@Url.Handler("btnUpdateList4_Click")"
+                OnClickParameter1="@(Parameter.FromFunction("count", "getRadioButtonList4CountPostbackValue"))"></f:Button>
+            <f:Button ID="btnCheckedItemsList4" Text="获取列表四的选中项" OnClick="@Url.Handler("btnCheckedItemsList_Click")" OnClickParameter1="@(Parameter.FromData("name", "列表四"))"
+                OnClickParameter2="@(Parameter.FromFunction("selected", "getCurrentControlSelectedPostbackValue3"))"></f:Button>
         </Items>
     </f:SimpleForm>
     <br />
@@ -45,7 +50,8 @@
     </f:RadioButtonList>
     <br />
     <f:Button ID="btnUpdateList3" CssClass="marginr" Text="更新列表三" OnClick="@Url.Handler("btnUpdateList3_Click")"></f:Button>
-    <f:Button ID="btnCheckedItemsList3" Text="获取列表三的选中项" OnClick="@Url.Handler("btnCheckedItemsList_Click")" OnClickParameter1="@(Parameter.FromData("name", "列表三"))" OnClickParameter2="@(Parameter.FromFunction("selected", "getCurrentControlSelectedPostbackValue4"))"></f:Button>
+    <f:Button ID="btnCheckedItemsList3" Text="获取列表三的选中项" OnClick="@Url.Handler("btnCheckedItemsList_Click")" OnClickParameter1="@(Parameter.FromData("name", "列表三"))"
+        OnClickParameter2="@(Parameter.FromFunction("selected", "getCurrentControlSelectedPostbackValue4"))"></f:Button>
 
 }
 
@@ -101,7 +107,8 @@
         <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>反复填充和清空</h3>
         <ol>
             <li>
-                <strong class="example-control-reference" data-example-control="RadioButtonList4" title="列表四">列表四</strong>为空时点击<strong class="example-control-reference" data-example-control="btnUpdateList4" title="更新列表四（可反复操作）">更新列表四（可反复操作）</strong>。<br />
+                <strong class="example-control-reference" data-example-control="RadioButtonList4" title="列表四">列表四</strong>为空时点击<strong
+                    class="example-control-reference" data-example-control="btnUpdateList4" title="更新列表四（可反复操作）">更新列表四（可反复操作）</strong>。<br />
                 结果：<strong class="example-control-reference" data-example-control="RadioButtonList4" title="列表四">列表四</strong>填入选项并出现默认选择。
             </li>
             <li>
@@ -111,7 +118,8 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>DataSource()</code>（<strong class="example-control-reference" data-example-control="RadioButtonList2" title="列表二（竖排）">列表二（竖排）</strong>）：后台返回新选项及选中值；获取按钮把客户端当前值作为请求参数提交。</li>
+            <li><code>DataSource()</code>（<strong class="example-control-reference" data-example-control="RadioButtonList2"
+                    title="列表二（竖排）">列表二（竖排）</strong>）：后台返回新选项及选中值；获取按钮把客户端当前值作为请求参数提交。</li>
         </ul>
     </section>
 }

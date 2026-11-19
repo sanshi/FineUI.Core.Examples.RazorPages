@@ -32,7 +32,8 @@
             </f:TextBox>
             <f:TextBox Label="邮箱" ID="tbxEmail" Required="true" RegexPattern="EMAIL" RegexMessage="请输入有效的邮箱地址" ShowRedStar="true">
             </f:TextBox>
-            <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="@Url.Handler("btnSubmit_Click")" OnClickFields="SimpleForm1" OnClickParameter1="@(Parameter.FromFunction("imgPhotoUrl", "getimgPhotoImgPhotoUrlPostbackValue"))"></f:Button>
+            <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="@Url.Handler("btnSubmit_Click")" OnClickFields="SimpleForm1"
+                OnClickParameter1="@(Parameter.FromFunction("imgPhotoUrl", "getimgPhotoImgPhotoUrlPostbackValue"))"></f:Button>
         </Items>
         <Tools>
             <f:Tool IconFont="_Upload" Text="上传头像" ClickHandler="onUploadClick"></f:Tool>
@@ -79,7 +80,8 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>Hidden</code>（<strong class="example-control-reference" data-example-control="filePhoto" title="上传控件">上传控件</strong>）：隐藏上传字段，由工具图标触发系统选择对话框。 本页声明值为 <code>true</code>。</li>
+            <li><code>Hidden</code>（<strong class="example-control-reference" data-example-control="filePhoto"
+                    title="上传控件">上传控件</strong>）：隐藏上传字段，由工具图标触发系统选择对话框。 本页声明值为 <code>true</code>。</li>
         </ul>
     </section>
 }

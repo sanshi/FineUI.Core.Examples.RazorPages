@@ -12,14 +12,14 @@
 
 @section body {
 
-    <f:Panel ID="Panel7" BodyPadding="20" Title="Panel" ShowBorder="false" ShowHeader="false" IsViewPort="true"
-             Layout="VBox" BoxConfigSpace="10">
+    <f:Panel ID="Panel7" BodyPadding="20" Title="Panel" ShowBorder="false" ShowHeader="false" IsViewPort="true" Layout="VBox" BoxConfigSpace="10">
         <Items>
             <f:Form ID="Form5" ShowBorder="true" ShowBorderShadow="true" BodyPadding="10" RemoveLastFieldsMargin="true" ShowHeader="false">
                 <Rows>
                     <f:FormRow>
                         <Items>
-                            <f:TwinTriggerBox EmptyText="输入要搜索的关键词" ShowLabel="false" ID="ttbSearch" ShowTrigger1="false" Trigger1Icon="Clear" Trigger2Icon="Search">
+                            <f:TwinTriggerBox EmptyText="输入要搜索的关键词" ShowLabel="false" ID="ttbSearch" ShowTrigger1="false" Trigger1Icon="Clear"
+                                Trigger2Icon="Search">
                                 <Listeners>
                                     <f:Listener Event="trigger1click" Handler="onTrigger1Click"></f:Listener>
                                     <f:Listener Event="trigger2click" Handler="onTrigger2Click"></f:Listener>
@@ -40,7 +40,7 @@
                 </Rows>
             </f:Form>
             <f:Grid ID="Grid1" Title="Grid1" PageSize="10" ShowBorder="true" ShowBorderShadow="true" BoxFlex="1" AllowPaging="true" IsDatabasePaging="false"
-                    ShowHeader="false" EnableCheckBoxSelect="true" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
+                ShowHeader="false" EnableCheckBoxSelect="true" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()">
                 <Toolbars>
                     <f:Toolbar ID="Toolbar2">
                         <Items>
@@ -66,7 +66,8 @@
             </f:Grid>
         </Items>
     </f:Panel>
-    <f:Window ID="Window1" Title="弹出窗体" Hidden="true" EnableIFrame="true" EnableMaximize="true" Target="Top" EnableResize="true" IsModal="true" Width="850" Height="500" CloseAction="HidePostBack">
+    <f:Window ID="Window1" Title="弹出窗体" Hidden="true" EnableIFrame="true" EnableMaximize="true" Target="Top" EnableResize="true" IsModal="true" Width="850"
+        Height="500" CloseAction="HidePostBack">
         <Listeners>
             <f:Listener Event="close" Handler="onWindow1Close"></f:Listener>
             <f:Listener Event="iframeload" Handler="onIFrameLoad" />
@@ -173,17 +174,21 @@
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>演示点击表格行命令，把当前行标识和名称传入 <code>iframe</code> 编辑窗体。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>打开当前行的编辑页面</h3>
-    <ol>
-        <li>在<strong class="example-control-reference" data-example-control="Grid1" title="Grid1">Grid1</strong>点击第一行的<strong>编辑</strong>或弹出窗体入口。<br />结果：<code>iframe</code> 窗体打开当前记录，标题或地址包含本次选择的行信息；不会固定打开同一条记录。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>DataIDField</code>（<strong class="example-control-reference" data-example-control="Grid1" title="Grid1">Grid1</strong>）：初始为<code>Id</code>，表格使用稳定的记录 <code>ID</code> 识别当前行。</li>
-        <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control="Window1" title="弹出窗体">弹出窗体</strong>）：初始为<code>true</code>，编辑窗体使用独立子页面。</li>
-        <li><code>IFrameUrl</code>（<strong class="example-control-reference" data-example-control="Window1" title="弹出窗体">弹出窗体</strong>）：本页根据当前记录拼接子页面地址及必要参数。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>演示点击表格行命令，把当前行标识和名称传入 <code>iframe</code> 编辑窗体。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>打开当前行的编辑页面</h3>
+        <ol>
+            <li>在<strong class="example-control-reference" data-example-control="Grid1"
+                    title="Grid1">Grid1</strong>点击第一行的<strong>编辑</strong>或弹出窗体入口。<br />结果：<code>iframe</code> 窗体打开当前记录，标题或地址包含本次选择的行信息；不会固定打开同一条记录。</li>
+        </ol>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>DataIDField</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="Grid1">Grid1</strong>）：初始为<code>Id</code>，表格使用稳定的记录 <code>ID</code> 识别当前行。</li>
+            <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control="Window1"
+                    title="弹出窗体">弹出窗体</strong>）：初始为<code>true</code>，编辑窗体使用独立子页面。</li>
+            <li><code>IFrameUrl</code>（<strong class="example-control-reference" data-example-control="Window1"
+                    title="弹出窗体">弹出窗体</strong>）：本页根据当前记录拼接子页面地址及必要参数。</li>
+        </ul>
+    </section>
 }

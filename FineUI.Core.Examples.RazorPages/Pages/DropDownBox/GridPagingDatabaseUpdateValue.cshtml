@@ -12,9 +12,10 @@
         <Items>
             <f:DropDownBox ID="DropDownBox1" EmptyText="请从下拉表格中选择" EnableMultiSelect="true" MatchFieldWidth="false">
                 <PopPanel>
-                    <f:Grid ID="Grid1" Width="650" Height="300" ShowBorder="true" ShowHeader="false" DataIDField="Id" DataTextField="Name" EnableCheckBoxSelect="true"
-                            AllowPaging="true" IsDatabasePaging="true" PageSize="5" Hidden="true" EnableMultiSelect="true" KeepCurrentSelection="true"
-                            OnPageIndexChanged="@Url.Handler("Grid1_PageIndexChanged")" OnPageIndexChangedFields="Grid1" DataSource="@ViewBag.Grid1DataSource" RecordCount="@ViewBag.Grid1RecordCount">
+                    <f:Grid ID="Grid1" Width="650" Height="300" ShowBorder="true" ShowHeader="false" DataIDField="Id" DataTextField="Name"
+                        EnableCheckBoxSelect="true" AllowPaging="true" IsDatabasePaging="true" PageSize="5" Hidden="true" EnableMultiSelect="true"
+                        KeepCurrentSelection="true" OnPageIndexChanged="@Url.Handler("Grid1_PageIndexChanged")" OnPageIndexChangedFields="Grid1"
+                        DataSource="@ViewBag.Grid1DataSource" RecordCount="@ViewBag.Grid1RecordCount">
                         <Columns>
                             <f:RowNumberField />
                             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -32,7 +33,8 @@
                 <Items>
                     <f:Button ID="btnUpdateValue" Text="更新下拉框的值为[张娟娟,叶鹏]" CssClass="marginr" OnClick="@Url.Handler("btnUpdateValue_Click")"></f:Button>
                     <f:Button ID="btnClearValue" Text="清空下拉框的值" CssClass="marginr" OnClick="@Url.Handler("btnClearValue_Click")"></f:Button>
-                    <f:Button ID="btnGetSelection" Text="获取下拉框的选中值" CssClass="marginr" OnClick="@Url.Handler("btnGetSelection_Click")" OnClickFields="DropDownBox1"></f:Button>
+                    <f:Button ID="btnGetSelection" Text="获取下拉框的选中值" CssClass="marginr" OnClick="@Url.Handler("btnGetSelection_Click")" OnClickFields="DropDownBox1">
+                    </f:Button>
                 </Items>
             </f:Panel>
         </Items>
@@ -72,7 +74,9 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>Value</code>（<strong class="example-control-reference" data-example-control="DropDownBox1" title="请从下拉表格中选择">请从下拉表格中选择</strong>）：按钮处理后更新<strong class="example-control-reference" data-example-control="DropDownBox1" title="请从下拉表格中选择">下拉框</strong>当前选中值，显示文字随本页的选中数据同步更新。</li>
+            <li><code>Value</code>（<strong class="example-control-reference" data-example-control="DropDownBox1"
+                    title="请从下拉表格中选择">请从下拉表格中选择</strong>）：按钮处理后更新<strong class="example-control-reference" data-example-control="DropDownBox1"
+                    title="请从下拉表格中选择">下拉框</strong>当前选中值，显示文字随本页的选中数据同步更新。</li>
         </ul>
     </section>
 }

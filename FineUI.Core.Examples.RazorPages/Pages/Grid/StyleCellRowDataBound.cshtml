@@ -26,7 +26,8 @@
 
 @section body {
 
-    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name" DataSource="@DataSourceUtil.GetDataTable()" RowDataBoundFunction="grid1RowDataBound">
+    <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" DataIDField="Id" DataTextField="Name"
+        DataSource="@DataSourceUtil.GetDataTable()" RowDataBoundFunction="grid1RowDataBound">
         <Columns>
             <f:RowNumberField />
             <f:RenderField HeaderText="姓名" DataField="Name" />
@@ -46,7 +47,8 @@
 
     <f:Button Text="选中了哪些行" CssClass="marginr" ClickHandler="onNotifySelectedRowsClick"></f:Button>
 
-    <f:Button Text="重新绑定表格" OnClick="@Url.Handler("Button1_Click")" OnClickParameter1="@(Parameter.FromFunction("fields", "getGrid1FieldsPostbackValue"))" OnClickParameter2="@(Parameter.FromFunction("source", "getGrid1SourcePostbackValue"))"></f:Button>
+    <f:Button Text="重新绑定表格" OnClick="@Url.Handler("Button1_Click")" OnClickParameter1="@(Parameter.FromFunction("fields", "getGrid1FieldsPostbackValue"))" OnClickParameter2="@(Parameter.FromFunction("source", "getGrid1SourcePostbackValue"))">
+    </f:Button>
 
 
 }

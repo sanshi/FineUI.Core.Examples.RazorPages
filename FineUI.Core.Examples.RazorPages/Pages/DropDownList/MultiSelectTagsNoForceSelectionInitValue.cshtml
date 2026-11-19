@@ -11,7 +11,7 @@
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" ShowBorder="true" Title="下拉列表（多选，可编辑，用户输入值）" ShowHeader="true">
         <Items>
             <f:DropDownList ID="DropDownList1" EnableMultiSelect="true" EnableEdit="true" ForceSelection="false" MultiSelectMode="Tags"
-                    Text="@ViewBag.DropDownList1Text" SelectedValueArray="@ViewBag.DropDownList1SelectedValueArray">
+                Text="@ViewBag.DropDownList1Text" SelectedValueArray="@ViewBag.DropDownList1SelectedValueArray">
                 <f:ListItem Text="可选项1" Value="Value1" Selected="true" />
                 <f:ListItem Text="可选项2（不可选择）" Value="Value2" EnableSelect="false" />
                 <f:ListItem Text="可选项3（不可选择）" Value="Value3" EnableSelect="false" />
@@ -49,8 +49,12 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>SelectedValueArray</code>（<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：后台用 <code>UIHelper</code> 设置选择；读取当前值时由客户端作为请求参数提交。</li>
-            <li><code>ForceSelection</code>（<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：为 <code>false</code> 时允许保存列表之外的用户输入；为 <code>true</code> 时需要匹配现有选项。 本页声明值为 <code>false</code>。</li>
+            <li><code>SelectedValueArray</code>（<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：后台用
+                <code>UIHelper</code> 设置选择；读取当前值时由客户端作为请求参数提交。
+            </li>
+            <li><code>ForceSelection</code>（<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：为
+                <code>false</code> 时允许保存列表之外的用户输入；为 <code>true</code> 时需要匹配现有选项。 本页声明值为 <code>false</code>。
+            </li>
             <li><code>Text</code>（<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：提供本页的初始显示文字。</li>
         </ul>
     </section>

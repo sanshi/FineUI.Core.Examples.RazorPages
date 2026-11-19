@@ -7,18 +7,23 @@
 
 
 @section body {
-    
+
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="中国省市县联动">
         <Items>
-            <f:DropDownList ID="ddlSheng" Label="省份" ShowRedStar="true" CompareType="String" CompareValue="-1" CompareOperator="NotEqual" CompareMessage="请选择省份！" Items="@ViewBag.ShengItems" OnSelectedIndexChanged="@Url.Handler("ddlSheng_SelectedIndexChanged")" OnSelectedIndexChangedFields="SimpleForm1">
+            <f:DropDownList ID="ddlSheng" Label="省份" ShowRedStar="true" CompareType="String" CompareValue="-1" CompareOperator="NotEqual"
+                CompareMessage="请选择省份！" Items="@ViewBag.ShengItems" OnSelectedIndexChanged="@Url.Handler("ddlSheng_SelectedIndexChanged")"
+                OnSelectedIndexChangedFields="SimpleForm1">
             </f:DropDownList>
-            <f:DropDownList ID="ddlShi" Label="地区市" ShowRedStar="true" CompareType="String" CompareValue="-1" CompareOperator="NotEqual" CompareMessage="请选择地区市！" Enabled="false" OnSelectedIndexChanged="@Url.Handler("ddlShi_SelectedIndexChanged")" OnSelectedIndexChangedFields="SimpleForm1">
+            <f:DropDownList ID="ddlShi" Label="地区市" ShowRedStar="true" CompareType="String" CompareValue="-1" CompareOperator="NotEqual"
+                CompareMessage="请选择地区市！" Enabled="false" OnSelectedIndexChanged="@Url.Handler("ddlShi_SelectedIndexChanged")" OnSelectedIndexChangedFields="SimpleForm1">
                 <f:ListItem Text="选择地区市" Value="-1"></f:ListItem>
             </f:DropDownList>
-            <f:DropDownList ID="ddlXian" ShowRedStar="true" CompareType="String" CompareValue="-1" CompareOperator="NotEqual" CompareMessage="请选择县区市！" Label="县区市" Enabled="false">
+            <f:DropDownList ID="ddlXian" ShowRedStar="true" CompareType="String" CompareValue="-1" CompareOperator="NotEqual" CompareMessage="请选择县区市！"
+                Label="县区市" Enabled="false">
                 <f:ListItem Text="选择县区市" Value="-1"></f:ListItem>
             </f:DropDownList>
-            <f:Button ID="btnSubmit" Text="获取选中的省市县" _ValidateForms="SimpleForm1" ValidateTarget="Top" OnClick="@Url.Handler("btnSubmit_Click")" OnClickFields="SimpleForm1"></f:Button>
+            <f:Button ID="btnSubmit" Text="获取选中的省市县" _ValidateForms="SimpleForm1" ValidateTarget="Top" OnClick="@Url.Handler("btnSubmit_Click")"
+                OnClickFields="SimpleForm1"></f:Button>
         </Items>
     </f:SimpleForm>
     <br />
@@ -48,7 +53,8 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="ddlSheng" title="省份">省份</strong>、<strong class="example-control-reference" data-example-control="ddlShi" title="地区市">地区市</strong>）：上级选择改变后回发，后台重新加载下级选项，并切换下级可用状态。</li>
+            <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="ddlSheng" title="省份">省份</strong>、<strong
+                    class="example-control-reference" data-example-control="ddlShi" title="地区市">地区市</strong>）：上级选择改变后回发，后台重新加载下级选项，并切换下级可用状态。</li>
         </ul>
     </section>
 }

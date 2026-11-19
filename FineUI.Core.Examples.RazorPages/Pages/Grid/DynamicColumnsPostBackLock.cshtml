@@ -7,8 +7,8 @@
 
 @section body {
 
-    <f:DropDownList ID="DropDownList1" Label="切换表格" Width="500"
-                    OnSelectedIndexChanged="@Url.Handler("DropDownList1_SelectedIndexChanged")" OnSelectedIndexChangedParameter1="@(Parameter.FromFunction("selected", "getCurrentControlSelectedPostbackValue"))">
+    <f:DropDownList ID="DropDownList1" Label="切换表格" Width="500" OnSelectedIndexChanged="@Url.Handler("DropDownList1_SelectedIndexChanged")"
+        OnSelectedIndexChangedParameter1="@(Parameter.FromFunction("selected", "getCurrentControlSelectedPostbackValue"))">
         <Items>
             <f:ListItem Text="表格一（单选，列锁定）" Value="table1" Selected="true"></f:ListItem>
             <f:ListItem Text="表格二（多选，列锁定）" Value="table2"></f:ListItem>
@@ -17,7 +17,7 @@
     <br>
     <br>
     <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格一（单选，列锁定）" DataIDField="Id" DataTextField="Name" EnableMultiSelect="false"
-            DataSource="@DataSourceUtil.GetDataTable()" Columns="@ViewBag.Grid1Columns" AllowColumnLocking="true">
+        DataSource="@DataSourceUtil.GetDataTable()" Columns="@ViewBag.Grid1Columns" AllowColumnLocking="true">
     </f:Grid>
     <br>
     <br>

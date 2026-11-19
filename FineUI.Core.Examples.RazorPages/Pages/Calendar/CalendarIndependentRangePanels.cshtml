@@ -10,8 +10,7 @@
 
     <b>日期范围</b>
     <br />
-    <f:Calendar ID="Calendar1" DateFormatString="yyyy-MM-dd"
-        RangeStartDate="@ViewBag.Calendar1RangeStartDate" RangeEndDate="@ViewBag.Calendar1RangeEndDate"
+    <f:Calendar ID="Calendar1" DateFormatString="yyyy-MM-dd" RangeStartDate="@ViewBag.Calendar1RangeStartDate" RangeEndDate="@ViewBag.Calendar1RangeEndDate"
         DisplayType="DayRange" IndependentRangePanels="true">
     </f:Calendar>
     <br />
@@ -19,8 +18,7 @@
     <br />
     <b>月份范围</b>
     <br />
-    <f:Calendar ID="Calendar2" DateFormatString="yyyy/MM"
-        RangeStartDate="@ViewBag.Calendar2RangeStartDate" RangeEndDate="@ViewBag.Calendar2RangeEndDate"
+    <f:Calendar ID="Calendar2" DateFormatString="yyyy/MM" RangeStartDate="@ViewBag.Calendar2RangeStartDate" RangeEndDate="@ViewBag.Calendar2RangeEndDate"
         DisplayType="MonthRange" IndependentRangePanels="true">
     </f:Calendar>
     <br />
@@ -28,15 +26,12 @@
     <br />
     <b>年份范围</b>
     <br />
-    <f:Calendar ID="Calendar3" DateFormatString="yyyy"
-        RangeStartDate="@ViewBag.Calendar3RangeStartDate" RangeEndDate="@ViewBag.Calendar3RangeEndDate"
+    <f:Calendar ID="Calendar3" DateFormatString="yyyy" RangeStartDate="@ViewBag.Calendar3RangeStartDate" RangeEndDate="@ViewBag.Calendar3RangeEndDate"
         DisplayType="YearRange" IndependentRangePanels="true">
     </f:Calendar>
     <br />
-    <f:Button ID="Button1" Text="获取选中的值" OnClick="@Url.Handler("Button1_Click")"
-        OnClickParameter1="@(Parameter.FromFunction("text1", "getCalendar1Text1PostbackValue"))"
-        OnClickParameter2="@(Parameter.FromFunction("text2", "getCalendar2Text2PostbackValue"))"
-        OnClickParameter3="@(Parameter.FromFunction("text3", "getCalendar3Text3PostbackValue"))"></f:Button>
+    <f:Button ID="Button1" Text="获取选中的值" OnClick="@Url.Handler("Button1_Click")" OnClickParameter1="@(Parameter.FromFunction("text1", "getCalendar1Text1PostbackValue"))"
+        OnClickParameter2="@(Parameter.FromFunction("text2", "getCalendar2Text2PostbackValue"))" OnClickParameter3="@(Parameter.FromFunction("text3", "getCalendar3Text3PostbackValue"))"></f:Button>
     <br />
     <br />
     <f:Label ID="labResult" EncodeText="false" ShowLabel="false">
@@ -79,7 +74,11 @@
         <div> 说明：设置 <code>IndependentRangePanels</code>=<code>true</code> 开启“范围面板独立切换”。范围选择时左右两个面板可各自独立切换年份/月份，互不联动，便于快速定位跨度较大的起止日期区间。 </div>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>IndependentRangePanels</code>（<strong class="example-control-reference" data-example-control="Calendar1" title="第 1 个日历">第 1 个日历</strong>、<strong class="example-control-reference" data-example-control="Calendar2" title="第 2 个日历">第 2 个日历</strong>、<strong class="example-control-reference" data-example-control="Calendar3" title="第 3 个日历">第 3 个日历</strong>）：初始为 <code>true</code>，左右面板分别切换年月，另一侧不被强制切到相邻月份。</li>
+            <li><code>IndependentRangePanels</code>（<strong class="example-control-reference" data-example-control="Calendar1" title="第 1 个日历">第 1
+                    个日历</strong>、<strong class="example-control-reference" data-example-control="Calendar2" title="第 2 个日历">第 2 个日历</strong>、<strong
+                    class="example-control-reference" data-example-control="Calendar3" title="第 3 个日历">第 3 个日历</strong>）：初始为
+                <code>true</code>，左右面板分别切换年月，另一侧不被强制切到相邻月份。
+            </li>
         </ul>
     </section>
 }

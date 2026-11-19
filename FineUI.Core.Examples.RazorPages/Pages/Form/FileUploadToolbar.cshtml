@@ -39,9 +39,11 @@
                 <Items>
                     <f:Button Text="测试按钮"></f:Button>
                     <f:ToolbarFill></f:ToolbarFill>
-                    <f:FileUpload ID="filePhoto" ButtonText="上传个人头像" ButtonIconFont="_Upload" AcceptFileTypes="image/*" ButtonOnly="true" OnFileSelected="@Url.Handler("filePhoto_FileSelected")" OnFileSelectedFields="filePhoto">
+                    <f:FileUpload ID="filePhoto" ButtonText="上传个人头像" ButtonIconFont="_Upload" AcceptFileTypes="image/*" ButtonOnly="true"
+                        OnFileSelected="@Url.Handler("filePhoto_FileSelected")" OnFileSelectedFields="filePhoto">
                     </f:FileUpload>
-                    <f:Button IconFont="_Save" ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="@Url.Handler("btnSubmit_Click")" OnClickFields="SimpleForm1" OnClickParameter1="@(Parameter.FromFunction("imgPhotoUrl", "getimgPhotoImgPhotoUrlPostbackValue"))"></f:Button>
+                    <f:Button IconFont="_Save" ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="@Url.Handler("btnSubmit_Click")"
+                        OnClickFields="SimpleForm1" OnClickParameter1="@(Parameter.FromFunction("imgPhotoUrl", "getimgPhotoImgPhotoUrlPostbackValue"))"></f:Button>
                 </Items>
             </f:Toolbar>
         </Toolbars>
@@ -84,7 +86,8 @@
         </ul>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>ButtonOnly</code>（<strong class="example-control-reference" data-example-control="filePhoto" title="上传控件">上传控件</strong>）：只显示上传按钮，不显示文件路径输入框。 本页声明值为 <code>true</code>。</li>
+            <li><code>ButtonOnly</code>（<strong class="example-control-reference" data-example-control="filePhoto"
+                    title="上传控件">上传控件</strong>）：只显示上传按钮，不显示文件路径输入框。 本页声明值为 <code>true</code>。</li>
         </ul>
     </section>
 }

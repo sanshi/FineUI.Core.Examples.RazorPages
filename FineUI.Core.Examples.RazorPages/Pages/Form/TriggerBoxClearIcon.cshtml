@@ -10,8 +10,7 @@
 
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" ShowBorder="true" Title="表单" ShowHeader="true">
         <Items>
-            <f:TriggerBox ID="TriggerBox1" ShowLabel="false" Text="默认值"
-                          TriggerIcon="Clear" AutoShowClearIcon="true">
+            <f:TriggerBox ID="TriggerBox1" ShowLabel="false" Text="默认值" TriggerIcon="Clear" AutoShowClearIcon="true">
             </f:TriggerBox>
             <f:Button ID="btnSubmit" Text="提交表单" OnClick="@Url.Handler("btnSubmit_Click")" OnClickParameter1="@(Parameter.FromFunction("box1Value", "getTriggerBox1Box1ValuePostbackValue"))"></f:Button>
         </Items>
@@ -46,7 +45,8 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>AutoShowClearIcon</code>（<strong class="example-control-reference" data-example-control="TriggerBox1" title="触发器输入框">触发器输入框</strong>）：开启随内容自动显示清空图标；清空动作在浏览器完成。</li>
+            <li><code>AutoShowClearIcon</code>（<strong class="example-control-reference" data-example-control="TriggerBox1"
+                    title="触发器输入框">触发器输入框</strong>）：开启随内容自动显示清空图标；清空动作在浏览器完成。</li>
         </ul>
     </section>
 }

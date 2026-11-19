@@ -18,17 +18,18 @@
             <f:Panel CssClass="f-field" ShowBorder="false" ShowHeader="false">
                 <Items>
                     <f:Button ID="btnServerSetSelectedValue" CssClass="marginr" Text="选中上面列表中的第一项和第三项" OnClick="@Url.Handler("btnServerSetSelectedValue_Click")"></f:Button>
-                    <f:Button ID="btnServerGetSelectedValue" CssClass="marginr" Text="获取上面列表的选中项" OnClick="@Url.Handler("btnServerGetSelectedValue_Click")" OnClickParameter1="@(Parameter.FromFunction("selected", "getCurrentControlSelectedPostbackValue"))"></f:Button>
+                    <f:Button ID="btnServerGetSelectedValue" CssClass="marginr" Text="获取上面列表的选中项" OnClick="@Url.Handler("btnServerGetSelectedValue_Click")"
+                        OnClickParameter1="@(Parameter.FromFunction("selected", "getCurrentControlSelectedPostbackValue"))"></f:Button>
                     <f:Button ID="btnClientGetSelectedValue" Text="获取上面列表的选中项（JavaScript 脚本）" ClickHandler="onAlertSelectedValueClick"></f:Button>
                 </Items>
             </f:Panel>
             <f:Label></f:Label>
-            <f:CheckBoxList ID="CheckBoxList2" Label="列表二（三列）" ColumnNumber="3" AutoColumnWidth="true"
-                            DataTextField="Name" DataValueField="Id" DataSource="@ViewBag.CheckBoxList2DataSource"
-                            SelectedValueArray="@ViewBag.CheckBoxList2SelectedValueArray">
+            <f:CheckBoxList ID="CheckBoxList2" Label="列表二（三列）" ColumnNumber="3" AutoColumnWidth="true" DataTextField="Name" DataValueField="Id"
+                DataSource="@ViewBag.CheckBoxList2DataSource" SelectedValueArray="@ViewBag.CheckBoxList2SelectedValueArray">
             </f:CheckBoxList>
             <f:Label></f:Label>
-            <f:CheckBoxList ID="CheckBoxList3" Label="列表三（选中项改变事件）" AutoColumnWidth="true" ColumnNumber="3" ShowRedStar="true" Required="true" OnSelectedIndexChanged="@Url.Handler("CheckBoxList3_SelectedIndexChanged")" OnSelectedIndexChangedParameter1="@(Parameter.FromFunction("selected", "getCurrentControlSelectedPostbackValue2"))">
+            <f:CheckBoxList ID="CheckBoxList3" Label="列表三（选中项改变事件）" AutoColumnWidth="true" ColumnNumber="3" ShowRedStar="true" Required="true"
+                OnSelectedIndexChanged="@Url.Handler("CheckBoxList3_SelectedIndexChanged")" OnSelectedIndexChangedParameter1="@(Parameter.FromFunction("selected", "getCurrentControlSelectedPostbackValue2"))">
                 <f:CheckItem Text="可选项 1（很长的可选项）" Value="value1" />
                 <f:CheckItem Text="可选项 2" Value="value2" />
                 <f:CheckItem Text="可选项 3" Value="value3" />
@@ -56,7 +57,8 @@
         <Toolbars>
             <f:Toolbar Position="Bottom" ToolbarAlign="Right">
                 <Items>
-                    <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="@Url.Handler("btnSubmit_Click")" OnClickFields="SimpleForm1"></f:Button>
+                    <f:Button ID="btnSubmit" _ValidateForms="SimpleForm1" Text="提交表单" OnClick="@Url.Handler("btnSubmit_Click")" OnClickFields="SimpleForm1">
+                    </f:Button>
                 </Items>
             </f:Toolbar>
         </Toolbars>
@@ -128,8 +130,12 @@
         <p>注：注意复选框列表中每一项的宽度不相同。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>ColumnNumber</code>（<strong class="example-control-reference" data-example-control="CheckBoxList2" title="列表二（三列）">列表二（三列）</strong>）：决定列表分为几列。 本页<strong class="example-control-reference" data-example-control="CheckBoxList2" title="列表二（三列）">列表二（三列）</strong>声明值为 <code>3</code>。</li>
-            <li><code>AutoColumnWidth</code>（<strong class="example-control-reference" data-example-control="CheckBoxList1" title="列表一">列表一</strong>）：选项宽度按各项文字内容调整。 本页<strong class="example-control-reference" data-example-control="CheckBoxList1" title="列表一">列表一</strong>声明值为 <code>true</code>。</li>
+            <li><code>ColumnNumber</code>（<strong class="example-control-reference" data-example-control="CheckBoxList2"
+                    title="列表二（三列）">列表二（三列）</strong>）：决定列表分为几列。 本页<strong class="example-control-reference" data-example-control="CheckBoxList2"
+                    title="列表二（三列）">列表二（三列）</strong>声明值为 <code>3</code>。</li>
+            <li><code>AutoColumnWidth</code>（<strong class="example-control-reference" data-example-control="CheckBoxList1"
+                    title="列表一">列表一</strong>）：选项宽度按各项文字内容调整。 本页<strong class="example-control-reference" data-example-control="CheckBoxList1"
+                    title="列表一">列表一</strong>声明值为 <code>true</code>。</li>
         </ul>
     </section>
 }

@@ -8,31 +8,36 @@
 
 @section body {
 
-    <f:SimpleForm ID="SimpleForm1" IsFluid="true"  LabelWidth="150" Title="简单表单" EnableCollapse="false" BodyPadding="10" ShowBorder="true" ShowHeader="true">
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" LabelWidth="150" Title="简单表单" EnableCollapse="false" BodyPadding="10" ShowBorder="true" ShowHeader="true">
         <Items>
             <f:RadioButton ID="rbtnSingleRadio" Label="单选框" Text="可选项">
                 <Attributes>
                     <f:Attribute Key="data-qtip" Value="通过Attributes属性设置的提示信息"></f:Attribute>
                 </Attributes>
             </f:RadioButton>
-            <f:Button ID="btnSelectSingleRadio" CssClass="marginr" Text="选择/反选单选框" OnClick="@Url.Handler("btnSelectSingleRadio_Click")" OnClickParameter1="@(Parameter.FromFunction("isChecked", "getrbtnSingleRadioIsCheckedPostbackValue"))"></f:Button>
+            <f:Button ID="btnSelectSingleRadio" CssClass="marginr" Text="选择/反选单选框" OnClick="@Url.Handler("btnSelectSingleRadio_Click")"
+                OnClickParameter1="@(Parameter.FromFunction("isChecked", "getrbtnSingleRadioIsCheckedPostbackValue"))"></f:Button>
             <f:Button ID="btnChangeCheckStatus" CssClass="marginr" Text="选择/反选单选框（客户端脚本）" ClickHandler="onChangeCheckStatusClick"></f:Button>
-            <f:Label >
-            </f:Label>
-            <f:RadioButton ID="rbtnFirst" Label="单选框（分组）" Checked="true" GroupName="MyRadioGroup1" Text="可选项 1" >
-            </f:RadioButton>
-            <f:RadioButton ID="rbtnSecond" GroupName="MyRadioGroup1" ShowEmptyLabel="true" Text="可选项 2" >
-            </f:RadioButton>
-            <f:RadioButton ID="rbtnThird" GroupName="MyRadioGroup1" ShowEmptyLabel="true" Text="可选项 3" >
-            </f:RadioButton>
-            <f:Button ID="btnSelectSecondRadio" Text="选中分组单选框中的下一个" OnClick="@Url.Handler("btnSelectSecondRadio_Click")" OnClickParameter1="@(Parameter.FromFunction("checkedRadio", "getCurrentControlCheckedRadioPostbackValue"))"></f:Button>
             <f:Label>
             </f:Label>
-            <f:RadioButton ID="rbtnFirstAuto" Label="单选框（选中改变事件）" Checked="true" GroupName="MyRadioGroup2" Text="可选项 1"  OnCheckedChanged="@Url.Handler("rbtnAuto_CheckedChanged")" OnCheckedChangedParameter1="@(Parameter.FromFunction("checkedRadio", "getCurrentControlCheckedRadioPostbackValue2"))">
+            <f:RadioButton ID="rbtnFirst" Label="单选框（分组）" Checked="true" GroupName="MyRadioGroup1" Text="可选项 1">
             </f:RadioButton>
-            <f:RadioButton ID="rbtnSecondAuto" GroupName="MyRadioGroup2" ShowEmptyLabel="true" Text="可选项 2"  OnCheckedChanged="@Url.Handler("rbtnAuto_CheckedChanged")" OnCheckedChangedParameter1="@(Parameter.FromFunction("checkedRadio", "getCurrentControlCheckedRadioPostbackValue2"))">
+            <f:RadioButton ID="rbtnSecond" GroupName="MyRadioGroup1" ShowEmptyLabel="true" Text="可选项 2">
             </f:RadioButton>
-            <f:RadioButton ID="rbtnThirdAuto" GroupName="MyRadioGroup2" ShowEmptyLabel="true" Text="可选项 3"  OnCheckedChanged="@Url.Handler("rbtnAuto_CheckedChanged")" OnCheckedChangedParameter1="@(Parameter.FromFunction("checkedRadio", "getCurrentControlCheckedRadioPostbackValue2"))">
+            <f:RadioButton ID="rbtnThird" GroupName="MyRadioGroup1" ShowEmptyLabel="true" Text="可选项 3">
+            </f:RadioButton>
+            <f:Button ID="btnSelectSecondRadio" Text="选中分组单选框中的下一个" OnClick="@Url.Handler("btnSelectSecondRadio_Click")" OnClickParameter1="@(Parameter.FromFunction("checkedRadio", "getCurrentControlCheckedRadioPostbackValue"))">
+            </f:Button>
+            <f:Label>
+            </f:Label>
+            <f:RadioButton ID="rbtnFirstAuto" Label="单选框（选中改变事件）" Checked="true" GroupName="MyRadioGroup2" Text="可选项 1"
+                OnCheckedChanged="@Url.Handler("rbtnAuto_CheckedChanged")" OnCheckedChangedParameter1="@(Parameter.FromFunction("checkedRadio", "getCurrentControlCheckedRadioPostbackValue2"))">
+            </f:RadioButton>
+            <f:RadioButton ID="rbtnSecondAuto" GroupName="MyRadioGroup2" ShowEmptyLabel="true" Text="可选项 2" OnCheckedChanged="@Url.Handler("rbtnAuto_CheckedChanged")"
+                OnCheckedChangedParameter1="@(Parameter.FromFunction("checkedRadio", "getCurrentControlCheckedRadioPostbackValue2"))">
+            </f:RadioButton>
+            <f:RadioButton ID="rbtnThirdAuto" GroupName="MyRadioGroup2" ShowEmptyLabel="true" Text="可选项 3" OnCheckedChanged="@Url.Handler("rbtnAuto_CheckedChanged")"
+                OnCheckedChangedParameter1="@(Parameter.FromFunction("checkedRadio", "getCurrentControlCheckedRadioPostbackValue2"))">
             </f:RadioButton>
         </Items>
     </f:SimpleForm>
@@ -74,7 +79,9 @@
         <h3><i class="f-icon f-iconfont f-iconfont-radio-button-checked" aria-hidden="true"></i>同组只选一项</h3>
         <ol>
             <li>
-                在<strong class="example-control-reference" data-example-control="rbtnFirst" title="第 2 个单选框（可选项 1）">单选框（分组）</strong>中选择<strong class="example-control-reference" data-example-control="rbtnSecond" title="第 3 个单选框（可选项 2）">第 3 个单选框（可选项 2）</strong>、<strong class="example-control-reference" data-example-control="rbtnSecondAuto" title="第 6 个单选框（可选项 2）">第 6 个单选框（可选项 2）</strong>。<br />
+                在<strong class="example-control-reference" data-example-control="rbtnFirst" title="第 2 个单选框（可选项 1）">单选框（分组）</strong>中选择<strong
+                    class="example-control-reference" data-example-control="rbtnSecond" title="第 3 个单选框（可选项 2）">第 3 个单选框（可选项 2）</strong>、<strong
+                    class="example-control-reference" data-example-control="rbtnSecondAuto" title="第 6 个单选框（可选项 2）">第 6 个单选框（可选项 2）</strong>。<br />
                 结果：第二项选中，第一项取消。
             </li>
         </ol>
@@ -87,9 +94,18 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>GroupName</code>（<strong class="example-control-reference" data-example-control="rbtnFirst" title="第 2 个单选框（可选项 1）">第 2 个单选框（可选项 1）</strong>）：名称相同的<strong class="example-control-reference" data-example-control="rbtnSingleRadio" title="可选项">单选框</strong>互斥，不同分组相互独立。 本页<strong class="example-control-reference" data-example-control="rbtnFirst" title="第 2 个单选框（可选项 1）">单选框（分组）</strong>声明值为 <code>MyRadioGroup1</code>。</li>
-            <li><code>Checked</code>（<strong class="example-control-reference" data-example-control="rbtnFirst" title="第 2 个单选框（可选项 1）">第 2 个单选框（可选项 1）</strong>）：指定<strong class="example-control-reference" data-example-control="rbtnSingleRadio" title="可选项">单选框</strong>的初始选中状态。 本页<strong class="example-control-reference" data-example-control="rbtnFirst" title="第 2 个单选框（可选项 1）">单选框（分组）</strong>声明值为 <code>true</code>。</li>
-            <li><code>OnCheckedChanged</code>（<strong class="example-control-reference" data-example-control="rbtnFirstAuto" title="第 5 个单选框（可选项 1）">第 5 个单选框（可选项 1）</strong>、<strong class="example-control-reference" data-example-control="rbtnSecondAuto" title="第 6 个单选框（可选项 2）">第 6 个单选框（可选项 2）</strong>、<strong class="example-control-reference" data-example-control="rbtnThirdAuto" title="第 7 个单选框（可选项 3）">第 7 个单选框（可选项 3）</strong>）：用户改变当前分组选择后回发并显示结果。</li>
+            <li><code>GroupName</code>（<strong class="example-control-reference" data-example-control="rbtnFirst" title="第 2 个单选框（可选项 1）">第 2 个单选框（可选项
+                    1）</strong>）：名称相同的<strong class="example-control-reference" data-example-control="rbtnSingleRadio" title="可选项">单选框</strong>互斥，不同分组相互独立。
+                本页<strong class="example-control-reference" data-example-control="rbtnFirst" title="第 2 个单选框（可选项 1）">单选框（分组）</strong>声明值为
+                <code>MyRadioGroup1</code>。
+            </li>
+            <li><code>Checked</code>（<strong class="example-control-reference" data-example-control="rbtnFirst" title="第 2 个单选框（可选项 1）">第 2 个单选框（可选项
+                    1）</strong>）：指定<strong class="example-control-reference" data-example-control="rbtnSingleRadio" title="可选项">单选框</strong>的初始选中状态。 本页<strong
+                    class="example-control-reference" data-example-control="rbtnFirst" title="第 2 个单选框（可选项 1）">单选框（分组）</strong>声明值为 <code>true</code>。</li>
+            <li><code>OnCheckedChanged</code>（<strong class="example-control-reference" data-example-control="rbtnFirstAuto" title="第 5 个单选框（可选项 1）">第 5
+                    个单选框（可选项 1）</strong>、<strong class="example-control-reference" data-example-control="rbtnSecondAuto" title="第 6 个单选框（可选项 2）">第 6 个单选框（可选项
+                    2）</strong>、<strong class="example-control-reference" data-example-control="rbtnThirdAuto" title="第 7 个单选框（可选项 3）">第 7 个单选框（可选项
+                    3）</strong>）：用户改变当前分组选择后回发并显示结果。</li>
         </ul>
     </section>
 }

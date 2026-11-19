@@ -13,7 +13,8 @@
             <f:Toolbar>
                 <Items>
                     <f:Button ID="btnClose" Text="取消" Icon="SystemClose" ClickHandler="onCloseActiveWindowClick"></f:Button>
-                    <f:Button ID="btnSaveContinue" Text="导出" Icon="SystemSave" OnClick="@Url.Handler("SelectColumnsIFrame_btnSaveContinue_Click")" OnClickParameter1="@(Parameter.FromFunction("columns", "getcblColumnsColumnsPostbackValue"))"></f:Button>
+                    <f:Button ID="btnSaveContinue" Text="导出" Icon="SystemSave" OnClick="@Url.Handler("SelectColumnsIFrame_btnSaveContinue_Click")"
+                        OnClickParameter1="@(Parameter.FromFunction("columns", "getcblColumnsColumnsPostbackValue"))"></f:Button>
                 </Items>
             </f:Toolbar>
         </Toolbars>

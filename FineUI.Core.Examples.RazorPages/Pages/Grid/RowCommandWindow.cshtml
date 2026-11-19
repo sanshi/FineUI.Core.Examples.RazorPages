@@ -11,38 +11,36 @@
 }
 
 @section body {
-    <f:Grid ID="Grid1" Title="客户列表" ShowHeader="true" ShowBorder="true" IsFluid="true"
-            DataIDField="ID" DataSource="@rows">
+    <f:Grid ID="Grid1" Title="客户列表" ShowHeader="true" ShowBorder="true" IsFluid="true" DataIDField="ID" DataSource="@rows">
         <Columns>
             <f:RenderField HeaderText="客户编号" DataField="ID" Width="150" />
             <f:RenderField HeaderText="客户标识" DataField="Slug" Width="220" />
             <f:RenderField HeaderText="客户姓名" DataField="DisplayName" Width="150" />
             <f:RenderField HeaderText="操作" ExpandUnusedSpace="true">
                 <Commands>
-                    <f:Command Text="查看客户" CommandName="View" WindowID="Details"
-                               WindowIFrameUrlFormatString="@Url.Content("~/Grid/RowCommandWindowDetails?slug={0}")"
-                               _WindowIFrameUrlFields="Slug"
-                               WindowTitleFormatString="客户 - {0}" _WindowTitleFields="DisplayName" />
+                    <f:Command Text="查看客户" CommandName="View" WindowID="Details" WindowIFrameUrlFormatString="@Url.Content("~/Grid/RowCommandWindowDetails?slug={0}")"
+                        _WindowIFrameUrlFields="Slug" WindowTitleFormatString="客户 - {0}" _WindowTitleFields="DisplayName" />
                 </Commands>
             </f:RenderField>
         </Columns>
     </f:Grid>
-    <f:Window ID="Details" Title="客户详情" Width="500" Height="300"
-              IsModal="true" EnableIFrame="true" Hidden="true" />
+    <f:Window ID="Details" Title="客户详情" Width="500" Height="300" IsModal="true" EnableIFrame="true" Hidden="true" />
 
 
 }
 
 @section exampleDescription {
-<section aria-label="页面描述">
-    <p>通过行单击回发事件读取当前记录的主键和姓名。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>触发当前行事件</h3>
-    <ul>
-        <li>单击<strong class="example-control-reference" data-example-control="Grid1" title="客户列表">客户列表</strong>中某条记录的姓名单元格。<br />结果：动作触发后台事件，后台读取本次行索引及对应数据键，提示行主键和姓名。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>RowClick</code>（<strong class="example-control-reference" data-example-control="Grid1" title="客户列表">客户列表</strong>）：处理本页关注的行单击动作，取本次操作对应的行信息。</li>
-    </ul>
-</section>
+    <section aria-label="页面描述">
+        <p>通过行单击回发事件读取当前记录的主键和姓名。</p>
+        <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>触发当前行事件</h3>
+        <ul>
+            <li>单击<strong class="example-control-reference" data-example-control="Grid1"
+                    title="客户列表">客户列表</strong>中某条记录的姓名单元格。<br />结果：动作触发后台事件，后台读取本次行索引及对应数据键，提示行主键和姓名。</li>
+        </ul>
+        <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+        <ul class="example-description-properties">
+            <li><code>RowClick</code>（<strong class="example-control-reference" data-example-control="Grid1"
+                    title="客户列表">客户列表</strong>）：处理本页关注的行单击动作，取本次操作对应的行信息。</li>
+        </ul>
+    </section>
 }

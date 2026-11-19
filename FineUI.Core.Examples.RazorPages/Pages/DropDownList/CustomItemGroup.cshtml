@@ -30,7 +30,8 @@
 
     <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" ShowBorder="true" Title="列表项分组" ShowHeader="true">
         <Items>
-            <f:DropDownList ID="DropDownList1" EnableGroup="true" DataTextField="Name" DataValueField="Id" DataGroupField="Major" DataSource="@DataSourceUtil.GetDataTable()">
+            <f:DropDownList ID="DropDownList1" EnableGroup="true" DataTextField="Name" DataValueField="Id" DataGroupField="Major"
+                DataSource="@DataSourceUtil.GetDataTable()">
             </f:DropDownList>
             <f:Button ID="btnGetSelection" Text="获取此下拉列表的选中项" OnClick="@Url.Handler("btnGetSelection_Click")" OnClickFields="DropDownList1"></f:Button>
         </Items>
@@ -54,8 +55,10 @@
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>EnableGroup</code>（<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：按数据分组显示列表项。 本页声明值为 <code>true</code>。</li>
-            <li><code>DataGroupField</code>（<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：从指定数据字段取得分组标题。 本页声明值为 <code>Major</code>。</li>
+            <li><code>EnableGroup</code>（<strong class="example-control-reference" data-example-control="DropDownList1" title="下拉列表">下拉列表</strong>）：按数据分组显示列表项。
+                本页声明值为 <code>true</code>。</li>
+            <li><code>DataGroupField</code>（<strong class="example-control-reference" data-example-control="DropDownList1"
+                    title="下拉列表">下拉列表</strong>）：从指定数据字段取得分组标题。 本页声明值为 <code>Major</code>。</li>
         </ul>
     </section>
 }

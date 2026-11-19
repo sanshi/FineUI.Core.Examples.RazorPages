@@ -25,28 +25,33 @@
 
 @section body {
 
-    <f:SimpleForm ID="SimpleForm1" IsFluid="true"  LabelWidth="150" Title="简单表单" EnableCollapse="false" BodyPadding="10" ShowBorder="true" ShowHeader="true">
+    <f:SimpleForm ID="SimpleForm1" IsFluid="true" LabelWidth="150" Title="简单表单" EnableCollapse="false" BodyPadding="10" ShowBorder="true" ShowHeader="true">
         <Items>
-            <f:RadioButton ID="rbtnSingleRadio" Label="单选框" Text="可选项" >
+            <f:RadioButton ID="rbtnSingleRadio" Label="单选框" Text="可选项">
             </f:RadioButton>
-            <f:Button ID="btnSelectSingleRadio" CssClass="marginr" Text="选择/反选单选框" OnClick="@Url.Handler("btnSelectSingleRadio_Click")" OnClickParameter1="@(Parameter.FromFunction("isChecked", "getrbtnSingleRadioIsCheckedPostbackValue"))"></f:Button>
+            <f:Button ID="btnSelectSingleRadio" CssClass="marginr" Text="选择/反选单选框" OnClick="@Url.Handler("btnSelectSingleRadio_Click")"
+                OnClickParameter1="@(Parameter.FromFunction("isChecked", "getrbtnSingleRadioIsCheckedPostbackValue"))"></f:Button>
             <f:Button ID="btnChangeCheckStatus" CssClass="marginr" Text="选择/反选单选框（客户端脚本）" ClickHandler="onChangeCheckStatusClick"></f:Button>
-            <f:Label >
-            </f:Label>
-            <f:RadioButton ID="rbtnFirst" Label="单选框（分组）" Checked="true" GroupName="MyRadioGroup1" Text="可选项 1" >
-            </f:RadioButton>
-            <f:RadioButton ID="rbtnSecond" GroupName="MyRadioGroup1" ShowEmptyLabel="true" Text="可选项 2" >
-            </f:RadioButton>
-            <f:RadioButton ID="rbtnThird" GroupName="MyRadioGroup1" ShowEmptyLabel="true" Text="可选项 3" >
-            </f:RadioButton>
-            <f:Button ID="btnSelectSecondRadio" Text="选中分组单选框中的下一个" OnClick="@Url.Handler("btnSelectSecondRadio_Click")" OnClickParameter1="@(Parameter.FromFunction("checkedRadio", "getCurrentControlCheckedRadioPostbackValue"))"></f:Button>
             <f:Label>
             </f:Label>
-            <f:RadioButton ID="rbtnFirstAuto" Label="单选框（选中改变事件）" Checked="true" GroupName="MyRadioGroup2" Text="可选项 1"  OnCheckedChanged="@Url.Handler("rbtnAuto_CheckedChanged")" OnCheckedChangedParameter1="@(Parameter.FromFunction("checkedRadio", "getCurrentControlCheckedRadioPostbackValue2"))">
+            <f:RadioButton ID="rbtnFirst" Label="单选框（分组）" Checked="true" GroupName="MyRadioGroup1" Text="可选项 1">
             </f:RadioButton>
-            <f:RadioButton ID="rbtnSecondAuto" GroupName="MyRadioGroup2" ShowEmptyLabel="true" Text="可选项 2"  OnCheckedChanged="@Url.Handler("rbtnAuto_CheckedChanged")" OnCheckedChangedParameter1="@(Parameter.FromFunction("checkedRadio", "getCurrentControlCheckedRadioPostbackValue2"))">
+            <f:RadioButton ID="rbtnSecond" GroupName="MyRadioGroup1" ShowEmptyLabel="true" Text="可选项 2">
             </f:RadioButton>
-            <f:RadioButton ID="rbtnThirdAuto" GroupName="MyRadioGroup2" ShowEmptyLabel="true" Text="可选项 3"  OnCheckedChanged="@Url.Handler("rbtnAuto_CheckedChanged")" OnCheckedChangedParameter1="@(Parameter.FromFunction("checkedRadio", "getCurrentControlCheckedRadioPostbackValue2"))">
+            <f:RadioButton ID="rbtnThird" GroupName="MyRadioGroup1" ShowEmptyLabel="true" Text="可选项 3">
+            </f:RadioButton>
+            <f:Button ID="btnSelectSecondRadio" Text="选中分组单选框中的下一个" OnClick="@Url.Handler("btnSelectSecondRadio_Click")" OnClickParameter1="@(Parameter.FromFunction("checkedRadio", "getCurrentControlCheckedRadioPostbackValue"))">
+            </f:Button>
+            <f:Label>
+            </f:Label>
+            <f:RadioButton ID="rbtnFirstAuto" Label="单选框（选中改变事件）" Checked="true" GroupName="MyRadioGroup2" Text="可选项 1"
+                OnCheckedChanged="@Url.Handler("rbtnAuto_CheckedChanged")" OnCheckedChangedParameter1="@(Parameter.FromFunction("checkedRadio", "getCurrentControlCheckedRadioPostbackValue2"))">
+            </f:RadioButton>
+            <f:RadioButton ID="rbtnSecondAuto" GroupName="MyRadioGroup2" ShowEmptyLabel="true" Text="可选项 2" OnCheckedChanged="@Url.Handler("rbtnAuto_CheckedChanged")"
+                OnCheckedChangedParameter1="@(Parameter.FromFunction("checkedRadio", "getCurrentControlCheckedRadioPostbackValue2"))">
+            </f:RadioButton>
+            <f:RadioButton ID="rbtnThirdAuto" GroupName="MyRadioGroup2" ShowEmptyLabel="true" Text="可选项 3" OnCheckedChanged="@Url.Handler("rbtnAuto_CheckedChanged")"
+                OnCheckedChangedParameter1="@(Parameter.FromFunction("checkedRadio", "getCurrentControlCheckedRadioPostbackValue2"))">
             </f:RadioButton>
         </Items>
     </f:SimpleForm>
@@ -96,11 +101,15 @@
             </li>
         </ol>
         <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-        <p>注：本示例使用 CSS 关系伪类 <code>:has()</code> 让"选中"的<strong class="example-control-reference" data-example-control="rbtnSingleRadio" title="可选项">单选框</strong>文字变红。</p>
+        <p>注：本示例使用 CSS 关系伪类 <code>:has()</code> 让"选中"的<strong class="example-control-reference" data-example-control="rbtnSingleRadio"
+                title="可选项">单选框</strong>文字变红。</p>
         <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
         <ul class="example-description-properties">
-            <li><code>:has()</code>（本页全部<strong class="example-control-reference" data-example-control="rbtnSingleRadio" title="可选项">单选框</strong>，如<strong class="example-control-reference" data-example-control="rbtnSingleRadio" title="可选项">可选项</strong>）：从包含已选中 <code>input</code> 的字段单元格匹配文字标签。</li>
-            <li><code>:checked</code>（本页全部<strong class="example-control-reference" data-example-control="rbtnSingleRadio" title="可选项">单选框</strong>，如<strong class="example-control-reference" data-example-control="rbtnSingleRadio" title="可选项">可选项</strong>）：仅匹配当前选中的输入元素，使文字样式随选中状态变化。</li>
+            <li><code>:has()</code>（本页全部<strong class="example-control-reference" data-example-control="rbtnSingleRadio" title="可选项">单选框</strong>，如<strong
+                    class="example-control-reference" data-example-control="rbtnSingleRadio" title="可选项">可选项</strong>）：从包含已选中 <code>input</code> 的字段单元格匹配文字标签。
+            </li>
+            <li><code>:checked</code>（本页全部<strong class="example-control-reference" data-example-control="rbtnSingleRadio" title="可选项">单选框</strong>，如<strong
+                    class="example-control-reference" data-example-control="rbtnSingleRadio" title="可选项">可选项</strong>）：仅匹配当前选中的输入元素，使文字样式随选中状态变化。</li>
         </ul>
     </section>
 }
